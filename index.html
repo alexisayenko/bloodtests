@@ -481,7 +481,7 @@
 
     function renderAnalysisItem(a) {
       if (panelViewMode === 'detailed') {
-        return `<li>${escHtml(getAnalysisName(a.loinc))}<br><span class="result-loinc">LOINC ${escHtml(a.loinc)} · ${escHtml(a.longCommonName)}</span></li>`;
+        return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>`;
       }
       return `<li>${escHtml(getAnalysisName(a.loinc))}</li>`;
     }
