@@ -38,9 +38,14 @@ jobs:
           mkdir -p _site/dev
           # Copy main to root (exclude .git and .github)
           rsync -a --exclude='.git' --exclude='.github' main/ _site/
-          # Copy devel to /dev/ subfolder
+          # Copy devel to /dev/ subfolder and stamp build info
           if [ -d devel ]; then
             rsync -a --exclude='.git' --exclude='.github' devel/ _site/dev/
+            cd devel
+            COMMIT=$(git log -1 --format="%h")
+            DATETIME=$(git log -1 --format="%ci" | cut -c1-16)
+            cd ..
+            sed -i "s/<!--BUILD_INFO-->/${COMMIT} · ${DATETIME}/" _site/dev/index.html
           fi
           ls -la _site/
           ls -la _site/dev/ || echo "No dev folder"
