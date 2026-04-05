@@ -1,0 +1,57 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, devel]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+
+      - name: Checkout devel
+        uses: actions/checkout@v4
+        with:
+          ref: devel
+          path: devel
+        continue-on-error: true
+
+      - name: Build site
+        run: |
+          mkdir -p _site
+          # Copy main to root
+          cp -r main/* _site/ 2>/dev/null || true
+          cp -r main/.* _site/ 2>/dev/null || true
+          # Copy devel to /dev/ subfolder
+          if [ -d devel ]; then
+            mkdir -p _site/dev
+            cp -r devel/* _site/dev/ 2>/dev/null || true
+          fi
+          # Remove .git folders
+          rm -rf _site/.git _site/dev/.git _site/.github _site/dev/.github
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
