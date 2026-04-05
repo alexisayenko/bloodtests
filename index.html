@@ -121,6 +121,7 @@
     .panel-collapse-btn.collapsed { transform: rotate(90deg); }
     .panel-card-body.collapsed { display: none; }
     .panel-card-body { border-left: 3px solid var(--panel-color, #d1d5db); margin-left: 0; padding-left: 9px; }
+    .panel-card-collapsed { border-left: 3px solid var(--panel-color, #d1d5db); margin-left: 0; padding-left: 9px; }
     .panel-card-list { list-style: none; }
     .panel-card-list li { font-size: 15px; color: var(--gray-700); padding: 3px 0; border-top: 1px solid var(--gray-200); }
     .panel-card-list li:first-child { border-top: none; }
@@ -496,7 +497,7 @@
         return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:flex-start"><span>${escHtml(getAnalysisName(a.loinc))}<br><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span></span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal;white-space:nowrap;margin-left:8px">${escHtml(a.loinc)}</a></li>${extra}`;
       }
       if (panelViewMode === 'compact') {
-        return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>`;
+        return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:400">${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>`;
       }
       return `<li>${escHtml(getAnalysisName(a.loinc))}</li>`;
     }
