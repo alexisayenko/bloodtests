@@ -141,14 +141,14 @@
     .panel-card-list li.detail-line { border-top: none; padding: 3px 0 3px 12px; font-size: 14px; color: var(--gray-400); line-height: 1.65; }
     .panel-card-list li.detail-line.long-name { font-style: italic; color: var(--gray-400); }
     .panel-card-list li.detail-line.description { color: var(--gray-500); padding-top: 2px; }
-    .description-text { display: block; }
+    .description-text { display: inline; }
     .panel-card-list li.detail-line.scientific-wrap { padding-top: 8px; position: relative; display: none; }
     .scientific-text {
-      display: block;
+      display: inline;
     }
     .panel-card-list li.detail-line.scientific-wrap.expanded { display: list-item; }
     .scientific-toggle {
-      display: block;
+      display: inline;
       padding: 0;
       border: none;
       background: none;
@@ -159,16 +159,14 @@
       line-height: 1;
       letter-spacing: 1px;
       cursor: pointer;
-      margin-top: 2px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 4px;
+      vertical-align: baseline;
     }
     .scientific-toggle.expanded {
       color: var(--primary);
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0;
-      text-align: center;
     }
     .panel-card-list li.detail-line.why-line { color: var(--gray-500); padding-top: 10px; }
     .panel-card-list li.detail-line.freq-line { color: var(--gray-400); padding-top: 4px; padding-bottom: 8px; }
@@ -562,7 +560,7 @@
             extra += `<li class="detail-line description"><span class="description-text">${escHtml(inf.description || '')}</span>${inf.scientific ? `<button type="button" class="scientific-toggle" aria-expanded="false" aria-label="${t('readMore')}" onclick="toggleScientific('${scientificId}', this)">...</button>` : ''}</li>`;
           }
           if (inf.scientific) {
-            extra += `<li id="${scientificId}" class="detail-line scientific-wrap"><div class="scientific-text">${escHtml(inf.scientific)}</div></li>`;
+            extra += `<li id="${scientificId}" class="detail-line scientific-wrap"><span class="scientific-text">${escHtml(inf.scientific)}</span><button type="button" class="scientific-toggle expanded" aria-expanded="true" aria-label="${t('showLess')}" onclick="toggleScientific('${scientificId}', this)">${t('showLess')}</button></li>`;
           }
           if (inf.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(inf.why)}</li>`;
           if (inf.frequency) extra += `<li class="detail-line freq-line">${clockIcon}${escHtml(t('frequencyPrefix'))} ${escHtml(formatFrequencyText(inf.frequency))}</li>`;
