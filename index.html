@@ -26,6 +26,15 @@
 
     .header { background: var(--primary); color: white; padding: 16px 20px; position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; }
     .header h1 { font-size: 22px; font-weight: 600; }
+    .branch-badge {
+      display: none;
+      font-size: 12px;
+      background: rgba(255,255,255,0.25);
+      padding: 2px 6px;
+      border-radius: 4px;
+      vertical-align: middle;
+    }
+    .branch-badge.visible { display: inline-block; }
     .header-controls { display: flex; align-items: center; gap: 8px; }
     .lang-select {
       background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 8px;
@@ -154,21 +163,17 @@
     .scientific-text.expanded::after { display: none; }
     .scientific-toggle {
       position: absolute;
-      left: 50%;
-      bottom: 4px;
-      transform: translateX(-50%);
-      min-width: 42px;
-      height: 26px;
-      padding: 0 12px;
-      border: 1px solid rgba(37, 99, 235, 0.18);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.96);
-      color: var(--primary);
+      right: 0;
+      bottom: 10px;
+      padding: 0 0 0 10px;
+      border: none;
+      background: linear-gradient(to right, rgba(249,250,251,0), rgba(249,250,251,0.98) 35%);
+      color: var(--gray-500);
       font: inherit;
-      font-size: 18px;
-      font-weight: 700;
+      font-size: 20px;
+      font-weight: 600;
       line-height: 1;
-      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.12);
+      letter-spacing: 1px;
       cursor: pointer;
     }
     .scientific-toggle.expanded {
@@ -179,11 +184,12 @@
       margin-top: 6px;
       padding: 0;
       border: none;
-      border-radius: 0;
       background: none;
+      color: var(--primary);
       font-size: 13px;
       font-weight: 600;
       box-shadow: none;
+      letter-spacing: 0;
     }
     .panel-card-list li.detail-line.why-line { color: var(--gray-500); }
     .panel-card-list li.detail-line.freq-line { color: var(--gray-400); }
@@ -206,7 +212,7 @@
 <body>
   <div class="app">
     <header class="header">
-      <h1>Blood Tests <span style="font-size:12px;background:rgba(255,255,255,0.25);padding:2px 6px;border-radius:4px;vertical-align:middle">DEVEL</span></h1>
+      <h1>Blood Tests <span id="branch-badge" class="branch-badge">DEVEL</span></h1>
       <div class="header-controls">
         <select class="lang-select" onchange="setLang(this.value)">
           <option value="en">Eng</option>
@@ -289,9 +295,9 @@
     }
 
     const uiStrings = {
-      'en':    { results: 'Past Results', planned: 'Planned Tests', panels: 'Panels', biomarker: 'Biomarker', value: 'Value', reference: 'Reference', back: '← Back', noResults: 'No blood tests recorded yet.', noPlanned: 'No planned tests.', noPanels: 'No panels defined.', overdue: 'Overdue', biomarkers: 'biomarkers', analyses: 'analyses', navResults: 'Results', navPlanned: 'Planned', navPanels: 'Panels', readMore: 'Read more', showLess: 'Show less' },
-      'ru-RU': { results: 'Результаты', planned: 'Запланировано', panels: 'Панели', biomarker: 'Показатель', value: 'Значение', reference: 'Норма', back: '← Назад', noResults: 'Нет записей анализов.', noPlanned: 'Нет запланированных анализов.', noPanels: 'Панели не определены.', overdue: 'Просрочено', biomarkers: 'показателей', analyses: 'анализов', navResults: 'Результаты', navPlanned: 'План', navPanels: 'Панели', readMore: 'Показать больше', showLess: 'Свернуть' },
-      'uk-UA': { results: 'Результати', planned: 'Заплановано', panels: 'Панелі', biomarker: 'Показник', value: 'Значення', reference: 'Норма', back: '← Назад', noResults: 'Немає записів аналізів.', noPlanned: 'Немає запланованих аналізів.', noPanels: 'Панелі не визначені.', overdue: 'Прострочено', biomarkers: 'показників', analyses: 'аналізів', navResults: 'Результати', navPlanned: 'План', navPanels: 'Панелі', readMore: 'Показати більше', showLess: 'Згорнути' },
+      'en':    { results: 'Past Results', planned: 'Planned Tests', panels: 'Panels', biomarker: 'Biomarker', value: 'Value', reference: 'Reference', back: '← Back', noResults: 'No blood tests recorded yet.', noPlanned: 'No planned tests.', noPanels: 'No panels defined.', overdue: 'Overdue', biomarkers: 'biomarkers', analyses: 'analyses', navResults: 'Results', navPlanned: 'Planned', navPanels: 'Panels', readMore: 'Read more', showLess: 'Show less', frequencyPrefix: 'Do it' },
+      'ru-RU': { results: 'Результаты', planned: 'Запланировано', panels: 'Панели', biomarker: 'Показатель', value: 'Значение', reference: 'Норма', back: '← Назад', noResults: 'Нет записей анализов.', noPlanned: 'Нет запланированных анализов.', noPanels: 'Панели не определены.', overdue: 'Просрочено', biomarkers: 'показателей', analyses: 'анализов', navResults: 'Результаты', navPlanned: 'План', navPanels: 'Панели', readMore: 'Показать больше', showLess: 'Свернуть', frequencyPrefix: 'Сдавать' },
+      'uk-UA': { results: 'Результати', planned: 'Заплановано', panels: 'Панелі', biomarker: 'Показник', value: 'Значення', reference: 'Норма', back: '← Назад', noResults: 'Немає записів аналізів.', noPlanned: 'Немає запланованих аналізів.', noPanels: 'Панелі не визначені.', overdue: 'Прострочено', biomarkers: 'показників', analyses: 'аналізів', navResults: 'Результати', navPlanned: 'План', navPanels: 'Панелі', readMore: 'Показати більше', showLess: 'Згорнути', frequencyPrefix: 'Здавати' },
     };
 
     function t(key) { return uiStrings[currentLang][key] || uiStrings['en'][key]; }
@@ -354,6 +360,15 @@
       return div.innerHTML;
     }
 
+    function updateBranchBadge() {
+      const badge = document.getElementById('branch-badge');
+      if (!badge) return;
+      const params = new URLSearchParams(window.location.search);
+      const forcedEnv = params.get('env');
+      const isDevel = forcedEnv === 'devel' || window.location.pathname === '/dev' || window.location.pathname.startsWith('/dev/');
+      badge.classList.toggle('visible', isDevel);
+    }
+
     function toggleScientific(id, btn) {
       const text = document.getElementById(id);
       if (!text) return;
@@ -364,6 +379,12 @@
         btn.setAttribute('aria-label', expanded ? t('showLess') : t('readMore'));
         btn.classList.toggle('expanded', expanded);
       }
+    }
+
+    function formatFrequencyText(text) {
+      if (!text) return '';
+      const normalized = text.replace(/\s*;\s*/g, ', ').trim();
+      return normalized.charAt(0).toLowerCase() + normalized.slice(1);
     }
 
     function isOutOfRange(r) {
@@ -560,7 +581,7 @@
             extra += `<li class="detail-line scientific-wrap"><div id="${scientificId}" class="scientific-text" onclick="toggleScientific('${scientificId}', this.nextElementSibling)">${escHtml(inf.scientific)}</div><button type="button" class="scientific-toggle" aria-expanded="false" aria-label="${t('readMore')}" onclick="toggleScientific('${scientificId}', this)">...</button></li>`;
           }
           if (inf.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(inf.why)}</li>`;
-          if (inf.frequency) extra += `<li class="detail-line freq-line">${clockIcon}Do it: ${escHtml(inf.frequency)}</li>`;
+          if (inf.frequency) extra += `<li class="detail-line freq-line">${clockIcon}${escHtml(t('frequencyPrefix'))} ${escHtml(formatFrequencyText(inf.frequency))}</li>`;
         }
         return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:flex-start"><span>${escHtml(getAnalysisName(a.loinc))}<br><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span></span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal;white-space:nowrap;margin-left:8px">${escHtml(a.loinc)}</a></li>${extra}`;
       }
@@ -640,6 +661,7 @@
     }
 
     // --- Init ---
+    updateBranchBadge();
     loadAll();
   </script>
 </body>
