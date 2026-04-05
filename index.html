@@ -6,7 +6,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#2563eb">
   <title>Blood Tests</title>
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -33,12 +32,14 @@
       background-repeat: no-repeat; background-position: right 6px center; padding-right: 20px;
     }
     .lang-select option { color: #111; background: white; }
-    .user-btn {
-      background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 10px;
+    .user-select {
+      background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 6px;
       border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
-      display: flex; align-items: center; gap: 4px;
+      appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='white'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 6px center; padding-right: 20px;
     }
-    .user-avatar { width: 22px; height: 22px; border-radius: 50%; }
+    .user-select option { color: #111; background: white; }
 
     .main { flex: 1; padding: 16px 20px; padding-bottom: 80px; }
 
@@ -141,7 +142,9 @@
           <option value="ru-RU">Рус</option>
           <option value="uk-UA">Укр</option>
         </select>
-        <button id="login-btn" class="user-btn" onclick="handleAuth()">Sign in</button>
+        <select id="user-select" class="user-select" onchange="selectUser(this.value)">
+          <option value="">-- User --</option>
+        </select>
       </div>
     </header>
 
@@ -234,50 +237,21 @@
       renderPanelsPage();
     }
 
-    // --- Google Sign-In ---
-    let googleUser = null;
-
-    function handleAuth() {
-      if (googleUser) {
-        googleUser = null;
-        currentUserId = null;
-        localStorage.removeItem('bloodtests_user');
-        updateLoginBtn();
-        loadUserData();
-        return;
-      }
-      google.accounts.id.prompt();
-    }
-
-    function onGoogleSignIn(response) {
-      const payload = JSON.parse(atob(response.credential.split('.')[1]));
-      googleUser = { name: payload.name, email: payload.email, picture: payload.picture };
-      localStorage.setItem('bloodtests_user', JSON.stringify(googleUser));
-      updateLoginBtn();
-      resolveUser();
-    }
-
-    function resolveUser() {
-      if (!googleUser || usersCache.length === 0) { currentUserId = null; loadUserData(); return; }
-      const match = usersCache.find(u => u.email === googleUser.email);
-      currentUserId = match ? match.id : null;
+    // --- User picker ---
+    function selectUser(userId) {
+      currentUserId = userId || null;
+      localStorage.setItem('bloodtests_userId', userId);
       loadUserData();
     }
 
-    function updateLoginBtn() {
-      const btn = document.getElementById('login-btn');
-      if (googleUser) {
-        btn.innerHTML = `<img class="user-avatar" src="${escHtml(googleUser.picture)}" alt="">${escHtml(googleUser.name.split(' ')[0])}`;
-      } else {
-        btn.textContent = 'Sign in';
-      }
+    function populateUserSelect() {
+      const sel = document.getElementById('user-select');
+      sel.innerHTML = '<option value="">-- User --</option>' +
+        usersCache.map(u => `<option value="${escHtml(u.id)}"${u.id === currentUserId ? ' selected' : ''}>${escHtml(u.name)}</option>`).join('');
     }
 
-    // Restore saved user (resolveUser called after loadAll)
-    try {
-      const saved = localStorage.getItem('bloodtests_user');
-      if (saved) { googleUser = JSON.parse(saved); updateLoginBtn(); }
-    } catch(e) {}
+    // Restore saved user
+    currentUserId = localStorage.getItem('bloodtests_userId') || null;
 
     // Restore saved language
     const savedLang = localStorage.getItem('bloodtests_lang');
@@ -339,8 +313,9 @@
       panelsCache = await panelsRes.json();
       usersCache = await usersRes.json();
 
+      populateUserSelect();
       renderPanelsPage();
-      resolveUser();
+      loadUserData();
     }
 
     async function loadUserData() {
@@ -379,12 +354,8 @@
     function renderResultsList() {
       const container = document.getElementById('results-list');
       document.querySelector('#view-results .section-title').textContent = t('results');
-      if (!googleUser) {
-        container.innerHTML = '<div class="empty-state">Sign in to view results.</div>';
-        return;
-      }
       if (!currentUserId) {
-        container.innerHTML = '<div class="empty-state">No data found for this account.</div>';
+        container.innerHTML = '<div class="empty-state">Select a user to view results.</div>';
         return;
       }
       if (resultsCache.length === 0) {
@@ -481,6 +452,10 @@
 
     function renderAnalysisItem(a) {
       if (panelViewMode === 'detailed') {
+        return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>
+          <li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.longCommonName)}</li>`;
+      }
+      if (panelViewMode === 'compact') {
         return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>`;
       }
       return `<li>${escHtml(getAnalysisName(a.loinc))}</li>`;
@@ -538,15 +513,6 @@
     }
 
     // --- Init ---
-    window.onload = function() {
-      if (typeof google !== 'undefined' && google.accounts) {
-        google.accounts.id.initialize({
-          client_id: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com',
-          callback: onGoogleSignIn,
-          auto_select: true,
-        });
-      }
-    };
     loadAll();
   </script>
 </body>
