@@ -21,8 +21,14 @@
     }
     .app { min-height: 100dvh; display: flex; flex-direction: column; max-width: 600px; margin: 0 auto; }
 
-    .header { background: var(--primary); color: white; padding: 16px 20px; position: sticky; top: 0; z-index: 10; }
+    .header { background: var(--primary); color: white; padding: 16px 20px; position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; }
     .header h1 { font-size: 20px; font-weight: 600; }
+    .lang-switcher { display: flex; gap: 4px; }
+    .lang-btn {
+      background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 10px;
+      border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
+    }
+    .lang-btn.active { background: white; color: var(--primary); }
 
     .main { flex: 1; padding: 16px 20px; padding-bottom: 80px; }
 
@@ -98,7 +104,14 @@
 </head>
 <body>
   <div class="app">
-    <header class="header"><h1>Blood Tests</h1></header>
+    <header class="header">
+      <h1>Blood Tests</h1>
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('en')">Eng</button>
+        <button class="lang-btn" onclick="setLang('ru-RU')">Рус</button>
+        <button class="lang-btn" onclick="setLang('uk-UA')">Укр</button>
+      </div>
+    </header>
 
     <main class="main">
       <div id="view-results" class="view active">
@@ -127,7 +140,7 @@
           <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
           <path d="M9 14l2 2 4-4"/>
         </svg>
-        <span>Results</span>
+        <span id="nav-results-label">Results</span>
       </button>
       <button id="nav-planned" class="nav-item" onclick="showView('planned')">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
@@ -135,14 +148,14 @@
           <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
           <line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
-        <span>Planned</span>
+        <span id="nav-planned-label">Planned</span>
       </button>
       <button id="nav-panels" class="nav-item" onclick="showView('panels')">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
         </svg>
-        <span>Panels</span>
+        <span id="nav-panels-label">Panels</span>
       </button>
     </nav>
   </div>
@@ -151,6 +164,29 @@
     let analysesCatalog = {};  // loinc -> analysis object
     let resultsCache = [];
     let panelsCache = [];
+    let plannedCache = [];
+    let currentLang = 'en';
+
+    const uiStrings = {
+      'en':    { results: 'Past Results', planned: 'Planned Tests', panels: 'Panels', biomarker: 'Biomarker', value: 'Value', reference: 'Reference', back: '← Back', noResults: 'No blood tests recorded yet.', noPlanned: 'No planned tests.', noPanels: 'No panels defined.', overdue: 'Overdue', biomarkers: 'biomarkers', analyses: 'analyses', navResults: 'Results', navPlanned: 'Planned', navPanels: 'Panels' },
+      'ru-RU': { results: 'Результаты', planned: 'Запланировано', panels: 'Панели', biomarker: 'Показатель', value: 'Значение', reference: 'Норма', back: '← Назад', noResults: 'Нет записей анализов.', noPlanned: 'Нет запланированных анализов.', noPanels: 'Панели не определены.', overdue: 'Просрочено', biomarkers: 'показателей', analyses: 'анализов', navResults: 'Результаты', navPlanned: 'План', navPanels: 'Панели' },
+      'uk-UA': { results: 'Результати', planned: 'Заплановано', panels: 'Панелі', biomarker: 'Показник', value: 'Значення', reference: 'Норма', back: '← Назад', noResults: 'Немає записів аналізів.', noPlanned: 'Немає запланованих аналізів.', noPanels: 'Панелі не визначені.', overdue: 'Прострочено', biomarkers: 'показників', analyses: 'аналізів', navResults: 'Результати', navPlanned: 'План', navPanels: 'Панелі' },
+    };
+
+    function t(key) { return uiStrings[currentLang][key] || uiStrings['en'][key]; }
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === { 'en': 'Eng', 'ru-RU': 'Рус', 'uk-UA': 'Укр' }[lang]));
+      // Update nav labels
+      document.getElementById('nav-results-label').textContent = t('navResults');
+      document.getElementById('nav-planned-label').textContent = t('navPlanned');
+      document.getElementById('nav-panels-label').textContent = t('navPanels');
+      // Re-render all
+      renderResultsList();
+      renderPlannedList(plannedCache);
+      renderPanelsPage();
+    }
 
     function showView(name) {
       document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
@@ -185,7 +221,14 @@
 
     function getAnalysisName(loinc) {
       const a = analysesCatalog[loinc];
-      return a ? a.displayName : loinc;
+      if (!a) return loinc;
+      if (currentLang !== 'en' && a.lang[currentLang]) return a.lang[currentLang];
+      return a.displayName;
+    }
+
+    function getPanelName(p) {
+      if (currentLang !== 'en' && p.lang[currentLang]) return p.lang[currentLang];
+      return p.name;
     }
 
     // --- Load data ---
@@ -203,13 +246,13 @@
       resultsCache = await resultsRes.json();
       resultsCache.sort((a, b) => b.date.localeCompare(a.date));
 
-      const planned = await plannedRes.json();
-      planned.sort((a, b) => a.plannedDate.localeCompare(b.plannedDate));
+      plannedCache = await plannedRes.json();
+      plannedCache.sort((a, b) => a.plannedDate.localeCompare(b.plannedDate));
 
       panelsCache = await panelsRes.json();
 
       renderResultsList();
-      renderPlannedList(planned);
+      renderPlannedList(plannedCache);
       renderPanelsPage();
     }
 
@@ -226,8 +269,9 @@
 
     function renderResultsList() {
       const container = document.getElementById('results-list');
+      document.querySelector('#view-results .section-title').textContent = t('results');
       if (resultsCache.length === 0) {
-        container.innerHTML = '<div class="empty-state">No blood tests recorded yet.</div>';
+        container.innerHTML = `<div class="empty-state">${t('noResults')}</div>`;
         return;
       }
       const groups = groupResults();
@@ -235,7 +279,7 @@
         <div class="card" onclick="showDetail(${i})">
           <div class="card-date">${formatDate(g.date)}</div>
           <div class="card-title">${escHtml(g.place || 'Blood Test')}</div>
-          <div class="card-meta">${g.items.length} biomarkers</div>
+          <div class="card-meta">${g.items.length} ${t('biomarkers')}</div>
         </div>
       `).join('');
     }
@@ -247,7 +291,7 @@
 
       const valuesHtml = `
         <div class="results-table">
-          <div class="results-header"><span>Biomarker</span><span>Value</span><span>Reference</span></div>
+          <div class="results-header"><span>${t('biomarker')}</span><span>${t('value')}</span><span>${t('reference')}</span></div>
           ${g.items.map(r => {
             const oor = isOutOfRange(r);
             return `<div class="results-row ${oor ? 'out-of-range' : ''}">
@@ -274,9 +318,10 @@
     // --- Planned ---
     function renderPlannedList(planned) {
       const container = document.getElementById('planned-list');
+      document.querySelector('#view-planned .section-title').textContent = t('planned');
       const today = new Date().toISOString().split('T')[0];
       if (planned.length === 0) {
-        container.innerHTML = '<div class="empty-state">No planned tests.</div>';
+        container.innerHTML = `<div class="empty-state">${t('noPlanned')}</div>`;
         return;
       }
       container.innerHTML = planned.map(p => {
@@ -285,7 +330,7 @@
           <div class="card planned ${isPast ? 'card-overdue' : ''}">
             <div class="card-date">
               ${formatDate(p.plannedDate)}
-              ${isPast ? '<span class="badge badge-overdue">Overdue</span>' : ''}
+              ${isPast ? `<span class="badge badge-overdue">${t('overdue')}</span>` : ''}
             </div>
             <div class="card-title">${escHtml(p.testType)}</div>
             ${p.notes ? `<div class="card-notes">${escHtml(p.notes)}</div>` : ''}
@@ -297,28 +342,21 @@
     function renderPanelsPage() {
       const container = document.getElementById('panels-full-content');
       if (panelsCache.length === 0) {
-        container.innerHTML = '<div class="empty-state">No panels defined.</div>';
+        container.innerHTML = `<div class="empty-state">${t('noPanels')}</div>`;
         return;
       }
       container.innerHTML = panelsCache.map(p => {
         const items = p.loincs.map(loinc => analysesCatalog[loinc]).filter(Boolean);
         return `
           <div class="panel-section">
-            <h2 class="panel-title">${escHtml(p.name)}</h2>
-            <div class="panel-subtitle">
-              ${p.lang['ru-RU'] ? '🇷🇺 ' + escHtml(p.lang['ru-RU']) : ''}
-              ${p.lang['uk-UA'] ? ' &nbsp; 🇺🇦 ' + escHtml(p.lang['uk-UA']) : ''}
-            </div>
+            <h2 class="panel-title">${escHtml(getPanelName(p))}</h2>
+            <div class="panel-subtitle">${items.length} ${t('analyses')}</div>
             <div class="results-table">
               ${items.map(a => `
                 <div class="results-row" style="grid-template-columns: 1fr auto">
                   <span class="result-name">
-                    ${escHtml(a.displayName)}
+                    ${escHtml(getAnalysisName(a.loinc))}
                     <br><span class="result-loinc">${escHtml(a.longCommonName)}</span>
-                    <br><span class="result-loinc">
-                      ${a.lang['ru-RU'] ? '🇷🇺 ' + escHtml(a.lang['ru-RU']) : ''}
-                      ${a.lang['uk-UA'] ? ' &nbsp; 🇺🇦 ' + escHtml(a.lang['uk-UA']) : ''}
-                    </span>
                   </span>
                   <span class="result-ref">${escHtml(a.loinc)}</span>
                 </div>
