@@ -586,8 +586,8 @@
     "longCommonName": "Thyrotropin receptor Ab [Units/volume] in Serum or Plasma",
     "displayName": "TRAb",
     "lang": {
-      "ru-RU": "Антитела к рецепторам ТТГ (TRAb)",
-      "uk-UA": "Антитіла до рецепторів ТТГ (TRAb)"
+      "ru-RU": "Антитела к рецепторам ТТГ",
+      "uk-UA": "Антитіла до рецепторів ТТГ"
     },
     "info": {
       "description": "Antibodies that hijack the TSH receptor on thyroid cells — instead of TSH controlling the thyroid, these antibodies take over. Stimulating TRAb force the thyroid to overproduce hormones, causing Graves’ disease. They’re the definitive marker for Graves’ and critical for assessing risk to a baby during pregnancy.",
