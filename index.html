@@ -83,6 +83,10 @@
     .result-value { font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
     .result-ref { font-size: 12px; color: var(--gray-400); text-align: right; min-width: 80px; }
 
+    .panel-section { margin-bottom: 24px; }
+    .panel-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; color: var(--primary); }
+    .panel-subtitle { font-size: 13px; color: var(--gray-500); margin-bottom: 12px; }
+
     .empty-state { text-align: center; padding: 40px 20px; color: var(--gray-500); }
     .loading { text-align: center; padding: 40px; color: var(--gray-400); }
 
@@ -112,16 +116,8 @@
         <div id="planned-list" class="card-list"><div class="loading">Loading...</div></div>
       </div>
 
-      <div id="view-catalog" class="view">
-        <h2 class="section-title">Panels</h2>
-        <div id="panels-list" class="card-list" style="margin-bottom:24px"><div class="loading">Loading...</div></div>
-        <h2 class="section-title">All Analyses</h2>
-        <div id="catalog-list" class="card-list"><div class="loading">Loading...</div></div>
-      </div>
-
-      <div id="view-panel-detail" class="view">
-        <button class="btn-back" onclick="showView('catalog')">&larr; Back</button>
-        <div id="panel-detail-content"></div>
+      <div id="view-panels" class="view">
+        <div id="panels-full-content"><div class="loading">Loading...</div></div>
       </div>
     </main>
 
@@ -141,12 +137,12 @@
         </svg>
         <span>Planned</span>
       </button>
-      <button id="nav-catalog" class="nav-item" onclick="showView('catalog')">
+      <button id="nav-panels" class="nav-item" onclick="showView('panels')">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
         </svg>
-        <span>Catalog</span>
+        <span>Panels</span>
       </button>
     </nav>
   </div>
@@ -162,8 +158,8 @@
       document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
       if (name === 'results' || name === 'detail') {
         document.getElementById('nav-results').classList.add('active');
-      } else if (name === 'catalog' || name === 'panel-detail') {
-        document.getElementById('nav-catalog').classList.add('active');
+      } else if (name === 'panels') {
+        document.getElementById('nav-panels').classList.add('active');
       } else {
         document.getElementById('nav-' + name).classList.add('active');
       }
@@ -214,8 +210,7 @@
 
       renderResultsList();
       renderPlannedList(planned);
-      renderPanels();
-      renderCatalog(analyses);
+      renderPanelsPage();
     }
 
     // --- Results (grouped by date + place) ---
@@ -298,72 +293,39 @@
       }).join('');
     }
 
-    // --- Panels ---
-    function renderPanels() {
-      const container = document.getElementById('panels-list');
+    // --- Panels page ---
+    function renderPanelsPage() {
+      const container = document.getElementById('panels-full-content');
       if (panelsCache.length === 0) {
         container.innerHTML = '<div class="empty-state">No panels defined.</div>';
         return;
       }
-      container.innerHTML = panelsCache.map((p, i) => `
-        <div class="card" onclick="showPanelDetail(${i})">
-          <div class="card-title">${escHtml(p.name)}</div>
-          <div class="card-meta">${p.loincs.length} analyses</div>
-          <div class="card-notes">
-            ${p.lang['ru-RU'] ? '🇷🇺 ' + escHtml(p.lang['ru-RU']) : ''}
-            ${p.lang['uk-UA'] ? ' &nbsp; 🇺🇦 ' + escHtml(p.lang['uk-UA']) : ''}
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function showPanelDetail(index) {
-      const p = panelsCache[index];
-      if (!p) return;
-
-      const items = p.loincs.map(loinc => analysesCatalog[loinc]).filter(Boolean);
-
-      document.getElementById('panel-detail-content').innerHTML = `
-        <div class="detail-header">
-          <h2>${escHtml(p.name)}</h2>
-          <div class="detail-notes">
-            ${p.lang['ru-RU'] ? '🇷🇺 ' + escHtml(p.lang['ru-RU']) : ''}
-            ${p.lang['uk-UA'] ? ' &nbsp; 🇺🇦 ' + escHtml(p.lang['uk-UA']) : ''}
-          </div>
-        </div>
-        <div class="results-table">
-          <div class="results-header"><span>Analysis</span><span>LOINC</span></div>
-          ${items.map(a => `
-            <div class="results-row" style="grid-template-columns: 1fr auto">
-              <span class="result-name">${escHtml(a.displayName)}<br>
-                <span class="result-loinc">${escHtml(a.longCommonName)}</span>
-              </span>
-              <span class="result-ref">${escHtml(a.loinc)}</span>
+      container.innerHTML = panelsCache.map(p => {
+        const items = p.loincs.map(loinc => analysesCatalog[loinc]).filter(Boolean);
+        return `
+          <div class="panel-section">
+            <h2 class="panel-title">${escHtml(p.name)}</h2>
+            <div class="panel-subtitle">
+              ${p.lang['ru-RU'] ? '🇷🇺 ' + escHtml(p.lang['ru-RU']) : ''}
+              ${p.lang['uk-UA'] ? ' &nbsp; 🇺🇦 ' + escHtml(p.lang['uk-UA']) : ''}
             </div>
-          `).join('')}
-        </div>
-      `;
-      showView('panel-detail');
-    }
-
-    // --- Catalog ---
-    function renderCatalog(analyses) {
-      const container = document.getElementById('catalog-list');
-      if (analyses.length === 0) {
-        container.innerHTML = '<div class="empty-state">No analyses in catalog.</div>';
-        return;
-      }
-      container.innerHTML = analyses.map(a => `
-        <div class="card planned">
-          <div class="card-title">${escHtml(a.displayName)}</div>
-          <div class="card-meta">LOINC ${escHtml(a.loinc)}</div>
-          <div class="card-notes">${escHtml(a.longCommonName)}</div>
-          <div class="card-notes" style="margin-top:4px">
-            ${a.lang['ru-RU'] ? '🇷🇺 ' + escHtml(a.lang['ru-RU']) : ''}
-            ${a.lang['uk-UA'] ? ' &nbsp; 🇺🇦 ' + escHtml(a.lang['uk-UA']) : ''}
-          </div>
-        </div>
-      `).join('');
+            <div class="results-table">
+              ${items.map(a => `
+                <div class="results-row" style="grid-template-columns: 1fr auto">
+                  <span class="result-name">
+                    ${escHtml(a.displayName)}
+                    <br><span class="result-loinc">${escHtml(a.longCommonName)}</span>
+                    <br><span class="result-loinc">
+                      ${a.lang['ru-RU'] ? '🇷🇺 ' + escHtml(a.lang['ru-RU']) : ''}
+                      ${a.lang['uk-UA'] ? ' &nbsp; 🇺🇦 ' + escHtml(a.lang['uk-UA']) : ''}
+                    </span>
+                  </span>
+                  <span class="result-ref">${escHtml(a.loinc)}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>`;
+      }).join('');
     }
 
     // --- Init ---

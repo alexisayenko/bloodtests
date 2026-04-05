@@ -367,5 +367,329 @@
       "ru-RU": "Липаза",
       "uk-UA": "Ліпаза"
     }
+  },
+  {
+    "loinc": "1971-1",
+    "longCommonName": "Bilirubin.indirect [Mass/volume] in Serum or Plasma",
+    "displayName": "Indirect Bilirubin (IBIL)",
+    "lang": {
+      "ru-RU": "Билирубин непрямой",
+      "uk-UA": "Білірубін непрямий"
+    }
+  },
+  {
+    "loinc": "2710-2",
+    "longCommonName": "Cholinesterase [Enzymatic activity/volume] in Serum or Plasma",
+    "displayName": "Pseudocholinesterase (PChE)",
+    "lang": {
+      "ru-RU": "Псевдохолинэстераза",
+      "uk-UA": "Псевдохолінестераза"
+    }
+  },
+  {
+    "loinc": "5195-3",
+    "longCommonName": "Hepatitis B virus surface Ag [Presence] in Serum",
+    "displayName": "HBsAg",
+    "lang": {
+      "ru-RU": "HBsAg (поверхностный антиген гепатита B)",
+      "uk-UA": "HBsAg (поверхневий антиген гепатиту B)"
+    }
+  },
+  {
+    "loinc": "16128-1",
+    "longCommonName": "Hepatitis C virus Ab [Presence] in Serum",
+    "displayName": "Anti-HCV",
+    "lang": {
+      "ru-RU": "Антитела к вирусу гепатита C",
+      "uk-UA": "Антитіла до вірусу гепатиту C"
+    }
+  },
+  {
+    "loinc": "1751-7",
+    "longCommonName": "Albumin [Mass/volume] in Serum or Plasma",
+    "displayName": "Albumin (ALB)",
+    "lang": {
+      "ru-RU": "Альбумин",
+      "uk-UA": "Альбумін"
+    }
+  },
+  {
+    "loinc": "10834-0",
+    "longCommonName": "Globulin [Mass/volume] in Serum by calculation",
+    "displayName": "Globulin",
+    "lang": {
+      "ru-RU": "Глобулин",
+      "uk-UA": "Глобулін"
+    }
+  },
+  {
+    "loinc": "2885-2",
+    "longCommonName": "Total protein [Mass/volume] in Serum or Plasma",
+    "displayName": "Total Protein (TP)",
+    "lang": {
+      "ru-RU": "Общий белок",
+      "uk-UA": "Загальний білок"
+    }
+  },
+  {
+    "loinc": "9830-1",
+    "longCommonName": "Cholesterol.total/Cholesterol.in HDL [Mass ratio] in Serum or Plasma",
+    "displayName": "Atherogenic Index",
+    "lang": {
+      "ru-RU": "Индекс атерогенности",
+      "uk-UA": "Індекс атерогенності"
+    }
+  },
+  {
+    "loinc": "1884-6",
+    "longCommonName": "Apolipoprotein B [Mass/volume] in Serum or Plasma",
+    "displayName": "Apolipoprotein B (ApoB)",
+    "lang": {
+      "ru-RU": "Аполипопротеин B",
+      "uk-UA": "Аполіпопротеїн B"
+    }
+  },
+  {
+    "loinc": "1869-7",
+    "longCommonName": "Apolipoprotein A1 [Mass/volume] in Serum or Plasma",
+    "displayName": "Apolipoprotein A1 (ApoA1)",
+    "lang": {
+      "ru-RU": "Аполипопротеин A1",
+      "uk-UA": "Аполіпопротеїн A1"
+    }
+  },
+  {
+    "loinc": "10835-7",
+    "longCommonName": "Lipoprotein a [Mass/volume] in Serum or Plasma",
+    "displayName": "Lipoprotein (a) [Lp(a)]",
+    "lang": {
+      "ru-RU": "Липопротеин (а)",
+      "uk-UA": "Ліпопротеїн (а)"
+    }
+  },
+  {
+    "loinc": "1988-5",
+    "longCommonName": "C reactive protein [Mass/volume] in Serum or Plasma",
+    "displayName": "C-Reactive Protein (CRP)",
+    "lang": {
+      "ru-RU": "С-реактивный белок",
+      "uk-UA": "С-реактивний білок"
+    }
+  },
+  {
+    "loinc": "30522-7",
+    "longCommonName": "C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method",
+    "displayName": "hs-CRP",
+    "lang": {
+      "ru-RU": "С-реактивный белок (высокочувствительный)",
+      "uk-UA": "С-реактивний білок (високочутливий)"
+    }
+  },
+  {
+    "loinc": "26881-3",
+    "longCommonName": "Interleukin 6 [Mass/volume] in Serum or Plasma",
+    "displayName": "Interleukin-6 (IL-6)",
+    "lang": {
+      "ru-RU": "Интерлейкин-6",
+      "uk-UA": "Інтерлейкін-6"
+    }
+  },
+  {
+    "loinc": "3167-4",
+    "longCommonName": "Tumor necrosis factor alpha [Mass/volume] in Serum or Plasma",
+    "displayName": "TNF-alpha",
+    "lang": {
+      "ru-RU": "Фактор некроза опухоли альфа (ФНО-α)",
+      "uk-UA": "Фактор некрозу пухлин альфа (ФНП-α)"
+    }
+  },
+  {
+    "loinc": "49246-0",
+    "longCommonName": "Oxidized LDL [Mass/volume] in Serum or Plasma",
+    "displayName": "Oxidized LDL (oxLDL)",
+    "lang": {
+      "ru-RU": "Окисленный ЛПНП",
+      "uk-UA": "Окислений ЛПНЩ"
+    }
+  },
+  {
+    "loinc": "2293-7",
+    "longCommonName": "Leptin [Mass/volume] in Serum or Plasma",
+    "displayName": "Leptin",
+    "lang": {
+      "ru-RU": "Лептин",
+      "uk-UA": "Лептин"
+    }
+  },
+  {
+    "loinc": "56660-9",
+    "longCommonName": "Adiponectin [Mass/volume] in Serum or Plasma",
+    "displayName": "Adiponectin",
+    "lang": {
+      "ru-RU": "Адипонектин",
+      "uk-UA": "Адипонектин"
+    }
+  },
+  {
+    "loinc": "2160-0",
+    "longCommonName": "Homocysteine [Moles/volume] in Serum or Plasma",
+    "displayName": "Homocysteine",
+    "lang": {
+      "ru-RU": "Гомоцистеин",
+      "uk-UA": "Гомоцистеїн"
+    }
+  },
+  {
+    "loinc": "3255-7",
+    "longCommonName": "Fibrinogen [Mass/volume] in Platelet poor plasma by Coagulation assay",
+    "displayName": "Fibrinogen",
+    "lang": {
+      "ru-RU": "Фибриноген",
+      "uk-UA": "Фібриноген"
+    }
+  },
+  {
+    "loinc": "2942-1",
+    "longCommonName": "Sex hormone binding globulin [Mass/volume] in Serum or Plasma",
+    "displayName": "SHBG",
+    "lang": {
+      "ru-RU": "Глобулин, связывающий половые гормоны (ГСПГ)",
+      "uk-UA": "Глобулін, що зв'язує статеві гормони (ГЗСГ)"
+    }
+  },
+  {
+    "loinc": "2243-4",
+    "longCommonName": "Estradiol [Mass/volume] in Serum or Plasma",
+    "displayName": "Estradiol (E2)",
+    "lang": {
+      "ru-RU": "Эстрадиол",
+      "uk-UA": "Естрадіол"
+    }
+  },
+  {
+    "loinc": "26454-9",
+    "longCommonName": "Dihydrotestosterone [Mass/volume] in Serum or Plasma",
+    "displayName": "Dihydrotestosterone (DHT)",
+    "lang": {
+      "ru-RU": "Дигидротестостерон",
+      "uk-UA": "Дигідротестостерон"
+    }
+  },
+  {
+    "loinc": "2191-5",
+    "longCommonName": "Dehydroepiandrosterone sulfate [Mass/volume] in Serum or Plasma",
+    "displayName": "DHEA-S",
+    "lang": {
+      "ru-RU": "Дегидроэпиандростерон-сульфат",
+      "uk-UA": "Дегідроепіандростерон-сульфат"
+    }
+  },
+  {
+    "loinc": "32700-7",
+    "longCommonName": "Thiamine [Mass/volume] in Blood",
+    "displayName": "Vitamin B1 (Thiamine)",
+    "lang": {
+      "ru-RU": "Витамин B1 (тиамин)",
+      "uk-UA": "Вітамін B1 (тіамін)"
+    }
+  },
+  {
+    "loinc": "2842-3",
+    "longCommonName": "Pyridoxal phosphate [Mass/volume] in Plasma",
+    "displayName": "Vitamin B6 (Pyridoxal-5-Phosphate)",
+    "lang": {
+      "ru-RU": "Витамин B6 (пиридоксальфосфат)",
+      "uk-UA": "Вітамін B6 (піридоксальфосфат)"
+    }
+  },
+  {
+    "loinc": "2284-8",
+    "longCommonName": "Folate [Mass/volume] in Serum or Plasma",
+    "displayName": "Vitamin B9 (Folate)",
+    "lang": {
+      "ru-RU": "Витамин B9 (фолат)",
+      "uk-UA": "Вітамін B9 (фолат)"
+    }
+  },
+  {
+    "loinc": "2132-9",
+    "longCommonName": "Cobalamin [Mass/volume] in Serum or Plasma",
+    "displayName": "Vitamin B12 (Cobalamin)",
+    "lang": {
+      "ru-RU": "Витамин B12 (кобаламин)",
+      "uk-UA": "Вітамін B12 (кобаламін)"
+    }
+  },
+  {
+    "loinc": "1989-3",
+    "longCommonName": "25-Hydroxyvitamin D [Mass/volume] in Serum or Plasma",
+    "displayName": "Vitamin D (25-OH)",
+    "lang": {
+      "ru-RU": "Витамин D (25-гидроксивитамин D)",
+      "uk-UA": "Вітамін D (25-гідроксивітамін D)"
+    }
+  },
+  {
+    "loinc": "17861-6",
+    "longCommonName": "Calcium [Mass/volume] in Serum or Plasma",
+    "displayName": "Calcium (Ca)",
+    "lang": {
+      "ru-RU": "Кальций",
+      "uk-UA": "Кальцій"
+    }
+  },
+  {
+    "loinc": "1994-3",
+    "longCommonName": "Calcium.ionized [Moles/volume] in Serum or Plasma",
+    "displayName": "Ionized Calcium (iCa)",
+    "lang": {
+      "ru-RU": "Кальций ионизированный",
+      "uk-UA": "Кальцій іонізований"
+    }
+  },
+  {
+    "loinc": "2075-0",
+    "longCommonName": "Chloride [Moles/volume] in Serum or Plasma",
+    "displayName": "Chloride (Cl)",
+    "lang": {
+      "ru-RU": "Хлор",
+      "uk-UA": "Хлор"
+    }
+  },
+  {
+    "loinc": "2777-1",
+    "longCommonName": "Phosphate [Mass/volume] in Serum or Plasma",
+    "displayName": "Phosphorus (P)",
+    "lang": {
+      "ru-RU": "Фосфор",
+      "uk-UA": "Фосфор"
+    }
+  },
+  {
+    "loinc": "19123-9",
+    "longCommonName": "Magnesium [Mass/volume] in Serum or Plasma",
+    "displayName": "Magnesium (Mg)",
+    "lang": {
+      "ru-RU": "Магний",
+      "uk-UA": "Магній"
+    }
+  },
+  {
+    "loinc": "29900-7",
+    "longCommonName": "Magnesium [Mass/volume] in Red Blood Cells",
+    "displayName": "Magnesium RBC (Mg RBC)",
+    "lang": {
+      "ru-RU": "Магний (эритроцитарный)",
+      "uk-UA": "Магній (еритроцитарний)"
+    }
+  },
+  {
+    "loinc": "2731-8",
+    "longCommonName": "Parathyrin.intact [Mass/volume] in Serum or Plasma",
+    "displayName": "Parathyroid Hormone (PTH)",
+    "lang": {
+      "ru-RU": "Паратиреоидный гормон (ПТГ)",
+      "uk-UA": "Паратиреоїдний гормон (ПТГ)"
+    }
   }
 ]
