@@ -6,6 +6,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#2563eb">
   <title>Blood Tests</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -15,14 +18,14 @@
       --radius: 12px; --shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: var(--gray-50); color: var(--gray-900);
       -webkit-font-smoothing: antialiased;
     }
     .app { min-height: 100dvh; display: flex; flex-direction: column; max-width: 600px; margin: 0 auto; }
 
     .header { background: var(--primary); color: white; padding: 16px 20px; position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; }
-    .header h1 { font-size: 20px; font-weight: 600; }
+    .header h1 { font-size: 22px; font-weight: 600; }
     .header-controls { display: flex; align-items: center; gap: 8px; }
     .lang-select {
       background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 6px;
@@ -56,7 +59,7 @@
     }
     .nav-item.active { color: var(--primary); }
 
-    .section-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+    .section-title { font-size: 20px; font-weight: 600; margin-bottom: 16px; }
     .view { display: none; }
     .view.active { display: block; }
 
@@ -65,28 +68,28 @@
       background: white; border-radius: var(--radius); padding: 16px;
       box-shadow: var(--shadow); cursor: pointer;
     }
-    .card-date { font-size: 13px; color: var(--gray-500); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
-    .card-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-    .card-meta { font-size: 13px; color: var(--gray-400); }
-    .card-notes { font-size: 13px; color: var(--gray-500); margin-top: 6px; line-height: 1.4; }
+    .card-date { font-size: 15px; color: var(--gray-500); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+    .card-title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .card-meta { font-size: 15px; color: var(--gray-400); }
+    .card-notes { font-size: 15px; color: var(--gray-500); margin-top: 6px; line-height: 1.4; }
     .card-overdue { border-left: 3px solid var(--danger); }
     .card.planned { cursor: default; }
 
-    .badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge { font-size: 13px; font-weight: 600; padding: 2px 8px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
     .badge-overdue { background: var(--danger-light); color: var(--danger); }
 
     .btn-back {
       background: none; border: none; color: var(--primary); padding: 8px 0;
-      font-size: 15px; cursor: pointer; margin-bottom: 12px;
+      font-size: 17px; cursor: pointer; margin-bottom: 12px;
     }
-    .detail-header h2 { font-size: 22px; margin-bottom: 4px; }
-    .detail-date { color: var(--gray-500); font-size: 14px; }
-    .detail-notes { margin-top: 8px; color: var(--gray-500); font-size: 14px; line-height: 1.5; }
+    .detail-header h2 { font-size: 24px; margin-bottom: 4px; }
+    .detail-date { color: var(--gray-500); font-size: 16px; }
+    .detail-notes { margin-top: 8px; color: var(--gray-500); font-size: 16px; line-height: 1.5; }
 
     .results-table { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); margin-top: 20px; }
     .results-header {
       display: grid; grid-template-columns: 1fr auto auto; gap: 8px;
-      padding: 12px 16px; background: var(--gray-100); font-size: 12px;
+      padding: 12px 16px; background: var(--gray-100); font-size: 14px;
       font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.5px;
     }
     .results-row {
@@ -95,10 +98,12 @@
     }
     .results-row.out-of-range { background: var(--danger-light); }
     .results-row.out-of-range .result-value { color: var(--danger); font-weight: 600; }
-    .result-name { font-size: 14px; font-weight: 500; }
-    .result-loinc { font-size: 11px; color: var(--gray-400); }
-    .result-value { font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
-    .result-ref { font-size: 12px; color: var(--gray-400); text-align: right; min-width: 80px; }
+    .result-name { font-size: 16px; font-weight: 500; }
+    .result-loinc { font-size: 13px; color: var(--gray-400); line-height: 1.6; }
+    .loinc-link { color: var(--gray-400); text-decoration: none; }
+    .loinc-link:hover { text-decoration: underline; color: var(--primary); }
+    .result-value { font-size: 16px; text-align: right; font-variant-numeric: tabular-nums; }
+    .result-ref { font-size: 14px; color: var(--gray-400); text-align: right; min-width: 80px; }
 
     .view-toggle { display: flex; gap: 4px; margin-bottom: 12px; }
     .view-toggle-btn {
@@ -113,18 +118,25 @@
       background: white; border-radius: var(--radius); padding: 12px;
       box-shadow: var(--shadow);
     }
-    .panel-card-title { font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+    .panel-card { border-left: none; overflow: hidden; }
+    .panel-card-title { font-size: 16px; font-weight: 600; color: white; margin: -12px -12px 8px -12px; padding: 10px 12px; background: var(--primary); border-radius: var(--radius) var(--radius) 0 0; }
+    .panel-card-body { border-left: 3px solid var(--panel-color, #d1d5db); margin-left: 0; padding-left: 9px; }
     .panel-card-list { list-style: none; }
-    .panel-card-list li { font-size: 13px; color: var(--gray-700); padding: 3px 0; border-top: 1px solid var(--gray-200); }
+    .panel-card-list li { font-size: 15px; color: var(--gray-700); padding: 3px 0; border-top: 1px solid var(--gray-200); }
     .panel-card-list li:first-child { border-top: none; }
-    .panel-card-list li.analysis-name { font-weight: 600; padding-top: 10px; }
-    .panel-card-list li.analysis-name:first-child { padding-top: 3px; }
-    .panel-card-section { font-size: 12px; font-weight: 600; color: var(--gray-500); padding: 6px 0 2px; border-top: 2px solid var(--gray-200); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+    .panel-card-list li.analysis-name { font-weight: 600; padding-top: 14px; border-top: 1px solid var(--gray-300); margin-top: 4px; }
+    .panel-card-list li.analysis-name:first-child { padding-top: 3px; border-top: none; margin-top: 0; }
+    .panel-card-list li.detail-line { border-top: none; padding: 1px 0 1px 12px; font-size: 14px; color: var(--gray-400); line-height: 1.5; }
+    .panel-card-list li.detail-line.long-name { font-style: italic; color: var(--gray-400); }
+    .panel-card-list li.detail-line.description { color: var(--gray-500); }
+    .panel-card-list li.detail-line.why-line { color: var(--gray-500); }
+    .panel-card-list li.detail-line.freq-line { color: var(--gray-400); }
+    .panel-card-section { font-size: 14px; font-weight: 600; color: var(--gray-500); padding: 6px 0 2px; border-top: 2px solid var(--gray-200); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
     .panel-card-section:first-child { border-top: none; margin-top: 0; }
 
     .panel-section { margin-bottom: 24px; }
-    .panel-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; color: var(--primary); }
-    .panel-subtitle { font-size: 13px; color: var(--gray-500); margin-bottom: 12px; }
+    .panel-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; color: var(--primary); }
+    .panel-subtitle { font-size: 15px; color: var(--gray-500); margin-bottom: 12px; }
 
     .empty-state { text-align: center; padding: 40px 20px; color: var(--gray-500); }
     .loading { text-align: center; padding: 40px; color: var(--gray-400); }
@@ -138,7 +150,7 @@
 <body>
   <div class="app">
     <header class="header">
-      <h1>Blood Tests</h1>
+      <h1>Blood Tests <span style="font-size:12px;background:rgba(255,255,255,0.25);padding:2px 6px;border-radius:4px;vertical-align:middle">DEVEL</span></h1>
       <div class="header-controls">
         <select class="lang-select" onchange="setLang(this.value)">
           <option value="en">Eng</option>
@@ -260,6 +272,7 @@
     const savedLang = localStorage.getItem('bloodtests_lang');
     if (savedLang) { currentLang = savedLang; document.querySelector('.lang-select').value = savedLang; }
 
+
     function showView(name) {
       document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
       document.getElementById('view-' + name).classList.add('active');
@@ -294,7 +307,11 @@
     function getAnalysisName(loinc) {
       const a = analysesCatalog[loinc];
       if (!a) return loinc;
-      if (currentLang !== 'en' && a.lang[currentLang]) return a.lang[currentLang];
+      if (currentLang !== 'en' && a.lang[currentLang]) {
+        const abbr = a.displayName.match(/\(([^)]+)\)$/);
+        const short = abbr ? abbr[1] : a.displayName;
+        return a.lang[currentLang] + ' / ' + short;
+      }
       return a.displayName;
     }
 
@@ -388,7 +405,7 @@
             return `<div class="results-row ${oor ? 'out-of-range' : ''}">
               <span class="result-name">
                 ${escHtml(getAnalysisName(r.loinc))}
-                <br><span class="result-loinc">LOINC ${escHtml(r.loinc)}${r.method ? ' · ' + escHtml(r.method) : ''}</span>
+                <br><span class="result-loinc"><a href="https://loinc.org/${encodeURIComponent(r.loinc)}" target="_blank" rel="noopener" class="loinc-link">LOINC ${escHtml(r.loinc)}</a>${r.method ? ' · ' + escHtml(r.method) : ''}</span>
               </span>
               <span class="result-value">${r.value} ${escHtml(r.unit || '')}</span>
               <span class="result-ref">${r.refMin != null && r.refMax != null ? r.refMin + ' – ' + r.refMax : '—'}</span>
@@ -461,20 +478,21 @@
       return names;
     }
 
+    const clipboardIcon = `<svg viewBox="0 0 24 24" width="13" height="13" style="vertical-align:-2px;margin-right:4px;flex-shrink:0"><rect x="3" y="2" width="16" height="20" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/><rect x="8" y="0" width="6" height="4" rx="1" fill="#9ca3af"/><circle cx="7.5" cy="8" r="1.5" fill="#2563eb"/><line x1="10.5" y1="8" x2="17" y2="8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="12.5" r="1.5" fill="#2563eb"/><line x1="10.5" y1="12.5" x2="17" y2="12.5" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="17" r="1.5" fill="#93b4f5"/><line x1="10.5" y1="17" x2="17" y2="17" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+    const clockIcon = `<svg viewBox="0 0 24 24" width="13" height="13" style="vertical-align:-2px;margin-right:4px;flex-shrink:0"><circle cx="12" cy="12" r="10" fill="none" stroke="#93b4f5" stroke-width="2"/><rect x="11" y="5" width="1.5" height="4" rx="0.5" fill="#4a7edc"/><rect x="11" y="9" width="1.5" height="4.5" rx="0.5" fill="#4a7edc"/><rect x="11.5" y="11.5" width="4" height="1.5" rx="0.5" fill="#4a7edc"/><circle cx="12" cy="12" r="1.5" fill="#2563eb"/></svg>`;
+
     function renderAnalysisItem(a) {
       if (panelViewMode === 'detailed') {
-        const otherNames = getOtherLangNames(a);
-        let extra = `<li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.longCommonName)}</li>`;
-        if (otherNames.length) extra += `<li class="result-loinc" style="border-top:none;padding-top:0">${otherNames.map(n => escHtml(n)).join(' · ')}</li>`;
+        let extra = '';
         if (a.info) {
-          if (a.info.description) extra += `<li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.info.description)}</li>`;
-          if (a.info.why) extra += `<li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.info.why)}</li>`;
-          if (a.info.frequency) extra += `<li class="result-loinc" style="border-top:none;padding-top:0"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:-1px;margin-right:3px"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5"/></svg>${escHtml(a.info.frequency)}</li>`;
+          if (a.info.description) extra += `<li class="detail-line description">${escHtml(a.info.description)}</li>`;
+          if (a.info.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(a.info.why)}</li>`;
+          if (a.info.frequency) extra += `<li class="detail-line freq-line">${clockIcon}Do it: ${escHtml(a.info.frequency)}</li>`;
         }
-        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</span></li>${extra}`;
+        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:flex-start"><span>${escHtml(getAnalysisName(a.loinc))}<br><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span></span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal;white-space:nowrap;margin-left:8px">${escHtml(a.loinc)}</a></li>${extra}`;
       }
       if (panelViewMode === 'compact') {
-        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</span></li>`;
+        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</a></li>`;
       }
       return `<li>${escHtml(getAnalysisName(a.loinc))}</li>`;
     }
@@ -498,16 +516,16 @@
         container.innerHTML = toggleHtml + `<div class="panels-grid">${panelsCache.map((p, i) => {
           const count = getPanelAnalyses(p).length;
           return `
-            <div class="panel-card" style="cursor:pointer" onclick="showPanelDetail(${i})">
+            <div class="panel-card" style="cursor:pointer;--panel-color:${p.color || '#d1d5db'}" onclick="showPanelDetail(${i})">
               <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
-              <div class="panel-card-meta" style="font-size:12px;color:var(--gray-400)">${count} ${t('analyses')}</div>
+              <div class="panel-card-body"><div class="panel-card-meta" style="font-size:12px;color:var(--gray-400)">${count} ${t('analyses')}</div></div>
             </div>`;
         }).join('')}</div>`;
       } else {
         container.innerHTML = toggleHtml + `<div class="${gridClass}">${panelsCache.map(p => `
-          <div class="panel-card">
+          <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
             <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
-            <ul class="panel-card-list">${renderPanelList(p)}</ul>
+            <div class="panel-card-body"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
           </div>
         `).join('')}</div>`;
       }
@@ -516,19 +534,15 @@
     function showPanelDetail(index) {
       const p = panelsCache[index];
       if (!p) return;
+      const savedMode = panelViewMode;
+      panelViewMode = 'detailed';
       document.getElementById('panel-detail-content').innerHTML = `
-        <div class="detail-header">
-          <h2>${escHtml(getPanelName(p))}</h2>
-        </div>
-        <div class="results-table" style="margin-top:12px">
-          ${getPanelAnalyses(p).map(a => `
-            <div class="results-row" style="grid-template-columns: 1fr auto">
-              <span class="result-name">${escHtml(getAnalysisName(a.loinc))}</span>
-              <span class="result-ref">${escHtml(a.loinc)}</span>
-            </div>
-          `).join('')}
+        <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
+          <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
+          <div class="panel-card-body"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
         </div>
       `;
+      panelViewMode = savedMode;
       showView('panel-detail');
     }
 

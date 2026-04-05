@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" font-family="'Segoe Print', 'Comic Sans MS', cursive">
+  <!-- Entry box -->
+  <rect x="50" y="40" width="480" height="290" rx="12" fill="none" stroke="#333" stroke-width="2"/>
+
+  <!-- Display Name (left, bold) -->
+  <text x="70" y="78" font-size="18" fill="#333" font-weight="bold" font-style="italic">Display Name</text>
+
+  <!-- LOINC Code (right, grey) -->
+  <text x="430" y="78" font-size="16" fill="#999" font-style="italic">LOINC Code</text>
+
+  <!-- Long Common Name, synonyms (grey) -->
+  <text x="70" y="108" font-size="14" fill="#999" font-style="italic">Long Common Name, other synonyms and</text>
+  <text x="70" y="128" font-size="14" fill="#999" font-style="italic">acronyms in English</text>
+
+  <!-- Physiological meaning (3 lines) -->
+  <text x="70" y="162" font-size="15" fill="#333" font-style="italic">Physiological meaning of the analysis in</text>
+  <text x="70" y="182" font-size="15" fill="#333" font-style="italic">human body, role in processes, importance,</text>
+  <text x="70" y="202" font-size="15" fill="#333" font-style="italic">etc. Three lines max.</text>
+
+  <!-- Why icon + text -->
+  <rect x="70" y="222" width="16" height="16" rx="3" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="95" y="236" font-size="15" fill="#333" font-style="italic">Why to do, under which conditions</text>
+
+  <!-- How often icon + text -->
+  <rect x="70" y="256" width="16" height="16" rx="3" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="95" y="270" font-size="15" fill="#333" font-style="italic">How often to do</text>
+
+  <!-- Title -->
+  <text x="80" y="400" font-size="64" fill="#333" font-weight="bold">Analysis Entry</text>
+</svg>

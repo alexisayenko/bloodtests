@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 780" width="850" height="780" font-family="'Segoe Print', 'Comic Sans MS', cursive">
+  <!-- Panel outer box -->
+  <rect x="200" y="80" width="380" height="600" rx="16" fill="none" stroke="#333" stroke-width="2"/>
+
+  <!-- Panel Caption bar -->
+  <rect x="200" y="80" width="380" height="50" rx="16" fill="none" stroke="#333" stroke-width="2"/>
+  <line x1="200" y1="130" x2="580" y2="130" stroke="#333" stroke-width="1"/>
+
+  <!-- Decorative color line -->
+  <line x1="214" y1="132" x2="214" y2="678" stroke="#333" stroke-width="3"/>
+
+  <!-- Analysis Entry 1 -->
+  <rect x="240" y="155" width="320" height="120" rx="12" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="400" y="222" text-anchor="middle" font-size="18" fill="#333">Analysis Entry</text>
+
+  <!-- Analysis Entry 2 -->
+  <rect x="240" y="300" width="320" height="120" rx="12" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="400" y="367" text-anchor="middle" font-size="18" fill="#333">Analysis Entry</text>
+
+  <!-- Analysis Entry 3 -->
+  <rect x="240" y="445" width="320" height="120" rx="12" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="400" y="512" text-anchor="middle" font-size="18" fill="#333">Analysis Entry</text>
+
+  <!-- Label: Panel Caption -->
+  <text x="310" y="45" font-size="16" fill="#333" font-style="italic">Panel Caption</text>
+  <line x1="355" y1="50" x2="370" y2="95" stroke="#333" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Label: Panel associated color line -->
+  <text x="5" y="400" font-size="14" fill="#333" font-style="italic">Panel associated</text>
+  <text x="5" y="420" font-size="14" fill="#333" font-style="italic">color line</text>
+  <line x1="140" y1="405" x2="210" y2="405" stroke="#333" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Label: Collection of analysis entries -->
+  <text x="610" y="170" font-size="14" fill="#333" font-style="italic">Collection of</text>
+  <text x="610" y="190" font-size="14" fill="#333" font-style="italic">analysis entries</text>
+  <line x1="650" y1="195" x2="565" y2="260" stroke="#333" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Label: Panel (big) -->
+  <text x="195" y="750" font-size="64" fill="#333" font-family="'Segoe Print', 'Comic Sans MS', cursive" font-weight="bold">Analysis Panel</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
