@@ -489,7 +489,8 @@
     // --- Panels page ---
     function panelIconSvg(p) {
       if (!p.icon) return '';
-      return `<svg class="panel-icon" viewBox="0 0 24 24" width="32" height="32" fill="none">${p.icon}</svg>`;
+      const vb = p.iconViewBox || '0 0 24 24';
+      return `<svg class="panel-icon" viewBox="${vb}" width="32" height="32" fill="none">${p.icon}</svg>`;
     }
 
     function getPanelAnalyses(p) {
