@@ -1,0 +1,13 @@
+[
+  {
+    "id": "r1",
+    "date": "2025-12-10",
+    "lab": "City Lab",
+    "notes": "Annual checkup",
+    "values": [
+      { "loinc": "718-7", "value": 14.2, "unit": "g/dL", "refMin": 13.5, "refMax": 17.5 },
+      { "loinc": "2345-7", "value": 105, "unit": "mg/dL", "refMin": 70, "refMax": 100 },
+      { "loinc": "2093-3", "value": 190, "unit": "mg/dL", "refMin": 0, "refMax": 200 }
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "loinc": "718-7",
+    "longCommonName": "Hemoglobin [Mass/volume] in Blood",
+    "displayName": "Hemoglobin",
+    "lang": {
+      "ru-RU": "Гемоглобин",
+      "uk-UA": "Гемоглобін"
+    }
+  },
+  {
+    "loinc": "2345-7",
+    "longCommonName": "Glucose [Mass/volume] in Serum or Plasma",
+    "displayName": "Glucose",
+    "lang": {
+      "ru-RU": "Глюкоза",
+      "uk-UA": "Глюкоза"
+    }
+  },
+  {
+    "loinc": "2093-3",
+    "longCommonName": "Cholesterol [Mass/volume] in Serum or Plasma",
+    "displayName": "Cholesterol",
+    "lang": {
+      "ru-RU": "Холестерин",
+      "uk-UA": "Холестерин"
+    }
+  },
+  {
+    "loinc": "789-8",
+    "longCommonName": "Erythrocytes [#/volume] in Blood by Automated count",
+    "displayName": "Red Blood Cells (RBC)",
+    "lang": {
+      "ru-RU": "Эритроциты",
+      "uk-UA": "Еритроцити"
+    }
+  },
+  {
+    "loinc": "6690-2",
+    "longCommonName": "Leukocytes [#/volume] in Blood by Automated count",
+    "displayName": "White Blood Cells (WBC)",
+    "lang": {
+      "ru-RU": "Лейкоциты",
+      "uk-UA": "Лейкоцити"
+    }
+  }
+]

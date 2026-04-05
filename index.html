@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#2563eb">
+  <title>Blood Tests</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #2563eb; --danger: #dc2626; --danger-light: #fef2f2;
+      --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
+      --gray-400: #9ca3af; --gray-500: #6b7280; --gray-900: #111827;
+      --radius: 12px; --shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--gray-50); color: var(--gray-900);
+      -webkit-font-smoothing: antialiased;
+    }
+    .app { min-height: 100dvh; display: flex; flex-direction: column; max-width: 600px; margin: 0 auto; }
+
+    .header { background: var(--primary); color: white; padding: 16px 20px; position: sticky; top: 0; z-index: 10; }
+    .header h1 { font-size: 20px; font-weight: 600; }
+
+    .main { flex: 1; padding: 16px 20px; padding-bottom: 80px; }
+
+    .bottom-nav {
+      position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 100%; max-width: 600px; background: white;
+      border-top: 1px solid var(--gray-200); display: flex;
+      padding: 8px 0; padding-bottom: max(8px, env(safe-area-inset-bottom)); z-index: 10;
+    }
+    .nav-item {
+      flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
+      padding: 6px; color: var(--gray-400); font-size: 12px;
+      font-weight: 500; cursor: pointer; border: none; background: none;
+    }
+    .nav-item.active { color: var(--primary); }
+
+    .section-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .card-list { display: flex; flex-direction: column; gap: 12px; }
+    .card {
+      background: white; border-radius: var(--radius); padding: 16px;
+      box-shadow: var(--shadow); cursor: pointer;
+    }
+    .card-date { font-size: 13px; color: var(--gray-500); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+    .card-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .card-meta { font-size: 13px; color: var(--gray-400); }
+    .card-notes { font-size: 13px; color: var(--gray-500); margin-top: 6px; line-height: 1.4; }
+    .card-overdue { border-left: 3px solid var(--danger); }
+    .card.planned { cursor: default; }
+
+    .badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge-overdue { background: var(--danger-light); color: var(--danger); }
+
+    .btn-back {
+      background: none; border: none; color: var(--primary); padding: 8px 0;
+      font-size: 15px; cursor: pointer; margin-bottom: 12px;
+    }
+    .detail-header h2 { font-size: 22px; margin-bottom: 4px; }
+    .detail-date { color: var(--gray-500); font-size: 14px; }
+    .detail-notes { margin-top: 8px; color: var(--gray-500); font-size: 14px; line-height: 1.5; }
+
+    .results-table { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); margin-top: 20px; }
+    .results-header {
+      display: grid; grid-template-columns: 1fr auto auto; gap: 8px;
+      padding: 12px 16px; background: var(--gray-100); font-size: 12px;
+      font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .results-row {
+      display: grid; grid-template-columns: 1fr auto auto; gap: 8px;
+      padding: 12px 16px; border-top: 1px solid var(--gray-100); align-items: center;
+    }
+    .results-row.out-of-range { background: var(--danger-light); }
+    .results-row.out-of-range .result-value { color: var(--danger); font-weight: 600; }
+    .result-name { font-size: 14px; font-weight: 500; }
+    .result-loinc { font-size: 11px; color: var(--gray-400); }
+    .result-value { font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
+    .result-ref { font-size: 12px; color: var(--gray-400); text-align: right; min-width: 80px; }
+
+    .empty-state { text-align: center; padding: 40px 20px; color: var(--gray-500); }
+    .loading { text-align: center; padding: 40px; color: var(--gray-400); }
+
+    @media (min-width: 640px) {
+      .main { padding: 24px; padding-bottom: 80px; }
+      .header { padding: 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="header"><h1>Blood Tests</h1></header>
+
+    <main class="main">
+      <div id="view-results" class="view active">
+        <h2 class="section-title">Past Results</h2>
+        <div id="results-list" class="card-list"><div class="loading">Loading...</div></div>
+      </div>
+
+      <div id="view-detail" class="view">
+        <button class="btn-back" onclick="showView('results')">&larr; Back</button>
+        <div id="detail-content"></div>
+      </div>
+
+      <div id="view-planned" class="view">
+        <h2 class="section-title">Planned Tests</h2>
+        <div id="planned-list" class="card-list"><div class="loading">Loading...</div></div>
+      </div>
+
+      <div id="view-catalog" class="view">
+        <h2 class="section-title">Analyses Catalog</h2>
+        <div id="catalog-list" class="card-list"><div class="loading">Loading...</div></div>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <button id="nav-results" class="nav-item active" onclick="showView('results')">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+          <path d="M9 14l2 2 4-4"/>
+        </svg>
+        <span>Results</span>
+      </button>
+      <button id="nav-planned" class="nav-item" onclick="showView('planned')">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <span>Planned</span>
+      </button>
+      <button id="nav-catalog" class="nav-item" onclick="showView('catalog')">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+        </svg>
+        <span>Catalog</span>
+      </button>
+    </nav>
+  </div>
+
+  <script>
+    let analysesCatalog = {};  // loinc -> analysis object
+    let resultsCache = [];
+
+    function showView(name) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.getElementById('view-' + name).classList.add('active');
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      if (name === 'results' || name === 'detail') {
+        document.getElementById('nav-results').classList.add('active');
+      } else {
+        document.getElementById('nav-' + name).classList.add('active');
+      }
+    }
+
+    function formatDate(dateStr) {
+      return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
+        year: 'numeric', month: 'short', day: 'numeric'
+      });
+    }
+
+    function escHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function isOutOfRange(r) {
+      if (r.refMin == null || r.refMax == null || r.value == null) return false;
+      const val = parseFloat(r.value);
+      return val < parseFloat(r.refMin) || val > parseFloat(r.refMax);
+    }
+
+    function getAnalysisName(loinc) {
+      const a = analysesCatalog[loinc];
+      return a ? a.displayName : loinc;
+    }
+
+    // --- Load data ---
+    async function loadAll() {
+      const [analysesRes, resultsRes, plannedRes] = await Promise.all([
+        fetch('/api/analyses'),
+        fetch('/api/results'),
+        fetch('/api/planned'),
+      ]);
+
+      const analyses = await analysesRes.json();
+      analyses.forEach(a => { analysesCatalog[a.loinc] = a; });
+
+      resultsCache = await resultsRes.json();
+      resultsCache.sort((a, b) => b.date.localeCompare(a.date));
+
+      const planned = await plannedRes.json();
+      planned.sort((a, b) => a.plannedDate.localeCompare(b.plannedDate));
+
+      renderResultsList();
+      renderPlannedList(planned);
+      renderCatalog(analyses);
+    }
+
+    // --- Results ---
+    function renderResultsList() {
+      const container = document.getElementById('results-list');
+      if (resultsCache.length === 0) {
+        container.innerHTML = '<div class="empty-state">No blood tests recorded yet.</div>';
+        return;
+      }
+      container.innerHTML = resultsCache.map(r => `
+        <div class="card" onclick="showDetail('${r.id}')">
+          <div class="card-date">${formatDate(r.date)}</div>
+          <div class="card-title">${escHtml(r.lab || 'Blood Test')}</div>
+          <div class="card-meta">${(r.values || []).length} biomarkers</div>
+          ${r.notes ? `<div class="card-notes">${escHtml(r.notes)}</div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    function showDetail(id) {
+      const r = resultsCache.find(x => x.id === id);
+      if (!r) return;
+
+      let valuesHtml = '<div class="empty-state">No values recorded.</div>';
+      if (r.values && r.values.length > 0) {
+        valuesHtml = `
+          <div class="results-table">
+            <div class="results-header"><span>Biomarker</span><span>Value</span><span>Reference</span></div>
+            ${r.values.map(v => {
+              const oor = isOutOfRange(v);
+              return `<div class="results-row ${oor ? 'out-of-range' : ''}">
+                <span class="result-name">${escHtml(getAnalysisName(v.loinc))}<br><span class="result-loinc">LOINC ${escHtml(v.loinc)}</span></span>
+                <span class="result-value">${v.value} ${escHtml(v.unit || '')}</span>
+                <span class="result-ref">${v.refMin != null && v.refMax != null ? v.refMin + ' – ' + v.refMax : '—'}</span>
+              </div>`;
+            }).join('')}
+          </div>`;
+      }
+
+      document.getElementById('detail-content').innerHTML = `
+        <div class="detail-header">
+          <h2>${escHtml(r.lab || 'Blood Test')}</h2>
+          <div class="detail-date">${formatDate(r.date)}</div>
+          ${r.notes ? `<p class="detail-notes">${escHtml(r.notes)}</p>` : ''}
+        </div>
+        ${valuesHtml}
+      `;
+      showView('detail');
+    }
+
+    // --- Planned ---
+    function renderPlannedList(planned) {
+      const container = document.getElementById('planned-list');
+      const today = new Date().toISOString().split('T')[0];
+      if (planned.length === 0) {
+        container.innerHTML = '<div class="empty-state">No planned tests.</div>';
+        return;
+      }
+      container.innerHTML = planned.map(p => {
+        const isPast = p.plannedDate < today;
+        return `
+          <div class="card planned ${isPast ? 'card-overdue' : ''}">
+            <div class="card-date">
+              ${formatDate(p.plannedDate)}
+              ${isPast ? '<span class="badge badge-overdue">Overdue</span>' : ''}
+            </div>
+            <div class="card-title">${escHtml(p.testType)}</div>
+            ${p.notes ? `<div class="card-notes">${escHtml(p.notes)}</div>` : ''}
+          </div>`;
+      }).join('');
+    }
+
+    // --- Catalog ---
+    function renderCatalog(analyses) {
+      const container = document.getElementById('catalog-list');
+      if (analyses.length === 0) {
+        container.innerHTML = '<div class="empty-state">No analyses in catalog.</div>';
+        return;
+      }
+      container.innerHTML = analyses.map(a => `
+        <div class="card planned">
+          <div class="card-title">${escHtml(a.displayName)}</div>
+          <div class="card-meta">LOINC ${escHtml(a.loinc)}</div>
+          <div class="card-notes">${escHtml(a.longCommonName)}</div>
+          <div class="card-notes" style="margin-top:4px">
+            ${a.lang['ru-RU'] ? '🇷🇺 ' + escHtml(a.lang['ru-RU']) : ''}
+            ${a.lang['uk-UA'] ? ' &nbsp; 🇺🇦 ' + escHtml(a.lang['uk-UA']) : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // --- Init ---
+    loadAll();
+  </script>
+</body>
+</html>
