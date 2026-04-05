@@ -504,7 +504,7 @@
 
     // --- Panels page ---
     function panelIconSvg(p) {
-      if (p.iconFile) return `<img class="panel-icon" src="icons/${p.iconFile}" width="32" height="32" alt="">`;
+      if (p.iconFile) return `<img class="panel-icon" src="icons/${p.iconFile}" height="32" alt="">`;
       if (!p.icon) return '';
       const vb = p.iconViewBox || '0 0 24 24';
       return `<svg class="panel-icon" viewBox="${vb}" width="32" height="32" fill="none">${p.icon}</svg>`;
