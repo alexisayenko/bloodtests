@@ -446,6 +446,7 @@
     },
     "info": {
       "description": "Autoantibodies against the thyroid enzyme involved in hormone synthesis.",
+      "scientific": "Thyroperoxidase antibodies aid in the detection of autoimmune and Hashimoto's thyroiditis. Antibodies against the thyroid are seldom seen in serum of normal individuals but 5-10% of patients may have low levels of antibodies with no signs of disease. These antibodies may be associated with other autoimmune disorders (cross-reactive antibodies).",
       "why": "Diagnoses autoimmune thyroid disease such as Hashimoto's thyroiditis.",
       "frequency": "Once for diagnosis; repeat only as clinically indicated"
     }
@@ -460,12 +461,13 @@
     },
     "info": {
       "description": "Autoantibodies targeting thyroglobulin, the precursor protein for thyroid hormones.",
+      "scientific": "Circulating immunoglobulins directed against thyroglobulin are commonly present in patients with autoimmune (Hashimoto) thyroiditis and, to a lesser extent, Graves disease. The test is used to confirm that a patient's diffuse goiter and/or hypothyroidism stems from autoimmune thyroiditis, and may help distinguish Graves disease from toxic nodular goiter. These antibodies are present in approximately 70% of autoimmune thyroiditis patients. The presence of thyroglobulin antibodies doesn't necessarily indicate clinically significant thyroid disease or define thyroid functional status.",
       "why": "Supports diagnosis of autoimmune thyroid disease and monitors thyroid cancer follow-up.",
       "frequency": "Once for diagnosis; repeat only as clinically indicated"
     }
   },
   {
-    "loinc": "56889-4",
+    "loinc": "5385-0",
     "longCommonName": "Thyrotropin receptor Ab [Units/volume] in Serum or Plasma",
     "displayName": "TRAb",
     "lang": {
@@ -474,12 +476,13 @@
     },
     "info": {
       "description": "Autoantibodies that bind to TSH receptors and can stimulate or block the thyroid.",
+      "scientific": "Thyrotropin receptor antibodies (TRAb) are immunoglobulins directed against the TSH receptor on thyroid follicular cells. Stimulating TRAb mimic the action of TSH, causing unregulated thyroid hormone production and are the hallmark of Graves disease. Blocking TRAb inhibit TSH binding and can cause hypothyroidism. TRAb measurement is essential for differentiating Graves disease from other causes of hyperthyroidism, monitoring disease activity during antithyroid drug therapy, and assessing the risk of neonatal thyrotoxicosis in pregnant women with Graves disease.",
       "why": "Diagnoses Graves' disease and predicts neonatal thyroid risk in pregnant patients.",
       "frequency": "As clinically indicated"
     }
   },
   {
-    "loinc": "1992-8",
+    "loinc": "1992-7",
     "longCommonName": "Calcitonin [Mass/volume] in Serum or Plasma",
     "displayName": "Calcitonin (CT)",
     "lang": {
@@ -488,6 +491,7 @@
     },
     "info": {
       "description": "Hormone produced by thyroid C-cells that helps regulate calcium and bone metabolism.",
+      "scientific": "Calcitonin is a 32-amino acid peptide hormone secreted by the parafollicular C-cells of the thyroid gland. It acts to lower blood calcium by inhibiting osteoclast-mediated bone resorption and increasing renal calcium excretion. Calcitonin serves as a highly sensitive and specific tumor marker for medullary thyroid carcinoma (MTC), which arises from the C-cells. Elevated basal calcitonin levels or an exaggerated response to stimulation testing (pentagastrin or calcium) indicates C-cell hyperplasia or MTC. It is also used to monitor for recurrence after thyroidectomy.",
       "why": "Screens for and monitors medullary thyroid carcinoma.",
       "frequency": "As clinically indicated"
     }
