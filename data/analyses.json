@@ -162,9 +162,24 @@
       "uk-UA": "Глюкоза натще"
     },
     "info": {
-      "description": "Fasting blood sugar level measured in whole blood.",
+      "description": "Your body's primary fuel — the sugar that every cell burns for energy. Blood glucose reflects the real-time balance between what you eat, what your cells consume, and how effectively insulin is doing its job. Measuring it fasting reveals how well your body maintains this balance overnight without food.",
       "why": "Screens for diabetes and prediabetes and monitors glycemic control.",
-      "frequency": "Annually; every 3 months if diabetic"
+      "frequency": "Annually; every 3 months if diabetic",
+      "scientific": "Glucose (C6H12O6) is a simple monosaccharide and monomer of carbohydrates. Glucose provides energy for cellular processes and aids metabolism within the body. When food is ingested, the carbohydrates within the food are broken down into glucose molecules. Blood glucose content is significant in determining an individual’s overall state of health. An elevated blood glucose level is called hyperglycemia and a deficient blood glucose level is called hypoglycemia. Type 1 diabetes is caused by the immune system attacking pancreatic beta cells and Type 2 diabetes is caused by insulin resistance.",
+      "lang": {
+        "ru-RU": {
+          "description": "Основное топливо вашего организма — сахар, который каждая клетка сжигает для получения энергии. Уровень глюкозы в крови отражает баланс в реальном времени между тем, что вы едите, что потребляют ваши клетки, и тем, насколько эффективно инсулин выполняет свою работу. Измерение натощак показывает, насколько хорошо организм поддерживает этот баланс за ночь без пищи.",
+          "scientific": "Глюкоза (C₆H₁₂O₆) — это простой моносахарид и мономер углеводов. Глюкоза обеспечивает энергию для клеточных процессов и участвует в метаболизме. При приёме пищи углеводы расщепляются до молекул глюкозы. Содержание глюкозы в крови является важным показателем общего состояния здоровья. Повышенный уровень глюкозы в крови называется гипергликемией, а пониженный — гипогликемией. Сахарный диабет 1-го типа вызван атакой иммунной системы на бета-клетки поджелудочной железы, а 2-го типа — инсулинорезистентностью.",
+          "why": "Скрининг диабета и предиабета, мониторинг гликемического контроля.",
+          "frequency": "Ежегодно; каждые 3 месяца при диабете"
+        },
+        "uk-UA": {
+          "description": "Основне паливо вашого організму — цукор, який кожна клітина спалює для отримання енергії. Рівень глюкози в крові відображає баланс у реальному часі між тим, що ви їсте, що споживають ваші клітини, і тим, наскільки ефективно інсулін виконує свою роботу. Вимірювання натще показує, наскільки добре організм підтримує цей баланс протягом ночі без їжі.",
+          "scientific": "Глюкоза (C₆H₁₂O₆) — це простий моносахарид і мономер вуглеводів. Глюкоза забезпечує енергію для клітинних процесів та бере участь у метаболізмі. При прийомі їжі вуглеводи розщеплюються до молекул глюкози. Вміст глюкози в крові є важливим показником загального стану здоров’я. Підвищений рівень глюкози в крові називається гіперглікемією, а знижений — гіпоглікемією. Цукровий діабет 1-го типу спричинений атакою імунної системи на бета-клітини підшлункової залози, а 2-го типу — інсулінорезистентністю.",
+          "why": "Скринінг діабету та предіабету, моніторинг глікемічного контролю.",
+          "frequency": "Щорічно; кожні 3 місяці при діабеті"
+        }
+      }
     }
   },
   {
@@ -288,9 +303,24 @@
       "uk-UA": "Інсулін"
     },
     "info": {
-      "description": "Hormone produced by the pancreas that regulates blood glucose uptake by cells.",
+      "description": "The key hormone that unlocks your cells to let glucose in for energy. Produced by the pancreas after eating, insulin acts like a master switch for energy storage — when it works well, blood sugar stays stable; when it doesn't, glucose builds up in the blood leading to diabetes.",
       "why": "Assesses insulin resistance, helps diagnose type 2 diabetes and insulinomas.",
-      "frequency": "As clinically indicated"
+      "frequency": "As clinically indicated",
+      "scientific": "A protein hormone secreted by beta cells of the pancreas. Insulin plays a major role in the regulation of glucose metabolism, generally promoting the cellular utilization of glucose. It is also an important regulator of protein and lipid metabolism.",
+      "lang": {
+        "ru-RU": {
+          "description": "Ключевой гормон, открывающий клеткам доступ к глюкозе для получения энергии. Вырабатываясь поджелудочной железой после еды, инсулин действует как главный переключатель накопления энергии — когда он работает исправно, сахар в крови остаётся стабильным; когда нет — глюкоза накапливается в крови, приводя к диабету.",
+          "scientific": "Белковый гормон, секретируемый бета-клетками поджелудочной железы. Инсулин играет ключевую роль в регуляции метаболизма глюкозы, стимулируя её клеточное усвоение. Он также является важным регулятором белкового и липидного обмена.",
+          "why": "Оценивает инсулинорезистентность, помогает диагностировать сахарный диабет 2-го типа и инсулиномы.",
+          "frequency": "По клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Ключовий гормон, що відкриває клітинам доступ до глюкози для отримання енергії. Виробляючись підшлунковою залозою після їжі, інсулін діє як головний перемикач накопичення енергії — коли він працює справно, цукор у крові залишається стабільним; коли ні — глюкоза накопичується в крові, призводячи до діабету.",
+          "scientific": "Білковий гормон, що секретується бета-клітинами підшлункової залози. Інсулін відіграє ключову роль у регуляції метаболізму глюкози, стимулюючи її клітинне засвоєння. Він також є важливим регулятором білкового та ліпідного обміну.",
+          "why": "Оцінює інсулінорезистентність, допомагає діагностувати цукровий діабет 2-го типу та інсуліноми.",
+          "frequency": "За клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -330,9 +360,24 @@
       "uk-UA": "Амілаза"
     },
     "info": {
-      "description": "Enzyme produced by the pancreas and salivary glands that breaks down starches.",
+      "description": "A digestive enzyme from the pancreas and salivary glands that breaks down starches into simple sugars your body can absorb. When the pancreas is inflamed or damaged, amylase leaks into the bloodstream — elevated levels signal that something is stressing this vital organ.",
       "why": "Diagnoses and monitors pancreatitis and other pancreatic disorders.",
-      "frequency": "As clinically indicated"
+      "frequency": "As clinically indicated",
+      "scientific": "Amylase is a digestive enzyme produced primarily by the pancreas and salivary glands that catalyzes the hydrolysis of starch into sugars. Serum amylase is elevated in acute pancreatitis, typically rising within 6-12 hours of onset and returning to normal within 3-5 days. Elevated levels may also occur in salivary gland disorders, intestinal obstruction, and renal insufficiency. Amylase is less specific for pancreatic disease than lipase.",
+      "lang": {
+        "ru-RU": {
+          "description": "Пищеварительный фермент поджелудочной и слюнных желёз, расщепляющий крахмалы до простых сахаров, которые организм может усвоить. При воспалении или повреждении поджелудочной железы амилаза попадает в кровоток — повышенный уровень сигнализирует о том, что этот жизненно важный орган испытывает стресс.",
+          "scientific": "Амилаза — пищеварительный фермент, вырабатываемый преимущественно поджелудочной и слюнными железами, катализирующий гидролиз крахмала до сахаров. Уровень амилазы в сыворотке повышается при остром панкреатите, обычно нарастая в течение 6–12 часов от начала и возвращаясь к норме через 3–5 дней. Повышение также возможно при заболеваниях слюнных желёз, кишечной непроходимости и почечной недостаточности. Амилаза менее специфична для заболеваний поджелудочной железы, чем липаза.",
+          "why": "Диагностирует и контролирует панкреатит и другие заболевания поджелудочной железы.",
+          "frequency": "По клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Травний фермент підшлункової та слинних залоз, що розщеплює крохмалі до простих цукрів, які організм може засвоїти. При запаленні або пошкодженні підшлункової залози амілаза потрапляє у кровотік — підвищений рівень сигналізує про те, що цей життєво важливий орган перебуває під стресом.",
+          "scientific": "Амілаза — травний фермент, що виробляється переважно підшлунковою та слинними залозами, каталізуючи гідроліз крохмалю до цукрів. Рівень амілази в сироватці підвищується при гострому панкреатиті, зазвичай наростаючи протягом 6–12 годин від початку та повертаючись до норми через 3–5 днів. Підвищення також можливе при захворюваннях слинних залоз, кишковій непрохідності та нирковій недостатності. Амілаза менш специфічна для захворювань підшлункової залози, ніж ліпаза.",
+          "why": "Діагностує та контролює панкреатит та інші захворювання підшлункової залози.",
+          "frequency": "За клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -400,19 +445,19 @@
       "uk-UA": "Тиреотропний гормон (ТТГ)"
     },
     "info": {
-      "description": "Pituitary signal that tells the thyroid how hard to work and how much T4 and T3 to make.",
+      "description": "The brain's command signal to your thyroid — produced by the pituitary gland, it tells the thyroid how much hormone to make. When thyroid hormones drop, TSH rises to push the thyroid harder; when they're too high, TSH falls. This makes TSH the single most sensitive indicator of thyroid function.",
       "scientific": "A glycoprotein hormone secreted by the adenohypophysis (anterior pituitary gland). Thyrotropin stimulates the thyroid gland by increasing the iodide transport, synthesis and release of thyroid hormones (thyroxine and triiodothyronine). Thyrotropin consists of two noncovalently linked subunits, alpha and beta. Within a species, the alpha subunit is common in the pituitary glycoprotein hormones (TSH, LH and FSH), but the beta subunit is unique and confers its biological specificity.",
       "why": "Primary screening test for hypothyroidism and hyperthyroidism.",
       "frequency": "Annually; every 6-8 weeks when adjusting thyroid medication",
       "lang": {
         "ru-RU": {
-          "description": "Сигнал гипофиза, который показывает, насколько активно щитовидная железа должна работать и сколько Т4 и Т3 вырабатывать.",
+          "description": "Командный сигнал мозга для щитовидной железы — вырабатывается гипофизом и указывает щитовидке, сколько гормонов производить. Когда тиреоидных гормонов мало, ТТГ растёт, заставляя железу работать активнее; когда их слишком много — ТТГ падает. Это делает ТТГ самым чувствительным индикатором работы щитовидной железы.",
           "scientific": "Гликопротеиновый гормон, секретируемый аденогипофизом (передней долей гипофиза). Тиреотропин стимулирует щитовидную железу, усиливая транспорт йодида, синтез и высвобождение тиреоидных гормонов (тироксина и трийодтиронина). Тиреотропин состоит из двух нековалентно связанных субъединиц — альфа и бета. У представителей одного вида альфа-субъединица является общей для гипофизарных гликопротеиновых гормонов (ТТГ, ЛГ и ФСГ), тогда как бета-субъединица уникальна и определяет биологическую специфичность гормона.",
           "why": "Основной скрининговый тест на гипотиреоз и гипертиреоз.",
           "frequency": "Ежегодно; каждые 6–8 недель при подборе дозы тиреоидных препаратов"
         },
         "uk-UA": {
-          "description": "Сигнал гіпофіза, який показує, наскільки активно має працювати щитоподібна залоза і скільки Т4 та Т3 виробляти.",
+          "description": "Командний сигнал мозку для щитоподібної залози — виробляється гіпофізом і вказує залозі, скільки гормонів виробляти. Коли тиреоїдних гормонів мало, ТТГ зростає, змушуючи залозу працювати активніше; коли їх забагато — ТТГ падає. Це робить ТТГ найчутливішим індикатором роботи щитоподібної залози.",
           "scientific": "Глікопротеїновий гормон, що секретується аденогіпофізом (передньою часткою гіпофіза). Тиреотропін стимулює щитоподібну залозу, посилюючи транспорт йодиду, синтез і вивільнення тиреоїдних гормонів (тироксину та трийодтироніну). Тиреотропін складається з двох нековалентно зв'язаних субодиниць — альфа та бета. У межах одного виду альфа-субодиниця є спільною для гіпофізарних глікопротеїнових гормонів (ТТГ, ЛГ та ФСГ), тоді як бета-субодиниця є унікальною та визначає біологічну специфічність гормону.",
           "why": "Основний скринінговий тест на гіпотиреоз та гіпертиреоз.",
           "frequency": "Щорічно; кожні 6–8 тижнів при підборі дози тиреоїдних препаратів"
@@ -429,19 +474,19 @@
       "uk-UA": "Трийодтиронін вільний (Т3 віл.)"
     },
     "info": {
-      "description": "The most active thyroid hormone, directly speeding up energy use, heat production, and heart activity.",
+      "description": "The most powerful thyroid hormone — the one that actually enters your cells and drives metabolism, heart rate, body temperature, and energy levels. Most T3 is converted from T4 in tissues, and only the 'free' unbound fraction is biologically active. When T3 is high, everything speeds up; when it's low, the body slows down.",
       "scientific": "Free T3 (free triiodothyronine) is a measure of free circulating T3, excluding that which is bound to carrier proteins. This provides a more accurate measure of T3 levels because the carrier proteins can increase or decrease in various conditions artificially inflating or shrinking the total T3. T3 is discriminating for diagnosing and/or following the treatment of hyperthyroidism. The thyroid delivers 20 times more T4 than T3, so T4 is the more relevant analyte except in special cases.",
       "why": "Confirms hyperthyroidism and evaluates thyroid function when TSH is abnormal.",
       "frequency": "As clinically indicated; with TSH when monitoring thyroid disease",
       "lang": {
         "ru-RU": {
-          "description": "Самый активный гормон щитовидной железы, который напрямую ускоряет обмен веществ, выработку тепла и работу сердца.",
+          "description": "Самый мощный гормон щитовидной железы — именно он проникает в клетки и управляет обменом веществ, частотой сердечных сокращений, температурой тела и уровнем энергии. Большая часть Т3 образуется из Т4 в тканях, и только «свободная» несвязанная фракция биологически активна. Когда Т3 повышен, всё ускоряется; когда снижен — организм замедляется.",
           "scientific": "Свободный Т3 (свободный трийодтиронин) — показатель свободно циркулирующего Т3, не связанного с транспортными белками. Это более точный показатель уровня Т3, поскольку концентрация транспортных белков может изменяться при различных состояниях, искусственно завышая или занижая общий Т3. Определение Т3 особенно информативно для диагностики и мониторинга лечения гипертиреоза. Щитовидная железа продуцирует в 20 раз больше Т4, чем Т3, поэтому Т4 является более значимым аналитом, за исключением особых случаев.",
           "why": "Подтверждает гипертиреоз и оценивает функцию щитовидной железы при отклонениях ТТГ.",
           "frequency": "По клиническим показаниям; совместно с ТТГ при мониторинге заболеваний щитовидной железы"
         },
         "uk-UA": {
-          "description": "Найактивніший гормон щитоподібної залози, який безпосередньо прискорює обмін речовин, утворення тепла та роботу серця.",
+          "description": "Найпотужніший гормон щитоподібної залози — саме він проникає у клітини й керує обміном речовин, частотою серцевих скорочень, температурою тіла та рівнем енергії. Більша частина Т3 утворюється з Т4 у тканинах, і лише «вільна» незв'язана фракція біологічно активна. Коли Т3 підвищений, усе прискорюється; коли знижений — організм сповільнюється.",
           "scientific": "Вільний Т3 (вільний трийодтиронін) — показник вільно циркулюючого Т3, що не зв'язаний із транспортними білками. Це більш точний показник рівня Т3, оскільки концентрація транспортних білків може змінюватися при різних станах, штучно завищуючи або занижуючи загальний Т3. Визначення Т3 є особливо інформативним для діагностики та моніторингу лікування гіпертиреозу. Щитоподібна залоза продукує у 20 разів більше Т4, ніж Т3, тому Т4 є більш значущим аналітом, за винятком особливих випадків.",
           "why": "Підтверджує гіпертиреоз та оцінює функцію щитоподібної залози при відхиленнях ТТГ.",
           "frequency": "За клінічними показаннями; разом із ТТГ при моніторингу захворювань щитоподібної залози"
@@ -458,19 +503,19 @@
       "uk-UA": "Тироксин вільний (Т4 віл.)"
     },
     "info": {
-      "description": "The thyroid’s main circulating hormone, serving as a hormone reserve that tissues convert into active T3 when needed.",
+      "description": "The thyroid’s main output — a reservoir hormone that circulates in the blood waiting to be converted into active T3 where the body needs it. Free T4 measures only the unbound, available fraction, giving a true picture of thyroid supply regardless of protein changes from pregnancy, medications, or liver conditions.",
       "scientific": "Free T4 is the metabolically active fraction of thyroxine and is the precursor of triiodothyronine (T3). Free T4 is a sensitive test for thyroid function and is increased with hyperthyroidism and decreased with hypothyroidism. Free T4 is not affected by changes in thyroxine-binding proteins.",
       "why": "Confirms thyroid dysfunction when TSH is abnormal and monitors thyroid therapy.",
       "frequency": "As clinically indicated; with TSH when monitoring thyroid disease",
       "lang": {
         "ru-RU": {
-          "description": "Основной циркулирующий гормон щитовидной железы, который служит запасом и в тканях превращается в активный Т3 по мере необходимости.",
+          "description": "Основной продукт щитовидной железы — гормон-резерв, который циркулирует в крови и превращается в активный Т3 там, где это нужно организму. Свободный Т4 измеряет только несвязанную, доступную фракцию, давая истинную картину обеспечения тиреоидными гормонами независимо от изменений белков при беременности, приёме лекарств или заболеваниях печени.",
           "scientific": "Свободный Т4 — метаболически активная фракция тироксина, являющаяся предшественником трийодтиронина (Т3). Свободный Т4 — чувствительный тест функции щитовидной железы: его уровень повышается при гипертиреозе и снижается при гипотиреозе. На уровень свободного Т4 не влияют изменения концентрации тироксинсвязывающих белков.",
           "why": "Подтверждает дисфункцию щитовидной железы при отклонениях ТТГ и используется для мониторинга тиреоидной терапии.",
           "frequency": "По клиническим показаниям; совместно с ТТГ при мониторинге заболеваний щитовидной железы"
         },
         "uk-UA": {
-          "description": "Основний циркулюючий гормон щитоподібної залози, який слугує запасом і в тканинах перетворюється на активний Т3 за потреби.",
+          "description": "Основний продукт щитоподібної залози — гормон-резерв, що циркулює у крові й перетворюється на активний Т3 там, де це потрібно організму. Вільний Т4 вимірює лише незв'язану, доступну фракцію, даючи справжню картину забезпечення тиреоїдними гормонами незалежно від змін білків при вагітності, прийомі ліків чи захворюваннях печінки.",
           "scientific": "Вільний Т4 — метаболічно активна фракція тироксину, що є попередником трийодтироніну (Т3). Вільний Т4 — чутливий тест функції щитоподібної залози: його рівень підвищується при гіпертиреозі та знижується при гіпотиреозі. На рівень вільного Т4 не впливають зміни концентрації тироксинзв'язувальних білків.",
           "why": "Підтверджує дисфункцію щитоподібної залози при відхиленнях ТТГ та використовується для моніторингу тиреоїдної терапії.",
           "frequency": "За клінічними показаннями; разом із ТТГ при моніторингу захворювань щитоподібної залози"
@@ -487,19 +532,19 @@
       "uk-UA": "Антитіла до тиреопероксидази (анти-ТПО)"
     },
     "info": {
-      "description": "Immune antibodies against the enzyme the thyroid uses to attach iodine and build its hormones.",
+      "description": "Antibodies that attack thyroid peroxidase — the very enzyme your thyroid needs to produce hormones. Their presence means your immune system is targeting the thyroid, which is the hallmark of Hashimoto's thyroiditis. Even low levels in healthy people can signal future thyroid problems years before symptoms appear.",
       "scientific": "Thyroperoxidase antibodies aid in the detection of autoimmune and Hashimoto's thyroiditis. Antibodies against the thyroid are seldom seen in serum of normal individuals but 5-10% of patients may have low levels of antibodies with no signs of disease. These antibodies may be associated with other autoimmune disorders (cross-reactive antibodies).",
       "why": "Diagnoses autoimmune thyroid disease such as Hashimoto's thyroiditis.",
       "frequency": "Once for diagnosis; repeat only as clinically indicated",
       "lang": {
         "ru-RU": {
-          "description": "Иммунные антитела к ферменту, с помощью которого щитовидная железа присоединяет йод и собирает свои гормоны.",
+          "description": "Антитела, атакующие тиреопероксидазу — фермент, необходимый щитовидной железе для производства гормонов. Их наличие означает, что иммунная система нацелена на щитовидную железу, что является отличительным признаком тиреоидита Хашимото. Даже низкие уровни у здоровых людей могут сигнализировать о будущих проблемах с щитовидкой за годы до появления симптомов.",
           "scientific": "Антитела к тиреопероксидазе используются для выявления аутоиммунного тиреоидита и тиреоидита Хашимото. Антитела к щитовидной железе редко обнаруживаются в сыворотке здоровых людей, однако у 5–10% пациентов могут выявляться низкие уровни антител без признаков заболевания. Эти антитела могут быть ассоциированы с другими аутоиммунными заболеваниями (перекрёстно-реактивные антитела).",
           "why": "Диагностирует аутоиммунные заболевания щитовидной железы, такие как тиреоидит Хашимото.",
           "frequency": "Однократно для постановки диагноза; повторно — только по клиническим показаниям"
         },
         "uk-UA": {
-          "description": "Імунні антитіла до ферменту, за допомогою якого щитоподібна залоза приєднує йод і створює свої гормони.",
+          "description": "Антитіла, що атакують тиреопероксидазу — фермент, необхідний щитоподібній залозі для вироблення гормонів. Їх наявність означає, що імунна система спрямована проти залози, що є ознакою тиреоїдиту Хашимото. Навіть низькі рівні у здорових людей можуть сигналізувати про майбутні проблеми з щитоподібною залозою за роки до появи симптомів.",
           "scientific": "Антитіла до тиреопероксидази використовуються для виявлення аутоімунного тиреоїдиту та тиреоїдиту Хашимото. Антитіла до щитоподібної залози рідко виявляються у сироватці здорових людей, проте у 5–10% пацієнтів можуть бути виявлені низькі рівні антитіл без ознак захворювання. Ці антитіла можуть бути асоційовані з іншими аутоімунними захворюваннями (перехресно-реактивні антитіла).",
           "why": "Діагностує аутоімунні захворювання щитоподібної залози, зокрема тиреоїдит Хашимото.",
           "frequency": "Одноразово для встановлення діагнозу; повторно — лише за клінічними показаннями"
@@ -516,19 +561,19 @@
       "uk-UA": "Антитіла до тиреоглобуліну (анти-ТГ)"
     },
     "info": {
-      "description": "Immune antibodies against thyroglobulin, the storage protein the thyroid uses as raw material for making hormones.",
+      "description": "Antibodies against thyroglobulin — the protein scaffold your thyroid uses to assemble its hormones. Found in about 70% of Hashimoto's patients, they confirm autoimmune thyroid disease. In thyroid cancer follow-up, they matter because they can interfere with thyroglobulin measurements used to detect recurrence.",
       "scientific": "Circulating immunoglobulins directed against thyroglobulin are commonly present in patients with autoimmune (Hashimoto) thyroiditis and, to a lesser extent, Graves disease. The test is used to confirm that a patient's diffuse goiter and/or hypothyroidism stems from autoimmune thyroiditis, and may help distinguish Graves disease from toxic nodular goiter. These antibodies are present in approximately 70% of autoimmune thyroiditis patients. The presence of thyroglobulin antibodies doesn't necessarily indicate clinically significant thyroid disease or define thyroid functional status.",
       "why": "Supports diagnosis of autoimmune thyroid disease and monitors thyroid cancer follow-up.",
       "frequency": "Once for diagnosis; repeat only as clinically indicated",
       "lang": {
         "ru-RU": {
-          "description": "Иммунные антитела к тиреоглобулину — белку-запасу, который щитовидная железа использует как сырьё для своих гормонов.",
+          "description": "Антитела к тиреоглобулину — белку-каркасу, который щитовидная железа использует для сборки своих гормонов. Обнаруживаются примерно у 70% пациентов с тиреоидитом Хашимото и подтверждают аутоиммунное заболевание щитовидной железы. При наблюдении после рака щитовидной железы они важны, так как могут искажать измерения тиреоглобулина, используемые для выявления рецидива.",
           "scientific": "Циркулирующие иммуноглобулины, направленные против тиреоглобулина, часто обнаруживаются у пациентов с аутоиммунным (Хашимото) тиреоидитом и, в меньшей степени, при болезни Грейвса. Тест используется для подтверждения того, что диффузный зоб и/или гипотиреоз обусловлены аутоиммунным тиреоидитом, а также может помочь отличить болезнь Грейвса от токсического узлового зоба. Эти антитела присутствуют примерно у 70% пациентов с аутоиммунным тиреоидитом. Наличие антител к тиреоглобулину не обязательно указывает на клинически значимое заболевание щитовидной железы и не определяет её функциональный статус.",
           "why": "Подтверждает диагноз аутоиммунного заболевания щитовидной железы и используется при мониторинге рака щитовидной железы.",
           "frequency": "Однократно для постановки диагноза; повторно — только по клиническим показаниям"
         },
         "uk-UA": {
-          "description": "Імунні антитіла до тиреоглобуліну — білка-запасу, який щитоподібна залоза використовує як сировину для своїх гормонів.",
+          "description": "Антитіла до тиреоглобуліну — білка-каркасу, який щитоподібна залоза використовує для складання своїх гормонів. Виявляються приблизно у 70% пацієнтів з тиреоїдитом Хашимото й підтверджують автоімунне захворювання залози. При спостереженні після раку щитоподібної залози вони важливі, оскільки можуть спотворювати вимірювання тиреоглобуліну, що використовується для виявлення рецидиву.",
           "scientific": "Циркулюючі імуноглобуліни, спрямовані проти тиреоглобуліну, часто виявляються у пацієнтів з аутоімунним (Хашимото) тиреоїдитом і, меншою мірою, при хворобі Грейвса. Тест використовується для підтвердження того, що дифузний зоб та/або гіпотиреоз зумовлені аутоімунним тиреоїдитом, а також може допомогти відрізнити хворобу Грейвса від токсичного вузлового зоба. Ці антитіла присутні приблизно у 70% пацієнтів з аутоімунним тиреоїдитом. Наявність антитіл до тиреоглобуліну не обов'язково вказує на клінічно значуще захворювання щитоподібної залози та не визначає її функціональний статус.",
           "why": "Підтверджує діагноз аутоімунного захворювання щитоподібної залози та використовується при моніторингу раку щитоподібної залози.",
           "frequency": "Одноразово для встановлення діагнозу; повторно — лише за клінічними показаннями"
@@ -541,23 +586,23 @@
     "longCommonName": "Thyrotropin receptor Ab [Units/volume] in Serum or Plasma",
     "displayName": "TRAb",
     "lang": {
-      "ru-RU": "Антитела к рецепторам ТТГ (TRAb)",
-      "uk-UA": "Антитіла до рецепторів ТТГ (TRAb)"
+      "ru-RU": "Антитела к рецепторам ТТГ",
+      "uk-UA": "Антитіла до рецепторів ТТГ"
     },
     "info": {
-      "description": "Immune antibodies that latch onto the thyroid’s TSH receptor and can either push the gland to overwork or block its normal signal.",
+      "description": "Antibodies that hijack the TSH receptor on thyroid cells — instead of TSH controlling the thyroid, these antibodies take over. Stimulating TRAb force the thyroid to overproduce hormones, causing Graves’ disease. They’re the definitive marker for Graves’ and critical for assessing risk to a baby during pregnancy.",
       "scientific": "Thyrotropin receptor antibodies (TRAb) are immunoglobulins directed against the TSH receptor on thyroid follicular cells. Stimulating TRAb mimic the action of TSH, causing unregulated thyroid hormone production and are the hallmark of Graves disease. Blocking TRAb inhibit TSH binding and can cause hypothyroidism. TRAb measurement is essential for differentiating Graves disease from other causes of hyperthyroidism, monitoring disease activity during antithyroid drug therapy, and assessing the risk of neonatal thyrotoxicosis in pregnant women with Graves disease.",
       "why": "Diagnoses Graves' disease and predicts neonatal thyroid risk in pregnant patients.",
       "frequency": "As clinically indicated",
       "lang": {
         "ru-RU": {
-          "description": "Иммунные антитела, которые связываются с рецептором ТТГ и могут либо чрезмерно разгонять щитовидную железу, либо мешать нормальному сигналу.",
+          "description": "Антитела, которые захватывают рецептор ТТГ на клетках щитовидной железы — вместо ТТГ контроль над железой берут на себя эти антитела. Стимулирующие антитела к рецепторам ТТГ заставляют железу вырабатывать гормоны сверх нормы, вызывая болезнь Грейвса. Это определяющий маркер болезни Грейвса и критически важный показатель для оценки риска для ребёнка во время беременности.",
           "scientific": "Антитела к рецепторам тиреотропина (TRAb) — иммуноглобулины, направленные против рецептора ТТГ на фолликулярных клетках щитовидной железы. Стимулирующие TRAb имитируют действие ТТГ, вызывая нерегулируемую продукцию тиреоидных гормонов, и являются характерным признаком болезни Грейвса. Блокирующие TRAb препятствуют связыванию ТТГ и могут вызывать гипотиреоз. Определение TRAb необходимо для дифференциации болезни Грейвса от других причин гипертиреоза, мониторинга активности заболевания на фоне антитиреоидной терапии и оценки риска неонатального тиреотоксикоза у беременных с болезнью Грейвса.",
           "why": "Диагностирует болезнь Грейвса и оценивает риск неонатальной тиреоидной патологии у беременных.",
           "frequency": "По клиническим показаниям"
         },
         "uk-UA": {
-          "description": "Імунні антитіла, що зв'язуються з рецептором ТТГ і можуть або надмірно розганяти щитоподібну залозу, або заважати нормальному сигналу.",
+          "description": "Антитіла, що захоплюють рецептор ТТГ на клітинах щитоподібної залози — замість ТТГ контроль над залозою перебирають ці антитіла. Стимулюючі антитіла до рецепторів ТТГ змушують залозу виробляти гормони понад норму, спричиняючи хворобу Грейвса. Це визначальний маркер хвороби Грейвса й критично важливий показник для оцінки ризику для дитини під час вагітності.",
           "scientific": "Антитіла до рецепторів тиреотропіну (TRAb) — імуноглобуліни, спрямовані проти рецептора ТТГ на фолікулярних клітинах щитоподібної залози. Стимулюючі TRAb імітують дію ТТГ, спричиняючи нерегульовану продукцію тиреоїдних гормонів, і є характерною ознакою хвороби Грейвса. Блокуючі TRAb перешкоджають зв'язуванню ТТГ і можуть спричиняти гіпотиреоз. Визначення TRAb необхідне для диференціації хвороби Грейвса від інших причин гіпертиреозу, моніторингу активності захворювання на тлі антитиреоїдної терапії та оцінки ризику неонатального тиреотоксикозу у вагітних із хворобою Грейвса.",
           "why": "Діагностує хворобу Грейвса та оцінює ризик неонатальної тиреоїдної патології у вагітних.",
           "frequency": "За клінічними показаннями"
@@ -574,19 +619,19 @@
       "uk-UA": "Кальцитонін"
     },
     "info": {
-      "description": "A hormone from thyroid C-cells that helps lower blood calcium and slows the release of calcium from bone.",
+      "description": "A hormone from specialized thyroid C-cells that helps keep blood calcium from getting too high by slowing bone breakdown and increasing calcium excretion. Its main clinical value is as a tumor marker — C-cells can become cancerous (medullary thyroid carcinoma), and calcitonin levels rise dramatically, making it an early detection tool.",
       "scientific": "Calcitonin is a 32-amino acid peptide hormone secreted by the parafollicular C-cells of the thyroid gland. It acts to lower blood calcium by inhibiting osteoclast-mediated bone resorption and increasing renal calcium excretion. Calcitonin serves as a highly sensitive and specific tumor marker for medullary thyroid carcinoma (MTC), which arises from the C-cells. Elevated basal calcitonin levels or an exaggerated response to stimulation testing (pentagastrin or calcium) indicates C-cell hyperplasia or MTC. It is also used to monitor for recurrence after thyroidectomy.",
       "why": "Screens for and monitors medullary thyroid carcinoma.",
       "frequency": "As clinically indicated",
       "lang": {
         "ru-RU": {
-          "description": "Гормон С-клеток щитовидной железы, который помогает снижать кальций в крови и замедляет выход кальция из костей.",
+          "description": "Гормон специализированных С-клеток щитовидной железы, который не даёт кальцию в крови подняться слишком высоко, замедляя разрушение костей и усиливая выведение кальция. Основная клиническая ценность — как онкомаркер: С-клетки могут стать злокачественными (медуллярный рак щитовидной железы), и уровень кальцитонина резко возрастает, что делает его инструментом ранней диагностики.",
           "scientific": "Кальцитонин — пептидный гормон из 32 аминокислот, секретируемый парафолликулярными С-клетками щитовидной железы. Он снижает уровень кальция в крови, подавляя остеокласт-опосредованную резорбцию костной ткани и усиливая почечную экскрецию кальция. Кальцитонин является высокочувствительным и специфичным опухолевым маркёром медуллярного рака щитовидной железы (МРЩЖ), происходящего из С-клеток. Повышенный базальный уровень кальцитонина или чрезмерный ответ на стимуляционный тест (пентагастрином или кальцием) указывает на С-клеточную гиперплазию или МРЩЖ. Также используется для мониторинга рецидивов после тиреоидэктомии.",
           "why": "Скрининг и мониторинг медуллярного рака щитовидной железы.",
           "frequency": "По клиническим показаниям"
         },
         "uk-UA": {
-          "description": "Гормон С-клітин щитоподібної залози, який допомагає знижувати кальцій у крові та сповільнює вихід кальцію з кісток.",
+          "description": "Гормон спеціалізованих С-клітин щитоподібної залози, який не дає кальцію у крові піднятися надто високо, сповільнюючи руйнування кісток і посилюючи виведення кальцію. Основна клінічна цінність — як онкомаркер: С-клітини можуть стати злоякісними (медулярний рак щитоподібної залози), і рівень кальцитоніну різко зростає, що робить його інструментом ранньої діагностики.",
           "scientific": "Кальцитонін — пептидний гормон із 32 амінокислот, що секретується парафолікулярними С-клітинами щитоподібної залози. Він знижує рівень кальцію в крові, пригнічуючи остеокласт-опосередковану резорбцію кісткової тканини та посилюючи ниркову екскрецію кальцію. Кальцитонін є високочутливим і специфічним пухлинним маркером медулярного раку щитоподібної залози (МРЩЗ), що походить із С-клітин. Підвищений базальний рівень кальцитоніну або надмірна відповідь на стимуляційний тест (пентагастрином або кальцієм) вказує на С-клітинну гіперплазію або МРЩЗ. Також використовується для моніторингу рецидивів після тиреоїдектомії.",
           "why": "Скринінг та моніторинг медулярного раку щитоподібної залози.",
           "frequency": "За клінічними показаннями"
@@ -603,9 +648,24 @@
       "uk-UA": "Глікований гемоглобін (NGSP)"
     },
     "info": {
-      "description": "Reflects average blood glucose over 2-3 months, reported as a percentage (NGSP standard).",
+      "description": "A 'memory' of your blood sugar over the past 2-3 months, recorded in your red blood cells. As glucose circulates, it sticks to hemoglobin — the more sugar in your blood over time, the higher this number. Unlike a single glucose test, HbA1c reveals the bigger picture of metabolic control.",
       "why": "Diagnoses diabetes and monitors long-term glycemic control.",
-      "frequency": "Every 3-6 months for diabetics; annually for screening"
+      "frequency": "Every 3-6 months for diabetics; annually for screening",
+      "scientific": "Hemoglobin A1c (HbA1c) reflects average blood glucose levels over the preceding 2-3 months by measuring the percentage of hemoglobin that is glycated. The NGSP (National Glycohemoglobin Standardization Program) method reports results as a percentage, standardized to the DCCT reference. An HbA1c of 6.5% or higher is diagnostic of diabetes. Results may be affected by hemoglobin variants, iron deficiency, and certain ethnic backgrounds.",
+      "lang": {
+        "ru-RU": {
+          "description": "«Память» о вашем сахаре крови за последние 2–3 месяца, записанная в эритроцитах. Когда глюкоза циркулирует по крови, она прикрепляется к гемоглобину — чем больше сахара в крови с течением времени, тем выше этот показатель. В отличие от разового анализа глюкозы, HbA1c раскрывает общую картину метаболического контроля.",
+          "scientific": "Гликированный гемоглобин (HbA1c) отражает средний уровень глюкозы в крови за предшествующие 2–3 месяца путём измерения процента гликированного гемоглобина. Метод NGSP (Национальная программа стандартизации гликогемоглобина) выражает результат в процентах, стандартизированных по референсу DCCT. HbA1c ≥ 6,5% является диагностическим критерием диабета. На результаты могут влиять варианты гемоглобина, дефицит железа и этническая принадлежность.",
+          "why": "Диагностирует диабет и контролирует долгосрочный гликемический контроль.",
+          "frequency": "Каждые 3–6 месяцев при диабете; ежегодно для скрининга"
+        },
+        "uk-UA": {
+          "description": "«Пам’ять» про ваш цукор крові за останні 2–3 місяці, записана в еритроцитах. Коли глюкоза циркулює по крові, вона прикріплюється до гемоглобіну — чим більше цукру в крові з часом, тим вищий цей показник. На відміну від разового аналізу глюкози, HbA1c розкриває загальну картину метаболічного контролю.",
+          "scientific": "Глікований гемоглобін (HbA1c) відображає середній рівень глюкози в крові за попередні 2–3 місяці шляхом вимірювання відсотка глікованого гемоглобіну. Метод NGSP (Національна програма стандартизації глікогемоглобіну) виражає результат у відсотках, стандартизованих за референсом DCCT. HbA1c ≥ 6,5% є діагностичним критерієм діабету. На результати можуть впливати варіанти гемоглобіну, дефіцит заліза та етнічна належність.",
+          "why": "Діагностує діабет і контролює довгостроковий глікемічний контроль.",
+          "frequency": "Кожні 3–6 місяців при діабеті; щорічно для скринінгу"
+        }
+      }
     }
   },
   {
@@ -617,9 +677,24 @@
       "uk-UA": "Глікований гемоглобін (IFCC)"
     },
     "info": {
-      "description": "Reflects average blood glucose over 2-3 months, reported in mmol/mol (IFCC standard).",
+      "description": "The same blood sugar memory as HbA1c but reported in international SI units (mmol/mol) instead of percentage. This is the globally standardized reference method, making results comparable across laboratories worldwide.",
       "why": "Diagnoses diabetes and monitors long-term glycemic control using the international reference method.",
-      "frequency": "Every 3-6 months for diabetics; annually for screening"
+      "frequency": "Every 3-6 months for diabetics; annually for screening",
+      "scientific": "The IFCC (International Federation of Clinical Chemistry) reference method for HbA1c reports results in SI units (mmol/mol). All manufacturers should implement traceability to the IFCC reference system. The IFCC value can be converted to NGSP units using the equation: NGSP = (0.09148 x IFCC) + 2.152. For example, 6.5% NGSP equals approximately 48 mmol/mol IFCC.",
+      "lang": {
+        "ru-RU": {
+          "description": "Та же «память» о сахаре крови, что и HbA1c, но выраженная в международных единицах СИ (ммоль/моль) вместо процентов. Это глобально стандартизированный референсный метод, обеспечивающий сопоставимость результатов между лабораториями по всему миру.",
+          "scientific": "Референсный метод IFCC (Международная федерация клинической химии) для HbA1c выражает результаты в единицах СИ (ммоль/моль). Все производители должны обеспечивать прослеживаемость к референсной системе IFCC. Значение IFCC можно пересчитать в единицы NGSP по формуле: NGSP = (0,09148 × IFCC) + 2,152. Например, 6,5% NGSP соответствует приблизительно 48 ммоль/моль IFCC.",
+          "why": "Диагностирует диабет и контролирует долгосрочный гликемический контроль по международному референсному методу.",
+          "frequency": "Каждые 3–6 месяцев при диабете; ежегодно для скрининга"
+        },
+        "uk-UA": {
+          "description": "Та сама «пам’ять» про цукор крові, що й HbA1c, але виражена в міжнародних одиницях СІ (ммоль/моль) замість відсотків. Це глобально стандартизований референсний метод, що забезпечує порівнянність результатів між лабораторіями по всьому світу.",
+          "scientific": "Референсний метод IFCC (Міжнародна федерація клінічної хімії) для HbA1c виражає результати в одиницях СІ (ммоль/моль). Усі виробники повинні забезпечувати простежуваність до референсної системи IFCC. Значення IFCC можна перерахувати в одиниці NGSP за формулою: NGSP = (0,09148 × IFCC) + 2,152. Наприклад, 6,5% NGSP відповідає приблизно 48 ммоль/моль IFCC.",
+          "why": "Діагностує діабет і контролює довгостроковий глікемічний контроль за міжнародним референсним методом.",
+          "frequency": "Кожні 3–6 місяців при діабеті; щорічно для скринінгу"
+        }
+      }
     }
   },
   {
@@ -631,9 +706,24 @@
       "uk-UA": "Глікований альбумін"
     },
     "info": {
-      "description": "Albumin modified by glucose, reflecting average blood sugar over the past 2-3 weeks.",
+      "description": "A shorter-term blood sugar memory — reflecting the past 2-3 weeks instead of months. Since albumin lives shorter than hemoglobin, this test catches recent changes in glucose control faster. Especially useful when HbA1c is unreliable, such as in kidney disease or blood disorders.",
       "why": "Monitors short-term glycemic control when HbA1c is unreliable (e.g., hemoglobin disorders).",
-      "frequency": "Every 2-4 weeks, as clinically indicated"
+      "frequency": "Every 2-4 weeks, as clinically indicated",
+      "scientific": "Glycated albumin (GA) is formed by non-enzymatic glycation of serum albumin and reflects average blood glucose levels over the preceding 2-3 weeks, corresponding to albumin’s half-life. GA is useful as a short-term glycemic control marker, particularly in patients where HbA1c may be unreliable, such as those with hemoglobin variants, hemolytic anemia, or chronic kidney disease on dialysis. GA responds more rapidly to changes in glycemic control than HbA1c.",
+      "lang": {
+        "ru-RU": {
+          "description": "Краткосрочная «память» о сахаре крови — отражает последние 2–3 недели вместо месяцев. Поскольку альбумин живёт короче гемоглобина, этот тест быстрее выявляет недавние изменения в контроле глюкозы. Особенно полезен, когда HbA1c ненадёжен — например, при болезнях почек или заболеваниях крови.",
+          "scientific": "Гликированный альбумин (ГА) образуется путём неферментативного гликирования сывороточного альбумина и отражает средний уровень глюкозы в крови за предшествующие 2–3 недели, соответственно периоду полувыведения альбумина. ГА полезен как маркер краткосрочного гликемического контроля, особенно у пациентов, у которых HbA1c может быть ненадёжным — при вариантах гемоглобина, гемолитической анемии или хронической болезни почек на диализе. ГА реагирует на изменения гликемического контроля быстрее, чем HbA1c.",
+          "why": "Мониторинг краткосрочного гликемического контроля, когда HbA1c ненадёжен (например, при гемоглобинопатиях).",
+          "frequency": "Каждые 2–4 недели, по клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Короткострокова «пам’ять» про цукор крові — відображає останні 2–3 тижні замість місяців. Оскільки альбумін живе коротше за гемоглобін, цей тест швидше виявляє нещодавні зміни в контролі глюкози. Особливо корисний, коли HbA1c ненадійний — наприклад, при хворобах нирок або захворюваннях крові.",
+          "scientific": "Глікований альбумін (ГА) утворюється шляхом неферментативного глікування сироваткового альбуміну і відображає середній рівень глюкози в крові за попередні 2–3 тижні, відповідно до періоду напіввиведення альбуміну. ГА корисний як маркер короткострокового глікемічного контролю, особливо у пацієнтів, у яких HbA1c може бути ненадійним — при варіантах гемоглобіну, гемолітичній анемії або хронічній хворобі нирок на діалізі. ГА реагує на зміни глікемічного контролю швидше, ніж HbA1c.",
+          "why": "Моніторинг короткострокового глікемічного контролю, коли HbA1c ненадійний (наприклад, при гемоглобінопатіях).",
+          "frequency": "Кожні 2–4 тижні, за клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -645,9 +735,24 @@
       "uk-UA": "Фруктозамін"
     },
     "info": {
-      "description": "Glycated serum proteins reflecting average blood glucose over the past 2-3 weeks.",
+      "description": "Another short-term glucose tracker that captures the past 2-3 weeks of blood sugar levels by measuring sugar attached to blood proteins. Useful for seeing how quickly diet changes or new medications are working, without waiting months for HbA1c to shift.",
       "why": "Provides intermediate-term glycemic monitoring when HbA1c is unreliable.",
-      "frequency": "Every 2-4 weeks, as clinically indicated"
+      "frequency": "Every 2-4 weeks, as clinically indicated",
+      "scientific": "Fructosamine is a glycated serum protein that reflects average blood glucose levels over the preceding 2-3 weeks. It is formed by the non-enzymatic glycation of serum proteins, primarily albumin. Fructosamine is useful for monitoring short-term changes in glycemic control and in situations where HbA1c may be unreliable, such as hemoglobinopathies, pregnancy, or rapidly changing glucose levels.",
+      "lang": {
+        "ru-RU": {
+          "description": "Ещё один краткосрочный трекер глюкозы, фиксирующий уровень сахара в крови за последние 2–3 недели путём измерения сахара, присоединённого к белкам крови. Полезен для оценки того, как быстро работают изменения в диете или новые лекарства, без необходимости ждать месяцы, пока сдвинется HbA1c.",
+          "scientific": "Фруктозамин — это гликированный белок сыворотки, отражающий средний уровень глюкозы в крови за предшествующие 2–3 недели. Он образуется путём неферментативного гликирования сывороточных белков, преимущественно альбумина. Фруктозамин полезен для мониторинга краткосрочных изменений гликемического контроля и в ситуациях, когда HbA1c может быть ненадёжным — при гемоглобинопатиях, беременности или быстро меняющихся уровнях глюкозы.",
+          "why": "Обеспечивает среднесрочный гликемический мониторинг, когда HbA1c ненадёжен.",
+          "frequency": "Каждые 2–4 недели, по клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Ще один короткостроковий трекер глюкози, що фіксує рівень цукру в крові за останні 2–3 тижні шляхом вимірювання цукру, приєднаного до білків крові. Корисний для оцінки того, як швидко працюють зміни в дієті або нові ліки, без необхідності чекати місяці, поки зсунеться HbA1c.",
+          "scientific": "Фруктозамін — це глікований білок сироватки, що відображає середній рівень глюкози в крові за попередні 2–3 тижні. Він утворюється шляхом неферментативного глікування сироваткових білків, переважно альбуміну. Фруктозамін корисний для моніторингу короткострокових змін глікемічного контролю та в ситуаціях, коли HbA1c може бути ненадійним — при гемоглобінопатіях, вагітності або швидко змінюваних рівнях глюкози.",
+          "why": "Забезпечує середньостроковий глікемічний моніторинг, коли HbA1c ненадійний.",
+          "frequency": "Кожні 2–4 тижні, за клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -659,9 +764,24 @@
       "uk-UA": "C-пептид"
     },
     "info": {
-      "description": "Byproduct of insulin production that reflects how much insulin the pancreas is making.",
+      "description": "A direct window into how much insulin your pancreas is actually producing. C-peptide is released in equal amounts with insulin but lasts longer in the blood, making it a more reliable measure. It helps distinguish whether the body has stopped making insulin (type 1 diabetes) or is making plenty but can't use it (type 2).",
       "why": "Differentiates type 1 from type 2 diabetes and evaluates residual beta-cell function.",
-      "frequency": "As clinically indicated"
+      "frequency": "As clinically indicated",
+      "scientific": "C-peptide is a 31-amino acid polypeptide that is cleaved from proinsulin during the production of insulin in pancreatic beta cells. It is secreted in equimolar amounts with insulin but has a longer half-life, making it a more stable marker of endogenous insulin secretion. C-peptide measurement helps distinguish type 1 from type 2 diabetes, assess residual beta-cell function, and evaluate hypoglycemia causes including factitious insulin use.",
+      "lang": {
+        "ru-RU": {
+          "description": "Прямое окно в то, сколько инсулина на самом деле производит ваша поджелудочная железа. C-пептид выделяется в равных количествах с инсулином, но дольше сохраняется в крови, что делает его более надёжным показателем. Он помогает отличить, перестал ли организм вырабатывать инсулин (диабет 1-го типа) или вырабатывает достаточно, но не может его использовать (диабет 2-го типа).",
+          "scientific": "C-пептид — это полипептид из 31 аминокислоты, который отщепляется от проинсулина при производстве инсулина бета-клетками поджелудочной железы. Он секретируется в эквимолярных количествах с инсулином, но имеет более длительный период полувыведения, что делает его более стабильным маркером эндогенной секреции инсулина. Измерение C-пептида помогает дифференцировать диабет 1-го и 2-го типа, оценивать остаточную функцию бета-клеток и выявлять причины гипогликемии, включая искусственное введение инсулина.",
+          "why": "Дифференцирует диабет 1-го и 2-го типа, оценивает остаточную функцию бета-клеток.",
+          "frequency": "По клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Пряме вікно в те, скільки інсуліну насправді виробляє ваша підшлункова залоза. C-пептид виділяється в рівних кількостях з інсуліном, але довше зберігається в крові, що робить його надійнішим показником. Він допомагає відрізнити, чи організм перестав виробляти інсулін (діабет 1-го типу), чи виробляє достатньо, але не може його використати (діабет 2-го типу).",
+          "scientific": "C-пептид — це поліпептид з 31 амінокислоти, який відщеплюється від проінсуліну при виробництві інсуліну бета-клітинами підшлункової залози. Він секретується в еквімолярних кількостях з інсуліном, але має довший період напіввиведення, що робить його стабільнішим маркером ендогенної секреції інсуліну. Вимірювання C-пептиду допомагає диференціювати діабет 1-го та 2-го типу, оцінювати залишкову функцію бета-клітин та виявляти причини гіпоглікемії, включаючи штучне введення інсуліну.",
+          "why": "Диференціює діабет 1-го та 2-го типу, оцінює залишкову функцію бета-клітин.",
+          "frequency": "За клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -673,9 +793,24 @@
       "uk-UA": "Ліпаза"
     },
     "info": {
-      "description": "Pancreatic enzyme that breaks down dietary fats into fatty acids.",
+      "description": "The pancreas's fat-digesting enzyme — it breaks dietary fats into absorbable fatty acids in the intestine. More specific to the pancreas than amylase, elevated lipase is the most reliable blood marker for pancreatitis and stays elevated longer, making it harder to miss.",
       "why": "Diagnoses acute pancreatitis; more specific to the pancreas than amylase.",
-      "frequency": "As clinically indicated"
+      "frequency": "As clinically indicated",
+      "scientific": "Lipase is an enzyme produced by the pancreas that breaks down dietary triglycerides into fatty acids and glycerol. The enzyme travels from the pancreatic duct to the duodenum. Elevated lipase levels indicate pancreatic issues including pancreatic duct obstruction, pancreatic cancer, gall bladder inflammation, or kidney disease. Lipase is more specific and sensitive for acute pancreatitis than amylase, remaining elevated for a longer period.",
+      "lang": {
+        "ru-RU": {
+          "description": "Жирорасщепляющий фермент поджелудочной железы — он расщепляет пищевые жиры до усвояемых жирных кислот в кишечнике. Более специфичен для поджелудочной железы, чем амилаза; повышенная липаза — наиболее надёжный маркер панкреатита в крови, который дольше остаётся повышенным, что позволяет не пропустить диагноз.",
+          "scientific": "Липаза — фермент, вырабатываемый поджелудочной железой, расщепляющий пищевые триглицериды до жирных кислот и глицерина. Фермент поступает из протока поджелудочной железы в двенадцатиперстную кишку. Повышенный уровень липазы указывает на проблемы поджелудочной железы, включая обструкцию протока, рак поджелудочной железы, воспаление жёлчного пузыря или заболевания почек. Липаза более специфична и чувствительна при остром панкреатите, чем амилаза, и остаётся повышенной дольше.",
+          "why": "Диагностирует острый панкреатит; более специфична для поджелудочной железы, чем амилаза.",
+          "frequency": "По клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Жиророзщеплюючий фермент підшлункової залози — він розщеплює харчові жири до засвоюваних жирних кислот у кишечнику. Більш специфічний для підшлункової залози, ніж амілаза; підвищена ліпаза — найнадійніший маркер панкреатиту в крові, який довше залишається підвищеним, що дозволяє не пропустити діагноз.",
+          "scientific": "Ліпаза — фермент, що виробляється підшлунковою залозою, розщеплює харчові тригліцериди до жирних кислот та гліцерину. Фермент надходить з протоки підшлункової залози до дванадцятипалої кишки. Підвищений рівень ліпази вказує на проблеми підшлункової залози, включаючи обструкцію протоки, рак підшлункової залози, запалення жовчного міхура або захворювання нирок. Ліпаза більш специфічна та чутлива при гострому панкреатиті, ніж амілаза, і залишається підвищеною довше.",
+          "why": "Діагностує гострий панкреатит; більш специфічна для підшлункової залози, ніж амілаза.",
+          "frequency": "За клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -1536,7 +1671,10 @@
     "loinc": "751-8",
     "longCommonName": "Neutrophils [#/volume] in Blood by Automated count",
     "displayName": "Neutrophils (NEUT#)",
-    "lang": { "ru-RU": "Нейтрофилы (абс.)", "uk-UA": "Нейтрофіли (абс.)" },
+    "lang": {
+      "ru-RU": "Нейтрофилы (абс.)",
+      "uk-UA": "Нейтрофіли (абс.)"
+    },
     "info": {
       "description": "Most abundant white blood cells, first responders to bacterial infections.",
       "why": "Detects bacterial infections, monitors chemotherapy effects, and evaluates immune status.",
@@ -1547,7 +1685,10 @@
     "loinc": "731-0",
     "longCommonName": "Lymphocytes [#/volume] in Blood by Automated count",
     "displayName": "Lymphocytes (LYMPH#)",
-    "lang": { "ru-RU": "Лимфоциты (абс.)", "uk-UA": "Лімфоцити (абс.)" },
+    "lang": {
+      "ru-RU": "Лимфоциты (абс.)",
+      "uk-UA": "Лімфоцити (абс.)"
+    },
     "info": {
       "description": "White blood cells responsible for adaptive immunity, including T-cells and B-cells.",
       "why": "Evaluates viral infections, immune deficiencies, and lymphoproliferative disorders.",
@@ -1558,7 +1699,10 @@
     "loinc": "742-7",
     "longCommonName": "Monocytes [#/volume] in Blood by Automated count",
     "displayName": "Monocytes (MONO#)",
-    "lang": { "ru-RU": "Моноциты (абс.)", "uk-UA": "Моноцити (абс.)" },
+    "lang": {
+      "ru-RU": "Моноциты (абс.)",
+      "uk-UA": "Моноцити (абс.)"
+    },
     "info": {
       "description": "Largest white blood cells that differentiate into macrophages to engulf pathogens and debris.",
       "why": "Helps diagnose chronic infections, inflammatory conditions, and blood disorders.",
@@ -1569,7 +1713,10 @@
     "loinc": "711-2",
     "longCommonName": "Eosinophils [#/volume] in Blood by Automated count",
     "displayName": "Eosinophils (EO#)",
-    "lang": { "ru-RU": "Эозинофилы (абс.)", "uk-UA": "Еозинофіли (абс.)" },
+    "lang": {
+      "ru-RU": "Эозинофилы (абс.)",
+      "uk-UA": "Еозинофіли (абс.)"
+    },
     "info": {
       "description": "White blood cells involved in allergic responses and defense against parasites.",
       "why": "Detects allergic conditions, parasitic infections, and eosinophilic disorders.",
@@ -1580,7 +1727,10 @@
     "loinc": "704-7",
     "longCommonName": "Basophils [#/volume] in Blood by Automated count",
     "displayName": "Basophils (BASO#)",
-    "lang": { "ru-RU": "Базофилы (абс.)", "uk-UA": "Базофіли (абс.)" },
+    "lang": {
+      "ru-RU": "Базофилы (абс.)",
+      "uk-UA": "Базофіли (абс.)"
+    },
     "info": {
       "description": "Rarest white blood cells that release histamine and play a role in allergic reactions.",
       "why": "Helps evaluate allergic conditions and myeloproliferative disorders.",
@@ -1591,7 +1741,10 @@
     "loinc": "770-8",
     "longCommonName": "Neutrophils/100 leukocytes in Blood by Automated count",
     "displayName": "Neutrophils (NEUT%)",
-    "lang": { "ru-RU": "Нейтрофилы (%)", "uk-UA": "Нейтрофіли (%)" },
+    "lang": {
+      "ru-RU": "Нейтрофилы (%)",
+      "uk-UA": "Нейтрофіли (%)"
+    },
     "info": {
       "description": "Percentage of white blood cells that are neutrophils.",
       "why": "Helps interpret the differential white blood cell count for infection or bone marrow assessment.",
@@ -1602,7 +1755,10 @@
     "loinc": "736-9",
     "longCommonName": "Lymphocytes/100 leukocytes in Blood by Automated count",
     "displayName": "Lymphocytes (LYMPH%)",
-    "lang": { "ru-RU": "Лимфоциты (%)", "uk-UA": "Лімфоцити (%)" },
+    "lang": {
+      "ru-RU": "Лимфоциты (%)",
+      "uk-UA": "Лімфоцити (%)"
+    },
     "info": {
       "description": "Percentage of white blood cells that are lymphocytes.",
       "why": "Aids in diagnosing viral infections, immune deficiencies, and lymphocytic disorders.",
@@ -1613,7 +1769,10 @@
     "loinc": "5905-5",
     "longCommonName": "Monocytes/100 leukocytes in Blood by Automated count",
     "displayName": "Monocytes (MONO%)",
-    "lang": { "ru-RU": "Моноциты (%)", "uk-UA": "Моноцити (%)" },
+    "lang": {
+      "ru-RU": "Моноциты (%)",
+      "uk-UA": "Моноцити (%)"
+    },
     "info": {
       "description": "Percentage of white blood cells that are monocytes.",
       "why": "Helps evaluate chronic infections, inflammatory conditions, and hematologic disorders.",
@@ -1624,7 +1783,10 @@
     "loinc": "713-8",
     "longCommonName": "Eosinophils/100 leukocytes in Blood by Automated count",
     "displayName": "Eosinophils (EO%)",
-    "lang": { "ru-RU": "Эозинофилы (%)", "uk-UA": "Еозинофіли (%)" },
+    "lang": {
+      "ru-RU": "Эозинофилы (%)",
+      "uk-UA": "Еозинофіли (%)"
+    },
     "info": {
       "description": "Percentage of white blood cells that are eosinophils.",
       "why": "Screens for allergic reactions, parasitic infections, and eosinophilic disorders.",
@@ -1635,7 +1797,10 @@
     "loinc": "706-2",
     "longCommonName": "Basophils/100 leukocytes in Blood by Automated count",
     "displayName": "Basophils (BASO%)",
-    "lang": { "ru-RU": "Базофилы (%)", "uk-UA": "Базофіли (%)" },
+    "lang": {
+      "ru-RU": "Базофилы (%)",
+      "uk-UA": "Базофіли (%)"
+    },
     "info": {
       "description": "Percentage of white blood cells that are basophils.",
       "why": "Helps evaluate allergic conditions and chronic myeloproliferative disorders.",
@@ -1646,7 +1811,10 @@
     "loinc": "787-2",
     "longCommonName": "Mean corpuscular volume [Entitic volume] by Automated count",
     "displayName": "MCV",
-    "lang": { "ru-RU": "Средний объем эритроцита (MCV)", "uk-UA": "Середній об'єм еритроцита (MCV)" },
+    "lang": {
+      "ru-RU": "Средний объем эритроцита (MCV)",
+      "uk-UA": "Середній об'єм еритроцита (MCV)"
+    },
     "info": {
       "description": "Average volume of a single red blood cell.",
       "why": "Classifies anemia as microcytic, normocytic, or macrocytic to guide diagnosis.",
@@ -1657,7 +1825,10 @@
     "loinc": "785-6",
     "longCommonName": "Mean corpuscular hemoglobin [Entitic mass] by Automated count",
     "displayName": "MCH",
-    "lang": { "ru-RU": "Среднее содержание гемоглобина (MCH)", "uk-UA": "Середній вміст гемоглобіну (MCH)" },
+    "lang": {
+      "ru-RU": "Среднее содержание гемоглобина (MCH)",
+      "uk-UA": "Середній вміст гемоглобіну (MCH)"
+    },
     "info": {
       "description": "Average amount of hemoglobin per red blood cell.",
       "why": "Helps classify anemia types and complements MCV in evaluating red cell disorders.",
@@ -1668,7 +1839,10 @@
     "loinc": "786-4",
     "longCommonName": "Mean corpuscular hemoglobin concentration [Mass/volume] by Automated count",
     "displayName": "MCHC",
-    "lang": { "ru-RU": "Средняя концентрация гемоглобина (MCHC)", "uk-UA": "Середня концентрація гемоглобіну (MCHC)" },
+    "lang": {
+      "ru-RU": "Средняя концентрация гемоглобина (MCHC)",
+      "uk-UA": "Середня концентрація гемоглобіну (MCHC)"
+    },
     "info": {
       "description": "Average concentration of hemoglobin within red blood cells.",
       "why": "Detects hypochromic anemias such as iron deficiency and hereditary spherocytosis.",
@@ -1679,7 +1853,10 @@
     "loinc": "788-0",
     "longCommonName": "Erythrocyte distribution width [Ratio] by Automated count",
     "displayName": "RDW-CV",
-    "lang": { "ru-RU": "Ширина распределения эритроцитов (RDW-CV)", "uk-UA": "Ширина розподілу еритроцитів (RDW-CV)" },
+    "lang": {
+      "ru-RU": "Ширина распределения эритроцитов (RDW-CV)",
+      "uk-UA": "Ширина розподілу еритроцитів (RDW-CV)"
+    },
     "info": {
       "description": "Coefficient of variation in red blood cell size, indicating size heterogeneity.",
       "why": "Helps differentiate anemia types; elevated in iron deficiency and mixed nutritional anemias.",
@@ -1690,7 +1867,10 @@
     "loinc": "21000-5",
     "longCommonName": "Erythrocyte distribution width [Entitic volume] by Automated count",
     "displayName": "RDW-SD",
-    "lang": { "ru-RU": "Ширина распределения эритроцитов (RDW-SD)", "uk-UA": "Ширина розподілу еритроцитів (RDW-SD)" },
+    "lang": {
+      "ru-RU": "Ширина распределения эритроцитов (RDW-SD)",
+      "uk-UA": "Ширина розподілу еритроцитів (RDW-SD)"
+    },
     "info": {
       "description": "Standard deviation of red blood cell volume distribution.",
       "why": "Provides a direct measure of red cell size variability to help classify anemias.",
@@ -1701,7 +1881,10 @@
     "loinc": "777-3",
     "longCommonName": "Platelets [#/volume] in Blood by Automated count",
     "displayName": "Platelets (PLT)",
-    "lang": { "ru-RU": "Тромбоциты", "uk-UA": "Тромбоцити" },
+    "lang": {
+      "ru-RU": "Тромбоциты",
+      "uk-UA": "Тромбоцити"
+    },
     "info": {
       "description": "Cell fragments essential for blood clotting and wound repair.",
       "why": "Detects thrombocytopenia or thrombocytosis and evaluates bleeding or clotting risk.",
@@ -1712,7 +1895,10 @@
     "loinc": "32623-1",
     "longCommonName": "Mean platelet volume [Entitic volume] in Blood by Automated count",
     "displayName": "MPV",
-    "lang": { "ru-RU": "Средний объем тромбоцита (MPV)", "uk-UA": "Середній об'єм тромбоцита (MPV)" },
+    "lang": {
+      "ru-RU": "Средний объем тромбоцита (MPV)",
+      "uk-UA": "Середній об'єм тромбоцита (MPV)"
+    },
     "info": {
       "description": "Average size of platelets, reflecting bone marrow platelet production activity.",
       "why": "Helps distinguish causes of abnormal platelet counts (production vs. destruction).",
@@ -1723,7 +1909,10 @@
     "loinc": "32207-3",
     "longCommonName": "Platelet distribution width [Entitic volume] in Blood by Automated count",
     "displayName": "PDW",
-    "lang": { "ru-RU": "Ширина распределения тромбоцитов (PDW)", "uk-UA": "Ширина розподілу тромбоцитів (PDW)" },
+    "lang": {
+      "ru-RU": "Ширина распределения тромбоцитов (PDW)",
+      "uk-UA": "Ширина розподілу тромбоцитів (PDW)"
+    },
     "info": {
       "description": "Measure of variation in platelet size within the blood.",
       "why": "Aids in differentiating reactive thrombocytosis from myeloproliferative disorders.",
@@ -1734,7 +1923,10 @@
     "loinc": "58410-2",
     "longCommonName": "Platelet large cell ratio in Blood by Automated count",
     "displayName": "P-LCR",
-    "lang": { "ru-RU": "Коэффициент больших тромбоцитов (P-LCR)", "uk-UA": "Коефіцієнт великих тромбоцитів (P-LCR)" },
+    "lang": {
+      "ru-RU": "Коэффициент больших тромбоцитов (P-LCR)",
+      "uk-UA": "Коефіцієнт великих тромбоцитів (P-LCR)"
+    },
     "info": {
       "description": "Percentage of platelets that exceed a defined large-size threshold.",
       "why": "Indicates increased platelet turnover and helps evaluate thrombocytopenic conditions.",
@@ -1745,7 +1937,10 @@
     "loinc": "74464-9",
     "longCommonName": "Platelet large cells [#/volume] in Blood by Automated count",
     "displayName": "P-LCC",
-    "lang": { "ru-RU": "Большие тромбоциты (P-LCC)", "uk-UA": "Великі тромбоцити (P-LCC)" },
+    "lang": {
+      "ru-RU": "Большие тромбоциты (P-LCC)",
+      "uk-UA": "Великі тромбоцити (P-LCC)"
+    },
     "info": {
       "description": "Absolute count of large platelets in the blood.",
       "why": "Supplements P-LCR to evaluate platelet production and destruction disorders.",
@@ -1756,7 +1951,10 @@
     "loinc": "61928-1",
     "longCommonName": "Plateletcrit [Volume Fraction] in Blood by Automated count",
     "displayName": "Plateletcrit (PCT)",
-    "lang": { "ru-RU": "Тромбокрит (PCT)", "uk-UA": "Тромбокрит (PCT)" },
+    "lang": {
+      "ru-RU": "Тромбокрит (PCT)",
+      "uk-UA": "Тромбокрит (PCT)"
+    },
     "info": {
       "description": "Percentage of blood volume occupied by platelets, analogous to hematocrit for red cells.",
       "why": "Provides an overall measure of platelet mass to evaluate bleeding and clotting risk.",

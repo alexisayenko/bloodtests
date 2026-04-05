@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#2563eb">
-  <title>Blood Tests</title>
+  <title>Blood Tests [Devel]</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -56,7 +56,11 @@
       position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
       width: 100%; max-width: 600px; background: white;
       border-top: 1px solid var(--gray-200); display: flex;
-      padding: 8px 0; padding-bottom: max(8px, env(safe-area-inset-bottom)); z-index: 10;
+      padding: 8px 0; padding-bottom: calc(8px + env(safe-area-inset-bottom)); z-index: 10;
+    }
+    .bottom-nav::after {
+      content: ""; position: fixed; bottom: -50px; left: 0; right: 0;
+      height: 50px; background: white; z-index: 10;
     }
     .nav-item {
       flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
@@ -126,7 +130,10 @@
       box-shadow: var(--shadow);
     }
     .panel-card { border-left: none; overflow: hidden; }
-    .panel-card-title { font-size: 16px; font-weight: 600; color: white; margin: -12px -12px 8px -12px; padding: 10px 12px; background: var(--primary); border-radius: var(--radius) var(--radius) 0 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+    .panel-card-title { font-size: 16px; font-weight: 600; color: white; margin: -12px -12px 8px -12px; padding: 10px 12px; background: var(--primary); border-radius: var(--radius) var(--radius) 0 0; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    .panel-icon { flex-shrink: 0; }
+    img.panel-icon { filter: invert(1) drop-shadow(0 0 0 white); }
+    .panel-card-title span { flex: 1; }
     .panel-collapse-btn { background: none; border: none; cursor: pointer; padding: 4px; transition: transform 0.2s; }
     .panel-collapse-btn svg { display: block; }
     .panel-collapse-btn.collapsed { transform: rotate(90deg); }
@@ -138,11 +145,13 @@
     .panel-card-list li:first-child { border-top: none; }
     .panel-card-list li.analysis-name { font-weight: 600; padding-top: 20px; padding-bottom: 4px; border-top: 1px solid var(--accent-line); margin-top: 8px; }
     .panel-card-list li.analysis-name:first-child { padding-top: 6px; border-top: none; margin-top: 0; }
-    .panel-card-list li.detail-line { border-top: none; padding: 3px 0 3px 12px; font-size: 16px; color: var(--gray-400); line-height: 1.65; }
+    .panel-card-list li.detail-line { border-top: none; padding: 3px 0; font-size: 16px; color: var(--gray-400); line-height: 1.65; }
     .panel-card-list li.detail-line.long-name { font-style: italic; color: var(--gray-400); }
     .panel-card-list li.detail-line.description { color: var(--gray-500); padding-top: 2px; }
-    .panel-card-list li.detail-line.scientific { color: var(--gray-500); padding-top: 6px; cursor: pointer; max-height: 6.6em; overflow: hidden; position: relative; }
+    .panel-card-list li.detail-line.scientific { color: var(--gray-500); padding-top: 2px; cursor: pointer; max-height: 4.95em; overflow: hidden; position: relative; }
+    .panel-card-list li.detail-line.scientific::after { content: "..."; position: absolute; bottom: 0; left: 0; right: 0; height: 1.65em; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,1) 100%); display: flex; align-items: flex-end; justify-content: center; color: var(--primary); font-size: 22px; font-weight: 700; letter-spacing: 3px; padding-bottom: 0; }
     .panel-card-list li.detail-line.scientific.expanded { max-height: none; }
+    .panel-card-list li.detail-line.scientific.expanded::after { display: none; }
     .panel-card-list li.detail-line.why-line { color: var(--gray-500); padding-top: 10px; }
     .panel-card-list li.detail-line.freq-line { color: var(--gray-500); padding-top: 4px; padding-bottom: 8px; }
     .detail-icon { float: left; margin: 2px 6px 4px 0; }
@@ -165,7 +174,7 @@
 <body>
   <div class="app">
     <header class="header">
-      <h1>Blood Tests
+      <h1>Blood Tests <span id="branch-badge" class="branch-badge">DEVEL</span>
         <div id="build-info" style="font-size:10px;font-weight:400;opacity:0.6;margin-top:2px"><!--BUILD_INFO--></div>
       </h1>
       <div class="header-controls">
@@ -205,6 +214,15 @@
         <div id="planned-list" class="card-list"><div class="loading">Loading...</div></div>
       </div>
 
+      <div id="view-analytics" class="view">
+        <h2 class="section-title">Analytics</h2>
+        <div class="empty-state" style="padding:60px 20px">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--gray-300)" stroke-width="1.5" style="margin-bottom:16px"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p style="font-size:16px;color:var(--gray-400);margin-bottom:8px">Under Construction</p>
+          <p style="font-size:14px;color:var(--gray-300)">Charts, calculated indexes, and trend analysis coming soon.</p>
+        </div>
+      </div>
+
     </main>
 
     <nav class="bottom-nav">
@@ -229,6 +247,12 @@
           <line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
         <span id="nav-planned-label">Planned</span>
+      </button>
+      <button id="nav-analytics" class="nav-item" onclick="showView('analysis')">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="nav-analytics-label">Analytics</span>
       </button>
     </nav>
   </div>
@@ -343,11 +367,7 @@
     function getAnalysisName(loinc) {
       const a = analysesCatalog[loinc];
       if (!a) return loinc;
-      if (currentLang !== 'en' && a.lang[currentLang]) {
-        const abbr = a.displayName.match(/\(([^)]+)\)$/);
-        const short = abbr ? abbr[1] : a.displayName;
-        return a.lang[currentLang] + ' / ' + short;
-      }
+      if (currentLang !== 'en' && a.lang[currentLang]) return a.lang[currentLang];
       return a.displayName;
     }
 
@@ -483,6 +503,13 @@
     }
 
     // --- Panels page ---
+    function panelIconSvg(p) {
+      if (p.iconFile) return `<img class="panel-icon" src="icons/${p.iconFile}" width="32" height="32" alt="">`;
+      if (!p.icon) return '';
+      const vb = p.iconViewBox || '0 0 24 24';
+      return `<svg class="panel-icon" viewBox="${vb}" width="32" height="32" fill="none">${p.icon}</svg>`;
+    }
+
     function getPanelAnalyses(p) {
       if (p.sections) {
         return p.sections.flatMap(s => s.loincs.map(l => analysesCatalog[l]).filter(Boolean));
@@ -529,7 +556,9 @@
           if (inf.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(inf.why)}</li>`;
           if (inf.frequency) extra += `<li class="detail-line freq-line">${clockIcon}${escHtml(t('frequencyPrefix'))} ${escHtml(formatFrequencyText(inf.frequency))}</li>`;
         }
-        return `<li class="analysis-name"><div>${escHtml(getAnalysisName(a.loinc))}</div><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal;white-space:nowrap">${escHtml(a.loinc)}</a></div></li>${extra}`;
+        const translatedName = getAnalysisName(a.loinc);
+        const engPrefix = (currentLang !== 'en' && !translatedName.includes(a.displayName)) ? escHtml(a.displayName) + ', ' : '';
+        return `<li class="analysis-name"><div>${escHtml(getAnalysisName(a.loinc))}</div><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><span class="result-loinc" style="font-weight:normal;font-style:italic">${engPrefix}${escHtml(a.longCommonName)}</span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal;white-space:nowrap">${escHtml(a.loinc)}</a></div></li>${extra}`;
       }
       if (panelViewMode === 'compact') {
         return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:400">${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>`;
@@ -545,7 +574,7 @@
       }
 
       const collapseAllButton = panelViewMode === 'detailed'
-        ? `<button class="view-toggle-btn utility" onclick="collapseAllPanels()">Collapse all panels</button>`
+        ? `<button class="view-toggle-btn utility" onclick="toggleAllPanels()">Collapse / Expand all</button>`
         : '';
 
       const toggleHtml = `<div class="view-toggle">
@@ -562,14 +591,14 @@
           const count = getPanelAnalyses(p).length;
           return `
             <div class="panel-card" style="cursor:pointer;--panel-color:${p.color || '#d1d5db'}" onclick="showPanelDetail(${i})">
-              <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
+              <div class="panel-card-title">${panelIconSvg(p)}<span>${escHtml(getPanelName(p))}</span></div>
               <div class="panel-card-body"><div class="panel-card-meta" style="font-size:12px;color:var(--gray-400)">${count} ${t('analyses')}</div></div>
             </div>`;
         }).join('')}</div>`;
       } else if (panelViewMode === 'compact') {
         container.innerHTML = toggleHtml + `<div class="${gridClass}">${panelsCache.map(p => `
           <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
-            <div class="panel-card-title"><span>${escHtml(getPanelName(p))}</span></div>
+            <div class="panel-card-title">${panelIconSvg(p)}<span>${escHtml(getPanelName(p))}</span></div>
             <div class="panel-card-body"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
           </div>
         `).join('')}</div>`;
@@ -578,15 +607,39 @@
           const count = getPanelAnalyses(p).length;
           return `
           <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
-            <div class="panel-card-title" onclick="togglePanel(${i})"><span>${escHtml(getPanelName(p))}</span><button class="panel-collapse-btn" id="pcb-${i}"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l4 4 4-4"/></svg></button></div>
+            <div class="panel-card-title" onclick="togglePanel(${i})">${panelIconSvg(p)}<span>${escHtml(getPanelName(p))}</span><button class="panel-collapse-btn" id="pcb-${i}"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l4 4 4-4"/></svg></button></div>
             <div class="panel-card-body" id="pcbody-${i}"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
             <div class="panel-card-collapsed" id="pccol-${i}" style="display:none"><div class="panel-card-meta" style="font-size:12px;color:var(--gray-400);padding:4px 0">${count} ${t('analyses')}</div></div>
           </div>`;
         }).join('')}</div>`;
+        setTimeout(applyCollapsedState, 0);
       }
     }
 
+    function getCollapsedPanels() {
+      try { return JSON.parse(localStorage.getItem('bloodtests_collapsed') || '{}'); } catch(e) { return {}; }
+    }
+
+    function saveCollapsedPanels(state) {
+      localStorage.setItem('bloodtests_collapsed', JSON.stringify(state));
+    }
+
+    function applyCollapsedState() {
+      const state = getCollapsedPanels();
+      panelsCache.forEach((p, i) => {
+        if (state[p.id]) {
+          const body = document.getElementById('pcbody-' + i);
+          const btn = document.getElementById('pcb-' + i);
+          const col = document.getElementById('pccol-' + i);
+          if (body) body.classList.add('collapsed');
+          if (btn) btn.classList.add('collapsed');
+          if (col) col.style.display = 'block';
+        }
+      });
+    }
+
     function togglePanel(index) {
+      const p = panelsCache[index];
       const body = document.getElementById('pcbody-' + index);
       const btn = document.getElementById('pcb-' + index);
       const col = document.getElementById('pccol-' + index);
@@ -595,18 +648,32 @@
       body.classList.toggle('collapsed');
       btn.classList.toggle('collapsed');
       if (col) col.style.display = isCollapsed ? 'block' : 'none';
+      const state = getCollapsedPanels();
+      if (isCollapsed) { state[p.id] = true; } else { delete state[p.id]; }
+      saveCollapsedPanels(state);
     }
 
-    function collapseAllPanels() {
-      panelsCache.forEach((_, index) => {
-        const body = document.getElementById('pcbody-' + index);
-        const btn = document.getElementById('pcb-' + index);
-        const col = document.getElementById('pccol-' + index);
+    function toggleAllPanels() {
+      const state = getCollapsedPanels();
+      const allCollapsed = panelsCache.every(p => state[p.id]);
+      const newState = {};
+      panelsCache.forEach((p, i) => {
+        const body = document.getElementById('pcbody-' + i);
+        const btn = document.getElementById('pcb-' + i);
+        const col = document.getElementById('pccol-' + i);
         if (!body || !btn) return;
-        body.classList.add('collapsed');
-        btn.classList.add('collapsed');
-        if (col) col.style.display = 'block';
+        if (allCollapsed) {
+          body.classList.remove('collapsed');
+          btn.classList.remove('collapsed');
+          if (col) col.style.display = 'none';
+        } else {
+          body.classList.add('collapsed');
+          btn.classList.add('collapsed');
+          if (col) col.style.display = 'block';
+          newState[p.id] = true;
+        }
       });
+      saveCollapsedPanels(newState);
     }
 
     function showPanelDetail(index) {
@@ -616,7 +683,7 @@
       panelViewMode = 'detailed';
       document.getElementById('panel-detail-content').innerHTML = `
         <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
-          <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
+          <div class="panel-card-title">${panelIconSvg(p)}<span>${escHtml(getPanelName(p))}</span></div>
           <div class="panel-card-body"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
         </div>
       `;

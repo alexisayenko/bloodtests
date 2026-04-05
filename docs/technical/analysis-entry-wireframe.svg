@@ -1,34 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500" font-family="'Segoe Print', 'Comic Sans MS', cursive">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" width="700" height="520" font-family="'Segoe Print', 'Comic Sans MS', cursive">
   <!-- Entry box -->
-  <rect x="50" y="40" width="480" height="350" rx="12" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="50" y="40" width="440" height="370" rx="12" fill="none" stroke="#333" stroke-width="2"/>
 
-  <!-- Display Name (left, bold) -->
-  <text x="70" y="78" font-size="18" fill="#333" font-weight="bold" font-style="italic">Display Name</text>
+  <!-- Display Name (left, bold, larger) -->
+  <text x="70" y="80" font-size="22" fill="#333" font-weight="bold" font-style="italic">Display Name</text>
 
-  <!-- LOINC Code (right, grey) -->
-  <text x="430" y="78" font-size="16" fill="#999" font-style="italic">LOINC Code</text>
+  <!-- Acronyms and synonyms -->
+  <text x="70" y="105" font-size="15" fill="#333" font-style="italic">Acronyms and other synonyms in English</text>
 
-  <!-- Long Common Name, synonyms (grey) -->
-  <text x="70" y="108" font-size="14" fill="#999" font-style="italic">Long Common Name, other synonyms and</text>
-  <text x="70" y="128" font-size="14" fill="#999" font-style="italic">acronyms in English</text>
+  <!-- Long Common Name (grey) + LOINC Code (right, grey) -->
+  <text x="70" y="130" font-size="14" fill="#999" font-style="italic">Long Common Name</text>
+  <text x="400" y="130" font-size="14" fill="#999" font-style="italic">LOINC Code</text>
 
-  <!-- Simple description (2-3 lines) -->
+  <!-- Simple description -->
   <text x="70" y="162" font-size="15" fill="#333" font-style="italic">Simple description of the analysis.</text>
-  <text x="70" y="182" font-size="15" fill="#333" font-style="italic">Taking up to three lines max.</text>
+  <text x="70" y="182" font-size="15" fill="#333" font-style="italic">Taking several lines.</text>
 
-  <!-- Scientific description (several lines) -->
-  <text x="70" y="216" font-size="15" fill="#333" font-style="italic">Scientific description of the analysis taken</text>
-  <text x="70" y="236" font-size="15" fill="#333" font-style="italic">from the LOINC website. Might take up to</text>
-  <text x="70" y="256" font-size="15" fill="#333" font-style="italic">several lines.</text>
+  <!-- Scientific description with icon -->
+  <rect x="70" y="205" width="14" height="14" rx="3" fill="none" stroke="#333" stroke-width="1.2"/>
+  <text x="92" y="218" font-size="15" fill="#333" font-style="italic">Scientific description of the analysis taken</text>
+  <text x="92" y="238" font-size="15" fill="#333" font-style="italic">from the LOINC website. Might take up to</text>
+  <text x="92" y="258" font-size="15" fill="#333" font-style="italic">several lines.</text>
+
+  <!-- Ellipsis -->
+  <text x="240" y="280" font-size="22" fill="#333" font-weight="bold" letter-spacing="3">...</text>
+
+  <!-- Arrow to "Expand Scientific Description" -->
+  <line x1="270" y1="275" x2="510" y2="258" stroke="#333" stroke-width="1" marker-end="url(#arr)"/>
+  <text x="520" y="248" font-size="16" fill="#333" font-style="italic">Expand</text>
+  <text x="520" y="268" font-size="16" fill="#333" font-style="italic">Scientific</text>
+  <text x="520" y="288" font-size="16" fill="#333" font-style="italic">Description</text>
 
   <!-- Why icon + text -->
-  <rect x="70" y="284" width="16" height="16" rx="3" fill="none" stroke="#333" stroke-width="1.5"/>
-  <text x="95" y="298" font-size="15" fill="#333" font-style="italic">Why to do, under which conditions</text>
+  <rect x="70" y="302" width="14" height="14" rx="3" fill="none" stroke="#333" stroke-width="1.2"/>
+  <text x="92" y="315" font-size="15" fill="#333" font-style="italic">Why to do, under which conditions</text>
 
   <!-- How often icon + text -->
-  <rect x="70" y="318" width="16" height="16" rx="3" fill="none" stroke="#333" stroke-width="1.5"/>
-  <text x="95" y="332" font-size="15" fill="#333" font-style="italic">How often to do</text>
+  <rect x="70" y="334" width="14" height="14" rx="3" fill="none" stroke="#333" stroke-width="1.2"/>
+  <text x="92" y="347" font-size="15" fill="#333" font-style="italic">How often to do</text>
 
   <!-- Title -->
-  <text x="80" y="460" font-size="64" fill="#333" font-weight="bold">Analysis Entry</text>
+  <text x="80" y="480" font-size="64" fill="#333" font-weight="bold">Analysis Entry</text>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
 </svg>
