@@ -916,5 +916,131 @@
       "ru-RU": "Креатинкиназа",
       "uk-UA": "Креатинкіназа"
     }
+  },
+  {
+    "loinc": "751-8",
+    "longCommonName": "Neutrophils [#/volume] in Blood by Automated count",
+    "displayName": "Neutrophils (NEUT#)",
+    "lang": { "ru-RU": "Нейтрофилы (абс.)", "uk-UA": "Нейтрофіли (абс.)" }
+  },
+  {
+    "loinc": "731-0",
+    "longCommonName": "Lymphocytes [#/volume] in Blood by Automated count",
+    "displayName": "Lymphocytes (LYMPH#)",
+    "lang": { "ru-RU": "Лимфоциты (абс.)", "uk-UA": "Лімфоцити (абс.)" }
+  },
+  {
+    "loinc": "742-7",
+    "longCommonName": "Monocytes [#/volume] in Blood by Automated count",
+    "displayName": "Monocytes (MONO#)",
+    "lang": { "ru-RU": "Моноциты (абс.)", "uk-UA": "Моноцити (абс.)" }
+  },
+  {
+    "loinc": "711-2",
+    "longCommonName": "Eosinophils [#/volume] in Blood by Automated count",
+    "displayName": "Eosinophils (EO#)",
+    "lang": { "ru-RU": "Эозинофилы (абс.)", "uk-UA": "Еозинофіли (абс.)" }
+  },
+  {
+    "loinc": "704-7",
+    "longCommonName": "Basophils [#/volume] in Blood by Automated count",
+    "displayName": "Basophils (BASO#)",
+    "lang": { "ru-RU": "Базофилы (абс.)", "uk-UA": "Базофіли (абс.)" }
+  },
+  {
+    "loinc": "770-8",
+    "longCommonName": "Neutrophils/100 leukocytes in Blood by Automated count",
+    "displayName": "Neutrophils (NEUT%)",
+    "lang": { "ru-RU": "Нейтрофилы (%)", "uk-UA": "Нейтрофіли (%)" }
+  },
+  {
+    "loinc": "736-9",
+    "longCommonName": "Lymphocytes/100 leukocytes in Blood by Automated count",
+    "displayName": "Lymphocytes (LYMPH%)",
+    "lang": { "ru-RU": "Лимфоциты (%)", "uk-UA": "Лімфоцити (%)" }
+  },
+  {
+    "loinc": "5905-5",
+    "longCommonName": "Monocytes/100 leukocytes in Blood by Automated count",
+    "displayName": "Monocytes (MONO%)",
+    "lang": { "ru-RU": "Моноциты (%)", "uk-UA": "Моноцити (%)" }
+  },
+  {
+    "loinc": "713-8",
+    "longCommonName": "Eosinophils/100 leukocytes in Blood by Automated count",
+    "displayName": "Eosinophils (EO%)",
+    "lang": { "ru-RU": "Эозинофилы (%)", "uk-UA": "Еозинофіли (%)" }
+  },
+  {
+    "loinc": "706-2",
+    "longCommonName": "Basophils/100 leukocytes in Blood by Automated count",
+    "displayName": "Basophils (BASO%)",
+    "lang": { "ru-RU": "Базофилы (%)", "uk-UA": "Базофіли (%)" }
+  },
+  {
+    "loinc": "787-2",
+    "longCommonName": "Mean corpuscular volume [Entitic volume] by Automated count",
+    "displayName": "MCV",
+    "lang": { "ru-RU": "Средний объем эритроцита (MCV)", "uk-UA": "Середній об'єм еритроцита (MCV)" }
+  },
+  {
+    "loinc": "785-6",
+    "longCommonName": "Mean corpuscular hemoglobin [Entitic mass] by Automated count",
+    "displayName": "MCH",
+    "lang": { "ru-RU": "Среднее содержание гемоглобина (MCH)", "uk-UA": "Середній вміст гемоглобіну (MCH)" }
+  },
+  {
+    "loinc": "786-4",
+    "longCommonName": "Mean corpuscular hemoglobin concentration [Mass/volume] by Automated count",
+    "displayName": "MCHC",
+    "lang": { "ru-RU": "Средняя концентрация гемоглобина (MCHC)", "uk-UA": "Середня концентрація гемоглобіну (MCHC)" }
+  },
+  {
+    "loinc": "788-0",
+    "longCommonName": "Erythrocyte distribution width [Ratio] by Automated count",
+    "displayName": "RDW-CV",
+    "lang": { "ru-RU": "Ширина распределения эритроцитов (RDW-CV)", "uk-UA": "Ширина розподілу еритроцитів (RDW-CV)" }
+  },
+  {
+    "loinc": "21000-5",
+    "longCommonName": "Erythrocyte distribution width [Entitic volume] by Automated count",
+    "displayName": "RDW-SD",
+    "lang": { "ru-RU": "Ширина распределения эритроцитов (RDW-SD)", "uk-UA": "Ширина розподілу еритроцитів (RDW-SD)" }
+  },
+  {
+    "loinc": "777-3",
+    "longCommonName": "Platelets [#/volume] in Blood by Automated count",
+    "displayName": "Platelets (PLT)",
+    "lang": { "ru-RU": "Тромбоциты", "uk-UA": "Тромбоцити" }
+  },
+  {
+    "loinc": "32623-1",
+    "longCommonName": "Mean platelet volume [Entitic volume] in Blood by Automated count",
+    "displayName": "MPV",
+    "lang": { "ru-RU": "Средний объем тромбоцита (MPV)", "uk-UA": "Середній об'єм тромбоцита (MPV)" }
+  },
+  {
+    "loinc": "32207-3",
+    "longCommonName": "Platelet distribution width [Entitic volume] in Blood by Automated count",
+    "displayName": "PDW",
+    "lang": { "ru-RU": "Ширина распределения тромбоцитов (PDW)", "uk-UA": "Ширина розподілу тромбоцитів (PDW)" }
+  },
+  {
+    "loinc": "58410-2",
+    "longCommonName": "Platelet large cell ratio in Blood by Automated count",
+    "displayName": "P-LCR",
+    "lang": { "ru-RU": "Коэффициент больших тромбоцитов (P-LCR)", "uk-UA": "Коефіцієнт великих тромбоцитів (P-LCR)" }
+  },
+  {
+    "loinc": "74464-9",
+    "longCommonName": "Platelet large cells [#/volume] in Blood by Automated count",
+    "displayName": "P-LCC",
+    "lang": { "ru-RU": "Большие тромбоциты (P-LCC)", "uk-UA": "Великі тромбоцити (P-LCC)" }
+  },
+  {
+    "loinc": "61928-1",
+    "longCommonName": "Plateletcrit [Volume Fraction] in Blood by Automated count",
+    "displayName": "Plateletcrit (PCT)",
+    "lang": { "ru-RU": "Тромбокрит (PCT)", "uk-UA": "Тромбокрит (PCT)" }
   }
 ]

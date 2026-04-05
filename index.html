@@ -89,13 +89,17 @@
     .result-value { font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
     .result-ref { font-size: 12px; color: var(--gray-400); text-align: right; min-width: 80px; }
 
-    .panels-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .panels-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
     .panel-card {
       background: white; border-radius: var(--radius); padding: 12px;
-      box-shadow: var(--shadow); cursor: pointer;
+      box-shadow: var(--shadow);
     }
-    .panel-card-title { font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 2px; }
-    .panel-card-meta { font-size: 12px; color: var(--gray-400); }
+    .panel-card-title { font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+    .panel-card-list { list-style: none; }
+    .panel-card-list li { font-size: 13px; color: var(--gray-700); padding: 3px 0; border-top: 1px solid var(--gray-100); }
+    .panel-card-list li:first-child { border-top: none; }
+    .panel-card-section { font-size: 12px; font-weight: 600; color: var(--gray-500); padding: 6px 0 2px; border-top: 2px solid var(--gray-200); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+    .panel-card-section:first-child { border-top: none; margin-top: 0; }
 
     .panel-section { margin-bottom: 24px; }
     .panel-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; color: var(--primary); }
@@ -124,11 +128,6 @@
     <main class="main">
       <div id="view-panels" class="view active">
         <div id="panels-full-content"><div class="loading">Loading...</div></div>
-      </div>
-
-      <div id="view-panel-detail" class="view">
-        <button class="btn-back" onclick="showView('panels')">&larr; Back</button>
-        <div id="panel-detail-content"></div>
       </div>
 
       <div id="view-results" class="view">
@@ -208,7 +207,7 @@
       document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
       if (name === 'results' || name === 'detail') {
         document.getElementById('nav-results').classList.add('active');
-      } else if (name === 'panels' || name === 'panel-detail') {
+      } else if (name === 'panels') {
         document.getElementById('nav-panels').classList.add('active');
       } else {
         document.getElementById('nav-' + name).classList.add('active');
@@ -359,38 +358,25 @@
         container.innerHTML = `<div class="empty-state">${t('noPanels')}</div>`;
         return;
       }
-      container.innerHTML = `<div class="panels-grid">${panelsCache.map((p, i) => {
-        const count = p.loincs.filter(l => analysesCatalog[l]).length;
+      container.innerHTML = `<div class="panels-grid">${panelsCache.map(p => {
+        let listHtml = '';
+        if (p.sections) {
+          listHtml = p.sections.map(s => {
+            const sName = (currentLang !== 'en' && s.lang && s.lang[currentLang]) ? s.lang[currentLang] : s.name;
+            const items = s.loincs.map(l => analysesCatalog[l]).filter(Boolean);
+            return `<li class="panel-card-section">${escHtml(sName)}</li>` +
+              items.map(a => `<li>${escHtml(getAnalysisName(a.loinc))}</li>`).join('');
+          }).join('');
+        } else {
+          const items = p.loincs.map(l => analysesCatalog[l]).filter(Boolean);
+          listHtml = items.map(a => `<li>${escHtml(getAnalysisName(a.loinc))}</li>`).join('');
+        }
         return `
-          <div class="panel-card" onclick="showPanelDetail(${i})">
+          <div class="panel-card">
             <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
-            <div class="panel-card-meta">${count} ${t('analyses')}</div>
+            <ul class="panel-card-list">${listHtml}</ul>
           </div>`;
       }).join('')}</div>`;
-    }
-
-    function showPanelDetail(index) {
-      const p = panelsCache[index];
-      if (!p) return;
-      const items = p.loincs.map(loinc => analysesCatalog[loinc]).filter(Boolean);
-      document.getElementById('panel-detail-content').innerHTML = `
-        <div class="detail-header">
-          <h2>${escHtml(getPanelName(p))}</h2>
-          <div class="panel-subtitle">${items.length} ${t('analyses')}</div>
-        </div>
-        <div class="results-table" style="margin-top:12px">
-          ${items.map(a => `
-            <div class="results-row" style="grid-template-columns: 1fr auto">
-              <span class="result-name">
-                ${escHtml(getAnalysisName(a.loinc))}
-                <br><span class="result-loinc">${escHtml(a.longCommonName)}</span>
-              </span>
-              <span class="result-ref">${escHtml(a.loinc)}</span>
-            </div>
-          `).join('')}
-        </div>
-      `;
-      showView('panel-detail');
     }
 
     // --- Init ---
