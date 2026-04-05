@@ -162,10 +162,10 @@
       "uk-UA": "Глюкоза натще"
     },
     "info": {
-      "description": "Fasting blood sugar level measured in whole blood.",
+      "description": "Your body's primary fuel — the sugar that every cell burns for energy. Blood glucose reflects the real-time balance between what you eat, what your cells consume, and how effectively insulin is doing its job. Measuring it fasting reveals how well your body maintains this balance overnight without food.",
       "why": "Screens for diabetes and prediabetes and monitors glycemic control.",
       "frequency": "Annually; every 3 months if diabetic",
-      "scientific": "Glucose (C6H12O6) is a simple monosaccharide and monomer of carbohydrates. Glucose provides energy for cellular processes and aids metabolism within the body. When food is ingested, the carbohydrates within the food are broken down into glucose molecules. Blood glucose content is significant in determining an individual\u2019s overall state of health. An elevated blood glucose level is called hyperglycemia and a deficient blood glucose level is called hypoglycemia. Type 1 diabetes is caused by the immune system attacking pancreatic beta cells and Type 2 diabetes is caused by insulin resistance."
+      "scientific": "Glucose (C6H12O6) is a simple monosaccharide and monomer of carbohydrates. Glucose provides energy for cellular processes and aids metabolism within the body. When food is ingested, the carbohydrates within the food are broken down into glucose molecules. Blood glucose content is significant in determining an individual’s overall state of health. An elevated blood glucose level is called hyperglycemia and a deficient blood glucose level is called hypoglycemia. Type 1 diabetes is caused by the immune system attacking pancreatic beta cells and Type 2 diabetes is caused by insulin resistance."
     }
   },
   {
@@ -289,7 +289,7 @@
       "uk-UA": "Інсулін"
     },
     "info": {
-      "description": "Hormone produced by the pancreas that regulates blood glucose uptake by cells.",
+      "description": "The key hormone that unlocks your cells to let glucose in for energy. Produced by the pancreas after eating, insulin acts like a master switch for energy storage — when it works well, blood sugar stays stable; when it doesn't, glucose builds up in the blood leading to diabetes.",
       "why": "Assesses insulin resistance, helps diagnose type 2 diabetes and insulinomas.",
       "frequency": "As clinically indicated",
       "scientific": "A protein hormone secreted by beta cells of the pancreas. Insulin plays a major role in the regulation of glucose metabolism, generally promoting the cellular utilization of glucose. It is also an important regulator of protein and lipid metabolism."
@@ -332,7 +332,7 @@
       "uk-UA": "Амілаза"
     },
     "info": {
-      "description": "Enzyme produced by the pancreas and salivary glands that breaks down starches.",
+      "description": "A digestive enzyme from the pancreas and salivary glands that breaks down starches into simple sugars your body can absorb. When the pancreas is inflamed or damaged, amylase leaks into the bloodstream — elevated levels signal that something is stressing this vital organ.",
       "why": "Diagnoses and monitors pancreatitis and other pancreatic disorders.",
       "frequency": "As clinically indicated",
       "scientific": "Amylase is a digestive enzyme produced primarily by the pancreas and salivary glands that catalyzes the hydrolysis of starch into sugars. Serum amylase is elevated in acute pancreatitis, typically rising within 6-12 hours of onset and returning to normal within 3-5 days. Elevated levels may also occur in salivary gland disorders, intestinal obstruction, and renal insufficiency. Amylase is less specific for pancreatic disease than lipase."
@@ -606,7 +606,7 @@
       "uk-UA": "Глікований гемоглобін (NGSP)"
     },
     "info": {
-      "description": "Reflects average blood glucose over 2-3 months, reported as a percentage (NGSP standard).",
+      "description": "A 'memory' of your blood sugar over the past 2-3 months, recorded in your red blood cells. As glucose circulates, it sticks to hemoglobin — the more sugar in your blood over time, the higher this number. Unlike a single glucose test, HbA1c reveals the bigger picture of metabolic control.",
       "why": "Diagnoses diabetes and monitors long-term glycemic control.",
       "frequency": "Every 3-6 months for diabetics; annually for screening",
       "scientific": "Hemoglobin A1c (HbA1c) reflects average blood glucose levels over the preceding 2-3 months by measuring the percentage of hemoglobin that is glycated. The NGSP (National Glycohemoglobin Standardization Program) method reports results as a percentage, standardized to the DCCT reference. An HbA1c of 6.5% or higher is diagnostic of diabetes. Results may be affected by hemoglobin variants, iron deficiency, and certain ethnic backgrounds."
@@ -621,7 +621,7 @@
       "uk-UA": "Глікований гемоглобін (IFCC)"
     },
     "info": {
-      "description": "Reflects average blood glucose over 2-3 months, reported in mmol/mol (IFCC standard).",
+      "description": "The same blood sugar memory as HbA1c but reported in international SI units (mmol/mol) instead of percentage. This is the globally standardized reference method, making results comparable across laboratories worldwide.",
       "why": "Diagnoses diabetes and monitors long-term glycemic control using the international reference method.",
       "frequency": "Every 3-6 months for diabetics; annually for screening",
       "scientific": "The IFCC (International Federation of Clinical Chemistry) reference method for HbA1c reports results in SI units (mmol/mol). All manufacturers should implement traceability to the IFCC reference system. The IFCC value can be converted to NGSP units using the equation: NGSP = (0.09148 x IFCC) + 2.152. For example, 6.5% NGSP equals approximately 48 mmol/mol IFCC."
@@ -636,10 +636,10 @@
       "uk-UA": "Глікований альбумін"
     },
     "info": {
-      "description": "Albumin modified by glucose, reflecting average blood sugar over the past 2-3 weeks.",
+      "description": "A shorter-term blood sugar memory — reflecting the past 2-3 weeks instead of months. Since albumin lives shorter than hemoglobin, this test catches recent changes in glucose control faster. Especially useful when HbA1c is unreliable, such as in kidney disease or blood disorders.",
       "why": "Monitors short-term glycemic control when HbA1c is unreliable (e.g., hemoglobin disorders).",
       "frequency": "Every 2-4 weeks, as clinically indicated",
-      "scientific": "Glycated albumin (GA) is formed by non-enzymatic glycation of serum albumin and reflects average blood glucose levels over the preceding 2-3 weeks, corresponding to albumin\u2019s half-life. GA is useful as a short-term glycemic control marker, particularly in patients where HbA1c may be unreliable, such as those with hemoglobin variants, hemolytic anemia, or chronic kidney disease on dialysis. GA responds more rapidly to changes in glycemic control than HbA1c."
+      "scientific": "Glycated albumin (GA) is formed by non-enzymatic glycation of serum albumin and reflects average blood glucose levels over the preceding 2-3 weeks, corresponding to albumin’s half-life. GA is useful as a short-term glycemic control marker, particularly in patients where HbA1c may be unreliable, such as those with hemoglobin variants, hemolytic anemia, or chronic kidney disease on dialysis. GA responds more rapidly to changes in glycemic control than HbA1c."
     }
   },
   {
@@ -651,7 +651,7 @@
       "uk-UA": "Фруктозамін"
     },
     "info": {
-      "description": "Glycated serum proteins reflecting average blood glucose over the past 2-3 weeks.",
+      "description": "Another short-term glucose tracker that captures the past 2-3 weeks of blood sugar levels by measuring sugar attached to blood proteins. Useful for seeing how quickly diet changes or new medications are working, without waiting months for HbA1c to shift.",
       "why": "Provides intermediate-term glycemic monitoring when HbA1c is unreliable.",
       "frequency": "Every 2-4 weeks, as clinically indicated",
       "scientific": "Fructosamine is a glycated serum protein that reflects average blood glucose levels over the preceding 2-3 weeks. It is formed by the non-enzymatic glycation of serum proteins, primarily albumin. Fructosamine is useful for monitoring short-term changes in glycemic control and in situations where HbA1c may be unreliable, such as hemoglobinopathies, pregnancy, or rapidly changing glucose levels."
@@ -666,7 +666,7 @@
       "uk-UA": "C-пептид"
     },
     "info": {
-      "description": "Byproduct of insulin production that reflects how much insulin the pancreas is making.",
+      "description": "A direct window into how much insulin your pancreas is actually producing. C-peptide is released in equal amounts with insulin but lasts longer in the blood, making it a more reliable measure. It helps distinguish whether the body has stopped making insulin (type 1 diabetes) or is making plenty but can't use it (type 2).",
       "why": "Differentiates type 1 from type 2 diabetes and evaluates residual beta-cell function.",
       "frequency": "As clinically indicated",
       "scientific": "C-peptide is a 31-amino acid polypeptide that is cleaved from proinsulin during the production of insulin in pancreatic beta cells. It is secreted in equimolar amounts with insulin but has a longer half-life, making it a more stable marker of endogenous insulin secretion. C-peptide measurement helps distinguish type 1 from type 2 diabetes, assess residual beta-cell function, and evaluate hypoglycemia causes including factitious insulin use."
@@ -681,7 +681,7 @@
       "uk-UA": "Ліпаза"
     },
     "info": {
-      "description": "Pancreatic enzyme that breaks down dietary fats into fatty acids.",
+      "description": "The pancreas's fat-digesting enzyme — it breaks dietary fats into absorbable fatty acids in the intestine. More specific to the pancreas than amylase, elevated lipase is the most reliable blood marker for pancreatitis and stays elevated longer, making it harder to miss.",
       "why": "Diagnoses acute pancreatitis; more specific to the pancreas than amylase.",
       "frequency": "As clinically indicated",
       "scientific": "Lipase is an enzyme produced by the pancreas that breaks down dietary triglycerides into fatty acids and glycerol. The enzyme travels from the pancreatic duct to the duodenum. Elevated lipase levels indicate pancreatic issues including pancreatic duct obstruction, pancreatic cancer, gall bladder inflammation, or kidney disease. Lipase is more specific and sensitive for acute pancreatitis than amylase, remaining elevated for a longer period."
@@ -1545,7 +1545,10 @@
     "loinc": "751-8",
     "longCommonName": "Neutrophils [#/volume] in Blood by Automated count",
     "displayName": "Neutrophils (NEUT#)",
-    "lang": { "ru-RU": "Нейтрофилы (абс.)", "uk-UA": "Нейтрофіли (абс.)" },
+    "lang": {
+      "ru-RU": "Нейтрофилы (абс.)",
+      "uk-UA": "Нейтрофіли (абс.)"
+    },
     "info": {
       "description": "Most abundant white blood cells, first responders to bacterial infections.",
       "why": "Detects bacterial infections, monitors chemotherapy effects, and evaluates immune status.",
@@ -1556,7 +1559,10 @@
     "loinc": "731-0",
     "longCommonName": "Lymphocytes [#/volume] in Blood by Automated count",
     "displayName": "Lymphocytes (LYMPH#)",
-    "lang": { "ru-RU": "Лимфоциты (абс.)", "uk-UA": "Лімфоцити (абс.)" },
+    "lang": {
+      "ru-RU": "Лимфоциты (абс.)",
+      "uk-UA": "Лімфоцити (абс.)"
+    },
     "info": {
       "description": "White blood cells responsible for adaptive immunity, including T-cells and B-cells.",
       "why": "Evaluates viral infections, immune deficiencies, and lymphoproliferative disorders.",
@@ -1567,7 +1573,10 @@
     "loinc": "742-7",
     "longCommonName": "Monocytes [#/volume] in Blood by Automated count",
     "displayName": "Monocytes (MONO#)",
-    "lang": { "ru-RU": "Моноциты (абс.)", "uk-UA": "Моноцити (абс.)" },
+    "lang": {
+      "ru-RU": "Моноциты (абс.)",
+      "uk-UA": "Моноцити (абс.)"
+    },
     "info": {
       "description": "Largest white blood cells that differentiate into macrophages to engulf pathogens and debris.",
       "why": "Helps diagnose chronic infections, inflammatory conditions, and blood disorders.",
@@ -1578,7 +1587,10 @@
     "loinc": "711-2",
     "longCommonName": "Eosinophils [#/volume] in Blood by Automated count",
     "displayName": "Eosinophils (EO#)",
-    "lang": { "ru-RU": "Эозинофилы (абс.)", "uk-UA": "Еозинофіли (абс.)" },
+    "lang": {
+      "ru-RU": "Эозинофилы (абс.)",
+      "uk-UA": "Еозинофіли (абс.)"
+    },
     "info": {
       "description": "White blood cells involved in allergic responses and defense against parasites.",
       "why": "Detects allergic conditions, parasitic infections, and eosinophilic disorders.",
@@ -1589,7 +1601,10 @@
     "loinc": "704-7",
     "longCommonName": "Basophils [#/volume] in Blood by Automated count",
     "displayName": "Basophils (BASO#)",
-    "lang": { "ru-RU": "Базофилы (абс.)", "uk-UA": "Базофіли (абс.)" },
+    "lang": {
+      "ru-RU": "Базофилы (абс.)",
+      "uk-UA": "Базофіли (абс.)"
+    },
     "info": {
       "description": "Rarest white blood cells that release histamine and play a role in allergic reactions.",
       "why": "Helps evaluate allergic conditions and myeloproliferative disorders.",
@@ -1600,7 +1615,10 @@
     "loinc": "770-8",
     "longCommonName": "Neutrophils/100 leukocytes in Blood by Automated count",
     "displayName": "Neutrophils (NEUT%)",
-    "lang": { "ru-RU": "Нейтрофилы (%)", "uk-UA": "Нейтрофіли (%)" },
+    "lang": {
+      "ru-RU": "Нейтрофилы (%)",
+      "uk-UA": "Нейтрофіли (%)"
+    },
     "info": {
       "description": "Percentage of white blood cells that are neutrophils.",
       "why": "Helps interpret the differential white blood cell count for infection or bone marrow assessment.",
@@ -1611,7 +1629,10 @@
     "loinc": "736-9",
     "longCommonName": "Lymphocytes/100 leukocytes in Blood by Automated count",
     "displayName": "Lymphocytes (LYMPH%)",
-    "lang": { "ru-RU": "Лимфоциты (%)", "uk-UA": "Лімфоцити (%)" },
+    "lang": {
+      "ru-RU": "Лимфоциты (%)",
+      "uk-UA": "Лімфоцити (%)"
+    },
     "info": {
       "description": "Percentage of white blood cells that are lymphocytes.",
       "why": "Aids in diagnosing viral infections, immune deficiencies, and lymphocytic disorders.",
@@ -1622,7 +1643,10 @@
     "loinc": "5905-5",
     "longCommonName": "Monocytes/100 leukocytes in Blood by Automated count",
     "displayName": "Monocytes (MONO%)",
-    "lang": { "ru-RU": "Моноциты (%)", "uk-UA": "Моноцити (%)" },
+    "lang": {
+      "ru-RU": "Моноциты (%)",
+      "uk-UA": "Моноцити (%)"
+    },
     "info": {
       "description": "Percentage of white blood cells that are monocytes.",
       "why": "Helps evaluate chronic infections, inflammatory conditions, and hematologic disorders.",
@@ -1633,7 +1657,10 @@
     "loinc": "713-8",
     "longCommonName": "Eosinophils/100 leukocytes in Blood by Automated count",
     "displayName": "Eosinophils (EO%)",
-    "lang": { "ru-RU": "Эозинофилы (%)", "uk-UA": "Еозинофіли (%)" },
+    "lang": {
+      "ru-RU": "Эозинофилы (%)",
+      "uk-UA": "Еозинофіли (%)"
+    },
     "info": {
       "description": "Percentage of white blood cells that are eosinophils.",
       "why": "Screens for allergic reactions, parasitic infections, and eosinophilic disorders.",
@@ -1644,7 +1671,10 @@
     "loinc": "706-2",
     "longCommonName": "Basophils/100 leukocytes in Blood by Automated count",
     "displayName": "Basophils (BASO%)",
-    "lang": { "ru-RU": "Базофилы (%)", "uk-UA": "Базофіли (%)" },
+    "lang": {
+      "ru-RU": "Базофилы (%)",
+      "uk-UA": "Базофіли (%)"
+    },
     "info": {
       "description": "Percentage of white blood cells that are basophils.",
       "why": "Helps evaluate allergic conditions and chronic myeloproliferative disorders.",
@@ -1655,7 +1685,10 @@
     "loinc": "787-2",
     "longCommonName": "Mean corpuscular volume [Entitic volume] by Automated count",
     "displayName": "MCV",
-    "lang": { "ru-RU": "Средний объем эритроцита (MCV)", "uk-UA": "Середній об'єм еритроцита (MCV)" },
+    "lang": {
+      "ru-RU": "Средний объем эритроцита (MCV)",
+      "uk-UA": "Середній об'єм еритроцита (MCV)"
+    },
     "info": {
       "description": "Average volume of a single red blood cell.",
       "why": "Classifies anemia as microcytic, normocytic, or macrocytic to guide diagnosis.",
@@ -1666,7 +1699,10 @@
     "loinc": "785-6",
     "longCommonName": "Mean corpuscular hemoglobin [Entitic mass] by Automated count",
     "displayName": "MCH",
-    "lang": { "ru-RU": "Среднее содержание гемоглобина (MCH)", "uk-UA": "Середній вміст гемоглобіну (MCH)" },
+    "lang": {
+      "ru-RU": "Среднее содержание гемоглобина (MCH)",
+      "uk-UA": "Середній вміст гемоглобіну (MCH)"
+    },
     "info": {
       "description": "Average amount of hemoglobin per red blood cell.",
       "why": "Helps classify anemia types and complements MCV in evaluating red cell disorders.",
@@ -1677,7 +1713,10 @@
     "loinc": "786-4",
     "longCommonName": "Mean corpuscular hemoglobin concentration [Mass/volume] by Automated count",
     "displayName": "MCHC",
-    "lang": { "ru-RU": "Средняя концентрация гемоглобина (MCHC)", "uk-UA": "Середня концентрація гемоглобіну (MCHC)" },
+    "lang": {
+      "ru-RU": "Средняя концентрация гемоглобина (MCHC)",
+      "uk-UA": "Середня концентрація гемоглобіну (MCHC)"
+    },
     "info": {
       "description": "Average concentration of hemoglobin within red blood cells.",
       "why": "Detects hypochromic anemias such as iron deficiency and hereditary spherocytosis.",
@@ -1688,7 +1727,10 @@
     "loinc": "788-0",
     "longCommonName": "Erythrocyte distribution width [Ratio] by Automated count",
     "displayName": "RDW-CV",
-    "lang": { "ru-RU": "Ширина распределения эритроцитов (RDW-CV)", "uk-UA": "Ширина розподілу еритроцитів (RDW-CV)" },
+    "lang": {
+      "ru-RU": "Ширина распределения эритроцитов (RDW-CV)",
+      "uk-UA": "Ширина розподілу еритроцитів (RDW-CV)"
+    },
     "info": {
       "description": "Coefficient of variation in red blood cell size, indicating size heterogeneity.",
       "why": "Helps differentiate anemia types; elevated in iron deficiency and mixed nutritional anemias.",
@@ -1699,7 +1741,10 @@
     "loinc": "21000-5",
     "longCommonName": "Erythrocyte distribution width [Entitic volume] by Automated count",
     "displayName": "RDW-SD",
-    "lang": { "ru-RU": "Ширина распределения эритроцитов (RDW-SD)", "uk-UA": "Ширина розподілу еритроцитів (RDW-SD)" },
+    "lang": {
+      "ru-RU": "Ширина распределения эритроцитов (RDW-SD)",
+      "uk-UA": "Ширина розподілу еритроцитів (RDW-SD)"
+    },
     "info": {
       "description": "Standard deviation of red blood cell volume distribution.",
       "why": "Provides a direct measure of red cell size variability to help classify anemias.",
@@ -1710,7 +1755,10 @@
     "loinc": "777-3",
     "longCommonName": "Platelets [#/volume] in Blood by Automated count",
     "displayName": "Platelets (PLT)",
-    "lang": { "ru-RU": "Тромбоциты", "uk-UA": "Тромбоцити" },
+    "lang": {
+      "ru-RU": "Тромбоциты",
+      "uk-UA": "Тромбоцити"
+    },
     "info": {
       "description": "Cell fragments essential for blood clotting and wound repair.",
       "why": "Detects thrombocytopenia or thrombocytosis and evaluates bleeding or clotting risk.",
@@ -1721,7 +1769,10 @@
     "loinc": "32623-1",
     "longCommonName": "Mean platelet volume [Entitic volume] in Blood by Automated count",
     "displayName": "MPV",
-    "lang": { "ru-RU": "Средний объем тромбоцита (MPV)", "uk-UA": "Середній об'єм тромбоцита (MPV)" },
+    "lang": {
+      "ru-RU": "Средний объем тромбоцита (MPV)",
+      "uk-UA": "Середній об'єм тромбоцита (MPV)"
+    },
     "info": {
       "description": "Average size of platelets, reflecting bone marrow platelet production activity.",
       "why": "Helps distinguish causes of abnormal platelet counts (production vs. destruction).",
@@ -1732,7 +1783,10 @@
     "loinc": "32207-3",
     "longCommonName": "Platelet distribution width [Entitic volume] in Blood by Automated count",
     "displayName": "PDW",
-    "lang": { "ru-RU": "Ширина распределения тромбоцитов (PDW)", "uk-UA": "Ширина розподілу тромбоцитів (PDW)" },
+    "lang": {
+      "ru-RU": "Ширина распределения тромбоцитов (PDW)",
+      "uk-UA": "Ширина розподілу тромбоцитів (PDW)"
+    },
     "info": {
       "description": "Measure of variation in platelet size within the blood.",
       "why": "Aids in differentiating reactive thrombocytosis from myeloproliferative disorders.",
@@ -1743,7 +1797,10 @@
     "loinc": "58410-2",
     "longCommonName": "Platelet large cell ratio in Blood by Automated count",
     "displayName": "P-LCR",
-    "lang": { "ru-RU": "Коэффициент больших тромбоцитов (P-LCR)", "uk-UA": "Коефіцієнт великих тромбоцитів (P-LCR)" },
+    "lang": {
+      "ru-RU": "Коэффициент больших тромбоцитов (P-LCR)",
+      "uk-UA": "Коефіцієнт великих тромбоцитів (P-LCR)"
+    },
     "info": {
       "description": "Percentage of platelets that exceed a defined large-size threshold.",
       "why": "Indicates increased platelet turnover and helps evaluate thrombocytopenic conditions.",
@@ -1754,7 +1811,10 @@
     "loinc": "74464-9",
     "longCommonName": "Platelet large cells [#/volume] in Blood by Automated count",
     "displayName": "P-LCC",
-    "lang": { "ru-RU": "Большие тромбоциты (P-LCC)", "uk-UA": "Великі тромбоцити (P-LCC)" },
+    "lang": {
+      "ru-RU": "Большие тромбоциты (P-LCC)",
+      "uk-UA": "Великі тромбоцити (P-LCC)"
+    },
     "info": {
       "description": "Absolute count of large platelets in the blood.",
       "why": "Supplements P-LCR to evaluate platelet production and destruction disorders.",
@@ -1765,7 +1825,10 @@
     "loinc": "61928-1",
     "longCommonName": "Plateletcrit [Volume Fraction] in Blood by Automated count",
     "displayName": "Plateletcrit (PCT)",
-    "lang": { "ru-RU": "Тромбокрит (PCT)", "uk-UA": "Тромбокрит (PCT)" },
+    "lang": {
+      "ru-RU": "Тромбокрит (PCT)",
+      "uk-UA": "Тромбокрит (PCT)"
+    },
     "info": {
       "description": "Percentage of blood volume occupied by platelets, analogous to hematocrit for red cells.",
       "why": "Provides an overall measure of platelet mass to evaluate bleeding and clotting risk.",
