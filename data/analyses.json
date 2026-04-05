@@ -43,5 +43,77 @@
       "ru-RU": "Лейкоциты",
       "uk-UA": "Лейкоцити"
     }
+  },
+  {
+    "loinc": "2991-8",
+    "longCommonName": "Testosterone Free [Mass/volume] in Serum or Plasma",
+    "displayName": "Testosterone, Free (FT)",
+    "lang": {
+      "ru-RU": "Тестостерон свободный",
+      "uk-UA": "Тестостерон вільний"
+    }
+  },
+  {
+    "loinc": "14913-8",
+    "longCommonName": "Testosterone [Mass/volume] in Serum or Plasma",
+    "displayName": "Testosterone (T)",
+    "lang": {
+      "ru-RU": "Тестостерон",
+      "uk-UA": "Тестостерон"
+    }
+  },
+  {
+    "loinc": "10501-5",
+    "longCommonName": "Luteinizing hormone [Units/volume] in Serum or Plasma",
+    "displayName": "Luteinizing Hormone (LH)",
+    "lang": {
+      "ru-RU": "Лютеинизирующий гормон",
+      "uk-UA": "Лютеїнізуючий гормон"
+    }
+  },
+  {
+    "loinc": "15067-2",
+    "longCommonName": "Follicle stimulating hormone [Units/volume] in Serum or Plasma",
+    "displayName": "Follicle Stimulating Hormone (FSH)",
+    "lang": {
+      "ru-RU": "Фолликулостимулирующий гормон",
+      "uk-UA": "Фолікулостимулюючий гормон"
+    }
+  },
+  {
+    "loinc": "35937",
+    "longCommonName": "Zinc [Mass/volume] in Serum or Plasma",
+    "displayName": "Zinc (Zn)",
+    "lang": {
+      "ru-RU": "Цинк",
+      "uk-UA": "Цинк"
+    }
+  },
+  {
+    "loinc": "15081-3",
+    "longCommonName": "Prolactin [Units/volume] in Serum or Plasma",
+    "displayName": "Total Prolactin (PRL)",
+    "lang": {
+      "ru-RU": "Пролактин",
+      "uk-UA": "Пролактин"
+    }
+  },
+  {
+    "loinc": "2339-0",
+    "longCommonName": "Glucose [Mass/volume] in Blood by Fasting",
+    "displayName": "Glucose, Fasting",
+    "lang": {
+      "ru-RU": "Глюкоза натощак",
+      "uk-UA": "Глюкоза натще"
+    }
+  },
+  {
+    "loinc": "17855-8",
+    "longCommonName": "Hemoglobin A1c/Hemoglobin.total in Blood by DCCT",
+    "displayName": "HbA1c (DCCT)",
+    "lang": {
+      "ru-RU": "Гликированный гемоглобин",
+      "uk-UA": "Глікований гемоглобін"
+    }
   }
 ]

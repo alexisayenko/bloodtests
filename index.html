@@ -204,48 +204,58 @@
       renderCatalog(analyses);
     }
 
-    // --- Results ---
+    // --- Results (grouped by date + place) ---
+    function groupResults() {
+      const groups = {};
+      resultsCache.forEach(r => {
+        const key = r.date + '|' + (r.place || '');
+        if (!groups[key]) groups[key] = { date: r.date, place: r.place || '', items: [] };
+        groups[key].items.push(r);
+      });
+      return Object.values(groups).sort((a, b) => b.date.localeCompare(a.date));
+    }
+
     function renderResultsList() {
       const container = document.getElementById('results-list');
       if (resultsCache.length === 0) {
         container.innerHTML = '<div class="empty-state">No blood tests recorded yet.</div>';
         return;
       }
-      container.innerHTML = resultsCache.map(r => `
-        <div class="card" onclick="showDetail('${r.id}')">
-          <div class="card-date">${formatDate(r.date)}</div>
-          <div class="card-title">${escHtml(r.lab || 'Blood Test')}</div>
-          <div class="card-meta">${(r.values || []).length} biomarkers</div>
-          ${r.notes ? `<div class="card-notes">${escHtml(r.notes)}</div>` : ''}
+      const groups = groupResults();
+      container.innerHTML = groups.map((g, i) => `
+        <div class="card" onclick="showDetail(${i})">
+          <div class="card-date">${formatDate(g.date)}</div>
+          <div class="card-title">${escHtml(g.place || 'Blood Test')}</div>
+          <div class="card-meta">${g.items.length} biomarkers</div>
         </div>
       `).join('');
     }
 
-    function showDetail(id) {
-      const r = resultsCache.find(x => x.id === id);
-      if (!r) return;
+    function showDetail(groupIndex) {
+      const groups = groupResults();
+      const g = groups[groupIndex];
+      if (!g) return;
 
-      let valuesHtml = '<div class="empty-state">No values recorded.</div>';
-      if (r.values && r.values.length > 0) {
-        valuesHtml = `
-          <div class="results-table">
-            <div class="results-header"><span>Biomarker</span><span>Value</span><span>Reference</span></div>
-            ${r.values.map(v => {
-              const oor = isOutOfRange(v);
-              return `<div class="results-row ${oor ? 'out-of-range' : ''}">
-                <span class="result-name">${escHtml(getAnalysisName(v.loinc))}<br><span class="result-loinc">LOINC ${escHtml(v.loinc)}</span></span>
-                <span class="result-value">${v.value} ${escHtml(v.unit || '')}</span>
-                <span class="result-ref">${v.refMin != null && v.refMax != null ? v.refMin + ' – ' + v.refMax : '—'}</span>
-              </div>`;
-            }).join('')}
-          </div>`;
-      }
+      const valuesHtml = `
+        <div class="results-table">
+          <div class="results-header"><span>Biomarker</span><span>Value</span><span>Reference</span></div>
+          ${g.items.map(r => {
+            const oor = isOutOfRange(r);
+            return `<div class="results-row ${oor ? 'out-of-range' : ''}">
+              <span class="result-name">
+                ${escHtml(getAnalysisName(r.loinc))}
+                <br><span class="result-loinc">LOINC ${escHtml(r.loinc)}${r.method ? ' · ' + escHtml(r.method) : ''}</span>
+              </span>
+              <span class="result-value">${r.value} ${escHtml(r.unit || '')}</span>
+              <span class="result-ref">${r.refMin != null && r.refMax != null ? r.refMin + ' – ' + r.refMax : '—'}</span>
+            </div>`;
+          }).join('')}
+        </div>`;
 
       document.getElementById('detail-content').innerHTML = `
         <div class="detail-header">
-          <h2>${escHtml(r.lab || 'Blood Test')}</h2>
-          <div class="detail-date">${formatDate(r.date)}</div>
-          ${r.notes ? `<p class="detail-notes">${escHtml(r.notes)}</p>` : ''}
+          <h2>${escHtml(g.place || 'Blood Test')}</h2>
+          <div class="detail-date">${formatDate(g.date)}</div>
         </div>
         ${valuesHtml}
       `;
