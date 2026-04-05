@@ -214,6 +214,15 @@
         <div id="planned-list" class="card-list"><div class="loading">Loading...</div></div>
       </div>
 
+      <div id="view-analytics" class="view">
+        <h2 class="section-title">Analytics</h2>
+        <div class="empty-state" style="padding:60px 20px">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--gray-300)" stroke-width="1.5" style="margin-bottom:16px"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p style="font-size:16px;color:var(--gray-400);margin-bottom:8px">Under Construction</p>
+          <p style="font-size:14px;color:var(--gray-300)">Charts, calculated indexes, and trend analysis coming soon.</p>
+        </div>
+      </div>
+
     </main>
 
     <nav class="bottom-nav">
@@ -238,6 +247,12 @@
           <line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
         <span id="nav-planned-label">Planned</span>
+      </button>
+      <button id="nav-analytics" class="nav-item" onclick="showView('analysis')">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="nav-analytics-label">Analytics</span>
       </button>
     </nav>
   </div>
