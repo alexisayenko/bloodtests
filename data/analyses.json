@@ -101,7 +101,7 @@
   {
     "loinc": "2339-0",
     "longCommonName": "Glucose [Mass/volume] in Blood",
-    "displayName": "Glucose (Blood)",
+    "displayName": "Glucose Serum",
     "lang": {
       "ru-RU": "Глюкоза натощак",
       "uk-UA": "Глюкоза натще"
@@ -186,6 +186,69 @@
     "lang": {
       "ru-RU": "Инсулин",
       "uk-UA": "Інсулін"
+    }
+  },
+  {
+    "loinc": "2950-4",
+    "longCommonName": "Sodium [Moles/volume] in Serum or Plasma",
+    "displayName": "Sodium (Na)",
+    "lang": {
+      "ru-RU": "Натрий",
+      "uk-UA": "Натрій"
+    }
+  },
+  {
+    "loinc": "2823-3",
+    "longCommonName": "Potassium [Moles/volume] in Serum or Plasma",
+    "displayName": "Potassium (K)",
+    "lang": {
+      "ru-RU": "Калий",
+      "uk-UA": "Калій"
+    }
+  },
+  {
+    "loinc": "1798-8",
+    "longCommonName": "Amylase [Enzymatic activity/volume] in Serum or Plasma",
+    "displayName": "Amylase",
+    "lang": {
+      "ru-RU": "Амилаза",
+      "uk-UA": "Амілаза"
+    }
+  },
+  {
+    "loinc": "1968-7",
+    "longCommonName": "Bilirubin.direct [Mass/volume] in Serum or Plasma",
+    "displayName": "Direct Bilirubin",
+    "lang": {
+      "ru-RU": "Билирубин прямой",
+      "uk-UA": "Білірубін прямий"
+    }
+  },
+  {
+    "loinc": "1975-2",
+    "longCommonName": "Bilirubin.total [Mass/volume] in Serum or Plasma",
+    "displayName": "Total Bilirubin",
+    "lang": {
+      "ru-RU": "Билирубин общий",
+      "uk-UA": "Білірубін загальний"
+    }
+  },
+  {
+    "loinc": "3094-0",
+    "longCommonName": "Urea nitrogen [Mass/volume] in Serum or Plasma",
+    "displayName": "Urea (BUN)",
+    "lang": {
+      "ru-RU": "Мочевина",
+      "uk-UA": "Сечовина"
+    }
+  },
+  {
+    "loinc": "12190-5",
+    "longCommonName": "Creatinine [Mass/volume] in Serum or Plasma",
+    "displayName": "Creatinine",
+    "lang": {
+      "ru-RU": "Креатинин",
+      "uk-UA": "Креатинін"
     }
   }
 ]
