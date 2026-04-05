@@ -35,17 +35,15 @@ jobs:
 
       - name: Build site
         run: |
-          mkdir -p _site
-          # Copy main to root
-          cp -r main/* _site/ 2>/dev/null || true
-          cp -r main/.* _site/ 2>/dev/null || true
+          mkdir -p _site/dev
+          # Copy main to root (exclude .git and .github)
+          rsync -a --exclude='.git' --exclude='.github' main/ _site/
           # Copy devel to /dev/ subfolder
           if [ -d devel ]; then
-            mkdir -p _site/dev
-            cp -r devel/* _site/dev/ 2>/dev/null || true
+            rsync -a --exclude='.git' --exclude='.github' devel/ _site/dev/
           fi
-          # Remove .git folders
-          rm -rf _site/.git _site/dev/.git _site/.github _site/dev/.github
+          ls -la _site/
+          ls -la _site/dev/ || echo "No dev folder"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
