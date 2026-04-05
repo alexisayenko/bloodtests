@@ -6,6 +6,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#2563eb">
   <title>Blood Tests</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -23,12 +24,21 @@
 
     .header { background: var(--primary); color: white; padding: 16px 20px; position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; }
     .header h1 { font-size: 20px; font-weight: 600; }
-    .lang-switcher { display: flex; gap: 4px; }
-    .lang-btn {
+    .header-controls { display: flex; align-items: center; gap: 8px; }
+    .lang-select {
+      background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 6px;
+      border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
+      appearance: none; -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='white'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 6px center; padding-right: 20px;
+    }
+    .lang-select option { color: #111; background: white; }
+    .user-btn {
       background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 10px;
       border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
+      display: flex; align-items: center; gap: 4px;
     }
-    .lang-btn.active { background: white; color: var(--primary); }
+    .user-avatar { width: 22px; height: 22px; border-radius: 50%; }
 
     .main { flex: 1; padding: 16px 20px; padding-bottom: 80px; }
 
@@ -89,6 +99,13 @@
     .result-value { font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
     .result-ref { font-size: 12px; color: var(--gray-400); text-align: right; min-width: 80px; }
 
+    .view-toggle { display: flex; gap: 4px; margin-bottom: 12px; }
+    .view-toggle-btn {
+      background: var(--gray-100); border: none; padding: 6px 12px; border-radius: 6px;
+      font-size: 12px; font-weight: 500; color: var(--gray-500); cursor: pointer;
+    }
+    .view-toggle-btn.active { background: var(--primary); color: white; }
+
     .panels-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
     .panel-card {
       background: white; border-radius: var(--radius); padding: 12px;
@@ -118,16 +135,24 @@
   <div class="app">
     <header class="header">
       <h1>Blood Tests</h1>
-      <div class="lang-switcher">
-        <button class="lang-btn active" onclick="setLang('en')">Eng</button>
-        <button class="lang-btn" onclick="setLang('ru-RU')">Рус</button>
-        <button class="lang-btn" onclick="setLang('uk-UA')">Укр</button>
+      <div class="header-controls">
+        <select class="lang-select" onchange="setLang(this.value)">
+          <option value="en">Eng</option>
+          <option value="ru-RU">Рус</option>
+          <option value="uk-UA">Укр</option>
+        </select>
+        <button id="login-btn" class="user-btn" onclick="handleAuth()">Sign in</button>
       </div>
     </header>
 
     <main class="main">
       <div id="view-panels" class="view active">
         <div id="panels-full-content"><div class="loading">Loading...</div></div>
+      </div>
+
+      <div id="view-panel-detail" class="view">
+        <button class="btn-back" onclick="showView('panels')">&larr; Back</button>
+        <div id="panel-detail-content"></div>
       </div>
 
       <div id="view-results" class="view">
@@ -178,7 +203,16 @@
     let resultsCache = [];
     let panelsCache = [];
     let plannedCache = [];
+    let usersCache = [];
+    let currentUserId = null;
     let currentLang = 'en';
+    let panelViewMode = localStorage.getItem('bloodtests_panelView') || 'compact';
+
+    function setPanelView(mode) {
+      panelViewMode = mode;
+      localStorage.setItem('bloodtests_panelView', mode);
+      renderPanelsPage();
+    }
 
     const uiStrings = {
       'en':    { results: 'Past Results', planned: 'Planned Tests', panels: 'Panels', biomarker: 'Biomarker', value: 'Value', reference: 'Reference', back: '← Back', noResults: 'No blood tests recorded yet.', noPlanned: 'No planned tests.', noPanels: 'No panels defined.', overdue: 'Overdue', biomarkers: 'biomarkers', analyses: 'analyses', navResults: 'Results', navPlanned: 'Planned', navPanels: 'Panels' },
@@ -190,16 +224,64 @@
 
     function setLang(lang) {
       currentLang = lang;
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === { 'en': 'Eng', 'ru-RU': 'Рус', 'uk-UA': 'Укр' }[lang]));
-      // Update nav labels
+      document.querySelector('.lang-select').value = lang;
+      localStorage.setItem('bloodtests_lang', lang);
       document.getElementById('nav-results-label').textContent = t('navResults');
       document.getElementById('nav-planned-label').textContent = t('navPlanned');
       document.getElementById('nav-panels-label').textContent = t('navPanels');
-      // Re-render all
       renderResultsList();
       renderPlannedList(plannedCache);
       renderPanelsPage();
     }
+
+    // --- Google Sign-In ---
+    let googleUser = null;
+
+    function handleAuth() {
+      if (googleUser) {
+        googleUser = null;
+        currentUserId = null;
+        localStorage.removeItem('bloodtests_user');
+        updateLoginBtn();
+        loadUserData();
+        return;
+      }
+      google.accounts.id.prompt();
+    }
+
+    function onGoogleSignIn(response) {
+      const payload = JSON.parse(atob(response.credential.split('.')[1]));
+      googleUser = { name: payload.name, email: payload.email, picture: payload.picture };
+      localStorage.setItem('bloodtests_user', JSON.stringify(googleUser));
+      updateLoginBtn();
+      resolveUser();
+    }
+
+    function resolveUser() {
+      if (!googleUser || usersCache.length === 0) { currentUserId = null; loadUserData(); return; }
+      const match = usersCache.find(u => u.email === googleUser.email);
+      currentUserId = match ? match.id : null;
+      loadUserData();
+    }
+
+    function updateLoginBtn() {
+      const btn = document.getElementById('login-btn');
+      if (googleUser) {
+        btn.innerHTML = `<img class="user-avatar" src="${escHtml(googleUser.picture)}" alt="">${escHtml(googleUser.name.split(' ')[0])}`;
+      } else {
+        btn.textContent = 'Sign in';
+      }
+    }
+
+    // Restore saved user (resolveUser called after loadAll)
+    try {
+      const saved = localStorage.getItem('bloodtests_user');
+      if (saved) { googleUser = JSON.parse(saved); updateLoginBtn(); }
+    } catch(e) {}
+
+    // Restore saved language
+    const savedLang = localStorage.getItem('bloodtests_lang');
+    if (savedLang) { currentLang = savedLang; document.querySelector('.lang-select').value = savedLang; }
 
     function showView(name) {
       document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
@@ -207,7 +289,7 @@
       document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
       if (name === 'results' || name === 'detail') {
         document.getElementById('nav-results').classList.add('active');
-      } else if (name === 'panels') {
+      } else if (name === 'panels' || name === 'panel-detail') {
         document.getElementById('nav-panels').classList.add('active');
       } else {
         document.getElementById('nav-' + name).classList.add('active');
@@ -246,27 +328,41 @@
 
     // --- Load data ---
     async function loadAll() {
-      const [analysesRes, resultsRes, plannedRes, panelsRes] = await Promise.all([
+      const [analysesRes, panelsRes, usersRes] = await Promise.all([
         fetch('data/analyses.json'),
-        fetch('data/results.json'),
-        fetch('data/planned.json'),
         fetch('data/panels.json'),
+        fetch('data/users.json'),
       ]);
 
       const analyses = await analysesRes.json();
       analyses.forEach(a => { analysesCatalog[a.loinc] = a; });
+      panelsCache = await panelsRes.json();
+      usersCache = await usersRes.json();
+
+      renderPanelsPage();
+      resolveUser();
+    }
+
+    async function loadUserData() {
+      if (!currentUserId) {
+        resultsCache = [];
+        plannedCache = [];
+        renderResultsList();
+        renderPlannedList(plannedCache);
+        return;
+      }
+      const [resultsRes, plannedRes] = await Promise.all([
+        fetch(`data/users/${currentUserId}/results.json`),
+        fetch(`data/users/${currentUserId}/planned.json`),
+      ]);
 
       resultsCache = await resultsRes.json();
       resultsCache.sort((a, b) => b.date.localeCompare(a.date));
-
       plannedCache = await plannedRes.json();
       plannedCache.sort((a, b) => a.plannedDate.localeCompare(b.plannedDate));
 
-      panelsCache = await panelsRes.json();
-
       renderResultsList();
       renderPlannedList(plannedCache);
-      renderPanelsPage();
     }
 
     // --- Results (grouped by date + place) ---
@@ -283,6 +379,14 @@
     function renderResultsList() {
       const container = document.getElementById('results-list');
       document.querySelector('#view-results .section-title').textContent = t('results');
+      if (!googleUser) {
+        container.innerHTML = '<div class="empty-state">Sign in to view results.</div>';
+        return;
+      }
+      if (!currentUserId) {
+        container.innerHTML = '<div class="empty-state">No data found for this account.</div>';
+        return;
+      }
       if (resultsCache.length === 0) {
         container.innerHTML = `<div class="empty-state">${t('noResults')}</div>`;
         return;
@@ -352,34 +456,97 @@
     }
 
     // --- Panels page ---
+    function getPanelAnalyses(p) {
+      if (p.sections) {
+        return p.sections.flatMap(s => s.loincs.map(l => analysesCatalog[l]).filter(Boolean));
+      }
+      return p.loincs.map(l => analysesCatalog[l]).filter(Boolean);
+    }
+
+    function renderPanelList(p) {
+      let listHtml = '';
+      if (p.sections) {
+        listHtml = p.sections.map(s => {
+          const sName = (currentLang !== 'en' && s.lang && s.lang[currentLang]) ? s.lang[currentLang] : s.name;
+          const items = s.loincs.map(l => analysesCatalog[l]).filter(Boolean);
+          return `<li class="panel-card-section">${escHtml(sName)}</li>` +
+            items.map(a => renderAnalysisItem(a)).join('');
+        }).join('');
+      } else {
+        const items = p.loincs.map(l => analysesCatalog[l]).filter(Boolean);
+        listHtml = items.map(a => renderAnalysisItem(a)).join('');
+      }
+      return listHtml;
+    }
+
+    function renderAnalysisItem(a) {
+      if (panelViewMode === 'detailed') {
+        return `<li>${escHtml(getAnalysisName(a.loinc))}<br><span class="result-loinc">LOINC ${escHtml(a.loinc)} · ${escHtml(a.longCommonName)}</span></li>`;
+      }
+      return `<li>${escHtml(getAnalysisName(a.loinc))}</li>`;
+    }
+
     function renderPanelsPage() {
       const container = document.getElementById('panels-full-content');
       if (panelsCache.length === 0) {
         container.innerHTML = `<div class="empty-state">${t('noPanels')}</div>`;
         return;
       }
-      container.innerHTML = `<div class="panels-grid">${panelsCache.map(p => {
-        let listHtml = '';
-        if (p.sections) {
-          listHtml = p.sections.map(s => {
-            const sName = (currentLang !== 'en' && s.lang && s.lang[currentLang]) ? s.lang[currentLang] : s.name;
-            const items = s.loincs.map(l => analysesCatalog[l]).filter(Boolean);
-            return `<li class="panel-card-section">${escHtml(sName)}</li>` +
-              items.map(a => `<li>${escHtml(getAnalysisName(a.loinc))}</li>`).join('');
-          }).join('');
-        } else {
-          const items = p.loincs.map(l => analysesCatalog[l]).filter(Boolean);
-          listHtml = items.map(a => `<li>${escHtml(getAnalysisName(a.loinc))}</li>`).join('');
-        }
-        return `
+
+      const toggleHtml = `<div class="view-toggle">
+        <button class="view-toggle-btn ${panelViewMode === 'minimal' ? 'active' : ''}" onclick="setPanelView('minimal')">Minimal</button>
+        <button class="view-toggle-btn ${panelViewMode === 'compact' ? 'active' : ''}" onclick="setPanelView('compact')">Compact</button>
+        <button class="view-toggle-btn ${panelViewMode === 'detailed' ? 'active' : ''}" onclick="setPanelView('detailed')">Detailed</button>
+      </div>`;
+
+      if (panelViewMode === 'minimal') {
+        container.innerHTML = toggleHtml + `<div class="panels-grid">${panelsCache.map((p, i) => {
+          const count = getPanelAnalyses(p).length;
+          return `
+            <div class="panel-card" style="cursor:pointer" onclick="showPanelDetail(${i})">
+              <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
+              <div class="panel-card-meta" style="font-size:12px;color:var(--gray-400)">${count} ${t('analyses')}</div>
+            </div>`;
+        }).join('')}</div>`;
+      } else {
+        container.innerHTML = toggleHtml + `<div class="panels-grid">${panelsCache.map(p => `
           <div class="panel-card">
             <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
-            <ul class="panel-card-list">${listHtml}</ul>
-          </div>`;
-      }).join('')}</div>`;
+            <ul class="panel-card-list">${renderPanelList(p)}</ul>
+          </div>
+        `).join('')}</div>`;
+      }
+    }
+
+    function showPanelDetail(index) {
+      const p = panelsCache[index];
+      if (!p) return;
+      document.getElementById('panel-detail-content').innerHTML = `
+        <div class="detail-header">
+          <h2>${escHtml(getPanelName(p))}</h2>
+        </div>
+        <div class="results-table" style="margin-top:12px">
+          ${getPanelAnalyses(p).map(a => `
+            <div class="results-row" style="grid-template-columns: 1fr auto">
+              <span class="result-name">${escHtml(getAnalysisName(a.loinc))}</span>
+              <span class="result-ref">${escHtml(a.loinc)}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      showView('panel-detail');
     }
 
     // --- Init ---
+    window.onload = function() {
+      if (typeof google !== 'undefined' && google.accounts) {
+        google.accounts.id.initialize({
+          client_id: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com',
+          callback: onGoogleSignIn,
+          auto_select: true,
+        });
+      }
+    };
     loadAll();
   </script>
 </body>
