@@ -99,7 +99,7 @@
     .results-row.out-of-range { background: var(--danger-light); }
     .results-row.out-of-range .result-value { color: var(--danger); font-weight: 600; }
     .result-name { font-size: 16px; font-weight: 500; }
-    .result-loinc { font-size: 13px; color: var(--gray-400); }
+    .result-loinc { font-size: 13px; color: var(--gray-400); line-height: 1.6; }
     .result-value { font-size: 16px; text-align: right; font-variant-numeric: tabular-nums; }
     .result-ref { font-size: 14px; color: var(--gray-400); text-align: right; min-width: 80px; }
 
@@ -120,8 +120,13 @@
     .panel-card-list { list-style: none; }
     .panel-card-list li { font-size: 15px; color: var(--gray-700); padding: 3px 0; border-top: 1px solid var(--gray-200); }
     .panel-card-list li:first-child { border-top: none; }
-    .panel-card-list li.analysis-name { font-weight: 600; padding-top: 10px; }
-    .panel-card-list li.analysis-name:first-child { padding-top: 3px; }
+    .panel-card-list li.analysis-name { font-weight: 600; padding-top: 14px; border-top: 1px solid var(--gray-300); margin-top: 4px; }
+    .panel-card-list li.analysis-name:first-child { padding-top: 3px; border-top: none; margin-top: 0; }
+    .panel-card-list li.detail-line { border-top: none; padding: 1px 0 1px 12px; font-size: 13px; color: var(--gray-400); line-height: 1.5; }
+    .panel-card-list li.detail-line.long-name { font-style: italic; color: var(--gray-400); }
+    .panel-card-list li.detail-line.description { color: var(--gray-500); }
+    .panel-card-list li.detail-line.why-line { color: var(--gray-500); }
+    .panel-card-list li.detail-line.freq-line { color: var(--gray-400); }
     .panel-card-section { font-size: 14px; font-weight: 600; color: var(--gray-500); padding: 6px 0 2px; border-top: 2px solid var(--gray-200); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
     .panel-card-section:first-child { border-top: none; margin-top: 0; }
 
@@ -478,13 +483,16 @@
       return names;
     }
 
+    const clipboardIcon = `<svg viewBox="0 0 24 24" width="13" height="13" style="vertical-align:-2px;margin-right:4px;flex-shrink:0"><rect x="3" y="2" width="16" height="20" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/><rect x="8" y="0" width="6" height="4" rx="1" fill="#9ca3af"/><circle cx="7.5" cy="8" r="1.5" fill="#2563eb"/><line x1="10.5" y1="8" x2="17" y2="8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="12.5" r="1.5" fill="#2563eb"/><line x1="10.5" y1="12.5" x2="17" y2="12.5" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="17" r="1.5" fill="#93b4f5"/><line x1="10.5" y1="17" x2="17" y2="17" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+    const clockIcon = `<svg viewBox="0 0 24 24" width="13" height="13" style="vertical-align:-2px;margin-right:4px;flex-shrink:0"><circle cx="12" cy="12" r="10" fill="none" stroke="#93b4f5" stroke-width="2"/><rect x="11" y="5" width="1.5" height="4" rx="0.5" fill="#4a7edc"/><rect x="11" y="9" width="1.5" height="4.5" rx="0.5" fill="#4a7edc"/><rect x="11.5" y="11.5" width="4" height="1.5" rx="0.5" fill="#4a7edc"/><circle cx="12" cy="12" r="1.5" fill="#2563eb"/></svg>`;
+
     function renderAnalysisItem(a) {
       if (panelViewMode === 'detailed') {
-        let extra = `<li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.longCommonName)}</li>`;
+        let extra = `<li class="detail-line long-name">${escHtml(a.longCommonName)}</li>`;
         if (a.info) {
-          if (a.info.description) extra += `<li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.info.description)}</li>`;
-          if (a.info.why) extra += `<li class="result-loinc" style="border-top:none;padding-top:0"><svg viewBox="0 0 24 24" width="13" height="13" style="vertical-align:-2px;margin-right:3px"><rect x="3" y="2" width="16" height="20" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/><rect x="8" y="0" width="6" height="4" rx="1" fill="#9ca3af"/><circle cx="7.5" cy="8" r="1.5" fill="#2563eb"/><line x1="10.5" y1="8" x2="17" y2="8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="12.5" r="1.5" fill="#2563eb"/><line x1="10.5" y1="12.5" x2="17" y2="12.5" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="17" r="1.5" fill="#93b4f5"/><line x1="10.5" y1="17" x2="17" y2="17" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/></svg>${escHtml(a.info.why)}</li>`;
-          if (a.info.frequency) extra += `<li class="result-loinc" style="border-top:none;padding-top:0"><svg viewBox="0 0 24 24" width="13" height="13" style="vertical-align:-2px;margin-right:3px"><circle cx="12" cy="12" r="10" fill="none" stroke="#93b4f5" stroke-width="2"/><rect x="11" y="5" width="1.5" height="4" rx="0.5" fill="#4a7edc"/><rect x="11" y="5" width="1.5" height="4" rx="0.5" fill="#4a7edc"/><rect x="11" y="9" width="1.5" height="4.5" rx="0.5" fill="#4a7edc"/><rect x="11.5" y="11.5" width="4" height="1.5" rx="0.5" fill="#4a7edc" transform="rotate(0 11.5 11.5)"/><circle cx="12" cy="12" r="1.5" fill="#2563eb"/></svg>${escHtml(a.info.frequency)}</li>`;
+          if (a.info.description) extra += `<li class="detail-line description">${escHtml(a.info.description)}</li>`;
+          if (a.info.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(a.info.why)}</li>`;
+          if (a.info.frequency) extra += `<li class="detail-line freq-line">${clockIcon}${escHtml(a.info.frequency)}</li>`;
         }
         return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</span></li>${extra}`;
       }
