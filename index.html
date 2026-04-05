@@ -113,8 +113,15 @@
       </div>
 
       <div id="view-catalog" class="view">
-        <h2 class="section-title">Analyses Catalog</h2>
+        <h2 class="section-title">Panels</h2>
+        <div id="panels-list" class="card-list" style="margin-bottom:24px"><div class="loading">Loading...</div></div>
+        <h2 class="section-title">All Analyses</h2>
         <div id="catalog-list" class="card-list"><div class="loading">Loading...</div></div>
+      </div>
+
+      <div id="view-panel-detail" class="view">
+        <button class="btn-back" onclick="showView('catalog')">&larr; Back</button>
+        <div id="panel-detail-content"></div>
       </div>
     </main>
 
@@ -147,6 +154,7 @@
   <script>
     let analysesCatalog = {};  // loinc -> analysis object
     let resultsCache = [];
+    let panelsCache = [];
 
     function showView(name) {
       document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
@@ -154,6 +162,8 @@
       document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
       if (name === 'results' || name === 'detail') {
         document.getElementById('nav-results').classList.add('active');
+      } else if (name === 'catalog' || name === 'panel-detail') {
+        document.getElementById('nav-catalog').classList.add('active');
       } else {
         document.getElementById('nav-' + name).classList.add('active');
       }
@@ -184,10 +194,11 @@
 
     // --- Load data ---
     async function loadAll() {
-      const [analysesRes, resultsRes, plannedRes] = await Promise.all([
+      const [analysesRes, resultsRes, plannedRes, panelsRes] = await Promise.all([
         fetch('data/analyses.json'),
         fetch('data/results.json'),
         fetch('data/planned.json'),
+        fetch('data/panels.json'),
       ]);
 
       const analyses = await analysesRes.json();
@@ -199,8 +210,11 @@
       const planned = await plannedRes.json();
       planned.sort((a, b) => a.plannedDate.localeCompare(b.plannedDate));
 
+      panelsCache = await panelsRes.json();
+
       renderResultsList();
       renderPlannedList(planned);
+      renderPanels();
       renderCatalog(analyses);
     }
 
@@ -282,6 +296,54 @@
             ${p.notes ? `<div class="card-notes">${escHtml(p.notes)}</div>` : ''}
           </div>`;
       }).join('');
+    }
+
+    // --- Panels ---
+    function renderPanels() {
+      const container = document.getElementById('panels-list');
+      if (panelsCache.length === 0) {
+        container.innerHTML = '<div class="empty-state">No panels defined.</div>';
+        return;
+      }
+      container.innerHTML = panelsCache.map((p, i) => `
+        <div class="card" onclick="showPanelDetail(${i})">
+          <div class="card-title">${escHtml(p.name)}</div>
+          <div class="card-meta">${p.loincs.length} analyses</div>
+          <div class="card-notes">
+            ${p.lang['ru-RU'] ? '🇷🇺 ' + escHtml(p.lang['ru-RU']) : ''}
+            ${p.lang['uk-UA'] ? ' &nbsp; 🇺🇦 ' + escHtml(p.lang['uk-UA']) : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function showPanelDetail(index) {
+      const p = panelsCache[index];
+      if (!p) return;
+
+      const items = p.loincs.map(loinc => analysesCatalog[loinc]).filter(Boolean);
+
+      document.getElementById('panel-detail-content').innerHTML = `
+        <div class="detail-header">
+          <h2>${escHtml(p.name)}</h2>
+          <div class="detail-notes">
+            ${p.lang['ru-RU'] ? '🇷🇺 ' + escHtml(p.lang['ru-RU']) : ''}
+            ${p.lang['uk-UA'] ? ' &nbsp; 🇺🇦 ' + escHtml(p.lang['uk-UA']) : ''}
+          </div>
+        </div>
+        <div class="results-table">
+          <div class="results-header"><span>Analysis</span><span>LOINC</span></div>
+          ${items.map(a => `
+            <div class="results-row" style="grid-template-columns: 1fr auto">
+              <span class="result-name">${escHtml(a.displayName)}<br>
+                <span class="result-loinc">${escHtml(a.longCommonName)}</span>
+              </span>
+              <span class="result-ref">${escHtml(a.loinc)}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      showView('panel-detail');
     }
 
     // --- Catalog ---

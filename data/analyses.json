@@ -250,5 +250,122 @@
       "ru-RU": "Креатинин",
       "uk-UA": "Креатинін"
     }
+  },
+  {
+    "loinc": "11580-8",
+    "longCommonName": "Thyrotropin [Units/volume] in Serum or Plasma",
+    "displayName": "TSH",
+    "lang": {
+      "ru-RU": "Тиреотропный гормон (ТТГ)",
+      "uk-UA": "Тиреотропний гормон (ТТГ)"
+    }
+  },
+  {
+    "loinc": "3051-0",
+    "longCommonName": "Triiodothyronine Free [Mass/volume] in Serum or Plasma",
+    "displayName": "Free T3 (FT3)",
+    "lang": {
+      "ru-RU": "Трийодтиронин свободный (Т3 св.)",
+      "uk-UA": "Трийодтиронін вільний (Т3 віл.)"
+    }
+  },
+  {
+    "loinc": "3024-7",
+    "longCommonName": "Thyroxine Free [Mass/volume] in Serum or Plasma",
+    "displayName": "Free T4 (FT4)",
+    "lang": {
+      "ru-RU": "Тироксин свободный (Т4 св.)",
+      "uk-UA": "Тироксин вільний (Т4 віл.)"
+    }
+  },
+  {
+    "loinc": "8099-4",
+    "longCommonName": "Thyroid peroxidase Ab [Units/volume] in Serum or Plasma",
+    "displayName": "Anti-TPO",
+    "lang": {
+      "ru-RU": "Антитела к тиреопероксидазе (анти-ТПО)",
+      "uk-UA": "Антитіла до тиреопероксидази (анти-ТПО)"
+    }
+  },
+  {
+    "loinc": "8098-6",
+    "longCommonName": "Thyroglobulin Ab [Units/volume] in Serum or Plasma",
+    "displayName": "Anti-TG",
+    "lang": {
+      "ru-RU": "Антитела к тиреоглобулину (анти-ТГ)",
+      "uk-UA": "Антитіла до тиреоглобуліну (анти-ТГ)"
+    }
+  },
+  {
+    "loinc": "56889-4",
+    "longCommonName": "Thyrotropin receptor Ab [Units/volume] in Serum or Plasma",
+    "displayName": "TRAb",
+    "lang": {
+      "ru-RU": "Антитела к рецепторам ТТГ (TRAb)",
+      "uk-UA": "Антитіла до рецепторів ТТГ (TRAb)"
+    }
+  },
+  {
+    "loinc": "1992-8",
+    "longCommonName": "Calcitonin [Mass/volume] in Serum or Plasma",
+    "displayName": "Calcitonin (CT)",
+    "lang": {
+      "ru-RU": "Кальцитонин",
+      "uk-UA": "Кальцитонін"
+    }
+  },
+  {
+    "loinc": "4548-4",
+    "longCommonName": "Hemoglobin A1c/Hemoglobin.total in Blood by NGSP",
+    "displayName": "HbA1c (NGSP)",
+    "lang": {
+      "ru-RU": "Гликированный гемоглобин (NGSP)",
+      "uk-UA": "Глікований гемоглобін (NGSP)"
+    }
+  },
+  {
+    "loinc": "59261-8",
+    "longCommonName": "Hemoglobin A1c/Hemoglobin.total in Blood by IFCC",
+    "displayName": "HbA1c (IFCC)",
+    "lang": {
+      "ru-RU": "Гликированный гемоглобин (IFCC)",
+      "uk-UA": "Глікований гемоглобін (IFCC)"
+    }
+  },
+  {
+    "loinc": "13979-8",
+    "longCommonName": "Glycated albumin/Albumin.total in Serum or Plasma",
+    "displayName": "Glycated Albumin (GA)",
+    "lang": {
+      "ru-RU": "Гликированный альбумин",
+      "uk-UA": "Глікований альбумін"
+    }
+  },
+  {
+    "loinc": "1557-8",
+    "longCommonName": "Fructosamine [Mass/volume] in Serum or Plasma",
+    "displayName": "Fructosamine",
+    "lang": {
+      "ru-RU": "Фруктозамин",
+      "uk-UA": "Фруктозамін"
+    }
+  },
+  {
+    "loinc": "1986-0",
+    "longCommonName": "C peptide [Mass/volume] in Serum or Plasma",
+    "displayName": "C-Peptide",
+    "lang": {
+      "ru-RU": "C-пептид",
+      "uk-UA": "C-пептид"
+    }
+  },
+  {
+    "loinc": "3040-3",
+    "longCommonName": "Lipase [Enzymatic activity/volume] in Serum or Plasma",
+    "displayName": "Lipase",
+    "lang": {
+      "ru-RU": "Липаза",
+      "uk-UA": "Ліпаза"
+    }
   }
 ]
