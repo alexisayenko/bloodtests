@@ -139,14 +139,15 @@
     .panel-card-list li.analysis-name:first-child { padding-top: 6px; border-top: none; margin-top: 0; }
     .panel-card-list li.detail-line { border-top: none; padding: 3px 0 3px 12px; font-size: 14px; color: var(--gray-400); line-height: 1.65; }
     .panel-card-list li.detail-line.long-name { font-style: italic; color: var(--gray-400); }
-    .panel-card-list li.detail-line.description { color: var(--gray-500); padding-top: 2px; display: flex; align-items: baseline; gap: 6px; }
+    .panel-card-list li.detail-line.description { color: var(--gray-500); padding-top: 2px; }
+    .description-text { display: block; }
     .panel-card-list li.detail-line.scientific-wrap { padding-top: 8px; position: relative; display: none; }
     .scientific-text {
       display: block;
     }
     .panel-card-list li.detail-line.scientific-wrap.expanded { display: list-item; }
     .scientific-toggle {
-      flex: 0 0 auto;
+      display: inline-block;
       padding: 0;
       border: none;
       background: none;
@@ -157,7 +158,7 @@
       line-height: 1;
       letter-spacing: 1px;
       cursor: pointer;
-      margin-left: 2px;
+      margin-top: 2px;
     }
     .scientific-toggle.expanded {
       color: var(--primary);
@@ -554,7 +555,7 @@
           const inf = (currentLang !== 'en' && a.info.lang && a.info.lang[currentLang]) ? { ...a.info, ...a.info.lang[currentLang] } : a.info;
           const scientificId = inf.scientific ? `scientific-${a.loinc.replace(/[^a-zA-Z0-9_-]/g, '-')}` : '';
           if (inf.description || inf.scientific) {
-            extra += `<li class="detail-line description"><span>${escHtml(inf.description || '')}</span>${inf.scientific ? `<button type="button" class="scientific-toggle" aria-expanded="false" aria-label="${t('readMore')}" onclick="toggleScientific('${scientificId}', this)">...</button>` : ''}</li>`;
+            extra += `<li class="detail-line description"><span class="description-text">${escHtml(inf.description || '')}</span>${inf.scientific ? `<button type="button" class="scientific-toggle" aria-expanded="false" aria-label="${t('readMore')}" onclick="toggleScientific('${scientificId}', this)">...</button>` : ''}</li>`;
           }
           if (inf.scientific) {
             extra += `<li id="${scientificId}" class="detail-line scientific-wrap"><div class="scientific-text">${escHtml(inf.scientific)}</div></li>`;
