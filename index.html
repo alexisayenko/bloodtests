@@ -538,7 +538,8 @@
           if (inf.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(inf.why)}</li>`;
           if (inf.frequency) extra += `<li class="detail-line freq-line">${clockIcon}${escHtml(t('frequencyPrefix'))} ${escHtml(formatFrequencyText(inf.frequency))}</li>`;
         }
-        const engLine = (currentLang !== 'en') ? `<div class="result-loinc" style="font-weight:normal">${escHtml(a.displayName)}</div>` : '';
+        const translatedName = getAnalysisName(a.loinc);
+        const engLine = (currentLang !== 'en' && !translatedName.includes(a.displayName)) ? `<div class="result-loinc" style="font-weight:normal">${escHtml(a.displayName)}</div>` : '';
         return `<li class="analysis-name"><div>${escHtml(getAnalysisName(a.loinc))}</div>${engLine}<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal;white-space:nowrap">${escHtml(a.loinc)}</a></div></li>${extra}`;
       }
       if (panelViewMode === 'compact') {
