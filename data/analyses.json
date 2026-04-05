@@ -6,6 +6,11 @@
     "lang": {
       "ru-RU": "Гемоглобин",
       "uk-UA": "Гемоглобін"
+    },
+    "info": {
+      "description": "Protein in red blood cells that carries oxygen throughout the body.",
+      "why": "Detects anemia, polycythemia, and monitors blood disorders.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -15,6 +20,11 @@
     "lang": {
       "ru-RU": "Глюкоза (сыворотка/плазма)",
       "uk-UA": "Глюкоза (сироватка/плазма)"
+    },
+    "info": {
+      "description": "Primary sugar in the blood used as the main energy source for cells.",
+      "why": "Screens for diabetes, prediabetes, and monitors blood sugar control.",
+      "frequency": "Annually; every 3 months if diabetic"
     }
   },
   {
@@ -24,6 +34,11 @@
     "lang": {
       "ru-RU": "Холестерин",
       "uk-UA": "Холестерин"
+    },
+    "info": {
+      "description": "Waxy fat-like substance found in all cells, essential for hormone and cell membrane production.",
+      "why": "Assesses cardiovascular disease risk and guides lipid-lowering therapy.",
+      "frequency": "Every 4-6 years; annually if at elevated risk"
     }
   },
   {
@@ -33,6 +48,11 @@
     "lang": {
       "ru-RU": "Эритроциты",
       "uk-UA": "Еритроцити"
+    },
+    "info": {
+      "description": "Cells that carry oxygen from the lungs to tissues and return carbon dioxide.",
+      "why": "Evaluates oxygen-carrying capacity and detects anemia or polycythemia.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -42,6 +62,11 @@
     "lang": {
       "ru-RU": "Лейкоциты",
       "uk-UA": "Лейкоцити"
+    },
+    "info": {
+      "description": "Immune system cells that defend the body against infections and foreign invaders.",
+      "why": "Detects infections, immune disorders, and monitors bone marrow function.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -51,6 +76,11 @@
     "lang": {
       "ru-RU": "Тестостерон свободный",
       "uk-UA": "Тестостерон вільний"
+    },
+    "info": {
+      "description": "The unbound, biologically active fraction of testosterone in the blood.",
+      "why": "Evaluates androgen status when SHBG levels may alter total testosterone interpretation.",
+      "frequency": "As clinically indicated; every 6-12 months if on testosterone therapy"
     }
   },
   {
@@ -60,6 +90,11 @@
     "lang": {
       "ru-RU": "Тестостерон",
       "uk-UA": "Тестостерон"
+    },
+    "info": {
+      "description": "Primary male sex hormone responsible for reproductive development and muscle mass.",
+      "why": "Diagnoses hypogonadism, monitors hormone therapy, and evaluates reproductive issues.",
+      "frequency": "As clinically indicated; every 6-12 months if on therapy"
     }
   },
   {
@@ -69,6 +104,11 @@
     "lang": {
       "ru-RU": "Лютеинизирующий гормон",
       "uk-UA": "Лютеїнізуючий гормон"
+    },
+    "info": {
+      "description": "Pituitary hormone that triggers ovulation in women and testosterone production in men.",
+      "why": "Evaluates fertility, pituitary function, and causes of irregular menstruation.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -78,6 +118,11 @@
     "lang": {
       "ru-RU": "Фолликулостимулирующий гормон",
       "uk-UA": "Фолікулостимулюючий гормон"
+    },
+    "info": {
+      "description": "Pituitary hormone that stimulates egg development in women and sperm production in men.",
+      "why": "Assesses fertility, menopause status, and pituitary gland function.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -87,6 +132,11 @@
     "lang": {
       "ru-RU": "Цинк",
       "uk-UA": "Цинк"
+    },
+    "info": {
+      "description": "Essential trace mineral involved in immune function, wound healing, and protein synthesis.",
+      "why": "Detects zinc deficiency associated with impaired immunity, hair loss, and delayed wound healing.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -96,6 +146,11 @@
     "lang": {
       "ru-RU": "Пролактин",
       "uk-UA": "Пролактин"
+    },
+    "info": {
+      "description": "Pituitary hormone primarily responsible for stimulating breast milk production.",
+      "why": "Investigates infertility, irregular periods, erectile dysfunction, and pituitary tumors.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -105,6 +160,11 @@
     "lang": {
       "ru-RU": "Глюкоза натощак",
       "uk-UA": "Глюкоза натще"
+    },
+    "info": {
+      "description": "Fasting blood sugar level measured in whole blood.",
+      "why": "Screens for diabetes and prediabetes and monitors glycemic control.",
+      "frequency": "Annually; every 3 months if diabetic"
     }
   },
   {
@@ -114,6 +174,11 @@
     "lang": {
       "ru-RU": "Гликированный гемоглобин",
       "uk-UA": "Глікований гемоглобін"
+    },
+    "info": {
+      "description": "Reflects average blood glucose levels over the past 2-3 months (DCCT-aligned units).",
+      "why": "Diagnoses diabetes and monitors long-term blood sugar control.",
+      "frequency": "Every 3-6 months for diabetics; annually for screening"
     }
   },
   {
@@ -123,6 +188,11 @@
     "lang": {
       "ru-RU": "Холестерин ЛПВП",
       "uk-UA": "Холестерин ЛПВЩ"
+    },
+    "info": {
+      "description": "\"Good\" cholesterol that helps remove other forms of cholesterol from the bloodstream.",
+      "why": "Assesses cardiovascular risk; higher levels are protective against heart disease.",
+      "frequency": "Every 4-6 years; annually if at elevated risk"
     }
   },
   {
@@ -132,6 +202,11 @@
     "lang": {
       "ru-RU": "Триглицериды",
       "uk-UA": "Тригліцериди"
+    },
+    "info": {
+      "description": "The most common type of fat in the body, stored from excess calories.",
+      "why": "Evaluates cardiovascular risk and screens for metabolic syndrome.",
+      "frequency": "Every 4-6 years; annually if at elevated risk"
     }
   },
   {
@@ -141,6 +216,11 @@
     "lang": {
       "ru-RU": "Холестерин ЛПНП",
       "uk-UA": "Холестерин ЛПНЩ"
+    },
+    "info": {
+      "description": "\"Bad\" cholesterol that contributes to plaque buildup in arteries.",
+      "why": "Primary target for cardiovascular risk reduction and lipid-lowering therapy.",
+      "frequency": "Every 4-6 years; annually if on statin therapy or at elevated risk"
     }
   },
   {
@@ -150,6 +230,11 @@
     "lang": {
       "ru-RU": "Щелочная фосфатаза",
       "uk-UA": "Лужна фосфатаза"
+    },
+    "info": {
+      "description": "Enzyme found mainly in the liver and bones involved in mineralization.",
+      "why": "Detects liver disease, bile duct obstruction, and bone disorders.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -159,6 +244,11 @@
     "lang": {
       "ru-RU": "Аланинаминотрансфераза (АЛТ)",
       "uk-UA": "Аланінамінотрансфераза (АЛТ)"
+    },
+    "info": {
+      "description": "Liver enzyme released into the blood when liver cells are damaged.",
+      "why": "Screens for liver damage from hepatitis, medications, or fatty liver disease.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -168,6 +258,11 @@
     "lang": {
       "ru-RU": "Гамма-глутамилтрансфераза (ГГТ)",
       "uk-UA": "Гамма-глутамілтрансфераза (ГГТ)"
+    },
+    "info": {
+      "description": "Enzyme found in the liver, bile ducts, and kidneys involved in glutathione metabolism.",
+      "why": "Detects bile duct problems, alcohol-related liver damage, and liver disease.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -177,6 +272,11 @@
     "lang": {
       "ru-RU": "Аспартатаминотрансфераза (АСТ)",
       "uk-UA": "Аспартатамінотрансфераза (АСТ)"
+    },
+    "info": {
+      "description": "Enzyme found in the liver, heart, and muscles released when tissues are damaged.",
+      "why": "Evaluates liver damage and helps differentiate liver from muscle injury when compared with ALT.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -186,6 +286,11 @@
     "lang": {
       "ru-RU": "Инсулин",
       "uk-UA": "Інсулін"
+    },
+    "info": {
+      "description": "Hormone produced by the pancreas that regulates blood glucose uptake by cells.",
+      "why": "Assesses insulin resistance, helps diagnose type 2 diabetes and insulinomas.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -195,6 +300,11 @@
     "lang": {
       "ru-RU": "Натрий",
       "uk-UA": "Натрій"
+    },
+    "info": {
+      "description": "Major electrolyte that regulates fluid balance, nerve, and muscle function.",
+      "why": "Detects dehydration, kidney disorders, and electrolyte imbalances.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -204,6 +314,11 @@
     "lang": {
       "ru-RU": "Калий",
       "uk-UA": "Калій"
+    },
+    "info": {
+      "description": "Electrolyte essential for proper heart rhythm, nerve signaling, and muscle contraction.",
+      "why": "Monitors kidney function and detects dangerous cardiac arrhythmia risk from imbalances.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -213,6 +328,11 @@
     "lang": {
       "ru-RU": "Амилаза",
       "uk-UA": "Амілаза"
+    },
+    "info": {
+      "description": "Enzyme produced by the pancreas and salivary glands that breaks down starches.",
+      "why": "Diagnoses and monitors pancreatitis and other pancreatic disorders.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -222,6 +342,11 @@
     "lang": {
       "ru-RU": "Билирубин прямой",
       "uk-UA": "Білірубін прямий"
+    },
+    "info": {
+      "description": "Water-soluble form of bilirubin processed by the liver for excretion.",
+      "why": "Helps differentiate obstructive from hepatocellular causes of jaundice.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -231,6 +356,11 @@
     "lang": {
       "ru-RU": "Билирубин общий",
       "uk-UA": "Білірубін загальний"
+    },
+    "info": {
+      "description": "Yellow pigment produced from the breakdown of red blood cells.",
+      "why": "Evaluates liver function, bile duct obstruction, and hemolytic conditions.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -240,6 +370,11 @@
     "lang": {
       "ru-RU": "Мочевина",
       "uk-UA": "Сечовина"
+    },
+    "info": {
+      "description": "Waste product from protein metabolism filtered by the kidneys.",
+      "why": "Assesses kidney function and hydration status.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -249,6 +384,11 @@
     "lang": {
       "ru-RU": "Креатинин",
       "uk-UA": "Креатинін"
+    },
+    "info": {
+      "description": "Waste product from muscle metabolism used as a key marker of kidney function.",
+      "why": "Evaluates kidney filtration capacity and monitors renal disease progression.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -258,6 +398,11 @@
     "lang": {
       "ru-RU": "Тиреотропный гормон (ТТГ)",
       "uk-UA": "Тиреотропний гормон (ТТГ)"
+    },
+    "info": {
+      "description": "Pituitary hormone that controls thyroid gland activity and hormone production.",
+      "why": "Primary screening test for hypothyroidism and hyperthyroidism.",
+      "frequency": "Annually; every 6-8 weeks when adjusting thyroid medication"
     }
   },
   {
@@ -267,6 +412,11 @@
     "lang": {
       "ru-RU": "Трийодтиронин свободный (Т3 св.)",
       "uk-UA": "Трийодтиронін вільний (Т3 віл.)"
+    },
+    "info": {
+      "description": "Active thyroid hormone that regulates metabolism, heart rate, and body temperature.",
+      "why": "Confirms hyperthyroidism and evaluates thyroid function when TSH is abnormal.",
+      "frequency": "As clinically indicated; with TSH when monitoring thyroid disease"
     }
   },
   {
@@ -276,6 +426,11 @@
     "lang": {
       "ru-RU": "Тироксин свободный (Т4 св.)",
       "uk-UA": "Тироксин вільний (Т4 віл.)"
+    },
+    "info": {
+      "description": "Main hormone produced by the thyroid gland, converted to active T3 in tissues.",
+      "why": "Confirms thyroid dysfunction when TSH is abnormal and monitors thyroid therapy.",
+      "frequency": "As clinically indicated; with TSH when monitoring thyroid disease"
     }
   },
   {
@@ -285,6 +440,11 @@
     "lang": {
       "ru-RU": "Антитела к тиреопероксидазе (анти-ТПО)",
       "uk-UA": "Антитіла до тиреопероксидази (анти-ТПО)"
+    },
+    "info": {
+      "description": "Autoantibodies against the thyroid enzyme involved in hormone synthesis.",
+      "why": "Diagnoses autoimmune thyroid disease such as Hashimoto's thyroiditis.",
+      "frequency": "Once for diagnosis; repeat only as clinically indicated"
     }
   },
   {
@@ -294,6 +454,11 @@
     "lang": {
       "ru-RU": "Антитела к тиреоглобулину (анти-ТГ)",
       "uk-UA": "Антитіла до тиреоглобуліну (анти-ТГ)"
+    },
+    "info": {
+      "description": "Autoantibodies targeting thyroglobulin, the precursor protein for thyroid hormones.",
+      "why": "Supports diagnosis of autoimmune thyroid disease and monitors thyroid cancer follow-up.",
+      "frequency": "Once for diagnosis; repeat only as clinically indicated"
     }
   },
   {
@@ -303,6 +468,11 @@
     "lang": {
       "ru-RU": "Антитела к рецепторам ТТГ (TRAb)",
       "uk-UA": "Антитіла до рецепторів ТТГ (TRAb)"
+    },
+    "info": {
+      "description": "Autoantibodies that bind to TSH receptors and can stimulate or block the thyroid.",
+      "why": "Diagnoses Graves' disease and predicts neonatal thyroid risk in pregnant patients.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -312,6 +482,11 @@
     "lang": {
       "ru-RU": "Кальцитонин",
       "uk-UA": "Кальцитонін"
+    },
+    "info": {
+      "description": "Hormone produced by thyroid C-cells that helps regulate calcium and bone metabolism.",
+      "why": "Screens for and monitors medullary thyroid carcinoma.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -321,6 +496,11 @@
     "lang": {
       "ru-RU": "Гликированный гемоглобин (NGSP)",
       "uk-UA": "Глікований гемоглобін (NGSP)"
+    },
+    "info": {
+      "description": "Reflects average blood glucose over 2-3 months, reported as a percentage (NGSP standard).",
+      "why": "Diagnoses diabetes and monitors long-term glycemic control.",
+      "frequency": "Every 3-6 months for diabetics; annually for screening"
     }
   },
   {
@@ -330,6 +510,11 @@
     "lang": {
       "ru-RU": "Гликированный гемоглобин (IFCC)",
       "uk-UA": "Глікований гемоглобін (IFCC)"
+    },
+    "info": {
+      "description": "Reflects average blood glucose over 2-3 months, reported in mmol/mol (IFCC standard).",
+      "why": "Diagnoses diabetes and monitors long-term glycemic control using the international reference method.",
+      "frequency": "Every 3-6 months for diabetics; annually for screening"
     }
   },
   {
@@ -339,6 +524,11 @@
     "lang": {
       "ru-RU": "Гликированный альбумин",
       "uk-UA": "Глікований альбумін"
+    },
+    "info": {
+      "description": "Albumin modified by glucose, reflecting average blood sugar over the past 2-3 weeks.",
+      "why": "Monitors short-term glycemic control when HbA1c is unreliable (e.g., hemoglobin disorders).",
+      "frequency": "Every 2-4 weeks, as clinically indicated"
     }
   },
   {
@@ -348,6 +538,11 @@
     "lang": {
       "ru-RU": "Фруктозамин",
       "uk-UA": "Фруктозамін"
+    },
+    "info": {
+      "description": "Glycated serum proteins reflecting average blood glucose over the past 2-3 weeks.",
+      "why": "Provides intermediate-term glycemic monitoring when HbA1c is unreliable.",
+      "frequency": "Every 2-4 weeks, as clinically indicated"
     }
   },
   {
@@ -357,6 +552,11 @@
     "lang": {
       "ru-RU": "C-пептид",
       "uk-UA": "C-пептид"
+    },
+    "info": {
+      "description": "Byproduct of insulin production that reflects how much insulin the pancreas is making.",
+      "why": "Differentiates type 1 from type 2 diabetes and evaluates residual beta-cell function.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -366,6 +566,11 @@
     "lang": {
       "ru-RU": "Липаза",
       "uk-UA": "Ліпаза"
+    },
+    "info": {
+      "description": "Pancreatic enzyme that breaks down dietary fats into fatty acids.",
+      "why": "Diagnoses acute pancreatitis; more specific to the pancreas than amylase.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -375,6 +580,11 @@
     "lang": {
       "ru-RU": "Билирубин непрямой",
       "uk-UA": "Білірубін непрямий"
+    },
+    "info": {
+      "description": "Unconjugated bilirubin not yet processed by the liver.",
+      "why": "Helps identify hemolytic anemia and Gilbert syndrome as causes of elevated bilirubin.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -384,6 +594,11 @@
     "lang": {
       "ru-RU": "Псевдохолинэстераза",
       "uk-UA": "Псевдохолінестераза"
+    },
+    "info": {
+      "description": "Enzyme produced by the liver that hydrolyzes choline esters.",
+      "why": "Assesses liver synthetic function and detects organophosphate poisoning or genetic variants affecting anesthesia.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -393,6 +608,11 @@
     "lang": {
       "ru-RU": "HBsAg (поверхностный антиген гепатита B)",
       "uk-UA": "HBsAg (поверхневий антиген гепатиту B)"
+    },
+    "info": {
+      "description": "Surface protein of the hepatitis B virus indicating current infection.",
+      "why": "Screens for active hepatitis B infection and carrier status.",
+      "frequency": "Once for screening; repeat if at ongoing risk"
     }
   },
   {
@@ -402,6 +622,11 @@
     "lang": {
       "ru-RU": "Антитела к вирусу гепатита C",
       "uk-UA": "Антитіла до вірусу гепатиту C"
+    },
+    "info": {
+      "description": "Antibodies against hepatitis C virus indicating past or current infection.",
+      "why": "Screens for hepatitis C infection, which can cause chronic liver disease.",
+      "frequency": "Once for screening; repeat if at ongoing risk"
     }
   },
   {
@@ -411,6 +636,11 @@
     "lang": {
       "ru-RU": "Альбумин",
       "uk-UA": "Альбумін"
+    },
+    "info": {
+      "description": "Most abundant blood protein, produced by the liver, that maintains fluid balance and transports substances.",
+      "why": "Evaluates liver synthetic function, nutritional status, and kidney disease.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -420,6 +650,11 @@
     "lang": {
       "ru-RU": "Глобулин",
       "uk-UA": "Глобулін"
+    },
+    "info": {
+      "description": "Group of proteins including immunoglobulins and transport proteins, calculated from total protein minus albumin.",
+      "why": "Screens for immune disorders, chronic infections, and liver disease.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -429,6 +664,11 @@
     "lang": {
       "ru-RU": "Общий белок",
       "uk-UA": "Загальний білок"
+    },
+    "info": {
+      "description": "Sum of all proteins in the blood, mainly albumin and globulins.",
+      "why": "Assesses nutritional status, liver function, and screens for immune or kidney disorders.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -438,6 +678,11 @@
     "lang": {
       "ru-RU": "Индекс атерогенности",
       "uk-UA": "Індекс атерогенності"
+    },
+    "info": {
+      "description": "Ratio of total cholesterol to HDL cholesterol reflecting atherosclerotic risk.",
+      "why": "Provides a combined cardiovascular risk metric that may be more predictive than individual lipid values.",
+      "frequency": "Every 4-6 years; annually if at elevated risk"
     }
   },
   {
@@ -447,6 +692,11 @@
     "lang": {
       "ru-RU": "Аполипопротеин B",
       "uk-UA": "Аполіпопротеїн B"
+    },
+    "info": {
+      "description": "Main protein on LDL and other atherogenic lipoprotein particles.",
+      "why": "Estimates the total number of atherogenic particles, improving cardiovascular risk prediction beyond LDL-C.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -456,6 +706,11 @@
     "lang": {
       "ru-RU": "Аполипопротеин A1",
       "uk-UA": "Аполіпопротеїн A1"
+    },
+    "info": {
+      "description": "Main protein component of HDL cholesterol particles.",
+      "why": "Assesses cardiovascular protection; the ApoB/ApoA1 ratio is a strong predictor of heart disease risk.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -465,6 +720,11 @@
     "lang": {
       "ru-RU": "Липопротеин (а)",
       "uk-UA": "Ліпопротеїн (а)"
+    },
+    "info": {
+      "description": "Genetically determined lipoprotein particle that promotes atherosclerosis and blood clotting.",
+      "why": "Identifies inherited cardiovascular risk not captured by standard lipid panels.",
+      "frequency": "Once in a lifetime (genetically determined); repeat only if result was borderline"
     }
   },
   {
@@ -474,6 +734,11 @@
     "lang": {
       "ru-RU": "С-реактивный белок",
       "uk-UA": "С-реактивний білок"
+    },
+    "info": {
+      "description": "Acute-phase protein produced by the liver that rises rapidly with inflammation or infection.",
+      "why": "Detects and monitors acute inflammation, infection, and tissue injury.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -483,6 +748,11 @@
     "lang": {
       "ru-RU": "С-реактивный белок (высокочувствительный)",
       "uk-UA": "С-реактивний білок (високочутливий)"
+    },
+    "info": {
+      "description": "Highly sensitive measurement of CRP that detects low-grade chronic inflammation.",
+      "why": "Assesses cardiovascular disease risk related to vascular inflammation.",
+      "frequency": "Annually, or as clinically indicated for cardiovascular risk stratification"
     }
   },
   {
@@ -492,6 +762,11 @@
     "lang": {
       "ru-RU": "Интерлейкин-6",
       "uk-UA": "Інтерлейкін-6"
+    },
+    "info": {
+      "description": "Pro-inflammatory cytokine produced by immune cells during infection and tissue injury.",
+      "why": "Evaluates systemic inflammation and monitors autoimmune or inflammatory conditions.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -501,6 +776,11 @@
     "lang": {
       "ru-RU": "Фактор некроза опухоли альфа (ФНО-α)",
       "uk-UA": "Фактор некрозу пухлин альфа (ФНП-α)"
+    },
+    "info": {
+      "description": "Key pro-inflammatory cytokine involved in systemic inflammation and immune regulation.",
+      "why": "Monitors chronic inflammatory and autoimmune diseases such as rheumatoid arthritis.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -510,6 +790,11 @@
     "lang": {
       "ru-RU": "Окисленный ЛПНП",
       "uk-UA": "Окислений ЛПНЩ"
+    },
+    "info": {
+      "description": "LDL cholesterol that has been damaged by oxidation, making it more atherogenic.",
+      "why": "Assesses oxidative stress and provides additional cardiovascular risk information.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -519,6 +804,11 @@
     "lang": {
       "ru-RU": "Лептин",
       "uk-UA": "Лептин"
+    },
+    "info": {
+      "description": "Hormone produced by fat cells that signals satiety and regulates energy balance.",
+      "why": "Evaluates obesity-related metabolic dysfunction and rare congenital leptin deficiency.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -528,6 +818,11 @@
     "lang": {
       "ru-RU": "Адипонектин",
       "uk-UA": "Адипонектин"
+    },
+    "info": {
+      "description": "Hormone secreted by fat cells that enhances insulin sensitivity and has anti-inflammatory effects.",
+      "why": "Assesses metabolic health; low levels are associated with insulin resistance and cardiovascular risk.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -537,6 +832,11 @@
     "lang": {
       "ru-RU": "Гомоцистеин",
       "uk-UA": "Гомоцистеїн"
+    },
+    "info": {
+      "description": "Amino acid whose elevated levels damage blood vessel walls and promote clotting.",
+      "why": "Identifies cardiovascular and stroke risk and screens for B-vitamin or folate deficiency.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -546,6 +846,11 @@
     "lang": {
       "ru-RU": "Фибриноген",
       "uk-UA": "Фібриноген"
+    },
+    "info": {
+      "description": "Blood clotting protein converted to fibrin to form clots, also an acute-phase reactant.",
+      "why": "Evaluates bleeding disorders, clotting risk, and systemic inflammation.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -555,6 +860,11 @@
     "lang": {
       "ru-RU": "Глобулин, связывающий половые гормоны (ГСПГ)",
       "uk-UA": "Глобулін, що зв'язує статеві гормони (ГЗСГ)"
+    },
+    "info": {
+      "description": "Liver-produced protein that binds and transports sex hormones, regulating their bioavailability.",
+      "why": "Helps interpret testosterone and estrogen levels and assess androgen excess or deficiency.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -564,6 +874,11 @@
     "lang": {
       "ru-RU": "Эстрадиол",
       "uk-UA": "Естрадіол"
+    },
+    "info": {
+      "description": "Primary female sex hormone essential for reproductive function and bone health.",
+      "why": "Evaluates ovarian function, menopause, fertility issues, and gynecomastia in men.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -573,6 +888,11 @@
     "lang": {
       "ru-RU": "Дигидротестостерон",
       "uk-UA": "Дигідротестостерон"
+    },
+    "info": {
+      "description": "Potent androgen derived from testosterone, active in skin, hair follicles, and the prostate.",
+      "why": "Evaluates androgen-related conditions such as hair loss, hirsutism, and prostate enlargement.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -582,6 +902,11 @@
     "lang": {
       "ru-RU": "Дегидроэпиандростерон-сульфат",
       "uk-UA": "Дегідроепіандростерон-сульфат"
+    },
+    "info": {
+      "description": "Adrenal androgen precursor that serves as a reservoir for sex hormone production.",
+      "why": "Evaluates adrenal gland function and investigates androgen excess or adrenal tumors.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -591,6 +916,11 @@
     "lang": {
       "ru-RU": "Витамин B1 (тиамин)",
       "uk-UA": "Вітамін B1 (тіамін)"
+    },
+    "info": {
+      "description": "Water-soluble vitamin essential for energy metabolism and nervous system function.",
+      "why": "Detects deficiency that can cause beriberi or Wernicke encephalopathy.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -600,6 +930,11 @@
     "lang": {
       "ru-RU": "Витамин B6 (пиридоксальфосфат)",
       "uk-UA": "Вітамін B6 (піридоксальфосфат)"
+    },
+    "info": {
+      "description": "Active form of vitamin B6 involved in amino acid metabolism and neurotransmitter synthesis.",
+      "why": "Detects deficiency associated with peripheral neuropathy and anemia.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -609,6 +944,11 @@
     "lang": {
       "ru-RU": "Витамин B9 (фолат)",
       "uk-UA": "Вітамін B9 (фолат)"
+    },
+    "info": {
+      "description": "B-vitamin essential for DNA synthesis, red blood cell formation, and fetal development.",
+      "why": "Detects folate deficiency causing megaloblastic anemia and elevated homocysteine.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -618,6 +958,11 @@
     "lang": {
       "ru-RU": "Витамин B12 (кобаламин)",
       "uk-UA": "Вітамін B12 (кобаламін)"
+    },
+    "info": {
+      "description": "Vitamin essential for nerve function, DNA synthesis, and red blood cell production.",
+      "why": "Detects deficiency causing megaloblastic anemia, neuropathy, and cognitive impairment.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -627,6 +972,11 @@
     "lang": {
       "ru-RU": "Витамин D (25-гидроксивитамин D)",
       "uk-UA": "Вітамін D (25-гідроксивітамін D)"
+    },
+    "info": {
+      "description": "Main circulating form of vitamin D reflecting overall body stores.",
+      "why": "Detects vitamin D deficiency linked to bone loss, immune dysfunction, and muscle weakness.",
+      "frequency": "Annually; every 3 months when supplementing to reach target levels"
     }
   },
   {
@@ -636,6 +986,11 @@
     "lang": {
       "ru-RU": "Кальций",
       "uk-UA": "Кальцій"
+    },
+    "info": {
+      "description": "Mineral essential for bone structure, muscle contraction, nerve function, and blood clotting.",
+      "why": "Screens for parathyroid disorders, bone disease, and kidney problems.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -645,6 +1000,11 @@
     "lang": {
       "ru-RU": "Кальций ионизированный",
       "uk-UA": "Кальцій іонізований"
+    },
+    "info": {
+      "description": "Free, biologically active form of calcium not bound to proteins.",
+      "why": "Provides a more accurate assessment of calcium status when albumin levels are abnormal.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -654,6 +1014,11 @@
     "lang": {
       "ru-RU": "Хлор",
       "uk-UA": "Хлор"
+    },
+    "info": {
+      "description": "Electrolyte that helps maintain fluid balance and acid-base equilibrium.",
+      "why": "Detects acid-base disorders and electrolyte imbalances.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -663,6 +1028,11 @@
     "lang": {
       "ru-RU": "Фосфор",
       "uk-UA": "Фосфор"
+    },
+    "info": {
+      "description": "Mineral essential for bone structure, energy production, and cell membrane integrity.",
+      "why": "Evaluates bone metabolism, parathyroid function, and kidney disease.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -672,6 +1042,11 @@
     "lang": {
       "ru-RU": "Магний",
       "uk-UA": "Магній"
+    },
+    "info": {
+      "description": "Mineral involved in over 300 enzymatic reactions including energy production and muscle function.",
+      "why": "Detects deficiency causing muscle cramps, arrhythmias, and fatigue.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -681,6 +1056,11 @@
     "lang": {
       "ru-RU": "Магний (эритроцитарный)",
       "uk-UA": "Магній (еритроцитарний)"
+    },
+    "info": {
+      "description": "Intracellular magnesium level measured in red blood cells, reflecting longer-term magnesium status.",
+      "why": "Provides a more accurate picture of tissue magnesium stores than serum magnesium alone.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -690,6 +1070,11 @@
     "lang": {
       "ru-RU": "Паратиреоидный гормон (ПТГ)",
       "uk-UA": "Паратиреоїдний гормон (ПТГ)"
+    },
+    "info": {
+      "description": "Hormone that regulates calcium and phosphorus levels by acting on bones, kidneys, and gut.",
+      "why": "Diagnoses hyperparathyroidism, hypoparathyroidism, and evaluates calcium metabolism disorders.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -699,6 +1084,11 @@
     "lang": {
       "ru-RU": "Гематокрит",
       "uk-UA": "Гематокрит"
+    },
+    "info": {
+      "description": "Percentage of blood volume occupied by red blood cells.",
+      "why": "Detects anemia, dehydration, and polycythemia.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -708,6 +1098,11 @@
     "lang": {
       "ru-RU": "Железо сывороточное",
       "uk-UA": "Залізо сироваткове"
+    },
+    "info": {
+      "description": "Essential mineral required for hemoglobin synthesis and oxygen transport.",
+      "why": "Evaluates iron deficiency or overload and helps diagnose anemia.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -717,6 +1112,11 @@
     "lang": {
       "ru-RU": "Ферритин",
       "uk-UA": "Феритин"
+    },
+    "info": {
+      "description": "Protein that stores iron inside cells, reflecting total body iron reserves.",
+      "why": "Best single test for diagnosing iron deficiency; also elevated in inflammation and iron overload.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -726,6 +1126,11 @@
     "lang": {
       "ru-RU": "Общая железосвязывающая способность (ОЖСС)",
       "uk-UA": "Загальна залізозв'язувальна здатність (ЗЗЗЗ)"
+    },
+    "info": {
+      "description": "Measures the blood's total capacity to bind iron via transferrin.",
+      "why": "Helps distinguish between iron deficiency anemia and other causes of abnormal iron levels.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -735,6 +1140,11 @@
     "lang": {
       "ru-RU": "Ненасыщенная железосвязывающая способность (НЖСС)",
       "uk-UA": "Ненасичена залізозв'язувальна здатність (НЗЗЗ)"
+    },
+    "info": {
+      "description": "The reserve iron-binding capacity of transferrin not yet occupied by iron.",
+      "why": "Helps calculate transferrin saturation and assess iron status.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -744,6 +1154,11 @@
     "lang": {
       "ru-RU": "Трансферрин",
       "uk-UA": "Трансферин"
+    },
+    "info": {
+      "description": "Iron-transport protein produced by the liver that carries iron through the bloodstream.",
+      "why": "Evaluates iron metabolism and helps distinguish types of anemia.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -753,6 +1168,11 @@
     "lang": {
       "ru-RU": "Насыщение трансферрина железом (%)",
       "uk-UA": "Насичення трансферину залізом (%)"
+    },
+    "info": {
+      "description": "Percentage of transferrin binding sites occupied by iron.",
+      "why": "Diagnoses iron deficiency and hemochromatosis (iron overload).",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -762,6 +1182,11 @@
     "lang": {
       "ru-RU": "Мочевая кислота",
       "uk-UA": "Сечова кислота"
+    },
+    "info": {
+      "description": "End product of purine metabolism excreted by the kidneys.",
+      "why": "Diagnoses gout, monitors kidney function, and assesses cardiovascular risk.",
+      "frequency": "Annually, or as clinically indicated"
     }
   },
   {
@@ -771,6 +1196,11 @@
     "lang": {
       "ru-RU": "СКФ (скорость клубочковой фильтрации)",
       "uk-UA": "ШКФ (швидкість клубочкової фільтрації)"
+    },
+    "info": {
+      "description": "Estimated rate at which the kidneys filter blood, calculated from creatinine and demographics.",
+      "why": "Stages chronic kidney disease and monitors kidney function over time.",
+      "frequency": "Annually; every 3-6 months in chronic kidney disease"
     }
   },
   {
@@ -780,6 +1210,11 @@
     "lang": {
       "ru-RU": "Цистатин C",
       "uk-UA": "Цистатин C"
+    },
+    "info": {
+      "description": "Small protein filtered by the kidneys, used as an alternative marker of kidney function.",
+      "why": "Provides a more accurate GFR estimate, especially when creatinine may be unreliable (e.g., extreme muscle mass).",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -789,6 +1224,11 @@
     "lang": {
       "ru-RU": "АЧТВ (активированное частичное тромбопластиновое время)",
       "uk-UA": "АЧТЧ (активований частковий тромбопластиновий час)"
+    },
+    "info": {
+      "description": "Measures the time it takes for blood to clot via the intrinsic coagulation pathway.",
+      "why": "Screens for clotting factor deficiencies and monitors heparin therapy.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -798,6 +1238,11 @@
     "lang": {
       "ru-RU": "МНО (международное нормализованное отношение)",
       "uk-UA": "МНВ (міжнародне нормалізоване відношення)"
+    },
+    "info": {
+      "description": "Standardized ratio of prothrombin time used to compare coagulation across laboratories.",
+      "why": "Monitors warfarin therapy and evaluates the extrinsic clotting pathway.",
+      "frequency": "Weekly to monthly when on warfarin; otherwise as clinically indicated"
     }
   },
   {
@@ -807,6 +1252,11 @@
     "lang": {
       "ru-RU": "Протромбиновое время",
       "uk-UA": "Протромбіновий час"
+    },
+    "info": {
+      "description": "Measures the time for blood to clot via the extrinsic and common coagulation pathways.",
+      "why": "Evaluates bleeding risk, liver function, and monitors anticoagulant therapy.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -816,6 +1266,11 @@
     "lang": {
       "ru-RU": "D-димер",
       "uk-UA": "D-димер"
+    },
+    "info": {
+      "description": "Fibrin degradation product released when blood clots break down.",
+      "why": "Rules out deep vein thrombosis and pulmonary embolism; also monitors clotting disorders.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -825,6 +1280,11 @@
     "lang": {
       "ru-RU": "Протромбиновый индекс",
       "uk-UA": "Протромбіновий індекс"
+    },
+    "info": {
+      "description": "Prothrombin time expressed as a percentage of a normal reference value.",
+      "why": "Assesses extrinsic coagulation pathway function and liver synthetic capacity.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -834,6 +1294,11 @@
     "lang": {
       "ru-RU": "Тромбиновое время",
       "uk-UA": "Тромбіновий час"
+    },
+    "info": {
+      "description": "Measures the time for fibrinogen to convert to fibrin in the final step of clot formation.",
+      "why": "Detects fibrinogen abnormalities, heparin contamination, and fibrin degradation products.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -843,6 +1308,11 @@
     "lang": {
       "ru-RU": "Антитромбин (активность)",
       "uk-UA": "Антитромбін (активність)"
+    },
+    "info": {
+      "description": "Natural anticoagulant protein that inactivates thrombin and other clotting factors.",
+      "why": "Identifies antithrombin deficiency as a cause of recurrent venous thrombosis.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -852,6 +1322,11 @@
     "lang": {
       "ru-RU": "СОЭ (скорость оседания эритроцитов)",
       "uk-UA": "ШОЕ (швидкість осідання еритроцитів)"
+    },
+    "info": {
+      "description": "Non-specific measure of how fast red blood cells settle in a tube, indicating inflammation.",
+      "why": "Screens for and monitors inflammatory conditions such as infections and autoimmune diseases.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -861,6 +1336,11 @@
     "lang": {
       "ru-RU": "АКТГ (адренокортикотропный гормон)",
       "uk-UA": "АКТГ (адренокортикотропний гормон)"
+    },
+    "info": {
+      "description": "Pituitary hormone that stimulates the adrenal glands to produce cortisol.",
+      "why": "Differentiates pituitary from adrenal causes of cortisol disorders (Cushing's, Addison's).",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -870,6 +1350,11 @@
     "lang": {
       "ru-RU": "Кортизол",
       "uk-UA": "Кортизол"
+    },
+    "info": {
+      "description": "Primary stress hormone produced by the adrenal glands that regulates metabolism and immune response.",
+      "why": "Diagnoses adrenal insufficiency (Addison's disease) and cortisol excess (Cushing's syndrome).",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -879,6 +1364,11 @@
     "lang": {
       "ru-RU": "Ревматоидный фактор",
       "uk-UA": "Ревматоїдний фактор"
+    },
+    "info": {
+      "description": "Autoantibody directed against the Fc portion of IgG, often elevated in autoimmune conditions.",
+      "why": "Supports diagnosis of rheumatoid arthritis and other autoimmune diseases.",
+      "frequency": "As clinically indicated"
     }
   },
   {
@@ -888,6 +1378,11 @@
     "lang": {
       "ru-RU": "ИФР-1 (соматомедин C)",
       "uk-UA": "ІФР-1 (соматомедин C)"
+    },
+    "info": {
+      "description": "Growth factor mediating the effects of growth hormone on tissue growth and metabolism.",
+      "why": "Screens for growth hormone deficiency or excess (acromegaly) and monitors treatment.",
+      "frequency": "As clinically indicated; every 6-12 months if monitoring therapy"
     }
   },
   {
@@ -897,6 +1392,11 @@
     "lang": {
       "ru-RU": "ПСА (простатический специфический антиген)",
       "uk-UA": "ПСА (простатичний специфічний антиген)"
+    },
+    "info": {
+      "description": "Protein produced by the prostate gland, elevated in prostate cancer and benign prostate conditions.",
+      "why": "Screens for prostate cancer and monitors treatment response in diagnosed patients.",
+      "frequency": "Annually for men over 50 (or over 40 if high risk); as clinically indicated"
     }
   },
   {
@@ -906,6 +1406,11 @@
     "lang": {
       "ru-RU": "Антитела к циклическому цитруллинированному пептиду (АЦЦП)",
       "uk-UA": "Антитіла до циклічного цитрулінованого пептиду (АЦЦП)"
+    },
+    "info": {
+      "description": "Highly specific autoantibody associated with rheumatoid arthritis.",
+      "why": "Confirms rheumatoid arthritis diagnosis with high specificity and predicts disease severity.",
+      "frequency": "Once for diagnosis; repeat only as clinically indicated"
     }
   },
   {
@@ -915,132 +1420,242 @@
     "lang": {
       "ru-RU": "Креатинкиназа",
       "uk-UA": "Креатинкіназа"
+    },
+    "info": {
+      "description": "Enzyme found in muscle tissue released into the blood when muscles are damaged.",
+      "why": "Detects muscle injury, rhabdomyolysis, and monitors statin-related myopathy.",
+      "frequency": "As clinically indicated"
     }
   },
   {
     "loinc": "751-8",
     "longCommonName": "Neutrophils [#/volume] in Blood by Automated count",
     "displayName": "Neutrophils (NEUT#)",
-    "lang": { "ru-RU": "Нейтрофилы (абс.)", "uk-UA": "Нейтрофіли (абс.)" }
+    "lang": { "ru-RU": "Нейтрофилы (абс.)", "uk-UA": "Нейтрофіли (абс.)" },
+    "info": {
+      "description": "Most abundant white blood cells, first responders to bacterial infections.",
+      "why": "Detects bacterial infections, monitors chemotherapy effects, and evaluates immune status.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "731-0",
     "longCommonName": "Lymphocytes [#/volume] in Blood by Automated count",
     "displayName": "Lymphocytes (LYMPH#)",
-    "lang": { "ru-RU": "Лимфоциты (абс.)", "uk-UA": "Лімфоцити (абс.)" }
+    "lang": { "ru-RU": "Лимфоциты (абс.)", "uk-UA": "Лімфоцити (абс.)" },
+    "info": {
+      "description": "White blood cells responsible for adaptive immunity, including T-cells and B-cells.",
+      "why": "Evaluates viral infections, immune deficiencies, and lymphoproliferative disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "742-7",
     "longCommonName": "Monocytes [#/volume] in Blood by Automated count",
     "displayName": "Monocytes (MONO#)",
-    "lang": { "ru-RU": "Моноциты (абс.)", "uk-UA": "Моноцити (абс.)" }
+    "lang": { "ru-RU": "Моноциты (абс.)", "uk-UA": "Моноцити (абс.)" },
+    "info": {
+      "description": "Largest white blood cells that differentiate into macrophages to engulf pathogens and debris.",
+      "why": "Helps diagnose chronic infections, inflammatory conditions, and blood disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "711-2",
     "longCommonName": "Eosinophils [#/volume] in Blood by Automated count",
     "displayName": "Eosinophils (EO#)",
-    "lang": { "ru-RU": "Эозинофилы (абс.)", "uk-UA": "Еозинофіли (абс.)" }
+    "lang": { "ru-RU": "Эозинофилы (абс.)", "uk-UA": "Еозинофіли (абс.)" },
+    "info": {
+      "description": "White blood cells involved in allergic responses and defense against parasites.",
+      "why": "Detects allergic conditions, parasitic infections, and eosinophilic disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "704-7",
     "longCommonName": "Basophils [#/volume] in Blood by Automated count",
     "displayName": "Basophils (BASO#)",
-    "lang": { "ru-RU": "Базофилы (абс.)", "uk-UA": "Базофіли (абс.)" }
+    "lang": { "ru-RU": "Базофилы (абс.)", "uk-UA": "Базофіли (абс.)" },
+    "info": {
+      "description": "Rarest white blood cells that release histamine and play a role in allergic reactions.",
+      "why": "Helps evaluate allergic conditions and myeloproliferative disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "770-8",
     "longCommonName": "Neutrophils/100 leukocytes in Blood by Automated count",
     "displayName": "Neutrophils (NEUT%)",
-    "lang": { "ru-RU": "Нейтрофилы (%)", "uk-UA": "Нейтрофіли (%)" }
+    "lang": { "ru-RU": "Нейтрофилы (%)", "uk-UA": "Нейтрофіли (%)" },
+    "info": {
+      "description": "Percentage of white blood cells that are neutrophils.",
+      "why": "Helps interpret the differential white blood cell count for infection or bone marrow assessment.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "736-9",
     "longCommonName": "Lymphocytes/100 leukocytes in Blood by Automated count",
     "displayName": "Lymphocytes (LYMPH%)",
-    "lang": { "ru-RU": "Лимфоциты (%)", "uk-UA": "Лімфоцити (%)" }
+    "lang": { "ru-RU": "Лимфоциты (%)", "uk-UA": "Лімфоцити (%)" },
+    "info": {
+      "description": "Percentage of white blood cells that are lymphocytes.",
+      "why": "Aids in diagnosing viral infections, immune deficiencies, and lymphocytic disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "5905-5",
     "longCommonName": "Monocytes/100 leukocytes in Blood by Automated count",
     "displayName": "Monocytes (MONO%)",
-    "lang": { "ru-RU": "Моноциты (%)", "uk-UA": "Моноцити (%)" }
+    "lang": { "ru-RU": "Моноциты (%)", "uk-UA": "Моноцити (%)" },
+    "info": {
+      "description": "Percentage of white blood cells that are monocytes.",
+      "why": "Helps evaluate chronic infections, inflammatory conditions, and hematologic disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "713-8",
     "longCommonName": "Eosinophils/100 leukocytes in Blood by Automated count",
     "displayName": "Eosinophils (EO%)",
-    "lang": { "ru-RU": "Эозинофилы (%)", "uk-UA": "Еозинофіли (%)" }
+    "lang": { "ru-RU": "Эозинофилы (%)", "uk-UA": "Еозинофіли (%)" },
+    "info": {
+      "description": "Percentage of white blood cells that are eosinophils.",
+      "why": "Screens for allergic reactions, parasitic infections, and eosinophilic disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "706-2",
     "longCommonName": "Basophils/100 leukocytes in Blood by Automated count",
     "displayName": "Basophils (BASO%)",
-    "lang": { "ru-RU": "Базофилы (%)", "uk-UA": "Базофіли (%)" }
+    "lang": { "ru-RU": "Базофилы (%)", "uk-UA": "Базофіли (%)" },
+    "info": {
+      "description": "Percentage of white blood cells that are basophils.",
+      "why": "Helps evaluate allergic conditions and chronic myeloproliferative disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "787-2",
     "longCommonName": "Mean corpuscular volume [Entitic volume] by Automated count",
     "displayName": "MCV",
-    "lang": { "ru-RU": "Средний объем эритроцита (MCV)", "uk-UA": "Середній об'єм еритроцита (MCV)" }
+    "lang": { "ru-RU": "Средний объем эритроцита (MCV)", "uk-UA": "Середній об'єм еритроцита (MCV)" },
+    "info": {
+      "description": "Average volume of a single red blood cell.",
+      "why": "Classifies anemia as microcytic, normocytic, or macrocytic to guide diagnosis.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "785-6",
     "longCommonName": "Mean corpuscular hemoglobin [Entitic mass] by Automated count",
     "displayName": "MCH",
-    "lang": { "ru-RU": "Среднее содержание гемоглобина (MCH)", "uk-UA": "Середній вміст гемоглобіну (MCH)" }
+    "lang": { "ru-RU": "Среднее содержание гемоглобина (MCH)", "uk-UA": "Середній вміст гемоглобіну (MCH)" },
+    "info": {
+      "description": "Average amount of hemoglobin per red blood cell.",
+      "why": "Helps classify anemia types and complements MCV in evaluating red cell disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "786-4",
     "longCommonName": "Mean corpuscular hemoglobin concentration [Mass/volume] by Automated count",
     "displayName": "MCHC",
-    "lang": { "ru-RU": "Средняя концентрация гемоглобина (MCHC)", "uk-UA": "Середня концентрація гемоглобіну (MCHC)" }
+    "lang": { "ru-RU": "Средняя концентрация гемоглобина (MCHC)", "uk-UA": "Середня концентрація гемоглобіну (MCHC)" },
+    "info": {
+      "description": "Average concentration of hemoglobin within red blood cells.",
+      "why": "Detects hypochromic anemias such as iron deficiency and hereditary spherocytosis.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "788-0",
     "longCommonName": "Erythrocyte distribution width [Ratio] by Automated count",
     "displayName": "RDW-CV",
-    "lang": { "ru-RU": "Ширина распределения эритроцитов (RDW-CV)", "uk-UA": "Ширина розподілу еритроцитів (RDW-CV)" }
+    "lang": { "ru-RU": "Ширина распределения эритроцитов (RDW-CV)", "uk-UA": "Ширина розподілу еритроцитів (RDW-CV)" },
+    "info": {
+      "description": "Coefficient of variation in red blood cell size, indicating size heterogeneity.",
+      "why": "Helps differentiate anemia types; elevated in iron deficiency and mixed nutritional anemias.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "21000-5",
     "longCommonName": "Erythrocyte distribution width [Entitic volume] by Automated count",
     "displayName": "RDW-SD",
-    "lang": { "ru-RU": "Ширина распределения эритроцитов (RDW-SD)", "uk-UA": "Ширина розподілу еритроцитів (RDW-SD)" }
+    "lang": { "ru-RU": "Ширина распределения эритроцитов (RDW-SD)", "uk-UA": "Ширина розподілу еритроцитів (RDW-SD)" },
+    "info": {
+      "description": "Standard deviation of red blood cell volume distribution.",
+      "why": "Provides a direct measure of red cell size variability to help classify anemias.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "777-3",
     "longCommonName": "Platelets [#/volume] in Blood by Automated count",
     "displayName": "Platelets (PLT)",
-    "lang": { "ru-RU": "Тромбоциты", "uk-UA": "Тромбоцити" }
+    "lang": { "ru-RU": "Тромбоциты", "uk-UA": "Тромбоцити" },
+    "info": {
+      "description": "Cell fragments essential for blood clotting and wound repair.",
+      "why": "Detects thrombocytopenia or thrombocytosis and evaluates bleeding or clotting risk.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "32623-1",
     "longCommonName": "Mean platelet volume [Entitic volume] in Blood by Automated count",
     "displayName": "MPV",
-    "lang": { "ru-RU": "Средний объем тромбоцита (MPV)", "uk-UA": "Середній об'єм тромбоцита (MPV)" }
+    "lang": { "ru-RU": "Средний объем тромбоцита (MPV)", "uk-UA": "Середній об'єм тромбоцита (MPV)" },
+    "info": {
+      "description": "Average size of platelets, reflecting bone marrow platelet production activity.",
+      "why": "Helps distinguish causes of abnormal platelet counts (production vs. destruction).",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "32207-3",
     "longCommonName": "Platelet distribution width [Entitic volume] in Blood by Automated count",
     "displayName": "PDW",
-    "lang": { "ru-RU": "Ширина распределения тромбоцитов (PDW)", "uk-UA": "Ширина розподілу тромбоцитів (PDW)" }
+    "lang": { "ru-RU": "Ширина распределения тромбоцитов (PDW)", "uk-UA": "Ширина розподілу тромбоцитів (PDW)" },
+    "info": {
+      "description": "Measure of variation in platelet size within the blood.",
+      "why": "Aids in differentiating reactive thrombocytosis from myeloproliferative disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "58410-2",
     "longCommonName": "Platelet large cell ratio in Blood by Automated count",
     "displayName": "P-LCR",
-    "lang": { "ru-RU": "Коэффициент больших тромбоцитов (P-LCR)", "uk-UA": "Коефіцієнт великих тромбоцитів (P-LCR)" }
+    "lang": { "ru-RU": "Коэффициент больших тромбоцитов (P-LCR)", "uk-UA": "Коефіцієнт великих тромбоцитів (P-LCR)" },
+    "info": {
+      "description": "Percentage of platelets that exceed a defined large-size threshold.",
+      "why": "Indicates increased platelet turnover and helps evaluate thrombocytopenic conditions.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "74464-9",
     "longCommonName": "Platelet large cells [#/volume] in Blood by Automated count",
     "displayName": "P-LCC",
-    "lang": { "ru-RU": "Большие тромбоциты (P-LCC)", "uk-UA": "Великі тромбоцити (P-LCC)" }
+    "lang": { "ru-RU": "Большие тромбоциты (P-LCC)", "uk-UA": "Великі тромбоцити (P-LCC)" },
+    "info": {
+      "description": "Absolute count of large platelets in the blood.",
+      "why": "Supplements P-LCR to evaluate platelet production and destruction disorders.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   },
   {
     "loinc": "61928-1",
     "longCommonName": "Plateletcrit [Volume Fraction] in Blood by Automated count",
     "displayName": "Plateletcrit (PCT)",
-    "lang": { "ru-RU": "Тромбокрит (PCT)", "uk-UA": "Тромбокрит (PCT)" }
+    "lang": { "ru-RU": "Тромбокрит (PCT)", "uk-UA": "Тромбокрит (PCT)" },
+    "info": {
+      "description": "Percentage of blood volume occupied by platelets, analogous to hematocrit for red cells.",
+      "why": "Provides an overall measure of platelet mass to evaluate bleeding and clotting risk.",
+      "frequency": "Annually, or as clinically indicated"
+    }
   }
 ]

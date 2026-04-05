@@ -108,6 +108,7 @@
     .view-toggle-btn.active { background: var(--primary); color: white; }
 
     .panels-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+    .panels-grid-single { grid-template-columns: 1fr; }
     .panel-card {
       background: white; border-radius: var(--radius); padding: 12px;
       box-shadow: var(--shadow);
@@ -450,10 +451,25 @@
       return listHtml;
     }
 
+    function getOtherLangNames(a) {
+      const names = [];
+      if (currentLang !== 'ru-RU' && a.lang['ru-RU']) names.push(a.lang['ru-RU']);
+      if (currentLang !== 'uk-UA' && a.lang['uk-UA']) names.push(a.lang['uk-UA']);
+      if (currentLang !== 'en') names.unshift(a.displayName);
+      return names;
+    }
+
     function renderAnalysisItem(a) {
       if (panelViewMode === 'detailed') {
-        return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>
-          <li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.longCommonName)}</li>`;
+        const otherNames = getOtherLangNames(a);
+        let extra = `<li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.longCommonName)}</li>`;
+        if (otherNames.length) extra += `<li class="result-loinc" style="border-top:none;padding-top:0">${otherNames.map(n => escHtml(n)).join(' · ')}</li>`;
+        if (a.info) {
+          if (a.info.description) extra += `<li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.info.description)}</li>`;
+          if (a.info.why) extra += `<li class="result-loinc" style="border-top:none;padding-top:0"><b>Why:</b> ${escHtml(a.info.why)}</li>`;
+          if (a.info.frequency) extra += `<li class="result-loinc" style="border-top:none;padding-top:0"><b>How often:</b> ${escHtml(a.info.frequency)}</li>`;
+        }
+        return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>${extra}`;
       }
       if (panelViewMode === 'compact') {
         return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>`;
@@ -474,6 +490,8 @@
         <button class="view-toggle-btn ${panelViewMode === 'detailed' ? 'active' : ''}" onclick="setPanelView('detailed')">Detailed</button>
       </div>`;
 
+      const gridClass = panelViewMode === 'detailed' ? 'panels-grid panels-grid-single' : 'panels-grid';
+
       if (panelViewMode === 'minimal') {
         container.innerHTML = toggleHtml + `<div class="panels-grid">${panelsCache.map((p, i) => {
           const count = getPanelAnalyses(p).length;
@@ -484,7 +502,7 @@
             </div>`;
         }).join('')}</div>`;
       } else {
-        container.innerHTML = toggleHtml + `<div class="panels-grid">${panelsCache.map(p => `
+        container.innerHTML = toggleHtml + `<div class="${gridClass}">${panelsCache.map(p => `
           <div class="panel-card">
             <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
             <ul class="panel-card-list">${renderPanelList(p)}</ul>
