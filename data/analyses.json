@@ -164,7 +164,8 @@
     "info": {
       "description": "Fasting blood sugar level measured in whole blood.",
       "why": "Screens for diabetes and prediabetes and monitors glycemic control.",
-      "frequency": "Annually; every 3 months if diabetic"
+      "frequency": "Annually; every 3 months if diabetic",
+      "scientific": "Glucose (C6H12O6) is a simple monosaccharide and monomer of carbohydrates. Glucose provides energy for cellular processes and aids metabolism within the body. When food is ingested, the carbohydrates within the food are broken down into glucose molecules. Blood glucose content is significant in determining an individual\u2019s overall state of health. An elevated blood glucose level is called hyperglycemia and a deficient blood glucose level is called hypoglycemia. Type 1 diabetes is caused by the immune system attacking pancreatic beta cells and Type 2 diabetes is caused by insulin resistance."
     }
   },
   {
@@ -290,7 +291,8 @@
     "info": {
       "description": "Hormone produced by the pancreas that regulates blood glucose uptake by cells.",
       "why": "Assesses insulin resistance, helps diagnose type 2 diabetes and insulinomas.",
-      "frequency": "As clinically indicated"
+      "frequency": "As clinically indicated",
+      "scientific": "A protein hormone secreted by beta cells of the pancreas. Insulin plays a major role in the regulation of glucose metabolism, generally promoting the cellular utilization of glucose. It is also an important regulator of protein and lipid metabolism."
     }
   },
   {
@@ -332,7 +334,8 @@
     "info": {
       "description": "Enzyme produced by the pancreas and salivary glands that breaks down starches.",
       "why": "Diagnoses and monitors pancreatitis and other pancreatic disorders.",
-      "frequency": "As clinically indicated"
+      "frequency": "As clinically indicated",
+      "scientific": "Amylase is a digestive enzyme produced primarily by the pancreas and salivary glands that catalyzes the hydrolysis of starch into sugars. Serum amylase is elevated in acute pancreatitis, typically rising within 6-12 hours of onset and returning to normal within 3-5 days. Elevated levels may also occur in salivary gland disorders, intestinal obstruction, and renal insufficiency. Amylase is less specific for pancreatic disease than lipase."
     }
   },
   {
@@ -605,7 +608,8 @@
     "info": {
       "description": "Reflects average blood glucose over 2-3 months, reported as a percentage (NGSP standard).",
       "why": "Diagnoses diabetes and monitors long-term glycemic control.",
-      "frequency": "Every 3-6 months for diabetics; annually for screening"
+      "frequency": "Every 3-6 months for diabetics; annually for screening",
+      "scientific": "Hemoglobin A1c (HbA1c) reflects average blood glucose levels over the preceding 2-3 months by measuring the percentage of hemoglobin that is glycated. The NGSP (National Glycohemoglobin Standardization Program) method reports results as a percentage, standardized to the DCCT reference. An HbA1c of 6.5% or higher is diagnostic of diabetes. Results may be affected by hemoglobin variants, iron deficiency, and certain ethnic backgrounds."
     }
   },
   {
@@ -619,7 +623,8 @@
     "info": {
       "description": "Reflects average blood glucose over 2-3 months, reported in mmol/mol (IFCC standard).",
       "why": "Diagnoses diabetes and monitors long-term glycemic control using the international reference method.",
-      "frequency": "Every 3-6 months for diabetics; annually for screening"
+      "frequency": "Every 3-6 months for diabetics; annually for screening",
+      "scientific": "The IFCC (International Federation of Clinical Chemistry) reference method for HbA1c reports results in SI units (mmol/mol). All manufacturers should implement traceability to the IFCC reference system. The IFCC value can be converted to NGSP units using the equation: NGSP = (0.09148 x IFCC) + 2.152. For example, 6.5% NGSP equals approximately 48 mmol/mol IFCC."
     }
   },
   {
@@ -633,7 +638,8 @@
     "info": {
       "description": "Albumin modified by glucose, reflecting average blood sugar over the past 2-3 weeks.",
       "why": "Monitors short-term glycemic control when HbA1c is unreliable (e.g., hemoglobin disorders).",
-      "frequency": "Every 2-4 weeks, as clinically indicated"
+      "frequency": "Every 2-4 weeks, as clinically indicated",
+      "scientific": "Glycated albumin (GA) is formed by non-enzymatic glycation of serum albumin and reflects average blood glucose levels over the preceding 2-3 weeks, corresponding to albumin\u2019s half-life. GA is useful as a short-term glycemic control marker, particularly in patients where HbA1c may be unreliable, such as those with hemoglobin variants, hemolytic anemia, or chronic kidney disease on dialysis. GA responds more rapidly to changes in glycemic control than HbA1c."
     }
   },
   {
@@ -647,7 +653,8 @@
     "info": {
       "description": "Glycated serum proteins reflecting average blood glucose over the past 2-3 weeks.",
       "why": "Provides intermediate-term glycemic monitoring when HbA1c is unreliable.",
-      "frequency": "Every 2-4 weeks, as clinically indicated"
+      "frequency": "Every 2-4 weeks, as clinically indicated",
+      "scientific": "Fructosamine is a glycated serum protein that reflects average blood glucose levels over the preceding 2-3 weeks. It is formed by the non-enzymatic glycation of serum proteins, primarily albumin. Fructosamine is useful for monitoring short-term changes in glycemic control and in situations where HbA1c may be unreliable, such as hemoglobinopathies, pregnancy, or rapidly changing glucose levels."
     }
   },
   {
@@ -661,7 +668,8 @@
     "info": {
       "description": "Byproduct of insulin production that reflects how much insulin the pancreas is making.",
       "why": "Differentiates type 1 from type 2 diabetes and evaluates residual beta-cell function.",
-      "frequency": "As clinically indicated"
+      "frequency": "As clinically indicated",
+      "scientific": "C-peptide is a 31-amino acid polypeptide that is cleaved from proinsulin during the production of insulin in pancreatic beta cells. It is secreted in equimolar amounts with insulin but has a longer half-life, making it a more stable marker of endogenous insulin secretion. C-peptide measurement helps distinguish type 1 from type 2 diabetes, assess residual beta-cell function, and evaluate hypoglycemia causes including factitious insulin use."
     }
   },
   {
@@ -675,7 +683,8 @@
     "info": {
       "description": "Pancreatic enzyme that breaks down dietary fats into fatty acids.",
       "why": "Diagnoses acute pancreatitis; more specific to the pancreas than amylase.",
-      "frequency": "As clinically indicated"
+      "frequency": "As clinically indicated",
+      "scientific": "Lipase is an enzyme produced by the pancreas that breaks down dietary triglycerides into fatty acids and glycerol. The enzyme travels from the pancreatic duct to the duodenum. Elevated lipase levels indicate pancreatic issues including pancreatic duct obstruction, pancreatic cancer, gall bladder inflammation, or kidney disease. Lipase is more specific and sensitive for acute pancreatitis than amylase, remaining elevated for a longer period."
     }
   },
   {
