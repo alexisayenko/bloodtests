@@ -185,9 +185,9 @@
     // --- Load data ---
     async function loadAll() {
       const [analysesRes, resultsRes, plannedRes] = await Promise.all([
-        fetch('/api/analyses'),
-        fetch('/api/results'),
-        fetch('/api/planned'),
+        fetch('data/analyses.json'),
+        fetch('data/results.json'),
+        fetch('data/planned.json'),
       ]);
 
       const analyses = await analysesRes.json();
