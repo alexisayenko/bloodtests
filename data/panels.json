@@ -23,7 +23,8 @@
     "id": "glucose-metabolism",
     "name": "Glucose Metabolism",
     "color": "#FFD966",
-    "icon": "<polygon points='12,3 18.5,6.5 18.5,13.5 12,17 5.5,13.5 5.5,6.5' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/><circle cx='12' cy='3' r='2' fill='white'/><circle cx='18.5' cy='6.5' r='2' fill='white'/><circle cx='18.5' cy='13.5' r='2' fill='white'/><circle cx='12' cy='17' r='2' fill='white'/><circle cx='5.5' cy='13.5' r='2' fill='white'/><circle cx='5.5' cy='6.5' r='2' fill='white'/><line x1='12' y1='1' x2='12' y2='0' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='12' cy='0' r='1' fill='white'/><line x1='20' y1='5.5' x2='22' y2='4' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='22' cy='4' r='1' fill='white'/><line x1='20' y1='14.5' x2='22' y2='16' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='22' cy='16' r='1' fill='white'/><line x1='12' y1='19' x2='12' y2='21' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='12' cy='21' r='1' fill='white'/><line x1='4' y1='14.5' x2='2' y2='16' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='2' cy='16' r='1' fill='white'/><line x1='4' y1='5.5' x2='2' y2='4' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='2' cy='4' r='1' fill='white'/>",
+    "iconFile": "drop.png",
+    "iconOld": "<polygon points='12,3 18.5,6.5 18.5,13.5 12,17 5.5,13.5 5.5,6.5' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/><circle cx='12' cy='3' r='2' fill='white'/><circle cx='18.5' cy='6.5' r='2' fill='white'/><circle cx='18.5' cy='13.5' r='2' fill='white'/><circle cx='12' cy='17' r='2' fill='white'/><circle cx='5.5' cy='13.5' r='2' fill='white'/><circle cx='5.5' cy='6.5' r='2' fill='white'/><line x1='12' y1='1' x2='12' y2='0' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='12' cy='0' r='1' fill='white'/><line x1='20' y1='5.5' x2='22' y2='4' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='22' cy='4' r='1' fill='white'/><line x1='20' y1='14.5' x2='22' y2='16' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='22' cy='16' r='1' fill='white'/><line x1='12' y1='19' x2='12' y2='21' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='12' cy='21' r='1' fill='white'/><line x1='4' y1='14.5' x2='2' y2='16' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='2' cy='16' r='1' fill='white'/><line x1='4' y1='5.5' x2='2' y2='4' stroke='white' stroke-width='2' stroke-linecap='round'/><circle cx='2' cy='4' r='1' fill='white'/>",
     "lang": {
       "ru-RU": "Углеводный обмен",
       "uk-UA": "Вуглеводний обмін"
@@ -90,7 +91,8 @@
     "id": "cardiovascular-inflammatory",
     "name": "Cardiovascular and Inflammatory Risk",
     "color": "#EA9999",
-    "icon": "<path d='M12 21C6 17 3 13 3 9.5 3 6.5 5.5 4 8 4c1.5 0 3 .8 4 2.5C13 5 14.5 4 16 4c2.5 0 5 2.5 5 5.5 0 3.5-3 7.5-9 11.5z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/><path d='M6 12h2.5l1.5-2.5 2 5 1.5-2.5H16' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/>",
+    "iconFile": "heart.png",
+    "iconOld": "<path d='M12 21C6 17 3 13 3 9.5 3 6.5 5.5 4 8 4c1.5 0 3 .8 4 2.5C13 5 14.5 4 16 4c2.5 0 5 2.5 5 5.5 0 3.5-3 7.5-9 11.5z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/><path d='M6 12h2.5l1.5-2.5 2 5 1.5-2.5H16' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/>",
     "lang": {
       "ru-RU": "Сердечно-сосудистый и воспалительный риск",
       "uk-UA": "Серцево-судинний та запальний ризик"
