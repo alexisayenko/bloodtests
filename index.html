@@ -305,7 +305,11 @@
     function getAnalysisName(loinc) {
       const a = analysesCatalog[loinc];
       if (!a) return loinc;
-      if (currentLang !== 'en' && a.lang[currentLang]) return a.lang[currentLang];
+      if (currentLang !== 'en' && a.lang[currentLang]) {
+        const abbr = a.displayName.match(/\(([^)]+)\)$/);
+        const short = abbr ? abbr[1] : a.displayName;
+        return a.lang[currentLang] + ' / ' + short;
+      }
       return a.displayName;
     }
 
@@ -528,19 +532,15 @@
     function showPanelDetail(index) {
       const p = panelsCache[index];
       if (!p) return;
+      const savedMode = panelViewMode;
+      panelViewMode = 'detailed';
       document.getElementById('panel-detail-content').innerHTML = `
-        <div class="detail-header">
-          <h2>${escHtml(getPanelName(p))}</h2>
-        </div>
-        <div class="results-table" style="margin-top:12px">
-          ${getPanelAnalyses(p).map(a => `
-            <div class="results-row" style="grid-template-columns: 1fr auto">
-              <span class="result-name">${escHtml(getAnalysisName(a.loinc))}</span>
-              <span class="result-ref">${escHtml(a.loinc)}</span>
-            </div>
-          `).join('')}
+        <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
+          <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
+          <div class="panel-card-body"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
         </div>
       `;
+      panelViewMode = savedMode;
       showView('panel-detail');
     }
 
