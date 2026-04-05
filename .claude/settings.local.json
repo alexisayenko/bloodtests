@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:alexisayenko.github.io)",
+      "WebFetch(domain:loinc.org)"
+    ]
+  }
+}
