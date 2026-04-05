@@ -130,7 +130,7 @@
     .panel-card-list li.detail-line { border-top: none; padding: 1px 0 1px 12px; font-size: 14px; color: var(--gray-400); line-height: 1.5; }
     .panel-card-list li.detail-line.long-name { font-style: italic; color: var(--gray-400); }
     .panel-card-list li.detail-line.description { color: var(--gray-500); }
-    .panel-card-list li.detail-line.scientific-wrap { padding-top: 3px; }
+    .panel-card-list li.detail-line.scientific-wrap { padding-top: 3px; position: relative; }
     .scientific-text {
       position: relative;
       display: -webkit-box;
@@ -138,6 +138,7 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       cursor: pointer;
+      padding-bottom: 18px;
     }
     .scientific-text::after {
       content: "";
@@ -145,22 +146,44 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 2.6em;
+      height: 3.6em;
       background: linear-gradient(to bottom, rgba(249,250,251,0), rgba(249,250,251,0.96));
       pointer-events: none;
     }
-    .scientific-text.expanded { display: block; -webkit-line-clamp: unset; }
+    .scientific-text.expanded { display: block; -webkit-line-clamp: unset; padding-bottom: 0; }
     .scientific-text.expanded::after { display: none; }
     .scientific-toggle {
-      margin-top: 4px;
-      padding: 0;
-      border: none;
-      background: none;
+      position: absolute;
+      left: 50%;
+      bottom: 4px;
+      transform: translateX(-50%);
+      min-width: 42px;
+      height: 26px;
+      padding: 0 12px;
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.96);
       color: var(--primary);
       font: inherit;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.12);
+      cursor: pointer;
+    }
+    .scientific-toggle.expanded {
+      position: static;
+      transform: none;
+      min-width: 0;
+      height: auto;
+      margin-top: 6px;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: none;
       font-size: 13px;
       font-weight: 600;
-      cursor: pointer;
+      box-shadow: none;
     }
     .panel-card-list li.detail-line.why-line { color: var(--gray-500); }
     .panel-card-list li.detail-line.freq-line { color: var(--gray-400); }
@@ -336,8 +359,10 @@
       if (!text) return;
       const expanded = text.classList.toggle('expanded');
       if (btn) {
-        btn.textContent = expanded ? t('showLess') : t('readMore');
+        btn.textContent = expanded ? t('showLess') : '...';
         btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        btn.setAttribute('aria-label', expanded ? t('showLess') : t('readMore'));
+        btn.classList.toggle('expanded', expanded);
       }
     }
 
@@ -532,7 +557,7 @@
           if (inf.description) extra += `<li class="detail-line description">${escHtml(inf.description)}</li>`;
           if (inf.scientific) {
             const scientificId = `scientific-${a.loinc.replace(/[^a-zA-Z0-9_-]/g, '-')}`;
-            extra += `<li class="detail-line scientific-wrap"><div id="${scientificId}" class="scientific-text" onclick="toggleScientific('${scientificId}', this.nextElementSibling)">${escHtml(inf.scientific)}</div><button type="button" class="scientific-toggle" aria-expanded="false" onclick="toggleScientific('${scientificId}', this)">${t('readMore')}</button></li>`;
+            extra += `<li class="detail-line scientific-wrap"><div id="${scientificId}" class="scientific-text" onclick="toggleScientific('${scientificId}', this.nextElementSibling)">${escHtml(inf.scientific)}</div><button type="button" class="scientific-toggle" aria-expanded="false" aria-label="${t('readMore')}" onclick="toggleScientific('${scientificId}', this)">...</button></li>`;
           }
           if (inf.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(inf.why)}</li>`;
           if (inf.frequency) extra += `<li class="detail-line freq-line">${clockIcon}Do it: ${escHtml(inf.frequency)}</li>`;
@@ -558,7 +583,7 @@
         <button class="view-toggle-btn ${panelViewMode === 'detailed' ? 'active' : ''}" onclick="setPanelView('detailed')">Detailed</button>
       </div>`;
 
-      const gridClass = panelViewMode === 'detailed' ? 'panels-grid panels-grid-single' : 'panels-grid';
+      const gridClass = panelViewMode === 'minimal' ? 'panels-grid' : 'panels-grid panels-grid-single';
 
       if (panelViewMode === 'minimal') {
         container.innerHTML = toggleHtml + `<div class="panels-grid">${panelsCache.map((p, i) => {
