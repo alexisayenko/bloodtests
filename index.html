@@ -380,8 +380,12 @@
         </div>
         <div class="results-table" style="margin-top:12px">
           ${items.map(a => `
-            <div class="results-row" style="grid-template-columns: 1fr">
-              <span class="result-name">${escHtml(getAnalysisName(a.loinc))}</span>
+            <div class="results-row" style="grid-template-columns: 1fr auto">
+              <span class="result-name">
+                ${escHtml(getAnalysisName(a.loinc))}
+                <br><span class="result-loinc">${escHtml(a.longCommonName)}</span>
+              </span>
+              <span class="result-ref">${escHtml(a.loinc)}</span>
             </div>
           `).join('')}
         </div>
