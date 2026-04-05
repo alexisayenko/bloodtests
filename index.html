@@ -159,8 +159,8 @@
       left: 18px;
       right: 0;
       bottom: 0;
-      height: 2.2em;
-      background: linear-gradient(to bottom, rgba(249,250,251,0), rgba(249,250,251,0.92) 45%, rgba(249,250,251,1));
+      height: 1.1em;
+      background: linear-gradient(to bottom, rgba(249,250,251,0), rgba(249,250,251,0.82) 55%, rgba(249,250,251,1));
       pointer-events: none;
     }
     .panel-card-list li.detail-line.scientific-wrap.expanded .scientific-text {
@@ -187,7 +187,7 @@
     .scientific-toggle.preview {
       position: absolute;
       left: 50%;
-      bottom: 1px;
+      bottom: -2px;
       transform: translateX(-50%);
       margin-left: 0;
       padding: 0 10px;
@@ -195,6 +195,7 @@
       color: var(--primary);
       font-weight: 700;
       line-height: 1;
+      z-index: 1;
     }
     .scientific-toggle.expanded {
       color: var(--primary);
@@ -377,9 +378,10 @@
       const params = new URLSearchParams(window.location.search);
       const forcedEnv = params.get('env');
       const path = window.location.pathname || '/';
-      const isDevelPath = path === '/dev' || path.startsWith('/dev/');
-      const isMainPath = path === '/' || path.endsWith('/index.html');
-      const isDevel = forcedEnv === 'devel' || (!isMainPath && isDevelPath);
+      const normalizedPath = path.replace(/\/+$/, '');
+      const isDevelPath = normalizedPath.endsWith('/dev');
+      const isMainPath = normalizedPath === '' || normalizedPath === '/' || !normalizedPath.includes('/dev');
+      const isDevel = forcedEnv === 'devel' || (isDevelPath && !forcedEnv);
       badge.classList.toggle('visible', isDevel);
     }
 
@@ -580,9 +582,9 @@
       return names;
     }
 
-    const clipboardIcon = `<svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-7px;margin-right:6px;flex-shrink:0"><rect x="3" y="2" width="16" height="20" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/><rect x="8" y="0" width="6" height="4" rx="1" fill="#9ca3af"/><circle cx="7.5" cy="8" r="1.5" fill="#2563eb"/><line x1="10.5" y1="8" x2="17" y2="8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="12.5" r="1.5" fill="#2563eb"/><line x1="10.5" y1="12.5" x2="17" y2="12.5" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="17" r="1.5" fill="#93b4f5"/><line x1="10.5" y1="17" x2="17" y2="17" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/></svg>`;
-    const academicHatIcon = `<svg viewBox="0 0 24 24" width="28" height="28" style="position:absolute;left:0;top:2px;flex-shrink:0"><path d="M2.5 9.5L12 5l9.5 4.5L12 14 2.5 9.5z" fill="#60a5fa"/><path d="M6 11.2V15c0 .8 2.7 2.5 6 2.5s6-1.7 6-2.5v-3.8" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.5 9.5v5.2" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="21.5" cy="16.5" r="1.2" fill="#2563eb"/></svg>`;
-    const clockIcon = `<svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-7px;margin-right:6px;flex-shrink:0"><circle cx="12" cy="12" r="10" fill="none" stroke="#93b4f5" stroke-width="2"/><rect x="11" y="5" width="1.5" height="4" rx="0.5" fill="#4a7edc"/><rect x="11" y="9" width="1.5" height="4.5" rx="0.5" fill="#4a7edc"/><rect x="11.5" y="11.5" width="4" height="1.5" rx="0.5" fill="#4a7edc"/><circle cx="12" cy="12" r="1.5" fill="#2563eb"/></svg>`;
+    const clipboardIcon = `<svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-7px;margin-right:6px;flex-shrink:0" fill="none" stroke="#111827" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M9 5H6.5A1.5 1.5 0 0 0 5 6.5v14A1.5 1.5 0 0 0 6.5 22h11a1.5 1.5 0 0 0 1.5-1.5v-14A1.5 1.5 0 0 0 17.5 5H15"/><path d="M9 3.5h6a1 1 0 0 1 1 1V7H8V4.5a1 1 0 0 1 1-1z"/><path d="M8.5 12h2l1.3-2.2 2.3 4.4 1.2-2.2H18"/><path d="M8 17.5l1.2 1.2L11 17"/><path d="M13.5 18h4"/></svg>`;
+    const academicHatIcon = `<svg viewBox="0 0 24 24" width="28" height="28" style="position:absolute;left:0;top:2px;flex-shrink:0" fill="none" stroke="#111827" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8.5L12 4l9.5 4.5L12 13 2.5 8.5z"/><path d="M6.5 10.5v4.1c0 1.7 2.5 3.4 5.5 3.4s5.5-1.7 5.5-3.4v-4.1"/><path d="M20 9.2v5.3"/><path d="M20 14.5l-1 2.8h2l-1-2.8z"/></svg>`;
+    const clockIcon = `<svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-7px;margin-right:6px;flex-shrink:0" fill="none" stroke="#111827" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5"/><path d="M12 12l3.5 3"/><path d="M12 4.5v1"/><path d="M12 18.5v1"/><path d="M4.5 12h1"/><path d="M18.5 12h1"/><path d="M6.6 6.6l.7.7"/><path d="M16.7 16.7l.7.7"/><path d="M17.4 6.6l-.7.7"/><path d="M7.3 16.7l-.7.7"/></svg>`;
 
     function renderAnalysisItem(a) {
       if (panelViewMode === 'detailed') {
