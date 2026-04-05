@@ -3,7 +3,7 @@
     "id": "thyroid",
     "name": "Thyroid Function",
     "color": "#fbbf24",
-    "icon": "<path d='M12 3c-1.5 0-2.5 1-2.5 2v1.5C7.5 7 6 9 6 11.5c0 2 1 3.5 2.5 4L8 18h8l-.5-2.5c1.5-.5 2.5-2 2.5-4 0-2.5-1.5-4.5-3.5-5V5c0-1-1-2-2.5-2z' fill='none' stroke='white' stroke-width='1.5'/><path d='M10 18v1.5c0 .8.9 1.5 2 1.5s2-.7 2-1.5V18' fill='none' stroke='white' stroke-width='1.5'/>",
+    "icon": "<path d='M12 16v5' stroke='white' stroke-width='1.5' stroke-linecap='round'/><path d='M10 18h4' stroke='white' stroke-width='1.5' stroke-linecap='round'/><path d='M10 20h4' stroke='white' stroke-width='1.5' stroke-linecap='round'/><path d='M12 16c-1 0-2-.5-3-2s-2.5-3-4-3c-1.5 0-2 1.5-1.5 3s2 3 4 3.5' fill='none' stroke='white' stroke-width='1.5'/><path d='M12 16c1 0 2-.5 3-2s2.5-3 4-3c1.5 0 2 1.5 1.5 3s-2 3-4 3.5' fill='none' stroke='white' stroke-width='1.5'/>",
     "lang": {
       "ru-RU": "Щитовидная железа",
       "uk-UA": "Щитоподібна залоза"
@@ -22,7 +22,7 @@
     "id": "glucose-metabolism",
     "name": "Glucose Metabolism",
     "color": "#f9a8b8",
-    "icon": "<circle cx='12' cy='12' r='4' fill='none' stroke='white' stroke-width='1.5'/><path d='M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83' stroke='white' stroke-width='1.5' stroke-linecap='round'/>",
+    "icon": "<path d='M12 3L17.5 6.5v7L12 17 6.5 13.5v-7z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/><circle cx='12' cy='3' r='1.5' fill='white'/><circle cx='17.5' cy='6.5' r='1.5' fill='white'/><circle cx='17.5' cy='13.5' r='1.5' fill='white'/><circle cx='12' cy='17' r='1.5' fill='white'/><circle cx='6.5' cy='13.5' r='1.5' fill='white'/><circle cx='6.5' cy='6.5' r='1.5' fill='white'/><path d='M12 1v-0.01M19.5 5.5l0.01 0.01M19.5 15l0.01 0.01M12 19.5v0.01M4.5 15l-0.01-0.01M4.5 5.5l-0.01 0.01' stroke='white' stroke-width='1.5' stroke-linecap='round'/><line x1='12' y1='1.5' x2='12' y2='0.5' stroke='white' stroke-width='1.2'/><line x1='19' y1='5' x2='20' y2='4' stroke='white' stroke-width='1.2'/><line x1='19' y1='15' x2='20.5' y2='16' stroke='white' stroke-width='1.2'/><line x1='12' y1='18.5' x2='12' y2='20' stroke='white' stroke-width='1.2'/><line x1='5' y1='15' x2='3.5' y2='16' stroke='white' stroke-width='1.2'/><line x1='5' y1='5' x2='4' y2='4' stroke='white' stroke-width='1.2'/>",
     "lang": {
       "ru-RU": "Углеводный обмен",
       "uk-UA": "Вуглеводний обмін"
@@ -43,7 +43,7 @@
     "id": "liver-function",
     "name": "Liver Function",
     "color": "#f8c4c4",
-    "icon": "<path d='M12 4C8 4 5 7 5 11c0 3 1.5 5 3.5 6.5L9 20h6l.5-2.5C17.5 16 19 14 19 11c0-4-3-7-7-7z' fill='none' stroke='white' stroke-width='1.5'/><path d='M12 8v5M12 13l3-2' stroke='white' stroke-width='1.3' stroke-linecap='round'/>",
+    "icon": "<path d='M4 12c0-5 3-8 8-8 3 0 5 1 6.5 3s2 4.5 1.5 7c-.5 2.5-2 4-4 5-1.5.8-3 1-5 .5-3-.8-5-2.5-6.5-4.5S4 13 4 12z' fill='none' stroke='white' stroke-width='1.5'/><path d='M12 4c0 4-2 7-4 9' fill='none' stroke='white' stroke-width='1.2'/>",
     "lang": {
       "ru-RU": "Функция печени",
       "uk-UA": "Функція печінки"
@@ -69,7 +69,7 @@
     "id": "lipid-metabolism",
     "name": "Lipid Metabolism",
     "color": "#d8b4fe",
-    "icon": "<circle cx='7' cy='7' r='2' fill='none' stroke='white' stroke-width='1.5'/><circle cx='17' cy='7' r='2' fill='none' stroke='white' stroke-width='1.5'/><circle cx='7' cy='17' r='2' fill='none' stroke='white' stroke-width='1.5'/><circle cx='17' cy='17' r='2' fill='none' stroke='white' stroke-width='1.5'/><path d='M9 7h6M7 9v6M17 9v6M9 17h6' stroke='white' stroke-width='1.3'/>",
+    "icon": "<circle cx='12' cy='5' r='3' fill='none' stroke='white' stroke-width='1.5'/><path d='M9.5 7.5C8 10 6.5 15 6.5 19c0 1.5.8 2.5 2 2.5s2-1 2-2.5' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round'/><path d='M14.5 7.5c1.5 2.5 3 7.5 3 11.5 0 1.5-.8 2.5-2 2.5s-2-1-2-2.5' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round'/><path d='M9 9v8M11 9v8M13 9v8M15 9v8' stroke='white' stroke-width='0.5' stroke-dasharray='1.5 1.5'/>",
     "lang": {
       "ru-RU": "Липидный обмен",
       "uk-UA": "Ліпідний обмін"
@@ -89,7 +89,7 @@
     "id": "cardiovascular-inflammatory",
     "name": "Cardiovascular and Inflammatory Risk",
     "color": "#e8a0c0",
-    "icon": "<path d='M12 21s-7-5-7-10a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 5-7 10-7 10z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/><path d='M8 12h3l1-2 2 4 1-2h3' stroke='white' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>",
+    "icon": "<path d='M12 21C6 17 3 13 3 9.5 3 6.5 5.5 4 8 4c1.5 0 3 .8 4 2.5C13 5 14.5 4 16 4c2.5 0 5 2.5 5 5.5 0 3.5-3 7.5-9 11.5z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/><path d='M6 13h3l1.5-3 2 6 1.5-3H18' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/>",
     "lang": {
       "ru-RU": "Сердечно-сосудистый и воспалительный риск",
       "uk-UA": "Серцево-судинний та запальний ризик"
@@ -110,7 +110,7 @@
     "id": "hpg-axis",
     "name": "HPG Axis",
     "color": "#86efac",
-    "icon": "<circle cx='12' cy='5' r='3' fill='none' stroke='white' stroke-width='1.5'/><circle cx='6' cy='17' r='3' fill='none' stroke='white' stroke-width='1.5'/><circle cx='18' cy='17' r='3' fill='none' stroke='white' stroke-width='1.5'/><path d='M10 7.5L7.5 14.5M14 7.5l2.5 7' stroke='white' stroke-width='1.3'/>",
+    "icon": "<path d='M8 5C5.5 5 4 8 4 11c0 4 2 7 4.5 7 1.5 0 2.5-1.5 2.5-3.5S10 12 8.5 12' fill='none' stroke='white' stroke-width='1.5'/><path d='M16 5c2.5 0 4 3 4 6 0 4-2 7-4.5 7-1.5 0-2.5-1.5-2.5-3.5S14 12 15.5 12' fill='none' stroke='white' stroke-width='1.5'/><path d='M9 5c0-1.5 1.2-3 3-3s3 1.5 3 3' fill='none' stroke='white' stroke-width='1.5'/>",
     "lang": {
       "ru-RU": "Ось гипоталамус-гипофиз-гонады",
       "uk-UA": "Вісь гіпоталамус-гіпофіз-гонади"
@@ -131,7 +131,7 @@
     "id": "vitamins-minerals-electrolytes",
     "name": "Vitamins, Minerals and Electrolytes",
     "color": "#bfdbfe",
-    "icon": "<path d='M9 2l3 7 3-7' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><circle cx='12' cy='15' r='5' fill='none' stroke='white' stroke-width='1.5'/><path d='M12 12v6M9 15h6' stroke='white' stroke-width='1.3' stroke-linecap='round'/>",
+    "icon": "<rect x='7' y='4' width='10' height='16' rx='5' fill='none' stroke='white' stroke-width='1.5'/><line x1='7' y1='12' x2='17' y2='12' stroke='white' stroke-width='1.5'/><path d='M20 3l.5 1.5L22 5l-1.5.5L20 7l-.5-1.5L18 5l1.5-.5z' fill='white' stroke='none'/>",
     "lang": {
       "ru-RU": "Витамины, минералы и электролиты",
       "uk-UA": "Вітаміни, мінерали та електроліти"
@@ -158,7 +158,7 @@
     "id": "iron-metabolism",
     "name": "Iron Metabolism",
     "color": "#fdba74",
-    "icon": "<path d='M12 3v18' stroke='white' stroke-width='2' stroke-linecap='round'/><path d='M8 7h8M7 12h10M8 17h8' stroke='white' stroke-width='1.5' stroke-linecap='round'/>",
+    "icon": "<ellipse cx='12' cy='12' rx='8' ry='6' fill='none' stroke='white' stroke-width='1.5'/><ellipse cx='12' cy='12' rx='3' ry='6' fill='none' stroke='white' stroke-width='1'/><text x='10' y='22' font-size='6' fill='white' font-family='Arial' font-weight='bold'>Fe</text>",
     "lang": {
       "ru-RU": "Обмен железа",
       "uk-UA": "Обмін заліза"
@@ -179,7 +179,7 @@
     "id": "kidney-function",
     "name": "Kidney Function",
     "color": "#a7f3d0",
-    "icon": "<path d='M8 4c-3 0-4 3-4 6s1 5 3 6v4h2v-4c1.5 0 3-1 3-3s-1-3-3-3c-1 0-2 .5-2 1.5' fill='none' stroke='white' stroke-width='1.5'/><path d='M16 4c3 0 4 3 4 6s-1 5-3 6v4h-2v-4c-1.5 0-3-1-3-3s1-3 3-3c1 0 2 .5 2 1.5' fill='none' stroke='white' stroke-width='1.5'/>",
+    "icon": "<path d='M7 6c-3 0-4.5 2.5-4.5 6s1.5 6 4.5 6c1.5 0 2.5-1.5 2.5-3s-1-2.5-2.5-2.5' fill='none' stroke='white' stroke-width='1.5'/><path d='M17 6c3 0 4.5 2.5 4.5 6s-1.5 6-4.5 6c-1.5 0-2.5-1.5-2.5-3s1-2.5 2.5-2.5' fill='none' stroke='white' stroke-width='1.5'/>",
     "lang": {
       "ru-RU": "Функция почек",
       "uk-UA": "Функція нирок"
@@ -196,7 +196,7 @@
     "id": "coagulation",
     "name": "Coagulation",
     "color": "#c4b5fd",
-    "icon": "<path d='M12 3c-1 2-4 4-4 8 0 3 2 5.5 4 7 2-1.5 4-4 4-7 0-4-3-6-4-8z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/><path d='M12 11v4' stroke='white' stroke-width='1.3' stroke-linecap='round'/><circle cx='12' cy='17' r='0.5' fill='white'/>",
+    "icon": "<path d='M12 2C9 7 5 10 5 14a7 7 0 0014 0c0-4-4-7-7-12z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/><path d='M12 11v4M12 15l2-1.5' stroke='white' stroke-width='1.3' stroke-linecap='round'/>",
     "lang": {
       "ru-RU": "Коагулограмма",
       "uk-UA": "Коагулограма"
@@ -216,7 +216,7 @@
     "id": "general-inflammatory",
     "name": "General Inflammatory Markers",
     "color": "#fde68a",
-    "icon": "<path d='M12 9v4M12 17h.01' stroke='white' stroke-width='2' stroke-linecap='round'/><path d='M10.3 3.3L2.6 17.6c-.4.7.1 1.4.9 1.4h15c.8 0 1.3-.7.9-1.4L11.7 3.3c-.4-.6-1-.6-1.4 0z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/>",
+    "icon": "<path d='M12 2c0 4-5 6-5 11a5.5 5.5 0 0011 0c0-3-2-5-3-7 0 3-2 4-3 4s-1.5-2 0-5c.5-1 0-2 0-3z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/>",
     "lang": {
       "ru-RU": "Общие маркеры воспаления",
       "uk-UA": "Загальні маркери запалення"
@@ -231,7 +231,7 @@
     "id": "hpa-axis",
     "name": "HPA Axis",
     "color": "#86efac",
-    "icon": "<circle cx='12' cy='6' r='4' fill='none' stroke='white' stroke-width='1.5'/><path d='M12 10v3' stroke='white' stroke-width='1.5'/><path d='M7 18c0-3 2.5-5 5-5s5 2 5 5' fill='none' stroke='white' stroke-width='1.5'/><path d='M7 18h10' stroke='white' stroke-width='1.5' stroke-linecap='round'/>",
+    "icon": "<path d='M6 8c0-3 2.5-5 6-5s6 2 6 5c0 2-1 3-2 3.5-.5.3-1 1-1 1.5v1h-6v-1c0-.5-.5-1.2-1-1.5C7 11 6 10 6 8z' fill='none' stroke='white' stroke-width='1.5'/><path d='M10 14v2c0 1 .5 1.5 2 1.5s2-.5 2-1.5v-2' fill='none' stroke='white' stroke-width='1.3'/><path d='M12 17.5v3M10 19l2 2 2-2' stroke='white' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/>",
     "lang": {
       "ru-RU": "Ось гипоталамус-гипофиз-надпочечники",
       "uk-UA": "Вісь гіпоталамус-гіпофіз-наднирники"
@@ -245,7 +245,7 @@
     "id": "other-markers",
     "name": "Other Markers",
     "color": "#d1d5db",
-    "icon": "<circle cx='12' cy='12' r='1.5' fill='white'/><circle cx='6' cy='12' r='1.5' fill='white'/><circle cx='18' cy='12' r='1.5' fill='white'/>",
+    "icon": "<circle cx='5' cy='12' r='2' fill='white'/><circle cx='12' cy='12' r='2' fill='white'/><circle cx='19' cy='12' r='2' fill='white'/>",
     "lang": {
       "ru-RU": "Прочие маркеры",
       "uk-UA": "Інші маркери"
@@ -262,7 +262,7 @@
     "id": "fbc",
     "name": "Full Blood Count (FBC)",
     "color": "#fca5a5",
-    "icon": "<circle cx='12' cy='10' r='5' fill='none' stroke='white' stroke-width='1.5'/><path d='M12 7v6M9 10h6' stroke='white' stroke-width='1.3' stroke-linecap='round'/><path d='M8 16h8M9 19h6' stroke='white' stroke-width='1.5' stroke-linecap='round'/>",
+    "icon": "<circle cx='9' cy='10' r='5' fill='none' stroke='white' stroke-width='1.5'/><circle cx='15' cy='10' r='5' fill='none' stroke='white' stroke-width='1.5'/><circle cx='12' cy='15' r='5' fill='none' stroke='white' stroke-width='1.5'/>",
     "lang": {
       "ru-RU": "Общий анализ крови (ОАК)",
       "uk-UA": "Загальний аналіз крові (ЗАК)"
