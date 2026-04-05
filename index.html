@@ -130,7 +130,9 @@
       box-shadow: var(--shadow);
     }
     .panel-card { border-left: none; overflow: hidden; }
-    .panel-card-title { font-size: 16px; font-weight: 600; color: white; margin: -12px -12px 8px -12px; padding: 10px 12px; background: var(--primary); border-radius: var(--radius) var(--radius) 0 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+    .panel-card-title { font-size: 16px; font-weight: 600; color: white; margin: -12px -12px 8px -12px; padding: 10px 12px; background: var(--primary); border-radius: var(--radius) var(--radius) 0 0; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    .panel-icon { flex-shrink: 0; }
+    .panel-card-title span { flex: 1; }
     .panel-collapse-btn { background: none; border: none; cursor: pointer; padding: 4px; transition: transform 0.2s; }
     .panel-collapse-btn svg { display: block; }
     .panel-collapse-btn.collapsed { transform: rotate(90deg); }
@@ -489,6 +491,11 @@
     }
 
     // --- Panels page ---
+    function panelIconSvg(p) {
+      if (!p.icon) return '';
+      return `<svg class="panel-icon" viewBox="0 0 24 24" width="20" height="20" fill="none">${p.icon}</svg>`;
+    }
+
     function getPanelAnalyses(p) {
       if (p.sections) {
         return p.sections.flatMap(s => s.loincs.map(l => analysesCatalog[l]).filter(Boolean));
@@ -551,7 +558,7 @@
       }
 
       const collapseAllButton = panelViewMode === 'detailed'
-        ? `<button class="view-toggle-btn utility" onclick="collapseAllPanels()">Collapse all panels</button>`
+        ? `<button class="view-toggle-btn utility" onclick="toggleAllPanels()">Collapse / Expand all</button>`
         : '';
 
       const toggleHtml = `<div class="view-toggle">
@@ -568,14 +575,14 @@
           const count = getPanelAnalyses(p).length;
           return `
             <div class="panel-card" style="cursor:pointer;--panel-color:${p.color || '#d1d5db'}" onclick="showPanelDetail(${i})">
-              <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
+              <div class="panel-card-title">${panelIconSvg(p)}<span>${escHtml(getPanelName(p))}</span></div>
               <div class="panel-card-body"><div class="panel-card-meta" style="font-size:12px;color:var(--gray-400)">${count} ${t('analyses')}</div></div>
             </div>`;
         }).join('')}</div>`;
       } else if (panelViewMode === 'compact') {
         container.innerHTML = toggleHtml + `<div class="${gridClass}">${panelsCache.map(p => `
           <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
-            <div class="panel-card-title"><span>${escHtml(getPanelName(p))}</span></div>
+            <div class="panel-card-title">${panelIconSvg(p)}<span>${escHtml(getPanelName(p))}</span></div>
             <div class="panel-card-body"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
           </div>
         `).join('')}</div>`;
@@ -584,15 +591,39 @@
           const count = getPanelAnalyses(p).length;
           return `
           <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
-            <div class="panel-card-title" onclick="togglePanel(${i})"><span>${escHtml(getPanelName(p))}</span><button class="panel-collapse-btn" id="pcb-${i}"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l4 4 4-4"/></svg></button></div>
+            <div class="panel-card-title" onclick="togglePanel(${i})">${panelIconSvg(p)}<span>${escHtml(getPanelName(p))}</span><button class="panel-collapse-btn" id="pcb-${i}"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l4 4 4-4"/></svg></button></div>
             <div class="panel-card-body" id="pcbody-${i}"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
             <div class="panel-card-collapsed" id="pccol-${i}" style="display:none"><div class="panel-card-meta" style="font-size:12px;color:var(--gray-400);padding:4px 0">${count} ${t('analyses')}</div></div>
           </div>`;
         }).join('')}</div>`;
+        setTimeout(applyCollapsedState, 0);
       }
     }
 
+    function getCollapsedPanels() {
+      try { return JSON.parse(localStorage.getItem('bloodtests_collapsed') || '{}'); } catch(e) { return {}; }
+    }
+
+    function saveCollapsedPanels(state) {
+      localStorage.setItem('bloodtests_collapsed', JSON.stringify(state));
+    }
+
+    function applyCollapsedState() {
+      const state = getCollapsedPanels();
+      panelsCache.forEach((p, i) => {
+        if (state[p.id]) {
+          const body = document.getElementById('pcbody-' + i);
+          const btn = document.getElementById('pcb-' + i);
+          const col = document.getElementById('pccol-' + i);
+          if (body) body.classList.add('collapsed');
+          if (btn) btn.classList.add('collapsed');
+          if (col) col.style.display = 'block';
+        }
+      });
+    }
+
     function togglePanel(index) {
+      const p = panelsCache[index];
       const body = document.getElementById('pcbody-' + index);
       const btn = document.getElementById('pcb-' + index);
       const col = document.getElementById('pccol-' + index);
@@ -601,18 +632,32 @@
       body.classList.toggle('collapsed');
       btn.classList.toggle('collapsed');
       if (col) col.style.display = isCollapsed ? 'block' : 'none';
+      const state = getCollapsedPanels();
+      if (isCollapsed) { state[p.id] = true; } else { delete state[p.id]; }
+      saveCollapsedPanels(state);
     }
 
-    function collapseAllPanels() {
-      panelsCache.forEach((_, index) => {
-        const body = document.getElementById('pcbody-' + index);
-        const btn = document.getElementById('pcb-' + index);
-        const col = document.getElementById('pccol-' + index);
+    function toggleAllPanels() {
+      const state = getCollapsedPanels();
+      const allCollapsed = panelsCache.every(p => state[p.id]);
+      const newState = {};
+      panelsCache.forEach((p, i) => {
+        const body = document.getElementById('pcbody-' + i);
+        const btn = document.getElementById('pcb-' + i);
+        const col = document.getElementById('pccol-' + i);
         if (!body || !btn) return;
-        body.classList.add('collapsed');
-        btn.classList.add('collapsed');
-        if (col) col.style.display = 'block';
+        if (allCollapsed) {
+          body.classList.remove('collapsed');
+          btn.classList.remove('collapsed');
+          if (col) col.style.display = 'none';
+        } else {
+          body.classList.add('collapsed');
+          btn.classList.add('collapsed');
+          if (col) col.style.display = 'block';
+          newState[p.id] = true;
+        }
       });
+      saveCollapsedPanels(newState);
     }
 
     function showPanelDetail(index) {
@@ -622,7 +667,7 @@
       panelViewMode = 'detailed';
       document.getElementById('panel-detail-content').innerHTML = `
         <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
-          <div class="panel-card-title">${escHtml(getPanelName(p))}</div>
+          <div class="panel-card-title">${panelIconSvg(p)}<span>${escHtml(getPanelName(p))}</span></div>
           <div class="panel-card-body"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
         </div>
       `;
