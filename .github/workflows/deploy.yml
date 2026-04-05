@@ -36,16 +36,22 @@ jobs:
       - name: Build site
         run: |
           mkdir -p _site/dev
-          # Copy main to root (exclude .git and .github)
+          BUILD_NUM=${{ github.run_number }}
+          # Copy main to root and stamp build info
           rsync -a --exclude='.git' --exclude='.github' main/ _site/
+          cd main
+          M_COMMIT=$(git log -1 --format="%h")
+          M_DATETIME=$(git log -1 --format="%ci" | cut -c1-16)
+          cd ..
+          sed -i "s/<!--BUILD_INFO-->/build ${BUILD_NUM} · ${M_COMMIT} · ${M_DATETIME}/" _site/index.html
           # Copy devel to /dev/ subfolder and stamp build info
           if [ -d devel ]; then
             rsync -a --exclude='.git' --exclude='.github' devel/ _site/dev/
             cd devel
-            COMMIT=$(git log -1 --format="%h")
-            DATETIME=$(git log -1 --format="%ci" | cut -c1-16)
+            D_COMMIT=$(git log -1 --format="%h")
+            D_DATETIME=$(git log -1 --format="%ci" | cut -c1-16)
             cd ..
-            sed -i "s/<!--BUILD_INFO-->/${COMMIT} · ${DATETIME}/" _site/dev/index.html
+            sed -i "s/<!--BUILD_INFO-->/build ${BUILD_NUM} · ${D_COMMIT} · ${D_DATETIME}/" _site/dev/index.html
           fi
           ls -la _site/
           ls -la _site/dev/ || echo "No dev folder"
