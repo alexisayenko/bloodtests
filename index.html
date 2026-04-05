@@ -131,7 +131,7 @@
     }
     .panel-card { border-left: none; overflow: hidden; }
     .panel-card-title { font-size: 16px; font-weight: 600; color: white; margin: -12px -12px 8px -12px; padding: 10px 12px; background: var(--primary); border-radius: var(--radius) var(--radius) 0 0; display: flex; align-items: center; gap: 8px; cursor: pointer; }
-    .panel-icon { flex-shrink: 0; }
+    .panel-icon { flex-shrink: 0; filter: brightness(0) invert(1); }
     .panel-card-title span { flex: 1; }
     .panel-collapse-btn { background: none; border: none; cursor: pointer; padding: 4px; transition: transform 0.2s; }
     .panel-collapse-btn svg { display: block; }
@@ -488,6 +488,7 @@
 
     // --- Panels page ---
     function panelIconSvg(p) {
+      if (p.iconFile) return `<img class="panel-icon" src="icons/${p.iconFile}" width="32" height="32" alt="">`;
       if (!p.icon) return '';
       const vb = p.iconViewBox || '0 0 24 24';
       return `<svg class="panel-icon" viewBox="${vb}" width="32" height="32" fill="none">${p.icon}</svg>`;
