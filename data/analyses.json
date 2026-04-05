@@ -11,16 +11,16 @@
   {
     "loinc": "2345-7",
     "longCommonName": "Glucose [Mass/volume] in Serum or Plasma",
-    "displayName": "Glucose",
+    "displayName": "Glucose (Serum/Plasma)",
     "lang": {
-      "ru-RU": "Глюкоза",
-      "uk-UA": "Глюкоза"
+      "ru-RU": "Глюкоза (сыворотка/плазма)",
+      "uk-UA": "Глюкоза (сироватка/плазма)"
     }
   },
   {
     "loinc": "2093-3",
     "longCommonName": "Cholesterol [Mass/volume] in Serum or Plasma",
-    "displayName": "Cholesterol",
+    "displayName": "Total Cholesterol",
     "lang": {
       "ru-RU": "Холестерин",
       "uk-UA": "Холестерин"
@@ -100,8 +100,8 @@
   },
   {
     "loinc": "2339-0",
-    "longCommonName": "Glucose [Mass/volume] in Blood by Fasting",
-    "displayName": "Glucose, Fasting",
+    "longCommonName": "Glucose [Mass/volume] in Blood",
+    "displayName": "Glucose (Blood)",
     "lang": {
       "ru-RU": "Глюкоза натощак",
       "uk-UA": "Глюкоза натще"
@@ -114,6 +114,78 @@
     "lang": {
       "ru-RU": "Гликированный гемоглобин",
       "uk-UA": "Глікований гемоглобін"
+    }
+  },
+  {
+    "loinc": "2085-9",
+    "longCommonName": "HDL Cholesterol [Mass/volume] in Serum or Plasma",
+    "displayName": "HDL-Cholesterol",
+    "lang": {
+      "ru-RU": "Холестерин ЛПВП",
+      "uk-UA": "Холестерин ЛПВЩ"
+    }
+  },
+  {
+    "loinc": "2571-8",
+    "longCommonName": "Triglycerides [Mass/volume] in Serum or Plasma",
+    "displayName": "Triglycerides",
+    "lang": {
+      "ru-RU": "Триглицериды",
+      "uk-UA": "Тригліцериди"
+    }
+  },
+  {
+    "loinc": "13457-7",
+    "longCommonName": "LDL Cholesterol [Mass/volume] in Serum or Plasma by calculation",
+    "displayName": "LDL-Cholesterol",
+    "lang": {
+      "ru-RU": "Холестерин ЛПНП",
+      "uk-UA": "Холестерин ЛПНЩ"
+    }
+  },
+  {
+    "loinc": "6768-6",
+    "longCommonName": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma",
+    "displayName": "Alkaline Phosphatase (ALP)",
+    "lang": {
+      "ru-RU": "Щелочная фосфатаза",
+      "uk-UA": "Лужна фосфатаза"
+    }
+  },
+  {
+    "loinc": "1742-6",
+    "longCommonName": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+    "displayName": "Alanine Aminotransferase (ALT/SGPT)",
+    "lang": {
+      "ru-RU": "Аланинаминотрансфераза (АЛТ)",
+      "uk-UA": "Аланінамінотрансфераза (АЛТ)"
+    }
+  },
+  {
+    "loinc": "2324-2",
+    "longCommonName": "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma",
+    "displayName": "Gamma Glutamyltransferase (γ-GT)",
+    "lang": {
+      "ru-RU": "Гамма-глутамилтрансфераза (ГГТ)",
+      "uk-UA": "Гамма-глутамілтрансфераза (ГГТ)"
+    }
+  },
+  {
+    "loinc": "1920-8",
+    "longCommonName": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+    "displayName": "Aspartate Aminotransferase (AST/SGOT)",
+    "lang": {
+      "ru-RU": "Аспартатаминотрансфераза (АСТ)",
+      "uk-UA": "Аспартатамінотрансфераза (АСТ)"
+    }
+  },
+  {
+    "loinc": "20448-7",
+    "longCommonName": "Insulin [Units/volume] in Serum or Plasma",
+    "displayName": "Insulin",
+    "lang": {
+      "ru-RU": "Инсулин",
+      "uk-UA": "Інсулін"
     }
   }
 ]
