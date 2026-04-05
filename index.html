@@ -116,7 +116,7 @@
       background: white; border-radius: var(--radius); padding: 12px;
       box-shadow: var(--shadow);
     }
-    .panel-card-title { font-size: 16px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+    .panel-card-title { font-size: 16px; font-weight: 600; color: var(--primary); margin: -12px -12px 8px -12px; padding: 10px 12px; background: var(--gray-50); border-radius: var(--radius) var(--radius) 0 0; border-bottom: 1px solid var(--gray-200); }
     .panel-card-list { list-style: none; }
     .panel-card-list li { font-size: 15px; color: var(--gray-700); padding: 3px 0; border-top: 1px solid var(--gray-200); }
     .panel-card-list li:first-child { border-top: none; }
@@ -488,13 +488,13 @@
 
     function renderAnalysisItem(a) {
       if (panelViewMode === 'detailed') {
-        let extra = `<li class="detail-line long-name">${escHtml(a.longCommonName)}</li>`;
+        let extra = '';
         if (a.info) {
           if (a.info.description) extra += `<li class="detail-line description">${escHtml(a.info.description)}</li>`;
           if (a.info.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(a.info.why)}</li>`;
-          if (a.info.frequency) extra += `<li class="detail-line freq-line">${clockIcon}${escHtml(a.info.frequency)}</li>`;
+          if (a.info.frequency) extra += `<li class="detail-line freq-line">${clockIcon}Do it: ${escHtml(a.info.frequency)}</li>`;
         }
-        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</span></li>${extra}`;
+        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:flex-start"><span>${escHtml(getAnalysisName(a.loinc))}<br><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span></span><span class="result-loinc" style="font-weight:normal;white-space:nowrap;margin-left:8px">${escHtml(a.loinc)}</span></li>${extra}`;
       }
       if (panelViewMode === 'compact') {
         return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</span></li>`;
