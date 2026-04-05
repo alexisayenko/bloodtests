@@ -68,7 +68,7 @@
   {
     "id": "lipid-metabolism",
     "name": "Lipid Metabolism",
-    "color": "#d8b4fe",
+    "color": "#93C47D",
     "icon": "<circle cx='12' cy='4' r='3' fill='none' stroke='white' stroke-width='1.8'/><path d='M9.5 7C8 10 6.5 15 6.5 19.5c0 1.5.8 2.5 2 2.5s2-1 2-2.5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round'/><path d='M14.5 7c1.5 3 3 8 3 12.5 0 1.5-.8 2.5-2 2.5s-2-1-2-2.5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round'/><line x1='8.5' y1='10' x2='8.5' y2='18' stroke='white' stroke-width='0.6' stroke-dasharray='1.2 1.2'/><line x1='10.5' y1='8' x2='10.5' y2='19' stroke='white' stroke-width='0.6' stroke-dasharray='1.2 1.2'/><line x1='13.5' y1='8' x2='13.5' y2='19' stroke='white' stroke-width='0.6' stroke-dasharray='1.2 1.2'/><line x1='15.5' y1='10' x2='15.5' y2='18' stroke='white' stroke-width='0.6' stroke-dasharray='1.2 1.2'/>",
     "lang": {
       "ru-RU": "Липидный обмен",
@@ -88,7 +88,7 @@
   {
     "id": "cardiovascular-inflammatory",
     "name": "Cardiovascular and Inflammatory Risk",
-    "color": "#e8a0c0",
+    "color": "#EA9999",
     "icon": "<path d='M12 21C6 17 3 13 3 9.5 3 6.5 5.5 4 8 4c1.5 0 3 .8 4 2.5C13 5 14.5 4 16 4c2.5 0 5 2.5 5 5.5 0 3.5-3 7.5-9 11.5z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/><path d='M6 12h2.5l1.5-2.5 2 5 1.5-2.5H16' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/>",
     "lang": {
       "ru-RU": "Сердечно-сосудистый и воспалительный риск",
@@ -109,7 +109,7 @@
   {
     "id": "hpg-axis",
     "name": "HPG Axis",
-    "color": "#86efac",
+    "color": "#D9D2E9",
     "icon": "<path d='M10 3c0-1 .8-1.5 2-1.5s2 .5 2 1.5' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round'/><path d='M10 3C10 6 8 7 7.5 9c-.5 2-.5 4 .5 6s2.5 3 4 3' fill='none' stroke='white' stroke-width='1.5'/><path d='M14 3c0 3 2 4 2.5 6s.5 4-.5 6-2.5 3-4 3' fill='none' stroke='white' stroke-width='1.5'/><ellipse cx='8.5' cy='13' rx='2.5' ry='3.5' fill='none' stroke='white' stroke-width='1.2'/><ellipse cx='15.5' cy='13' rx='2.5' ry='3.5' fill='none' stroke='white' stroke-width='1.2'/><path d='M8 10.5c.8.5 1.2 1.5 1 3' fill='none' stroke='white' stroke-width='0.8'/><path d='M16 10.5c-.8.5-1.2 1.5-1 3' fill='none' stroke='white' stroke-width='0.8'/>",
     "lang": {
       "ru-RU": "Ось гипоталамус-гипофиз-гонады",
