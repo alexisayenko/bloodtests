@@ -130,8 +130,38 @@
     .panel-card-list li.detail-line { border-top: none; padding: 1px 0 1px 12px; font-size: 14px; color: var(--gray-400); line-height: 1.5; }
     .panel-card-list li.detail-line.long-name { font-style: italic; color: var(--gray-400); }
     .panel-card-list li.detail-line.description { color: var(--gray-500); }
-    .panel-card-list li.detail-line.scientific { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; }
-    .panel-card-list li.detail-line.scientific.expanded { -webkit-line-clamp: unset; }
+    .panel-card-list li.detail-line.scientific-wrap { padding-top: 3px; }
+    .scientific-text {
+      position: relative;
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .scientific-text::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2.6em;
+      background: linear-gradient(to bottom, rgba(249,250,251,0), rgba(249,250,251,0.96));
+      pointer-events: none;
+    }
+    .scientific-text.expanded { display: block; -webkit-line-clamp: unset; }
+    .scientific-text.expanded::after { display: none; }
+    .scientific-toggle {
+      margin-top: 4px;
+      padding: 0;
+      border: none;
+      background: none;
+      color: var(--primary);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
     .panel-card-list li.detail-line.why-line { color: var(--gray-500); }
     .panel-card-list li.detail-line.freq-line { color: var(--gray-400); }
     .panel-card-section { font-size: 14px; font-weight: 600; color: var(--gray-500); padding: 6px 0 2px; border-top: 2px solid var(--gray-200); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
@@ -236,9 +266,9 @@
     }
 
     const uiStrings = {
-      'en':    { results: 'Past Results', planned: 'Planned Tests', panels: 'Panels', biomarker: 'Biomarker', value: 'Value', reference: 'Reference', back: '← Back', noResults: 'No blood tests recorded yet.', noPlanned: 'No planned tests.', noPanels: 'No panels defined.', overdue: 'Overdue', biomarkers: 'biomarkers', analyses: 'analyses', navResults: 'Results', navPlanned: 'Planned', navPanels: 'Panels' },
-      'ru-RU': { results: 'Результаты', planned: 'Запланировано', panels: 'Панели', biomarker: 'Показатель', value: 'Значение', reference: 'Норма', back: '← Назад', noResults: 'Нет записей анализов.', noPlanned: 'Нет запланированных анализов.', noPanels: 'Панели не определены.', overdue: 'Просрочено', biomarkers: 'показателей', analyses: 'анализов', navResults: 'Результаты', navPlanned: 'План', navPanels: 'Панели' },
-      'uk-UA': { results: 'Результати', planned: 'Заплановано', panels: 'Панелі', biomarker: 'Показник', value: 'Значення', reference: 'Норма', back: '← Назад', noResults: 'Немає записів аналізів.', noPlanned: 'Немає запланованих аналізів.', noPanels: 'Панелі не визначені.', overdue: 'Прострочено', biomarkers: 'показників', analyses: 'аналізів', navResults: 'Результати', navPlanned: 'План', navPanels: 'Панелі' },
+      'en':    { results: 'Past Results', planned: 'Planned Tests', panels: 'Panels', biomarker: 'Biomarker', value: 'Value', reference: 'Reference', back: '← Back', noResults: 'No blood tests recorded yet.', noPlanned: 'No planned tests.', noPanels: 'No panels defined.', overdue: 'Overdue', biomarkers: 'biomarkers', analyses: 'analyses', navResults: 'Results', navPlanned: 'Planned', navPanels: 'Panels', readMore: 'Read more', showLess: 'Show less' },
+      'ru-RU': { results: 'Результаты', planned: 'Запланировано', panels: 'Панели', biomarker: 'Показатель', value: 'Значение', reference: 'Норма', back: '← Назад', noResults: 'Нет записей анализов.', noPlanned: 'Нет запланированных анализов.', noPanels: 'Панели не определены.', overdue: 'Просрочено', biomarkers: 'показателей', analyses: 'анализов', navResults: 'Результаты', navPlanned: 'План', navPanels: 'Панели', readMore: 'Показать больше', showLess: 'Свернуть' },
+      'uk-UA': { results: 'Результати', planned: 'Заплановано', panels: 'Панелі', biomarker: 'Показник', value: 'Значення', reference: 'Норма', back: '← Назад', noResults: 'Немає записів аналізів.', noPlanned: 'Немає запланованих аналізів.', noPanels: 'Панелі не визначені.', overdue: 'Прострочено', biomarkers: 'показників', analyses: 'аналізів', navResults: 'Результати', navPlanned: 'План', navPanels: 'Панелі', readMore: 'Показати більше', showLess: 'Згорнути' },
     };
 
     function t(key) { return uiStrings[currentLang][key] || uiStrings['en'][key]; }
@@ -299,6 +329,16 @@
       const div = document.createElement('div');
       div.textContent = str;
       return div.innerHTML;
+    }
+
+    function toggleScientific(id, btn) {
+      const text = document.getElementById(id);
+      if (!text) return;
+      const expanded = text.classList.toggle('expanded');
+      if (btn) {
+        btn.textContent = expanded ? t('showLess') : t('readMore');
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      }
     }
 
     function isOutOfRange(r) {
@@ -490,7 +530,10 @@
         if (a.info) {
           const inf = (currentLang !== 'en' && a.info.lang && a.info.lang[currentLang]) ? { ...a.info, ...a.info.lang[currentLang] } : a.info;
           if (inf.description) extra += `<li class="detail-line description">${escHtml(inf.description)}</li>`;
-          if (inf.scientific) extra += `<li class="detail-line scientific" onclick="this.classList.toggle('expanded')">${escHtml(inf.scientific)}</li>`;
+          if (inf.scientific) {
+            const scientificId = `scientific-${a.loinc.replace(/[^a-zA-Z0-9_-]/g, '-')}`;
+            extra += `<li class="detail-line scientific-wrap"><div id="${scientificId}" class="scientific-text" onclick="toggleScientific('${scientificId}', this.nextElementSibling)">${escHtml(inf.scientific)}</div><button type="button" class="scientific-toggle" aria-expanded="false" onclick="toggleScientific('${scientificId}', this)">${t('readMore')}</button></li>`;
+          }
           if (inf.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(inf.why)}</li>`;
           if (inf.frequency) extra += `<li class="detail-line freq-line">${clockIcon}Do it: ${escHtml(inf.frequency)}</li>`;
         }
