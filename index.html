@@ -115,8 +115,10 @@
     }
     .panel-card-title { font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
     .panel-card-list { list-style: none; }
-    .panel-card-list li { font-size: 13px; color: var(--gray-700); padding: 3px 0; border-top: 1px solid var(--gray-100); }
+    .panel-card-list li { font-size: 13px; color: var(--gray-700); padding: 3px 0; border-top: 1px solid var(--gray-200); }
     .panel-card-list li:first-child { border-top: none; }
+    .panel-card-list li.analysis-name { font-weight: 600; padding-top: 10px; }
+    .panel-card-list li.analysis-name:first-child { padding-top: 3px; }
     .panel-card-section { font-size: 12px; font-weight: 600; color: var(--gray-500); padding: 6px 0 2px; border-top: 2px solid var(--gray-200); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
     .panel-card-section:first-child { border-top: none; margin-top: 0; }
 
@@ -466,13 +468,13 @@
         if (otherNames.length) extra += `<li class="result-loinc" style="border-top:none;padding-top:0">${otherNames.map(n => escHtml(n)).join(' · ')}</li>`;
         if (a.info) {
           if (a.info.description) extra += `<li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.info.description)}</li>`;
-          if (a.info.why) extra += `<li class="result-loinc" style="border-top:none;padding-top:0"><b>Why:</b> ${escHtml(a.info.why)}</li>`;
-          if (a.info.frequency) extra += `<li class="result-loinc" style="border-top:none;padding-top:0"><b>How often:</b> ${escHtml(a.info.frequency)}</li>`;
+          if (a.info.why) extra += `<li class="result-loinc" style="border-top:none;padding-top:0">${escHtml(a.info.why)}</li>`;
+          if (a.info.frequency) extra += `<li class="result-loinc" style="border-top:none;padding-top:0"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:-1px;margin-right:3px"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5"/></svg>${escHtml(a.info.frequency)}</li>`;
         }
-        return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>${extra}`;
+        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</span></li>${extra}`;
       }
       if (panelViewMode === 'compact') {
-        return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>`;
+        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</span></li>`;
       }
       return `<li>${escHtml(getAnalysisName(a.loinc))}</li>`;
     }
