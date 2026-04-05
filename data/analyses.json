@@ -691,5 +691,230 @@
       "ru-RU": "Паратиреоидный гормон (ПТГ)",
       "uk-UA": "Паратиреоїдний гормон (ПТГ)"
     }
+  },
+  {
+    "loinc": "4544-3",
+    "longCommonName": "Hematocrit [Volume Fraction] of Blood by Automated count",
+    "displayName": "Hematocrit (HCT)",
+    "lang": {
+      "ru-RU": "Гематокрит",
+      "uk-UA": "Гематокрит"
+    }
+  },
+  {
+    "loinc": "2498-4",
+    "longCommonName": "Iron [Mass/volume] in Serum or Plasma",
+    "displayName": "Iron Serum (Fe)",
+    "lang": {
+      "ru-RU": "Железо сывороточное",
+      "uk-UA": "Залізо сироваткове"
+    }
+  },
+  {
+    "loinc": "2276-4",
+    "longCommonName": "Ferritin [Mass/volume] in Serum or Plasma",
+    "displayName": "Ferritin",
+    "lang": {
+      "ru-RU": "Ферритин",
+      "uk-UA": "Феритин"
+    }
+  },
+  {
+    "loinc": "2500-7",
+    "longCommonName": "Iron binding capacity [Mass/volume] in Serum or Plasma",
+    "displayName": "Total Iron Binding Capacity (TIBC)",
+    "lang": {
+      "ru-RU": "Общая железосвязывающая способность (ОЖСС)",
+      "uk-UA": "Загальна залізозв'язувальна здатність (ЗЗЗЗ)"
+    }
+  },
+  {
+    "loinc": "2501-5",
+    "longCommonName": "Iron binding capacity.unsaturated [Mass/volume] in Serum or Plasma",
+    "displayName": "Unsaturated Iron-Binding Capacity (UIBC)",
+    "lang": {
+      "ru-RU": "Ненасыщенная железосвязывающая способность (НЖСС)",
+      "uk-UA": "Ненасичена залізозв'язувальна здатність (НЗЗЗ)"
+    }
+  },
+  {
+    "loinc": "3034-6",
+    "longCommonName": "Transferrin [Mass/volume] in Serum or Plasma",
+    "displayName": "Transferrin Serum (TRF)",
+    "lang": {
+      "ru-RU": "Трансферрин",
+      "uk-UA": "Трансферин"
+    }
+  },
+  {
+    "loinc": "2502-3",
+    "longCommonName": "Iron saturation [Mass Fraction] in Serum or Plasma",
+    "displayName": "% Iron Saturation (Calc)",
+    "lang": {
+      "ru-RU": "Насыщение трансферрина железом (%)",
+      "uk-UA": "Насичення трансферину залізом (%)"
+    }
+  },
+  {
+    "loinc": "3084-1",
+    "longCommonName": "Urate [Mass/volume] in Serum or Plasma",
+    "displayName": "Uric Acid",
+    "lang": {
+      "ru-RU": "Мочевая кислота",
+      "uk-UA": "Сечова кислота"
+    }
+  },
+  {
+    "loinc": "48642-3",
+    "longCommonName": "Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area] in Serum or Plasma",
+    "displayName": "eGFR",
+    "lang": {
+      "ru-RU": "СКФ (скорость клубочковой фильтрации)",
+      "uk-UA": "ШКФ (швидкість клубочкової фільтрації)"
+    }
+  },
+  {
+    "loinc": "33863-2",
+    "longCommonName": "Cystatin C [Mass/volume] in Serum or Plasma",
+    "displayName": "Cystatin C",
+    "lang": {
+      "ru-RU": "Цистатин C",
+      "uk-UA": "Цистатин C"
+    }
+  },
+  {
+    "loinc": "3173-2",
+    "longCommonName": "Activated partial thromboplastin time (aPTT) in Blood",
+    "displayName": "APTT",
+    "lang": {
+      "ru-RU": "АЧТВ (активированное частичное тромбопластиновое время)",
+      "uk-UA": "АЧТЧ (активований частковий тромбопластиновий час)"
+    }
+  },
+  {
+    "loinc": "6301-6",
+    "longCommonName": "INR in Platelet poor plasma by Coagulation assay",
+    "displayName": "INR",
+    "lang": {
+      "ru-RU": "МНО (международное нормализованное отношение)",
+      "uk-UA": "МНВ (міжнародне нормалізоване відношення)"
+    }
+  },
+  {
+    "loinc": "5902-2",
+    "longCommonName": "Prothrombin time (PT) in Platelet poor plasma by Coagulation assay",
+    "displayName": "Prothrombin Time (PT)",
+    "lang": {
+      "ru-RU": "Протромбиновое время",
+      "uk-UA": "Протромбіновий час"
+    }
+  },
+  {
+    "loinc": "48065-7",
+    "longCommonName": "Fibrin D-dimer FEU [Mass/volume] in Platelet poor plasma",
+    "displayName": "D-Dimer",
+    "lang": {
+      "ru-RU": "D-димер",
+      "uk-UA": "D-димер"
+    }
+  },
+  {
+    "loinc": "5894-1",
+    "longCommonName": "Prothrombin time (PT) in Platelet poor plasma by Coagulation assay --percent of normal",
+    "displayName": "Prothrombin Index",
+    "lang": {
+      "ru-RU": "Протромбиновый индекс",
+      "uk-UA": "Протромбіновий індекс"
+    }
+  },
+  {
+    "loinc": "3243-3",
+    "longCommonName": "Thrombin time in Platelet poor plasma by Coagulation assay",
+    "displayName": "Thrombin Time",
+    "lang": {
+      "ru-RU": "Тромбиновое время",
+      "uk-UA": "Тромбіновий час"
+    }
+  },
+  {
+    "loinc": "3174-0",
+    "longCommonName": "Antithrombin [Enzymatic activity/volume] in Platelet poor plasma",
+    "displayName": "Antithrombin (Activity)",
+    "lang": {
+      "ru-RU": "Антитромбин (активность)",
+      "uk-UA": "Антитромбін (активність)"
+    }
+  },
+  {
+    "loinc": "30341-2",
+    "longCommonName": "Erythrocyte sedimentation rate",
+    "displayName": "ESR",
+    "lang": {
+      "ru-RU": "СОЭ (скорость оседания эритроцитов)",
+      "uk-UA": "ШОЕ (швидкість осідання еритроцитів)"
+    }
+  },
+  {
+    "loinc": "2141-0",
+    "longCommonName": "Corticotropin [Mass/volume] in Plasma",
+    "displayName": "ACTH",
+    "lang": {
+      "ru-RU": "АКТГ (адренокортикотропный гормон)",
+      "uk-UA": "АКТГ (адренокортикотропний гормон)"
+    }
+  },
+  {
+    "loinc": "2143-6",
+    "longCommonName": "Cortisol [Mass/volume] in Serum or Plasma",
+    "displayName": "Cortisol",
+    "lang": {
+      "ru-RU": "Кортизол",
+      "uk-UA": "Кортизол"
+    }
+  },
+  {
+    "loinc": "11572-5",
+    "longCommonName": "Rheumatoid factor [Units/volume] in Serum or Plasma",
+    "displayName": "Rheumatoid Factor (RF)",
+    "lang": {
+      "ru-RU": "Ревматоидный фактор",
+      "uk-UA": "Ревматоїдний фактор"
+    }
+  },
+  {
+    "loinc": "2484-4",
+    "longCommonName": "Insulin-like growth factor-I [Mass/volume] in Serum or Plasma",
+    "displayName": "IGF-1 (Somatomedin C)",
+    "lang": {
+      "ru-RU": "ИФР-1 (соматомедин C)",
+      "uk-UA": "ІФР-1 (соматомедин C)"
+    }
+  },
+  {
+    "loinc": "2857-1",
+    "longCommonName": "Prostate specific Ag [Mass/volume] in Serum or Plasma",
+    "displayName": "PSA",
+    "lang": {
+      "ru-RU": "ПСА (простатический специфический антиген)",
+      "uk-UA": "ПСА (простатичний специфічний антиген)"
+    }
+  },
+  {
+    "loinc": "53027-9",
+    "longCommonName": "Cyclic citrullinated peptide Ab [Units/volume] in Serum",
+    "displayName": "Anti-CCP (ACCP)",
+    "lang": {
+      "ru-RU": "Антитела к циклическому цитруллинированному пептиду (АЦЦП)",
+      "uk-UA": "Антитіла до циклічного цитрулінованого пептиду (АЦЦП)"
+    }
+  },
+  {
+    "loinc": "2157-6",
+    "longCommonName": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma",
+    "displayName": "Creatine Kinase (CK)",
+    "lang": {
+      "ru-RU": "Креатинкиназа",
+      "uk-UA": "Креатинкіназа"
+    }
   }
 ]
