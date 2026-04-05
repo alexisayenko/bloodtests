@@ -117,6 +117,7 @@
       font-size: 12px; font-weight: 500; color: var(--gray-500); cursor: pointer;
     }
     .view-toggle-btn.active { background: var(--primary); color: white; }
+    .view-toggle-btn.utility { margin-left: auto; }
 
     .panels-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
     .panels-grid-single { grid-template-columns: 1fr; }
@@ -147,7 +148,7 @@
     }
     .panel-card-list li.detail-line.scientific-wrap.expanded { display: list-item; }
     .scientific-toggle {
-      display: inline-block;
+      display: block;
       padding: 0;
       border: none;
       background: none;
@@ -159,12 +160,15 @@
       letter-spacing: 1px;
       cursor: pointer;
       margin-top: 2px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .scientific-toggle.expanded {
       color: var(--primary);
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0;
+      text-align: center;
     }
     .panel-card-list li.detail-line.why-line { color: var(--gray-500); padding-top: 10px; }
     .panel-card-list li.detail-line.freq-line { color: var(--gray-400); padding-top: 4px; padding-bottom: 8px; }
@@ -578,10 +582,15 @@
         return;
       }
 
+      const collapseAllButton = panelViewMode === 'detailed'
+        ? `<button class="view-toggle-btn utility" onclick="collapseAllPanels()">Collapse all panels</button>`
+        : '';
+
       const toggleHtml = `<div class="view-toggle">
         <button class="view-toggle-btn ${panelViewMode === 'minimal' ? 'active' : ''}" onclick="setPanelView('minimal')">Minimal</button>
         <button class="view-toggle-btn ${panelViewMode === 'compact' ? 'active' : ''}" onclick="setPanelView('compact')">Compact</button>
         <button class="view-toggle-btn ${panelViewMode === 'detailed' ? 'active' : ''}" onclick="setPanelView('detailed')">Detailed</button>
+        ${collapseAllButton}
       </div>`;
 
       const gridClass = panelViewMode === 'minimal' ? 'panels-grid' : 'panels-grid panels-grid-single';
@@ -619,10 +628,23 @@
       const body = document.getElementById('pcbody-' + index);
       const btn = document.getElementById('pcb-' + index);
       const col = document.getElementById('pccol-' + index);
+      if (!body || !btn) return;
       const isCollapsed = !body.classList.contains('collapsed');
       body.classList.toggle('collapsed');
       btn.classList.toggle('collapsed');
       if (col) col.style.display = isCollapsed ? 'block' : 'none';
+    }
+
+    function collapseAllPanels() {
+      panelsCache.forEach((_, index) => {
+        const body = document.getElementById('pcbody-' + index);
+        const btn = document.getElementById('pcb-' + index);
+        const col = document.getElementById('pccol-' + index);
+        if (!body || !btn) return;
+        body.classList.add('collapsed');
+        btn.classList.add('collapsed');
+        if (col) col.style.display = 'block';
+      });
     }
 
     function showPanelDetail(index) {
