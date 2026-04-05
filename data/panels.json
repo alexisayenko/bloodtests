@@ -21,7 +21,7 @@
   {
     "id": "glucose-metabolism",
     "name": "Glucose Metabolism",
-    "color": "#f9a8b8",
+    "color": "#fbbf24",
     "icon": "<polygon points='12,2 19,6 19,14 12,18 5,14 5,6' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/><circle cx='12' cy='2' r='1.5' fill='white'/><circle cx='19' cy='6' r='1.5' fill='white'/><circle cx='19' cy='14' r='1.5' fill='white'/><circle cx='12' cy='18' r='1.5' fill='white'/><circle cx='5' cy='14' r='1.5' fill='white'/><circle cx='5' cy='6' r='1.5' fill='white'/><line x1='12' y1='0.5' x2='12' y2='0' stroke='white' stroke-width='1.2' stroke-linecap='round'/><line x1='20.5' y1='5' x2='21.5' y2='4.5' stroke='white' stroke-width='1.2' stroke-linecap='round'/><line x1='20.5' y1='15' x2='21.5' y2='15.5' stroke='white' stroke-width='1.2' stroke-linecap='round'/><line x1='12' y1='19.5' x2='12' y2='20.5' stroke='white' stroke-width='1.2' stroke-linecap='round'/><line x1='3.5' y1='15' x2='2.5' y2='15.5' stroke='white' stroke-width='1.2' stroke-linecap='round'/><line x1='3.5' y1='5' x2='2.5' y2='4.5' stroke='white' stroke-width='1.2' stroke-linecap='round'/>",
     "lang": {
       "ru-RU": "Углеводный обмен",
