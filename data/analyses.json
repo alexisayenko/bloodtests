@@ -400,19 +400,19 @@
       "uk-UA": "Тиреотропний гормон (ТТГ)"
     },
     "info": {
-      "description": "Pituitary hormone that controls thyroid gland activity and hormone production.",
+      "description": "Pituitary signal that tells the thyroid how hard to work and how much T4 and T3 to make.",
       "scientific": "A glycoprotein hormone secreted by the adenohypophysis (anterior pituitary gland). Thyrotropin stimulates the thyroid gland by increasing the iodide transport, synthesis and release of thyroid hormones (thyroxine and triiodothyronine). Thyrotropin consists of two noncovalently linked subunits, alpha and beta. Within a species, the alpha subunit is common in the pituitary glycoprotein hormones (TSH, LH and FSH), but the beta subunit is unique and confers its biological specificity.",
       "why": "Primary screening test for hypothyroidism and hyperthyroidism.",
       "frequency": "Annually; every 6-8 weeks when adjusting thyroid medication",
       "lang": {
         "ru-RU": {
-          "description": "Гормон гипофиза, контролирующий активность щитовидной железы и выработку гормонов.",
+          "description": "Сигнал гипофиза, который показывает, насколько активно щитовидная железа должна работать и сколько Т4 и Т3 вырабатывать.",
           "scientific": "Гликопротеиновый гормон, секретируемый аденогипофизом (передней долей гипофиза). Тиреотропин стимулирует щитовидную железу, усиливая транспорт йодида, синтез и высвобождение тиреоидных гормонов (тироксина и трийодтиронина). Тиреотропин состоит из двух нековалентно связанных субъединиц — альфа и бета. У представителей одного вида альфа-субъединица является общей для гипофизарных гликопротеиновых гормонов (ТТГ, ЛГ и ФСГ), тогда как бета-субъединица уникальна и определяет биологическую специфичность гормона.",
           "why": "Основной скрининговый тест на гипотиреоз и гипертиреоз.",
           "frequency": "Ежегодно; каждые 6–8 недель при подборе дозы тиреоидных препаратов"
         },
         "uk-UA": {
-          "description": "Гормон гіпофіза, що контролює активність щитоподібної залози та вироблення гормонів.",
+          "description": "Сигнал гіпофіза, який показує, наскільки активно має працювати щитоподібна залоза і скільки Т4 та Т3 виробляти.",
           "scientific": "Глікопротеїновий гормон, що секретується аденогіпофізом (передньою часткою гіпофіза). Тиреотропін стимулює щитоподібну залозу, посилюючи транспорт йодиду, синтез і вивільнення тиреоїдних гормонів (тироксину та трийодтироніну). Тиреотропін складається з двох нековалентно зв'язаних субодиниць — альфа та бета. У межах одного виду альфа-субодиниця є спільною для гіпофізарних глікопротеїнових гормонів (ТТГ, ЛГ та ФСГ), тоді як бета-субодиниця є унікальною та визначає біологічну специфічність гормону.",
           "why": "Основний скринінговий тест на гіпотиреоз та гіпертиреоз.",
           "frequency": "Щорічно; кожні 6–8 тижнів при підборі дози тиреоїдних препаратів"
@@ -429,19 +429,19 @@
       "uk-UA": "Трийодтиронін вільний (Т3 віл.)"
     },
     "info": {
-      "description": "Active thyroid hormone that regulates metabolism, heart rate, and body temperature.",
+      "description": "The most active thyroid hormone, directly speeding up energy use, heat production, and heart activity.",
       "scientific": "Free T3 (free triiodothyronine) is a measure of free circulating T3, excluding that which is bound to carrier proteins. This provides a more accurate measure of T3 levels because the carrier proteins can increase or decrease in various conditions artificially inflating or shrinking the total T3. T3 is discriminating for diagnosing and/or following the treatment of hyperthyroidism. The thyroid delivers 20 times more T4 than T3, so T4 is the more relevant analyte except in special cases.",
       "why": "Confirms hyperthyroidism and evaluates thyroid function when TSH is abnormal.",
       "frequency": "As clinically indicated; with TSH when monitoring thyroid disease",
       "lang": {
         "ru-RU": {
-          "description": "Активный гормон щитовидной железы, регулирующий обмен веществ, частоту сердечных сокращений и температуру тела.",
+          "description": "Самый активный гормон щитовидной железы, который напрямую ускоряет обмен веществ, выработку тепла и работу сердца.",
           "scientific": "Свободный Т3 (свободный трийодтиронин) — показатель свободно циркулирующего Т3, не связанного с транспортными белками. Это более точный показатель уровня Т3, поскольку концентрация транспортных белков может изменяться при различных состояниях, искусственно завышая или занижая общий Т3. Определение Т3 особенно информативно для диагностики и мониторинга лечения гипертиреоза. Щитовидная железа продуцирует в 20 раз больше Т4, чем Т3, поэтому Т4 является более значимым аналитом, за исключением особых случаев.",
           "why": "Подтверждает гипертиреоз и оценивает функцию щитовидной железы при отклонениях ТТГ.",
           "frequency": "По клиническим показаниям; совместно с ТТГ при мониторинге заболеваний щитовидной железы"
         },
         "uk-UA": {
-          "description": "Активний гормон щитоподібної залози, що регулює обмін речовин, частоту серцевих скорочень та температуру тіла.",
+          "description": "Найактивніший гормон щитоподібної залози, який безпосередньо прискорює обмін речовин, утворення тепла та роботу серця.",
           "scientific": "Вільний Т3 (вільний трийодтиронін) — показник вільно циркулюючого Т3, що не зв'язаний із транспортними білками. Це більш точний показник рівня Т3, оскільки концентрація транспортних білків може змінюватися при різних станах, штучно завищуючи або занижуючи загальний Т3. Визначення Т3 є особливо інформативним для діагностики та моніторингу лікування гіпертиреозу. Щитоподібна залоза продукує у 20 разів більше Т4, ніж Т3, тому Т4 є більш значущим аналітом, за винятком особливих випадків.",
           "why": "Підтверджує гіпертиреоз та оцінює функцію щитоподібної залози при відхиленнях ТТГ.",
           "frequency": "За клінічними показаннями; разом із ТТГ при моніторингу захворювань щитоподібної залози"
@@ -458,19 +458,19 @@
       "uk-UA": "Тироксин вільний (Т4 віл.)"
     },
     "info": {
-      "description": "Main hormone produced by the thyroid gland, converted to active T3 in tissues.",
+      "description": "The thyroid’s main circulating hormone, serving as a hormone reserve that tissues convert into active T3 when needed.",
       "scientific": "Free T4 is the metabolically active fraction of thyroxine and is the precursor of triiodothyronine (T3). Free T4 is a sensitive test for thyroid function and is increased with hyperthyroidism and decreased with hypothyroidism. Free T4 is not affected by changes in thyroxine-binding proteins.",
       "why": "Confirms thyroid dysfunction when TSH is abnormal and monitors thyroid therapy.",
       "frequency": "As clinically indicated; with TSH when monitoring thyroid disease",
       "lang": {
         "ru-RU": {
-          "description": "Основной гормон, вырабатываемый щитовидной железой, преобразуемый в активный Т3 в тканях.",
+          "description": "Основной циркулирующий гормон щитовидной железы, который служит запасом и в тканях превращается в активный Т3 по мере необходимости.",
           "scientific": "Свободный Т4 — метаболически активная фракция тироксина, являющаяся предшественником трийодтиронина (Т3). Свободный Т4 — чувствительный тест функции щитовидной железы: его уровень повышается при гипертиреозе и снижается при гипотиреозе. На уровень свободного Т4 не влияют изменения концентрации тироксинсвязывающих белков.",
           "why": "Подтверждает дисфункцию щитовидной железы при отклонениях ТТГ и используется для мониторинга тиреоидной терапии.",
           "frequency": "По клиническим показаниям; совместно с ТТГ при мониторинге заболеваний щитовидной железы"
         },
         "uk-UA": {
-          "description": "Основний гормон, що виробляється щитоподібною залозою та перетворюється на активний Т3 у тканинах.",
+          "description": "Основний циркулюючий гормон щитоподібної залози, який слугує запасом і в тканинах перетворюється на активний Т3 за потреби.",
           "scientific": "Вільний Т4 — метаболічно активна фракція тироксину, що є попередником трийодтироніну (Т3). Вільний Т4 — чутливий тест функції щитоподібної залози: його рівень підвищується при гіпертиреозі та знижується при гіпотиреозі. На рівень вільного Т4 не впливають зміни концентрації тироксинзв'язувальних білків.",
           "why": "Підтверджує дисфункцію щитоподібної залози при відхиленнях ТТГ та використовується для моніторингу тиреоїдної терапії.",
           "frequency": "За клінічними показаннями; разом із ТТГ при моніторингу захворювань щитоподібної залози"
@@ -487,19 +487,19 @@
       "uk-UA": "Антитіла до тиреопероксидази (анти-ТПО)"
     },
     "info": {
-      "description": "Autoantibodies against the thyroid enzyme involved in hormone synthesis.",
+      "description": "Immune antibodies against the enzyme the thyroid uses to attach iodine and build its hormones.",
       "scientific": "Thyroperoxidase antibodies aid in the detection of autoimmune and Hashimoto's thyroiditis. Antibodies against the thyroid are seldom seen in serum of normal individuals but 5-10% of patients may have low levels of antibodies with no signs of disease. These antibodies may be associated with other autoimmune disorders (cross-reactive antibodies).",
       "why": "Diagnoses autoimmune thyroid disease such as Hashimoto's thyroiditis.",
       "frequency": "Once for diagnosis; repeat only as clinically indicated",
       "lang": {
         "ru-RU": {
-          "description": "Аутоантитела к ферменту щитовидной железы, участвующему в синтезе гормонов.",
+          "description": "Иммунные антитела к ферменту, с помощью которого щитовидная железа присоединяет йод и собирает свои гормоны.",
           "scientific": "Антитела к тиреопероксидазе используются для выявления аутоиммунного тиреоидита и тиреоидита Хашимото. Антитела к щитовидной железе редко обнаруживаются в сыворотке здоровых людей, однако у 5–10% пациентов могут выявляться низкие уровни антител без признаков заболевания. Эти антитела могут быть ассоциированы с другими аутоиммунными заболеваниями (перекрёстно-реактивные антитела).",
           "why": "Диагностирует аутоиммунные заболевания щитовидной железы, такие как тиреоидит Хашимото.",
           "frequency": "Однократно для постановки диагноза; повторно — только по клиническим показаниям"
         },
         "uk-UA": {
-          "description": "Аутоантитіла до ферменту щитоподібної залози, що бере участь у синтезі гормонів.",
+          "description": "Імунні антитіла до ферменту, за допомогою якого щитоподібна залоза приєднує йод і створює свої гормони.",
           "scientific": "Антитіла до тиреопероксидази використовуються для виявлення аутоімунного тиреоїдиту та тиреоїдиту Хашимото. Антитіла до щитоподібної залози рідко виявляються у сироватці здорових людей, проте у 5–10% пацієнтів можуть бути виявлені низькі рівні антитіл без ознак захворювання. Ці антитіла можуть бути асоційовані з іншими аутоімунними захворюваннями (перехресно-реактивні антитіла).",
           "why": "Діагностує аутоімунні захворювання щитоподібної залози, зокрема тиреоїдит Хашимото.",
           "frequency": "Одноразово для встановлення діагнозу; повторно — лише за клінічними показаннями"
@@ -516,19 +516,19 @@
       "uk-UA": "Антитіла до тиреоглобуліну (анти-ТГ)"
     },
     "info": {
-      "description": "Autoantibodies targeting thyroglobulin, the precursor protein for thyroid hormones.",
+      "description": "Immune antibodies against thyroglobulin, the storage protein the thyroid uses as raw material for making hormones.",
       "scientific": "Circulating immunoglobulins directed against thyroglobulin are commonly present in patients with autoimmune (Hashimoto) thyroiditis and, to a lesser extent, Graves disease. The test is used to confirm that a patient's diffuse goiter and/or hypothyroidism stems from autoimmune thyroiditis, and may help distinguish Graves disease from toxic nodular goiter. These antibodies are present in approximately 70% of autoimmune thyroiditis patients. The presence of thyroglobulin antibodies doesn't necessarily indicate clinically significant thyroid disease or define thyroid functional status.",
       "why": "Supports diagnosis of autoimmune thyroid disease and monitors thyroid cancer follow-up.",
       "frequency": "Once for diagnosis; repeat only as clinically indicated",
       "lang": {
         "ru-RU": {
-          "description": "Аутоантитела к тиреоглобулину — белку-предшественнику тиреоидных гормонов.",
+          "description": "Иммунные антитела к тиреоглобулину — белку-запасу, который щитовидная железа использует как сырьё для своих гормонов.",
           "scientific": "Циркулирующие иммуноглобулины, направленные против тиреоглобулина, часто обнаруживаются у пациентов с аутоиммунным (Хашимото) тиреоидитом и, в меньшей степени, при болезни Грейвса. Тест используется для подтверждения того, что диффузный зоб и/или гипотиреоз обусловлены аутоиммунным тиреоидитом, а также может помочь отличить болезнь Грейвса от токсического узлового зоба. Эти антитела присутствуют примерно у 70% пациентов с аутоиммунным тиреоидитом. Наличие антител к тиреоглобулину не обязательно указывает на клинически значимое заболевание щитовидной железы и не определяет её функциональный статус.",
           "why": "Подтверждает диагноз аутоиммунного заболевания щитовидной железы и используется при мониторинге рака щитовидной железы.",
           "frequency": "Однократно для постановки диагноза; повторно — только по клиническим показаниям"
         },
         "uk-UA": {
-          "description": "Аутоантитіла до тиреоглобуліну — білка-попередника тиреоїдних гормонів.",
+          "description": "Імунні антитіла до тиреоглобуліну — білка-запасу, який щитоподібна залоза використовує як сировину для своїх гормонів.",
           "scientific": "Циркулюючі імуноглобуліни, спрямовані проти тиреоглобуліну, часто виявляються у пацієнтів з аутоімунним (Хашимото) тиреоїдитом і, меншою мірою, при хворобі Грейвса. Тест використовується для підтвердження того, що дифузний зоб та/або гіпотиреоз зумовлені аутоімунним тиреоїдитом, а також може допомогти відрізнити хворобу Грейвса від токсичного вузлового зоба. Ці антитіла присутні приблизно у 70% пацієнтів з аутоімунним тиреоїдитом. Наявність антитіл до тиреоглобуліну не обов'язково вказує на клінічно значуще захворювання щитоподібної залози та не визначає її функціональний статус.",
           "why": "Підтверджує діагноз аутоімунного захворювання щитоподібної залози та використовується при моніторингу раку щитоподібної залози.",
           "frequency": "Одноразово для встановлення діагнозу; повторно — лише за клінічними показаннями"
@@ -545,19 +545,19 @@
       "uk-UA": "Антитіла до рецепторів ТТГ (TRAb)"
     },
     "info": {
-      "description": "Autoantibodies that bind to TSH receptors and can stimulate or block the thyroid.",
+      "description": "Immune antibodies that latch onto the thyroid’s TSH receptor and can either push the gland to overwork or block its normal signal.",
       "scientific": "Thyrotropin receptor antibodies (TRAb) are immunoglobulins directed against the TSH receptor on thyroid follicular cells. Stimulating TRAb mimic the action of TSH, causing unregulated thyroid hormone production and are the hallmark of Graves disease. Blocking TRAb inhibit TSH binding and can cause hypothyroidism. TRAb measurement is essential for differentiating Graves disease from other causes of hyperthyroidism, monitoring disease activity during antithyroid drug therapy, and assessing the risk of neonatal thyrotoxicosis in pregnant women with Graves disease.",
       "why": "Diagnoses Graves' disease and predicts neonatal thyroid risk in pregnant patients.",
       "frequency": "As clinically indicated",
       "lang": {
         "ru-RU": {
-          "description": "Аутоантитела, связывающиеся с рецепторами ТТГ и способные стимулировать или блокировать щитовидную железу.",
+          "description": "Иммунные антитела, которые связываются с рецептором ТТГ и могут либо чрезмерно разгонять щитовидную железу, либо мешать нормальному сигналу.",
           "scientific": "Антитела к рецепторам тиреотропина (TRAb) — иммуноглобулины, направленные против рецептора ТТГ на фолликулярных клетках щитовидной железы. Стимулирующие TRAb имитируют действие ТТГ, вызывая нерегулируемую продукцию тиреоидных гормонов, и являются характерным признаком болезни Грейвса. Блокирующие TRAb препятствуют связыванию ТТГ и могут вызывать гипотиреоз. Определение TRAb необходимо для дифференциации болезни Грейвса от других причин гипертиреоза, мониторинга активности заболевания на фоне антитиреоидной терапии и оценки риска неонатального тиреотоксикоза у беременных с болезнью Грейвса.",
           "why": "Диагностирует болезнь Грейвса и оценивает риск неонатальной тиреоидной патологии у беременных.",
           "frequency": "По клиническим показаниям"
         },
         "uk-UA": {
-          "description": "Аутоантитіла, що зв'язуються з рецепторами ТТГ і можуть стимулювати або блокувати щитоподібну залозу.",
+          "description": "Імунні антитіла, що зв'язуються з рецептором ТТГ і можуть або надмірно розганяти щитоподібну залозу, або заважати нормальному сигналу.",
           "scientific": "Антитіла до рецепторів тиреотропіну (TRAb) — імуноглобуліни, спрямовані проти рецептора ТТГ на фолікулярних клітинах щитоподібної залози. Стимулюючі TRAb імітують дію ТТГ, спричиняючи нерегульовану продукцію тиреоїдних гормонів, і є характерною ознакою хвороби Грейвса. Блокуючі TRAb перешкоджають зв'язуванню ТТГ і можуть спричиняти гіпотиреоз. Визначення TRAb необхідне для диференціації хвороби Грейвса від інших причин гіпертиреозу, моніторингу активності захворювання на тлі антитиреоїдної терапії та оцінки ризику неонатального тиреотоксикозу у вагітних із хворобою Грейвса.",
           "why": "Діагностує хворобу Грейвса та оцінює ризик неонатальної тиреоїдної патології у вагітних.",
           "frequency": "За клінічними показаннями"
@@ -574,19 +574,19 @@
       "uk-UA": "Кальцитонін"
     },
     "info": {
-      "description": "Hormone produced by thyroid C-cells that helps regulate calcium and bone metabolism.",
+      "description": "A hormone from thyroid C-cells that helps lower blood calcium and slows the release of calcium from bone.",
       "scientific": "Calcitonin is a 32-amino acid peptide hormone secreted by the parafollicular C-cells of the thyroid gland. It acts to lower blood calcium by inhibiting osteoclast-mediated bone resorption and increasing renal calcium excretion. Calcitonin serves as a highly sensitive and specific tumor marker for medullary thyroid carcinoma (MTC), which arises from the C-cells. Elevated basal calcitonin levels or an exaggerated response to stimulation testing (pentagastrin or calcium) indicates C-cell hyperplasia or MTC. It is also used to monitor for recurrence after thyroidectomy.",
       "why": "Screens for and monitors medullary thyroid carcinoma.",
       "frequency": "As clinically indicated",
       "lang": {
         "ru-RU": {
-          "description": "Гормон С-клеток щитовидной железы, участвующий в регуляции кальциевого и костного обмена.",
+          "description": "Гормон С-клеток щитовидной железы, который помогает снижать кальций в крови и замедляет выход кальция из костей.",
           "scientific": "Кальцитонин — пептидный гормон из 32 аминокислот, секретируемый парафолликулярными С-клетками щитовидной железы. Он снижает уровень кальция в крови, подавляя остеокласт-опосредованную резорбцию костной ткани и усиливая почечную экскрецию кальция. Кальцитонин является высокочувствительным и специфичным опухолевым маркёром медуллярного рака щитовидной железы (МРЩЖ), происходящего из С-клеток. Повышенный базальный уровень кальцитонина или чрезмерный ответ на стимуляционный тест (пентагастрином или кальцием) указывает на С-клеточную гиперплазию или МРЩЖ. Также используется для мониторинга рецидивов после тиреоидэктомии.",
           "why": "Скрининг и мониторинг медуллярного рака щитовидной железы.",
           "frequency": "По клиническим показаниям"
         },
         "uk-UA": {
-          "description": "Гормон С-клітин щитоподібної залози, що бере участь у регуляції кальцієвого та кісткового обміну.",
+          "description": "Гормон С-клітин щитоподібної залози, який допомагає знижувати кальцій у крові та сповільнює вихід кальцію з кісток.",
           "scientific": "Кальцитонін — пептидний гормон із 32 амінокислот, що секретується парафолікулярними С-клітинами щитоподібної залози. Він знижує рівень кальцію в крові, пригнічуючи остеокласт-опосередковану резорбцію кісткової тканини та посилюючи ниркову екскрецію кальцію. Кальцитонін є високочутливим і специфічним пухлинним маркером медулярного раку щитоподібної залози (МРЩЗ), що походить із С-клітин. Підвищений базальний рівень кальцитоніну або надмірна відповідь на стимуляційний тест (пентагастрином або кальцієм) вказує на С-клітинну гіперплазію або МРЩЗ. Також використовується для моніторингу рецидивів після тиреоїдектомії.",
           "why": "Скринінг та моніторинг медулярного раку щитоподібної залози.",
           "frequency": "За клінічними показаннями"
