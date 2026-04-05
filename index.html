@@ -28,19 +28,15 @@
     .header h1 { font-size: 22px; font-weight: 600; }
     .header-controls { display: flex; align-items: center; gap: 8px; }
     .lang-select {
-      background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 6px;
+      background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 8px;
       border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
       appearance: none; -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='white'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 6px center; padding-right: 20px;
     }
     .lang-select option { color: #111; background: white; }
     .user-select {
-      background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 6px;
+      background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 8px;
       border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
       appearance: none; -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='white'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 6px center; padding-right: 20px;
     }
     .user-select option { color: #111; background: white; }
 
@@ -491,15 +487,16 @@
       if (panelViewMode === 'detailed') {
         let extra = '';
         if (a.info) {
-          if (a.info.description) extra += `<li class="detail-line description">${escHtml(a.info.description)}</li>`;
-          if (a.info.scientific) extra += `<li class="detail-line scientific" onclick="this.classList.toggle('expanded')">${escHtml(a.info.scientific)}</li>`;
-          if (a.info.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(a.info.why)}</li>`;
-          if (a.info.frequency) extra += `<li class="detail-line freq-line">${clockIcon}Do it: ${escHtml(a.info.frequency)}</li>`;
+          const inf = (currentLang !== 'en' && a.info.lang && a.info.lang[currentLang]) ? { ...a.info, ...a.info.lang[currentLang] } : a.info;
+          if (inf.description) extra += `<li class="detail-line description">${escHtml(inf.description)}</li>`;
+          if (inf.scientific) extra += `<li class="detail-line scientific" onclick="this.classList.toggle('expanded')">${escHtml(inf.scientific)}</li>`;
+          if (inf.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(inf.why)}</li>`;
+          if (inf.frequency) extra += `<li class="detail-line freq-line">${clockIcon}Do it: ${escHtml(inf.frequency)}</li>`;
         }
         return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:flex-start"><span>${escHtml(getAnalysisName(a.loinc))}<br><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span></span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal;white-space:nowrap;margin-left:8px">${escHtml(a.loinc)}</a></li>${extra}`;
       }
       if (panelViewMode === 'compact') {
-        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</a></li>`;
+        return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>`;
       }
       return `<li>${escHtml(getAnalysisName(a.loinc))}</li>`;
     }
@@ -528,21 +525,34 @@
               <div class="panel-card-body"><div class="panel-card-meta" style="font-size:12px;color:var(--gray-400)">${count} ${t('analyses')}</div></div>
             </div>`;
         }).join('')}</div>`;
+      } else if (panelViewMode === 'compact') {
+        container.innerHTML = toggleHtml + `<div class="${gridClass}">${panelsCache.map(p => `
+          <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
+            <div class="panel-card-title"><span>${escHtml(getPanelName(p))}</span></div>
+            <div class="panel-card-body"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
+          </div>
+        `).join('')}</div>`;
       } else {
-        container.innerHTML = toggleHtml + `<div class="${gridClass}">${panelsCache.map((p, i) => `
+        container.innerHTML = toggleHtml + `<div class="${gridClass}">${panelsCache.map((p, i) => {
+          const count = getPanelAnalyses(p).length;
+          return `
           <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
             <div class="panel-card-title" onclick="togglePanel(${i})"><span>${escHtml(getPanelName(p))}</span><button class="panel-collapse-btn" id="pcb-${i}"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l4 4 4-4"/></svg></button></div>
             <div class="panel-card-body" id="pcbody-${i}"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
-          </div>
-        `).join('')}</div>`;
+            <div class="panel-card-collapsed" id="pccol-${i}" style="display:none"><div class="panel-card-meta" style="font-size:12px;color:var(--gray-400);padding:4px 0">${count} ${t('analyses')}</div></div>
+          </div>`;
+        }).join('')}</div>`;
       }
     }
 
     function togglePanel(index) {
       const body = document.getElementById('pcbody-' + index);
       const btn = document.getElementById('pcb-' + index);
+      const col = document.getElementById('pccol-' + index);
+      const isCollapsed = !body.classList.contains('collapsed');
       body.classList.toggle('collapsed');
       btn.classList.toggle('collapsed');
+      if (col) col.style.display = isCollapsed ? 'block' : 'none';
     }
 
     function showPanelDetail(index) {
