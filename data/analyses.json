@@ -401,6 +401,7 @@
     },
     "info": {
       "description": "Pituitary hormone that controls thyroid gland activity and hormone production.",
+      "scientific": "A glycoprotein hormone secreted by the adenohypophysis (anterior pituitary gland). Thyrotropin stimulates the thyroid gland by increasing the iodide transport, synthesis and release of thyroid hormones (thyroxine and triiodothyronine). Thyrotropin consists of two noncovalently linked subunits, alpha and beta. Within a species, the alpha subunit is common in the pituitary glycoprotein hormones (TSH, LH and FSH), but the beta subunit is unique and confers its biological specificity.",
       "why": "Primary screening test for hypothyroidism and hyperthyroidism.",
       "frequency": "Annually; every 6-8 weeks when adjusting thyroid medication"
     }
@@ -415,6 +416,7 @@
     },
     "info": {
       "description": "Active thyroid hormone that regulates metabolism, heart rate, and body temperature.",
+      "scientific": "Free T3 (free triiodothyronine) is a measure of free circulating T3, excluding that which is bound to carrier proteins. This provides a more accurate measure of T3 levels because the carrier proteins can increase or decrease in various conditions artificially inflating or shrinking the total T3. T3 is discriminating for diagnosing and/or following the treatment of hyperthyroidism. The thyroid delivers 20 times more T4 than T3, so T4 is the more relevant analyte except in special cases.",
       "why": "Confirms hyperthyroidism and evaluates thyroid function when TSH is abnormal.",
       "frequency": "As clinically indicated; with TSH when monitoring thyroid disease"
     }
@@ -429,6 +431,7 @@
     },
     "info": {
       "description": "Main hormone produced by the thyroid gland, converted to active T3 in tissues.",
+      "scientific": "Free T4 is the metabolically active fraction of thyroxine and is the precursor of triiodothyronine (T3). Free T4 is a sensitive test for thyroid function and is increased with hyperthyroidism and decreased with hypothyroidism. Free T4 is not affected by changes in thyroxine-binding proteins.",
       "why": "Confirms thyroid dysfunction when TSH is abnormal and monitors thyroid therapy.",
       "frequency": "As clinically indicated; with TSH when monitoring thyroid disease"
     }
