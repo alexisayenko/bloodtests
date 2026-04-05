@@ -120,8 +120,9 @@
     }
     .panel-card { border-left: none; overflow: hidden; }
     .panel-card-title { font-size: 16px; font-weight: 600; color: white; margin: -12px -12px 8px -12px; padding: 10px 12px; background: var(--primary); border-radius: var(--radius) var(--radius) 0 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-    .panel-collapse-btn { background: none; border: none; color: rgba(255,255,255,0.7); font-size: 16px; cursor: pointer; padding: 0 2px; transition: transform 0.2s; }
-    .panel-collapse-btn.collapsed { transform: rotate(-90deg); }
+    .panel-collapse-btn { background: none; border: none; cursor: pointer; padding: 4px; transition: transform 0.2s; }
+    .panel-collapse-btn svg { display: block; }
+    .panel-collapse-btn.collapsed { transform: rotate(90deg); }
     .panel-card-body.collapsed { display: none; }
     .panel-card-body { border-left: 3px solid var(--panel-color, #d1d5db); margin-left: 0; padding-left: 9px; }
     .panel-card-list { list-style: none; }
@@ -530,7 +531,7 @@
       } else {
         container.innerHTML = toggleHtml + `<div class="${gridClass}">${panelsCache.map((p, i) => `
           <div class="panel-card" style="--panel-color:${p.color || '#d1d5db'}">
-            <div class="panel-card-title" onclick="togglePanel(${i})"><span>${escHtml(getPanelName(p))}</span><button class="panel-collapse-btn" id="pcb-${i}">&#9660;</button></div>
+            <div class="panel-card-title" onclick="togglePanel(${i})"><span>${escHtml(getPanelName(p))}</span><button class="panel-collapse-btn" id="pcb-${i}"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l4 4 4-4"/></svg></button></div>
             <div class="panel-card-body" id="pcbody-${i}"><ul class="panel-card-list">${renderPanelList(p)}</ul></div>
           </div>
         `).join('')}</div>`;
