@@ -2,6 +2,7 @@
   {
     "id": "thyroid",
     "name": "Thyroid Function",
+    "color": "#fbbf24",
     "lang": {
       "ru-RU": "Щитовидная железа",
       "uk-UA": "Щитоподібна залоза"
@@ -19,6 +20,7 @@
   {
     "id": "glucose-metabolism",
     "name": "Glucose Metabolism",
+    "color": "#f9a8b8",
     "lang": {
       "ru-RU": "Углеводный обмен",
       "uk-UA": "Вуглеводний обмін"
@@ -38,6 +40,7 @@
   {
     "id": "liver-function",
     "name": "Liver Function",
+    "color": "#f8c4c4",
     "lang": {
       "ru-RU": "Функция печени",
       "uk-UA": "Функція печінки"
@@ -62,6 +65,7 @@
   {
     "id": "lipid-metabolism",
     "name": "Lipid Metabolism",
+    "color": "#d8b4fe",
     "lang": {
       "ru-RU": "Липидный обмен",
       "uk-UA": "Ліпідний обмін"
@@ -80,6 +84,7 @@
   {
     "id": "cardiovascular-inflammatory",
     "name": "Cardiovascular and Inflammatory Risk",
+    "color": "#e8a0c0",
     "lang": {
       "ru-RU": "Сердечно-сосудистый и воспалительный риск",
       "uk-UA": "Серцево-судинний та запальний ризик"
@@ -99,6 +104,7 @@
   {
     "id": "hpg-axis",
     "name": "HPG Axis",
+    "color": "#86efac",
     "lang": {
       "ru-RU": "Ось гипоталамус-гипофиз-гонады",
       "uk-UA": "Вісь гіпоталамус-гіпофіз-гонади"
@@ -118,6 +124,7 @@
   {
     "id": "vitamins-minerals-electrolytes",
     "name": "Vitamins, Minerals and Electrolytes",
+    "color": "#bfdbfe",
     "lang": {
       "ru-RU": "Витамины, минералы и электролиты",
       "uk-UA": "Вітаміни, мінерали та електроліти"
@@ -143,6 +150,7 @@
   {
     "id": "iron-metabolism",
     "name": "Iron Metabolism",
+    "color": "#fdba74",
     "lang": {
       "ru-RU": "Обмен железа",
       "uk-UA": "Обмін заліза"
@@ -162,6 +170,7 @@
   {
     "id": "kidney-function",
     "name": "Kidney Function",
+    "color": "#a7f3d0",
     "lang": {
       "ru-RU": "Функция почек",
       "uk-UA": "Функція нирок"
@@ -177,6 +186,7 @@
   {
     "id": "coagulation",
     "name": "Coagulation",
+    "color": "#c4b5fd",
     "lang": {
       "ru-RU": "Коагулограмма",
       "uk-UA": "Коагулограма"
@@ -195,6 +205,7 @@
   {
     "id": "general-inflammatory",
     "name": "General Inflammatory Markers",
+    "color": "#fde68a",
     "lang": {
       "ru-RU": "Общие маркеры воспаления",
       "uk-UA": "Загальні маркери запалення"
@@ -208,6 +219,7 @@
   {
     "id": "hpa-axis",
     "name": "HPA Axis",
+    "color": "#86efac",
     "lang": {
       "ru-RU": "Ось гипоталамус-гипофиз-надпочечники",
       "uk-UA": "Вісь гіпоталамус-гіпофіз-наднирники"
@@ -220,6 +232,7 @@
   {
     "id": "other-markers",
     "name": "Other Markers",
+    "color": "#d1d5db",
     "lang": {
       "ru-RU": "Прочие маркеры",
       "uk-UA": "Інші маркери"
@@ -235,6 +248,7 @@
   {
     "id": "fbc",
     "name": "Full Blood Count (FBC)",
+    "color": "#fca5a5",
     "lang": {
       "ru-RU": "Общий анализ крови (ОАК)",
       "uk-UA": "Загальний аналіз крові (ЗАК)"
