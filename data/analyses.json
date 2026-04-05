@@ -165,7 +165,21 @@
       "description": "Your body's primary fuel — the sugar that every cell burns for energy. Blood glucose reflects the real-time balance between what you eat, what your cells consume, and how effectively insulin is doing its job. Measuring it fasting reveals how well your body maintains this balance overnight without food.",
       "why": "Screens for diabetes and prediabetes and monitors glycemic control.",
       "frequency": "Annually; every 3 months if diabetic",
-      "scientific": "Glucose (C6H12O6) is a simple monosaccharide and monomer of carbohydrates. Glucose provides energy for cellular processes and aids metabolism within the body. When food is ingested, the carbohydrates within the food are broken down into glucose molecules. Blood glucose content is significant in determining an individual’s overall state of health. An elevated blood glucose level is called hyperglycemia and a deficient blood glucose level is called hypoglycemia. Type 1 diabetes is caused by the immune system attacking pancreatic beta cells and Type 2 diabetes is caused by insulin resistance."
+      "scientific": "Glucose (C6H12O6) is a simple monosaccharide and monomer of carbohydrates. Glucose provides energy for cellular processes and aids metabolism within the body. When food is ingested, the carbohydrates within the food are broken down into glucose molecules. Blood glucose content is significant in determining an individual’s overall state of health. An elevated blood glucose level is called hyperglycemia and a deficient blood glucose level is called hypoglycemia. Type 1 diabetes is caused by the immune system attacking pancreatic beta cells and Type 2 diabetes is caused by insulin resistance.",
+      "lang": {
+        "ru-RU": {
+          "description": "Основное топливо вашего организма — сахар, который каждая клетка сжигает для получения энергии. Уровень глюкозы в крови отражает баланс в реальном времени между тем, что вы едите, что потребляют ваши клетки, и тем, насколько эффективно инсулин выполняет свою работу. Измерение натощак показывает, насколько хорошо организм поддерживает этот баланс за ночь без пищи.",
+          "scientific": "Глюкоза (C₆H₁₂O₆) — это простой моносахарид и мономер углеводов. Глюкоза обеспечивает энергию для клеточных процессов и участвует в метаболизме. При приёме пищи углеводы расщепляются до молекул глюкозы. Содержание глюкозы в крови является важным показателем общего состояния здоровья. Повышенный уровень глюкозы в крови называется гипергликемией, а пониженный — гипогликемией. Сахарный диабет 1-го типа вызван атакой иммунной системы на бета-клетки поджелудочной железы, а 2-го типа — инсулинорезистентностью.",
+          "why": "Скрининг диабета и предиабета, мониторинг гликемического контроля.",
+          "frequency": "Ежегодно; каждые 3 месяца при диабете"
+        },
+        "uk-UA": {
+          "description": "Основне паливо вашого організму — цукор, який кожна клітина спалює для отримання енергії. Рівень глюкози в крові відображає баланс у реальному часі між тим, що ви їсте, що споживають ваші клітини, і тим, наскільки ефективно інсулін виконує свою роботу. Вимірювання натще показує, наскільки добре організм підтримує цей баланс протягом ночі без їжі.",
+          "scientific": "Глюкоза (C₆H₁₂O₆) — це простий моносахарид і мономер вуглеводів. Глюкоза забезпечує енергію для клітинних процесів та бере участь у метаболізмі. При прийомі їжі вуглеводи розщеплюються до молекул глюкози. Вміст глюкози в крові є важливим показником загального стану здоров’я. Підвищений рівень глюкози в крові називається гіперглікемією, а знижений — гіпоглікемією. Цукровий діабет 1-го типу спричинений атакою імунної системи на бета-клітини підшлункової залози, а 2-го типу — інсулінорезистентністю.",
+          "why": "Скринінг діабету та предіабету, моніторинг глікемічного контролю.",
+          "frequency": "Щорічно; кожні 3 місяці при діабеті"
+        }
+      }
     }
   },
   {
@@ -292,7 +306,21 @@
       "description": "The key hormone that unlocks your cells to let glucose in for energy. Produced by the pancreas after eating, insulin acts like a master switch for energy storage — when it works well, blood sugar stays stable; when it doesn't, glucose builds up in the blood leading to diabetes.",
       "why": "Assesses insulin resistance, helps diagnose type 2 diabetes and insulinomas.",
       "frequency": "As clinically indicated",
-      "scientific": "A protein hormone secreted by beta cells of the pancreas. Insulin plays a major role in the regulation of glucose metabolism, generally promoting the cellular utilization of glucose. It is also an important regulator of protein and lipid metabolism."
+      "scientific": "A protein hormone secreted by beta cells of the pancreas. Insulin plays a major role in the regulation of glucose metabolism, generally promoting the cellular utilization of glucose. It is also an important regulator of protein and lipid metabolism.",
+      "lang": {
+        "ru-RU": {
+          "description": "Ключевой гормон, открывающий клеткам доступ к глюкозе для получения энергии. Вырабатываясь поджелудочной железой после еды, инсулин действует как главный переключатель накопления энергии — когда он работает исправно, сахар в крови остаётся стабильным; когда нет — глюкоза накапливается в крови, приводя к диабету.",
+          "scientific": "Белковый гормон, секретируемый бета-клетками поджелудочной железы. Инсулин играет ключевую роль в регуляции метаболизма глюкозы, стимулируя её клеточное усвоение. Он также является важным регулятором белкового и липидного обмена.",
+          "why": "Оценивает инсулинорезистентность, помогает диагностировать сахарный диабет 2-го типа и инсулиномы.",
+          "frequency": "По клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Ключовий гормон, що відкриває клітинам доступ до глюкози для отримання енергії. Виробляючись підшлунковою залозою після їжі, інсулін діє як головний перемикач накопичення енергії — коли він працює справно, цукор у крові залишається стабільним; коли ні — глюкоза накопичується в крові, призводячи до діабету.",
+          "scientific": "Білковий гормон, що секретується бета-клітинами підшлункової залози. Інсулін відіграє ключову роль у регуляції метаболізму глюкози, стимулюючи її клітинне засвоєння. Він також є важливим регулятором білкового та ліпідного обміну.",
+          "why": "Оцінює інсулінорезистентність, допомагає діагностувати цукровий діабет 2-го типу та інсуліноми.",
+          "frequency": "За клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -335,7 +363,21 @@
       "description": "A digestive enzyme from the pancreas and salivary glands that breaks down starches into simple sugars your body can absorb. When the pancreas is inflamed or damaged, amylase leaks into the bloodstream — elevated levels signal that something is stressing this vital organ.",
       "why": "Diagnoses and monitors pancreatitis and other pancreatic disorders.",
       "frequency": "As clinically indicated",
-      "scientific": "Amylase is a digestive enzyme produced primarily by the pancreas and salivary glands that catalyzes the hydrolysis of starch into sugars. Serum amylase is elevated in acute pancreatitis, typically rising within 6-12 hours of onset and returning to normal within 3-5 days. Elevated levels may also occur in salivary gland disorders, intestinal obstruction, and renal insufficiency. Amylase is less specific for pancreatic disease than lipase."
+      "scientific": "Amylase is a digestive enzyme produced primarily by the pancreas and salivary glands that catalyzes the hydrolysis of starch into sugars. Serum amylase is elevated in acute pancreatitis, typically rising within 6-12 hours of onset and returning to normal within 3-5 days. Elevated levels may also occur in salivary gland disorders, intestinal obstruction, and renal insufficiency. Amylase is less specific for pancreatic disease than lipase.",
+      "lang": {
+        "ru-RU": {
+          "description": "Пищеварительный фермент поджелудочной и слюнных желёз, расщепляющий крахмалы до простых сахаров, которые организм может усвоить. При воспалении или повреждении поджелудочной железы амилаза попадает в кровоток — повышенный уровень сигнализирует о том, что этот жизненно важный орган испытывает стресс.",
+          "scientific": "Амилаза — пищеварительный фермент, вырабатываемый преимущественно поджелудочной и слюнными железами, катализирующий гидролиз крахмала до сахаров. Уровень амилазы в сыворотке повышается при остром панкреатите, обычно нарастая в течение 6–12 часов от начала и возвращаясь к норме через 3–5 дней. Повышение также возможно при заболеваниях слюнных желёз, кишечной непроходимости и почечной недостаточности. Амилаза менее специфична для заболеваний поджелудочной железы, чем липаза.",
+          "why": "Диагностирует и контролирует панкреатит и другие заболевания поджелудочной железы.",
+          "frequency": "По клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Травний фермент підшлункової та слинних залоз, що розщеплює крохмалі до простих цукрів, які організм може засвоїти. При запаленні або пошкодженні підшлункової залози амілаза потрапляє у кровотік — підвищений рівень сигналізує про те, що цей життєво важливий орган перебуває під стресом.",
+          "scientific": "Амілаза — травний фермент, що виробляється переважно підшлунковою та слинними залозами, каталізуючи гідроліз крохмалю до цукрів. Рівень амілази в сироватці підвищується при гострому панкреатиті, зазвичай наростаючи протягом 6–12 годин від початку та повертаючись до норми через 3–5 днів. Підвищення також можливе при захворюваннях слинних залоз, кишковій непрохідності та нирковій недостатності. Амілаза менш специфічна для захворювань підшлункової залози, ніж ліпаза.",
+          "why": "Діагностує та контролює панкреатит та інші захворювання підшлункової залози.",
+          "frequency": "За клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -609,7 +651,21 @@
       "description": "A 'memory' of your blood sugar over the past 2-3 months, recorded in your red blood cells. As glucose circulates, it sticks to hemoglobin — the more sugar in your blood over time, the higher this number. Unlike a single glucose test, HbA1c reveals the bigger picture of metabolic control.",
       "why": "Diagnoses diabetes and monitors long-term glycemic control.",
       "frequency": "Every 3-6 months for diabetics; annually for screening",
-      "scientific": "Hemoglobin A1c (HbA1c) reflects average blood glucose levels over the preceding 2-3 months by measuring the percentage of hemoglobin that is glycated. The NGSP (National Glycohemoglobin Standardization Program) method reports results as a percentage, standardized to the DCCT reference. An HbA1c of 6.5% or higher is diagnostic of diabetes. Results may be affected by hemoglobin variants, iron deficiency, and certain ethnic backgrounds."
+      "scientific": "Hemoglobin A1c (HbA1c) reflects average blood glucose levels over the preceding 2-3 months by measuring the percentage of hemoglobin that is glycated. The NGSP (National Glycohemoglobin Standardization Program) method reports results as a percentage, standardized to the DCCT reference. An HbA1c of 6.5% or higher is diagnostic of diabetes. Results may be affected by hemoglobin variants, iron deficiency, and certain ethnic backgrounds.",
+      "lang": {
+        "ru-RU": {
+          "description": "«Память» о вашем сахаре крови за последние 2–3 месяца, записанная в эритроцитах. Когда глюкоза циркулирует по крови, она прикрепляется к гемоглобину — чем больше сахара в крови с течением времени, тем выше этот показатель. В отличие от разового анализа глюкозы, HbA1c раскрывает общую картину метаболического контроля.",
+          "scientific": "Гликированный гемоглобин (HbA1c) отражает средний уровень глюкозы в крови за предшествующие 2–3 месяца путём измерения процента гликированного гемоглобина. Метод NGSP (Национальная программа стандартизации гликогемоглобина) выражает результат в процентах, стандартизированных по референсу DCCT. HbA1c ≥ 6,5% является диагностическим критерием диабета. На результаты могут влиять варианты гемоглобина, дефицит железа и этническая принадлежность.",
+          "why": "Диагностирует диабет и контролирует долгосрочный гликемический контроль.",
+          "frequency": "Каждые 3–6 месяцев при диабете; ежегодно для скрининга"
+        },
+        "uk-UA": {
+          "description": "«Пам’ять» про ваш цукор крові за останні 2–3 місяці, записана в еритроцитах. Коли глюкоза циркулює по крові, вона прикріплюється до гемоглобіну — чим більше цукру в крові з часом, тим вищий цей показник. На відміну від разового аналізу глюкози, HbA1c розкриває загальну картину метаболічного контролю.",
+          "scientific": "Глікований гемоглобін (HbA1c) відображає середній рівень глюкози в крові за попередні 2–3 місяці шляхом вимірювання відсотка глікованого гемоглобіну. Метод NGSP (Національна програма стандартизації глікогемоглобіну) виражає результат у відсотках, стандартизованих за референсом DCCT. HbA1c ≥ 6,5% є діагностичним критерієм діабету. На результати можуть впливати варіанти гемоглобіну, дефіцит заліза та етнічна належність.",
+          "why": "Діагностує діабет і контролює довгостроковий глікемічний контроль.",
+          "frequency": "Кожні 3–6 місяців при діабеті; щорічно для скринінгу"
+        }
+      }
     }
   },
   {
@@ -624,7 +680,21 @@
       "description": "The same blood sugar memory as HbA1c but reported in international SI units (mmol/mol) instead of percentage. This is the globally standardized reference method, making results comparable across laboratories worldwide.",
       "why": "Diagnoses diabetes and monitors long-term glycemic control using the international reference method.",
       "frequency": "Every 3-6 months for diabetics; annually for screening",
-      "scientific": "The IFCC (International Federation of Clinical Chemistry) reference method for HbA1c reports results in SI units (mmol/mol). All manufacturers should implement traceability to the IFCC reference system. The IFCC value can be converted to NGSP units using the equation: NGSP = (0.09148 x IFCC) + 2.152. For example, 6.5% NGSP equals approximately 48 mmol/mol IFCC."
+      "scientific": "The IFCC (International Federation of Clinical Chemistry) reference method for HbA1c reports results in SI units (mmol/mol). All manufacturers should implement traceability to the IFCC reference system. The IFCC value can be converted to NGSP units using the equation: NGSP = (0.09148 x IFCC) + 2.152. For example, 6.5% NGSP equals approximately 48 mmol/mol IFCC.",
+      "lang": {
+        "ru-RU": {
+          "description": "Та же «память» о сахаре крови, что и HbA1c, но выраженная в международных единицах СИ (ммоль/моль) вместо процентов. Это глобально стандартизированный референсный метод, обеспечивающий сопоставимость результатов между лабораториями по всему миру.",
+          "scientific": "Референсный метод IFCC (Международная федерация клинической химии) для HbA1c выражает результаты в единицах СИ (ммоль/моль). Все производители должны обеспечивать прослеживаемость к референсной системе IFCC. Значение IFCC можно пересчитать в единицы NGSP по формуле: NGSP = (0,09148 × IFCC) + 2,152. Например, 6,5% NGSP соответствует приблизительно 48 ммоль/моль IFCC.",
+          "why": "Диагностирует диабет и контролирует долгосрочный гликемический контроль по международному референсному методу.",
+          "frequency": "Каждые 3–6 месяцев при диабете; ежегодно для скрининга"
+        },
+        "uk-UA": {
+          "description": "Та сама «пам’ять» про цукор крові, що й HbA1c, але виражена в міжнародних одиницях СІ (ммоль/моль) замість відсотків. Це глобально стандартизований референсний метод, що забезпечує порівнянність результатів між лабораторіями по всьому світу.",
+          "scientific": "Референсний метод IFCC (Міжнародна федерація клінічної хімії) для HbA1c виражає результати в одиницях СІ (ммоль/моль). Усі виробники повинні забезпечувати простежуваність до референсної системи IFCC. Значення IFCC можна перерахувати в одиниці NGSP за формулою: NGSP = (0,09148 × IFCC) + 2,152. Наприклад, 6,5% NGSP відповідає приблизно 48 ммоль/моль IFCC.",
+          "why": "Діагностує діабет і контролює довгостроковий глікемічний контроль за міжнародним референсним методом.",
+          "frequency": "Кожні 3–6 місяців при діабеті; щорічно для скринінгу"
+        }
+      }
     }
   },
   {
@@ -639,7 +709,21 @@
       "description": "A shorter-term blood sugar memory — reflecting the past 2-3 weeks instead of months. Since albumin lives shorter than hemoglobin, this test catches recent changes in glucose control faster. Especially useful when HbA1c is unreliable, such as in kidney disease or blood disorders.",
       "why": "Monitors short-term glycemic control when HbA1c is unreliable (e.g., hemoglobin disorders).",
       "frequency": "Every 2-4 weeks, as clinically indicated",
-      "scientific": "Glycated albumin (GA) is formed by non-enzymatic glycation of serum albumin and reflects average blood glucose levels over the preceding 2-3 weeks, corresponding to albumin’s half-life. GA is useful as a short-term glycemic control marker, particularly in patients where HbA1c may be unreliable, such as those with hemoglobin variants, hemolytic anemia, or chronic kidney disease on dialysis. GA responds more rapidly to changes in glycemic control than HbA1c."
+      "scientific": "Glycated albumin (GA) is formed by non-enzymatic glycation of serum albumin and reflects average blood glucose levels over the preceding 2-3 weeks, corresponding to albumin’s half-life. GA is useful as a short-term glycemic control marker, particularly in patients where HbA1c may be unreliable, such as those with hemoglobin variants, hemolytic anemia, or chronic kidney disease on dialysis. GA responds more rapidly to changes in glycemic control than HbA1c.",
+      "lang": {
+        "ru-RU": {
+          "description": "Краткосрочная «память» о сахаре крови — отражает последние 2–3 недели вместо месяцев. Поскольку альбумин живёт короче гемоглобина, этот тест быстрее выявляет недавние изменения в контроле глюкозы. Особенно полезен, когда HbA1c ненадёжен — например, при болезнях почек или заболеваниях крови.",
+          "scientific": "Гликированный альбумин (ГА) образуется путём неферментативного гликирования сывороточного альбумина и отражает средний уровень глюкозы в крови за предшествующие 2–3 недели, соответственно периоду полувыведения альбумина. ГА полезен как маркер краткосрочного гликемического контроля, особенно у пациентов, у которых HbA1c может быть ненадёжным — при вариантах гемоглобина, гемолитической анемии или хронической болезни почек на диализе. ГА реагирует на изменения гликемического контроля быстрее, чем HbA1c.",
+          "why": "Мониторинг краткосрочного гликемического контроля, когда HbA1c ненадёжен (например, при гемоглобинопатиях).",
+          "frequency": "Каждые 2–4 недели, по клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Короткострокова «пам’ять» про цукор крові — відображає останні 2–3 тижні замість місяців. Оскільки альбумін живе коротше за гемоглобін, цей тест швидше виявляє нещодавні зміни в контролі глюкози. Особливо корисний, коли HbA1c ненадійний — наприклад, при хворобах нирок або захворюваннях крові.",
+          "scientific": "Глікований альбумін (ГА) утворюється шляхом неферментативного глікування сироваткового альбуміну і відображає середній рівень глюкози в крові за попередні 2–3 тижні, відповідно до періоду напіввиведення альбуміну. ГА корисний як маркер короткострокового глікемічного контролю, особливо у пацієнтів, у яких HbA1c може бути ненадійним — при варіантах гемоглобіну, гемолітичній анемії або хронічній хворобі нирок на діалізі. ГА реагує на зміни глікемічного контролю швидше, ніж HbA1c.",
+          "why": "Моніторинг короткострокового глікемічного контролю, коли HbA1c ненадійний (наприклад, при гемоглобінопатіях).",
+          "frequency": "Кожні 2–4 тижні, за клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -654,7 +738,21 @@
       "description": "Another short-term glucose tracker that captures the past 2-3 weeks of blood sugar levels by measuring sugar attached to blood proteins. Useful for seeing how quickly diet changes or new medications are working, without waiting months for HbA1c to shift.",
       "why": "Provides intermediate-term glycemic monitoring when HbA1c is unreliable.",
       "frequency": "Every 2-4 weeks, as clinically indicated",
-      "scientific": "Fructosamine is a glycated serum protein that reflects average blood glucose levels over the preceding 2-3 weeks. It is formed by the non-enzymatic glycation of serum proteins, primarily albumin. Fructosamine is useful for monitoring short-term changes in glycemic control and in situations where HbA1c may be unreliable, such as hemoglobinopathies, pregnancy, or rapidly changing glucose levels."
+      "scientific": "Fructosamine is a glycated serum protein that reflects average blood glucose levels over the preceding 2-3 weeks. It is formed by the non-enzymatic glycation of serum proteins, primarily albumin. Fructosamine is useful for monitoring short-term changes in glycemic control and in situations where HbA1c may be unreliable, such as hemoglobinopathies, pregnancy, or rapidly changing glucose levels.",
+      "lang": {
+        "ru-RU": {
+          "description": "Ещё один краткосрочный трекер глюкозы, фиксирующий уровень сахара в крови за последние 2–3 недели путём измерения сахара, присоединённого к белкам крови. Полезен для оценки того, как быстро работают изменения в диете или новые лекарства, без необходимости ждать месяцы, пока сдвинется HbA1c.",
+          "scientific": "Фруктозамин — это гликированный белок сыворотки, отражающий средний уровень глюкозы в крови за предшествующие 2–3 недели. Он образуется путём неферментативного гликирования сывороточных белков, преимущественно альбумина. Фруктозамин полезен для мониторинга краткосрочных изменений гликемического контроля и в ситуациях, когда HbA1c может быть ненадёжным — при гемоглобинопатиях, беременности или быстро меняющихся уровнях глюкозы.",
+          "why": "Обеспечивает среднесрочный гликемический мониторинг, когда HbA1c ненадёжен.",
+          "frequency": "Каждые 2–4 недели, по клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Ще один короткостроковий трекер глюкози, що фіксує рівень цукру в крові за останні 2–3 тижні шляхом вимірювання цукру, приєднаного до білків крові. Корисний для оцінки того, як швидко працюють зміни в дієті або нові ліки, без необхідності чекати місяці, поки зсунеться HbA1c.",
+          "scientific": "Фруктозамін — це глікований білок сироватки, що відображає середній рівень глюкози в крові за попередні 2–3 тижні. Він утворюється шляхом неферментативного глікування сироваткових білків, переважно альбуміну. Фруктозамін корисний для моніторингу короткострокових змін глікемічного контролю та в ситуаціях, коли HbA1c може бути ненадійним — при гемоглобінопатіях, вагітності або швидко змінюваних рівнях глюкози.",
+          "why": "Забезпечує середньостроковий глікемічний моніторинг, коли HbA1c ненадійний.",
+          "frequency": "Кожні 2–4 тижні, за клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -669,7 +767,21 @@
       "description": "A direct window into how much insulin your pancreas is actually producing. C-peptide is released in equal amounts with insulin but lasts longer in the blood, making it a more reliable measure. It helps distinguish whether the body has stopped making insulin (type 1 diabetes) or is making plenty but can't use it (type 2).",
       "why": "Differentiates type 1 from type 2 diabetes and evaluates residual beta-cell function.",
       "frequency": "As clinically indicated",
-      "scientific": "C-peptide is a 31-amino acid polypeptide that is cleaved from proinsulin during the production of insulin in pancreatic beta cells. It is secreted in equimolar amounts with insulin but has a longer half-life, making it a more stable marker of endogenous insulin secretion. C-peptide measurement helps distinguish type 1 from type 2 diabetes, assess residual beta-cell function, and evaluate hypoglycemia causes including factitious insulin use."
+      "scientific": "C-peptide is a 31-amino acid polypeptide that is cleaved from proinsulin during the production of insulin in pancreatic beta cells. It is secreted in equimolar amounts with insulin but has a longer half-life, making it a more stable marker of endogenous insulin secretion. C-peptide measurement helps distinguish type 1 from type 2 diabetes, assess residual beta-cell function, and evaluate hypoglycemia causes including factitious insulin use.",
+      "lang": {
+        "ru-RU": {
+          "description": "Прямое окно в то, сколько инсулина на самом деле производит ваша поджелудочная железа. C-пептид выделяется в равных количествах с инсулином, но дольше сохраняется в крови, что делает его более надёжным показателем. Он помогает отличить, перестал ли организм вырабатывать инсулин (диабет 1-го типа) или вырабатывает достаточно, но не может его использовать (диабет 2-го типа).",
+          "scientific": "C-пептид — это полипептид из 31 аминокислоты, который отщепляется от проинсулина при производстве инсулина бета-клетками поджелудочной железы. Он секретируется в эквимолярных количествах с инсулином, но имеет более длительный период полувыведения, что делает его более стабильным маркером эндогенной секреции инсулина. Измерение C-пептида помогает дифференцировать диабет 1-го и 2-го типа, оценивать остаточную функцию бета-клеток и выявлять причины гипогликемии, включая искусственное введение инсулина.",
+          "why": "Дифференцирует диабет 1-го и 2-го типа, оценивает остаточную функцию бета-клеток.",
+          "frequency": "По клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Пряме вікно в те, скільки інсуліну насправді виробляє ваша підшлункова залоза. C-пептид виділяється в рівних кількостях з інсуліном, але довше зберігається в крові, що робить його надійнішим показником. Він допомагає відрізнити, чи організм перестав виробляти інсулін (діабет 1-го типу), чи виробляє достатньо, але не може його використати (діабет 2-го типу).",
+          "scientific": "C-пептид — це поліпептид з 31 амінокислоти, який відщеплюється від проінсуліну при виробництві інсуліну бета-клітинами підшлункової залози. Він секретується в еквімолярних кількостях з інсуліном, але має довший період напіввиведення, що робить його стабільнішим маркером ендогенної секреції інсуліну. Вимірювання C-пептиду допомагає диференціювати діабет 1-го та 2-го типу, оцінювати залишкову функцію бета-клітин та виявляти причини гіпоглікемії, включаючи штучне введення інсуліну.",
+          "why": "Диференціює діабет 1-го та 2-го типу, оцінює залишкову функцію бета-клітин.",
+          "frequency": "За клінічними показаннями"
+        }
+      }
     }
   },
   {
@@ -684,7 +796,21 @@
       "description": "The pancreas's fat-digesting enzyme — it breaks dietary fats into absorbable fatty acids in the intestine. More specific to the pancreas than amylase, elevated lipase is the most reliable blood marker for pancreatitis and stays elevated longer, making it harder to miss.",
       "why": "Diagnoses acute pancreatitis; more specific to the pancreas than amylase.",
       "frequency": "As clinically indicated",
-      "scientific": "Lipase is an enzyme produced by the pancreas that breaks down dietary triglycerides into fatty acids and glycerol. The enzyme travels from the pancreatic duct to the duodenum. Elevated lipase levels indicate pancreatic issues including pancreatic duct obstruction, pancreatic cancer, gall bladder inflammation, or kidney disease. Lipase is more specific and sensitive for acute pancreatitis than amylase, remaining elevated for a longer period."
+      "scientific": "Lipase is an enzyme produced by the pancreas that breaks down dietary triglycerides into fatty acids and glycerol. The enzyme travels from the pancreatic duct to the duodenum. Elevated lipase levels indicate pancreatic issues including pancreatic duct obstruction, pancreatic cancer, gall bladder inflammation, or kidney disease. Lipase is more specific and sensitive for acute pancreatitis than amylase, remaining elevated for a longer period.",
+      "lang": {
+        "ru-RU": {
+          "description": "Жирорасщепляющий фермент поджелудочной железы — он расщепляет пищевые жиры до усвояемых жирных кислот в кишечнике. Более специфичен для поджелудочной железы, чем амилаза; повышенная липаза — наиболее надёжный маркер панкреатита в крови, который дольше остаётся повышенным, что позволяет не пропустить диагноз.",
+          "scientific": "Липаза — фермент, вырабатываемый поджелудочной железой, расщепляющий пищевые триглицериды до жирных кислот и глицерина. Фермент поступает из протока поджелудочной железы в двенадцатиперстную кишку. Повышенный уровень липазы указывает на проблемы поджелудочной железы, включая обструкцию протока, рак поджелудочной железы, воспаление жёлчного пузыря или заболевания почек. Липаза более специфична и чувствительна при остром панкреатите, чем амилаза, и остаётся повышенной дольше.",
+          "why": "Диагностирует острый панкреатит; более специфична для поджелудочной железы, чем амилаза.",
+          "frequency": "По клиническим показаниям"
+        },
+        "uk-UA": {
+          "description": "Жиророзщеплюючий фермент підшлункової залози — він розщеплює харчові жири до засвоюваних жирних кислот у кишечнику. Більш специфічний для підшлункової залози, ніж амілаза; підвищена ліпаза — найнадійніший маркер панкреатиту в крові, який довше залишається підвищеним, що дозволяє не пропустити діагноз.",
+          "scientific": "Ліпаза — фермент, що виробляється підшлунковою залозою, розщеплює харчові тригліцериди до жирних кислот та гліцерину. Фермент надходить з протоки підшлункової залози до дванадцятипалої кишки. Підвищений рівень ліпази вказує на проблеми підшлункової залози, включаючи обструкцію протоки, рак підшлункової залози, запалення жовчного міхура або захворювання нирок. Ліпаза більш специфічна та чутлива при гострому панкреатиті, ніж амілаза, і залишається підвищеною довше.",
+          "why": "Діагностує гострий панкреатит; більш специфічна для підшлункової залози, ніж амілаза.",
+          "frequency": "За клінічними показаннями"
+        }
+      }
     }
   },
   {
