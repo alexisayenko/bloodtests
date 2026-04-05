@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#2563eb">
   <title>Blood Tests [Devel]</title>
@@ -56,7 +56,7 @@
       position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
       width: 100%; max-width: 600px; background: white;
       border-top: 1px solid var(--gray-200); display: flex;
-      padding: 8px 0; padding-bottom: max(8px, env(safe-area-inset-bottom)); z-index: 10;
+      padding: 8px 0; padding-bottom: calc(8px + env(safe-area-inset-bottom)); z-index: 10;
     }
     .nav-item {
       flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
