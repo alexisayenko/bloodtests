@@ -141,12 +141,11 @@
     .panel-card-list li.detail-line { border-top: none; padding: 3px 0 3px 12px; font-size: 16px; color: var(--gray-400); line-height: 1.65; }
     .panel-card-list li.detail-line.long-name { font-style: italic; color: var(--gray-400); }
     .panel-card-list li.detail-line.description { color: var(--gray-500); padding-top: 2px; }
-    .panel-card-list li.detail-line.scientific { color: var(--gray-500); padding-top: 6px; cursor: pointer; }
-    .panel-card-list li.detail-line.scientific .sci-text { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
-    .panel-card-list li.detail-line.scientific.expanded .sci-text { -webkit-line-clamp: unset; display: inline; }
+    .panel-card-list li.detail-line.scientific { color: var(--gray-500); padding-top: 6px; cursor: pointer; max-height: 6.6em; overflow: hidden; position: relative; }
+    .panel-card-list li.detail-line.scientific.expanded { max-height: none; }
     .panel-card-list li.detail-line.why-line { color: var(--gray-500); padding-top: 10px; }
     .panel-card-list li.detail-line.freq-line { color: var(--gray-500); padding-top: 4px; padding-bottom: 8px; }
-    .detail-line svg { float: left; margin: 3px 6px 0 0; }
+    .detail-icon { float: left; margin: 2px 6px 4px 0; }
     .panel-card-section { font-size: 14px; font-weight: 600; color: var(--gray-500); padding: 6px 0 2px; border-top: 2px solid var(--gray-200); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
     .panel-card-section:first-child { border-top: none; margin-top: 0; }
 
@@ -513,10 +512,10 @@
       return names;
     }
 
-    const academicHatIcon = `<svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-7px;margin-right:6px;flex-shrink:0" fill="none" stroke="#60a5fa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5L12 4l9 4.5L12 13 3 8.5z"/><path d="M7 10.4v3.7c0 1.5 2.3 3 5 3s5-1.5 5-3v-3.7"/><path d="M20 9v4.6"/></svg>`;
-    const clipboardIcon = `<svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-7px;margin-right:6px;flex-shrink:0" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9z"/><path d="M8 11.5h8"/><path d="M8 16h8"/></svg>`;
+    const academicHatIcon = `<svg class="detail-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#60a5fa" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5L12 4l9 4.5L12 13 3 8.5z"/><path d="M7 10.4v3.7c0 1.5 2.3 3 5 3s5-1.5 5-3v-3.7"/><path d="M20 9v4.6"/></svg>`;
+    const clipboardIcon = `<svg class="detail-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9z"/><path d="M8 11.5h8"/><path d="M8 16h8"/></svg>`;
 
-    const clockIcon = `<svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-7px;margin-right:6px;flex-shrink:0" fill="none" stroke="#60a5fa" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5"/><path d="M12 12l3.5 3"/></svg>`;
+    const clockIcon = `<svg class="detail-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#60a5fa" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5"/><path d="M12 12l3.5 3"/></svg>`;
 
     function renderAnalysisItem(a) {
       if (panelViewMode === 'detailed') {
@@ -524,7 +523,7 @@
         if (a.info) {
           const inf = (currentLang !== 'en' && a.info.lang && a.info.lang[currentLang]) ? { ...a.info, ...a.info.lang[currentLang] } : a.info;
           if (inf.description) extra += `<li class="detail-line description">${escHtml(inf.description)}</li>`;
-          if (inf.scientific) extra += `<li class="detail-line scientific" onclick="this.classList.toggle('expanded')">${academicHatIcon}<span class="sci-text">${escHtml(inf.scientific)}</span></li>`;
+          if (inf.scientific) extra += `<li class="detail-line scientific" onclick="this.classList.toggle('expanded')">${academicHatIcon}${escHtml(inf.scientific)}</li>`;
           if (inf.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(inf.why)}</li>`;
           if (inf.frequency) extra += `<li class="detail-line freq-line">${clockIcon}${escHtml(t('frequencyPrefix'))} ${escHtml(formatFrequencyText(inf.frequency))}</li>`;
         }
