@@ -138,11 +138,14 @@
     .panel-card-list li:first-child { border-top: none; }
     .panel-card-list li.analysis-name { font-weight: 600; padding-top: 20px; padding-bottom: 4px; border-top: 1px solid var(--accent-line); margin-top: 8px; }
     .panel-card-list li.analysis-name:first-child { padding-top: 6px; border-top: none; margin-top: 0; }
-    .panel-card-list li.detail-line { border-top: none; padding: 3px 0 3px 12px; font-size: 14px; color: var(--gray-400); line-height: 1.65; }
+    .panel-card-list li.detail-line { border-top: none; padding: 3px 0 3px 12px; font-size: 16px; color: var(--gray-400); line-height: 1.65; }
     .panel-card-list li.detail-line.long-name { font-style: italic; color: var(--gray-400); }
     .panel-card-list li.detail-line.description { color: var(--gray-500); padding-top: 2px; }
-    .panel-card-list li.detail-line.scientific-wrap { padding-top: 8px; position: relative; color: var(--gray-400); }
-    .scientific-preview { position: relative; padding-left: 18px; }
+    .panel-card-list li.detail-line.scientific-wrap { padding-top: 8px; position: relative; color: var(--gray-500); }
+    .scientific-preview {
+      position: relative;
+      padding: 4px 0 2px 20px;
+    }
     .scientific-text {
       display: -webkit-box;
       -webkit-line-clamp: 3;
@@ -156,8 +159,8 @@
       left: 18px;
       right: 0;
       bottom: 0;
-      height: 1.9em;
-      background: linear-gradient(to bottom, rgba(249,250,251,0), rgba(249,250,251,0.96));
+      height: 2.2em;
+      background: linear-gradient(to bottom, rgba(249,250,251,0), rgba(249,250,251,0.92) 45%, rgba(249,250,251,1));
       pointer-events: none;
     }
     .panel-card-list li.detail-line.scientific-wrap.expanded .scientific-text {
@@ -184,16 +187,18 @@
     .scientific-toggle.preview {
       position: absolute;
       left: 50%;
-      bottom: -1px;
+      bottom: 1px;
       transform: translateX(-50%);
       margin-left: 0;
-      padding: 0 8px;
-      background: rgba(249,250,251,0.96);
+      padding: 0 10px;
+      background: rgba(249,250,251,0.98);
+      color: var(--primary);
+      font-weight: 700;
       line-height: 1;
     }
     .scientific-toggle.expanded {
       color: var(--primary);
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 600;
       letter-spacing: 0;
     }
@@ -575,9 +580,9 @@
       return names;
     }
 
-    const clipboardIcon = `<svg viewBox="0 0 24 24" width="13" height="13" style="vertical-align:-2px;margin-right:4px;flex-shrink:0"><rect x="3" y="2" width="16" height="20" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/><rect x="8" y="0" width="6" height="4" rx="1" fill="#9ca3af"/><circle cx="7.5" cy="8" r="1.5" fill="#2563eb"/><line x1="10.5" y1="8" x2="17" y2="8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="12.5" r="1.5" fill="#2563eb"/><line x1="10.5" y1="12.5" x2="17" y2="12.5" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="17" r="1.5" fill="#93b4f5"/><line x1="10.5" y1="17" x2="17" y2="17" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/></svg>`;
-    const academicHatIcon = `<svg viewBox="0 0 24 24" width="13" height="13" style="position:absolute;left:0;top:4px;flex-shrink:0"><path d="M2.5 9.5L12 5l9.5 4.5L12 14 2.5 9.5z" fill="#93b4f5"/><path d="M6 11.2V15c0 .8 2.7 2.5 6 2.5s6-1.7 6-2.5v-3.8" fill="none" stroke="#4a7edc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.5 9.5v5.2" stroke="#4a7edc" stroke-width="1.5" stroke-linecap="round"/><circle cx="21.5" cy="16.5" r="1.2" fill="#2563eb"/></svg>`;
-    const clockIcon = `<svg viewBox="0 0 24 24" width="13" height="13" style="vertical-align:-2px;margin-right:4px;flex-shrink:0"><circle cx="12" cy="12" r="10" fill="none" stroke="#93b4f5" stroke-width="2"/><rect x="11" y="5" width="1.5" height="4" rx="0.5" fill="#4a7edc"/><rect x="11" y="9" width="1.5" height="4.5" rx="0.5" fill="#4a7edc"/><rect x="11.5" y="11.5" width="4" height="1.5" rx="0.5" fill="#4a7edc"/><circle cx="12" cy="12" r="1.5" fill="#2563eb"/></svg>`;
+    const clipboardIcon = `<svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-7px;margin-right:6px;flex-shrink:0"><rect x="3" y="2" width="16" height="20" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/><rect x="8" y="0" width="6" height="4" rx="1" fill="#9ca3af"/><circle cx="7.5" cy="8" r="1.5" fill="#2563eb"/><line x1="10.5" y1="8" x2="17" y2="8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="12.5" r="1.5" fill="#2563eb"/><line x1="10.5" y1="12.5" x2="17" y2="12.5" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="17" r="1.5" fill="#93b4f5"/><line x1="10.5" y1="17" x2="17" y2="17" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+    const academicHatIcon = `<svg viewBox="0 0 24 24" width="28" height="28" style="position:absolute;left:0;top:2px;flex-shrink:0"><path d="M2.5 9.5L12 5l9.5 4.5L12 14 2.5 9.5z" fill="#60a5fa"/><path d="M6 11.2V15c0 .8 2.7 2.5 6 2.5s6-1.7 6-2.5v-3.8" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.5 9.5v5.2" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="21.5" cy="16.5" r="1.2" fill="#2563eb"/></svg>`;
+    const clockIcon = `<svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-7px;margin-right:6px;flex-shrink:0"><circle cx="12" cy="12" r="10" fill="none" stroke="#93b4f5" stroke-width="2"/><rect x="11" y="5" width="1.5" height="4" rx="0.5" fill="#4a7edc"/><rect x="11" y="9" width="1.5" height="4.5" rx="0.5" fill="#4a7edc"/><rect x="11.5" y="11.5" width="4" height="1.5" rx="0.5" fill="#4a7edc"/><circle cx="12" cy="12" r="1.5" fill="#2563eb"/></svg>`;
 
     function renderAnalysisItem(a) {
       if (panelViewMode === 'detailed') {
