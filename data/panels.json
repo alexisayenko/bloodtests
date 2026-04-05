@@ -3,7 +3,8 @@
     "id": "thyroid",
     "name": "Thyroid Function",
     "color": "#FFF2CC",
-    "icon": "<path d='M12 2v3M10 3h4M10 4.5h4' stroke='white' stroke-width='1.5' stroke-linecap='round'/><path d='M12 5c-1 0-2.5 1-4 3.5S5 13 5 15c0 1.5.8 2.5 2 2.5s2.5-1 3-2.5c.3-1 1-2 2-2' fill='none' stroke='white' stroke-width='1.5'/><path d='M12 5c1 0 2.5 1 4 3.5S19 13 19 15c0 1.5-.8 2.5-2 2.5s-2.5-1-3-2.5c-.3-1-1-2-2-2' fill='none' stroke='white' stroke-width='1.5'/><circle cx='8' cy='12' r='.7' fill='white'/><circle cx='10' cy='10' r='.7' fill='white'/><circle cx='14' cy='10' r='.7' fill='white'/><circle cx='16' cy='12' r='.7' fill='white'/>",
+    "iconFile": "thyroid.png",
+    "iconOld": "<path d='M12 2v3M10 3h4M10 4.5h4' stroke='white' stroke-width='1.5' stroke-linecap='round'/><path d='M12 5c-1 0-2.5 1-4 3.5S5 13 5 15c0 1.5.8 2.5 2 2.5s2.5-1 3-2.5c.3-1 1-2 2-2' fill='none' stroke='white' stroke-width='1.5'/><path d='M12 5c1 0 2.5 1 4 3.5S19 13 19 15c0 1.5-.8 2.5-2 2.5s-2.5-1-3-2.5c-.3-1-1-2-2-2' fill='none' stroke='white' stroke-width='1.5'/><circle cx='8' cy='12' r='.7' fill='white'/><circle cx='10' cy='10' r='.7' fill='white'/><circle cx='14' cy='10' r='.7' fill='white'/><circle cx='16' cy='12' r='.7' fill='white'/>",
     "lang": {
       "ru-RU": "Щитовидная железа",
       "uk-UA": "Щитоподібна залоза"
@@ -179,7 +180,8 @@
     "id": "kidney-function",
     "name": "Kidney Function",
     "color": "#FFD966",
-    "icon": "<path d='M8 4C4.5 4 3 7.5 3 12s1.5 8 5 8c2.5 0 3.5-2.5 3.5-5s-1.5-3.5-3.5-3.5' fill='none' stroke='white' stroke-width='1.8'/><path d='M16 4c3.5 0 5 3.5 5 8s-1.5 8-5 8c-2.5 0-3.5-2.5-3.5-5s1.5-3.5 3.5-3.5' fill='none' stroke='white' stroke-width='1.8'/><path d='M11 14v6M13 14v6' stroke='white' stroke-width='1.2' stroke-linecap='round'/>",
+    "iconFile": "kidney.png",
+    "iconOld": "<path d='M8 4C4.5 4 3 7.5 3 12s1.5 8 5 8c2.5 0 3.5-2.5 3.5-5s-1.5-3.5-3.5-3.5' fill='none' stroke='white' stroke-width='1.8'/><path d='M16 4c3.5 0 5 3.5 5 8s-1.5 8-5 8c-2.5 0-3.5-2.5-3.5-5s1.5-3.5 3.5-3.5' fill='none' stroke='white' stroke-width='1.8'/><path d='M11 14v6M13 14v6' stroke='white' stroke-width='1.2' stroke-linecap='round'/>",
     "lang": {
       "ru-RU": "Функция почек",
       "uk-UA": "Функція нирок"
