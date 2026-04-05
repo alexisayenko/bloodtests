@@ -141,12 +141,31 @@
     .panel-card-list li.detail-line { border-top: none; padding: 3px 0 3px 12px; font-size: 14px; color: var(--gray-400); line-height: 1.65; }
     .panel-card-list li.detail-line.long-name { font-style: italic; color: var(--gray-400); }
     .panel-card-list li.detail-line.description { color: var(--gray-500); padding-top: 2px; }
-    .description-text { display: inline; }
-    .panel-card-list li.detail-line.scientific-wrap { padding-top: 8px; position: relative; display: none; }
+    .panel-card-list li.detail-line.scientific-wrap { padding-top: 8px; position: relative; color: var(--gray-400); }
+    .scientific-preview { position: relative; padding-left: 18px; }
     .scientific-text {
-      display: inline;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.65;
     }
-    .panel-card-list li.detail-line.scientific-wrap.expanded { display: list-item; }
+    .scientific-preview::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 0;
+      bottom: 0;
+      height: 1.9em;
+      background: linear-gradient(to bottom, rgba(249,250,251,0), rgba(249,250,251,0.96));
+      pointer-events: none;
+    }
+    .panel-card-list li.detail-line.scientific-wrap.expanded .scientific-text {
+      display: inline;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+    .panel-card-list li.detail-line.scientific-wrap.expanded .scientific-preview::after { display: none; }
     .scientific-toggle {
       display: inline;
       padding: 0;
@@ -161,6 +180,16 @@
       cursor: pointer;
       margin-left: 4px;
       vertical-align: baseline;
+    }
+    .scientific-toggle.preview {
+      position: absolute;
+      left: 50%;
+      bottom: -1px;
+      transform: translateX(-50%);
+      margin-left: 0;
+      padding: 0 8px;
+      background: rgba(249,250,251,0.96);
+      line-height: 1;
     }
     .scientific-toggle.expanded {
       color: var(--primary);
@@ -353,12 +382,11 @@
       const text = document.getElementById(id);
       if (!text) return;
       const expanded = text.classList.toggle('expanded');
-      if (btn) {
-        btn.textContent = expanded ? t('showLess') : '...';
-        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        btn.setAttribute('aria-label', expanded ? t('showLess') : t('readMore'));
-        btn.classList.toggle('expanded', expanded);
-      }
+      const previewBtn = text.querySelector('.scientific-toggle.preview');
+      const collapseBtn = text.querySelector('.scientific-toggle.expanded');
+      if (previewBtn) previewBtn.style.display = expanded ? 'none' : 'inline';
+      if (collapseBtn) collapseBtn.style.display = expanded ? 'inline' : 'none';
+      if (btn) btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
     }
 
     function formatFrequencyText(text) {
@@ -548,6 +576,7 @@
     }
 
     const clipboardIcon = `<svg viewBox="0 0 24 24" width="13" height="13" style="vertical-align:-2px;margin-right:4px;flex-shrink:0"><rect x="3" y="2" width="16" height="20" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1"/><rect x="8" y="0" width="6" height="4" rx="1" fill="#9ca3af"/><circle cx="7.5" cy="8" r="1.5" fill="#2563eb"/><line x1="10.5" y1="8" x2="17" y2="8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="12.5" r="1.5" fill="#2563eb"/><line x1="10.5" y1="12.5" x2="17" y2="12.5" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="17" r="1.5" fill="#93b4f5"/><line x1="10.5" y1="17" x2="17" y2="17" stroke="#93b4f5" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+    const academicHatIcon = `<svg viewBox="0 0 24 24" width="13" height="13" style="position:absolute;left:0;top:4px;flex-shrink:0"><path d="M2.5 9.5L12 5l9.5 4.5L12 14 2.5 9.5z" fill="#93b4f5"/><path d="M6 11.2V15c0 .8 2.7 2.5 6 2.5s6-1.7 6-2.5v-3.8" fill="none" stroke="#4a7edc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.5 9.5v5.2" stroke="#4a7edc" stroke-width="1.5" stroke-linecap="round"/><circle cx="21.5" cy="16.5" r="1.2" fill="#2563eb"/></svg>`;
     const clockIcon = `<svg viewBox="0 0 24 24" width="13" height="13" style="vertical-align:-2px;margin-right:4px;flex-shrink:0"><circle cx="12" cy="12" r="10" fill="none" stroke="#93b4f5" stroke-width="2"/><rect x="11" y="5" width="1.5" height="4" rx="0.5" fill="#4a7edc"/><rect x="11" y="9" width="1.5" height="4.5" rx="0.5" fill="#4a7edc"/><rect x="11.5" y="11.5" width="4" height="1.5" rx="0.5" fill="#4a7edc"/><circle cx="12" cy="12" r="1.5" fill="#2563eb"/></svg>`;
 
     function renderAnalysisItem(a) {
@@ -556,16 +585,14 @@
         if (a.info) {
           const inf = (currentLang !== 'en' && a.info.lang && a.info.lang[currentLang]) ? { ...a.info, ...a.info.lang[currentLang] } : a.info;
           const scientificId = inf.scientific ? `scientific-${a.loinc.replace(/[^a-zA-Z0-9_-]/g, '-')}` : '';
-          if (inf.description || inf.scientific) {
-            extra += `<li class="detail-line description"><span class="description-text">${escHtml(inf.description || '')}</span>${inf.scientific ? `<button type="button" class="scientific-toggle" aria-expanded="false" aria-label="${t('readMore')}" onclick="toggleScientific('${scientificId}', this)">...</button>` : ''}</li>`;
-          }
+          if (inf.description) extra += `<li class="detail-line description">${escHtml(inf.description)}</li>`;
           if (inf.scientific) {
-            extra += `<li id="${scientificId}" class="detail-line scientific-wrap"><span class="scientific-text">${escHtml(inf.scientific)}</span><button type="button" class="scientific-toggle expanded" aria-expanded="true" aria-label="${t('showLess')}" onclick="toggleScientific('${scientificId}', this)">${t('showLess')}</button></li>`;
+            extra += `<li id="${scientificId}" class="detail-line scientific-wrap"><div class="scientific-preview">${academicHatIcon}<span class="scientific-text">${escHtml(inf.scientific)}</span><button type="button" class="scientific-toggle preview" aria-expanded="false" aria-label="${t('readMore')}" onclick="toggleScientific('${scientificId}', this)">...</button><button type="button" class="scientific-toggle expanded" aria-expanded="true" aria-label="${t('showLess')}" onclick="toggleScientific('${scientificId}', this)" style="display:none">${t('showLess')}</button></div></li>`;
           }
           if (inf.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(inf.why)}</li>`;
           if (inf.frequency) extra += `<li class="detail-line freq-line">${clockIcon}${escHtml(t('frequencyPrefix'))} ${escHtml(formatFrequencyText(inf.frequency))}</li>`;
         }
-        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:flex-start"><span>${escHtml(getAnalysisName(a.loinc))}<br><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span></span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal;white-space:nowrap;margin-left:8px">${escHtml(a.loinc)}</a></li>${extra}`;
+        return `<li class="analysis-name"><div>${escHtml(getAnalysisName(a.loinc))}</div><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal;white-space:nowrap">${escHtml(a.loinc)}</a></div></li>${extra}`;
       }
       if (panelViewMode === 'compact') {
         return `<li style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:400">${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc">${escHtml(a.loinc)}</span></li>`;
