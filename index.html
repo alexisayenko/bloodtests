@@ -22,7 +22,7 @@
     .app { min-height: 100dvh; display: flex; flex-direction: column; max-width: 600px; margin: 0 auto; }
 
     .header { background: var(--primary); color: white; padding: 16px 20px; position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; }
-    .header h1 { font-size: 20px; font-weight: 600; }
+    .header h1 { font-size: 22px; font-weight: 600; }
     .header-controls { display: flex; align-items: center; gap: 8px; }
     .lang-select {
       background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 6px;
@@ -56,7 +56,7 @@
     }
     .nav-item.active { color: var(--primary); }
 
-    .section-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+    .section-title { font-size: 20px; font-weight: 600; margin-bottom: 16px; }
     .view { display: none; }
     .view.active { display: block; }
 
@@ -65,28 +65,28 @@
       background: white; border-radius: var(--radius); padding: 16px;
       box-shadow: var(--shadow); cursor: pointer;
     }
-    .card-date { font-size: 13px; color: var(--gray-500); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
-    .card-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
-    .card-meta { font-size: 13px; color: var(--gray-400); }
-    .card-notes { font-size: 13px; color: var(--gray-500); margin-top: 6px; line-height: 1.4; }
+    .card-date { font-size: 15px; color: var(--gray-500); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+    .card-title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .card-meta { font-size: 15px; color: var(--gray-400); }
+    .card-notes { font-size: 15px; color: var(--gray-500); margin-top: 6px; line-height: 1.4; }
     .card-overdue { border-left: 3px solid var(--danger); }
     .card.planned { cursor: default; }
 
-    .badge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge { font-size: 13px; font-weight: 600; padding: 2px 8px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
     .badge-overdue { background: var(--danger-light); color: var(--danger); }
 
     .btn-back {
       background: none; border: none; color: var(--primary); padding: 8px 0;
-      font-size: 15px; cursor: pointer; margin-bottom: 12px;
+      font-size: 17px; cursor: pointer; margin-bottom: 12px;
     }
-    .detail-header h2 { font-size: 22px; margin-bottom: 4px; }
-    .detail-date { color: var(--gray-500); font-size: 14px; }
-    .detail-notes { margin-top: 8px; color: var(--gray-500); font-size: 14px; line-height: 1.5; }
+    .detail-header h2 { font-size: 24px; margin-bottom: 4px; }
+    .detail-date { color: var(--gray-500); font-size: 16px; }
+    .detail-notes { margin-top: 8px; color: var(--gray-500); font-size: 16px; line-height: 1.5; }
 
     .results-table { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); margin-top: 20px; }
     .results-header {
       display: grid; grid-template-columns: 1fr auto auto; gap: 8px;
-      padding: 12px 16px; background: var(--gray-100); font-size: 12px;
+      padding: 12px 16px; background: var(--gray-100); font-size: 14px;
       font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.5px;
     }
     .results-row {
@@ -95,10 +95,10 @@
     }
     .results-row.out-of-range { background: var(--danger-light); }
     .results-row.out-of-range .result-value { color: var(--danger); font-weight: 600; }
-    .result-name { font-size: 14px; font-weight: 500; }
-    .result-loinc { font-size: 11px; color: var(--gray-400); }
-    .result-value { font-size: 14px; text-align: right; font-variant-numeric: tabular-nums; }
-    .result-ref { font-size: 12px; color: var(--gray-400); text-align: right; min-width: 80px; }
+    .result-name { font-size: 16px; font-weight: 500; }
+    .result-loinc { font-size: 13px; color: var(--gray-400); }
+    .result-value { font-size: 16px; text-align: right; font-variant-numeric: tabular-nums; }
+    .result-ref { font-size: 14px; color: var(--gray-400); text-align: right; min-width: 80px; }
 
     .view-toggle { display: flex; gap: 4px; margin-bottom: 12px; }
     .view-toggle-btn {
@@ -113,18 +113,18 @@
       background: white; border-radius: var(--radius); padding: 12px;
       box-shadow: var(--shadow);
     }
-    .panel-card-title { font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+    .panel-card-title { font-size: 16px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
     .panel-card-list { list-style: none; }
-    .panel-card-list li { font-size: 13px; color: var(--gray-700); padding: 3px 0; border-top: 1px solid var(--gray-200); }
+    .panel-card-list li { font-size: 15px; color: var(--gray-700); padding: 3px 0; border-top: 1px solid var(--gray-200); }
     .panel-card-list li:first-child { border-top: none; }
     .panel-card-list li.analysis-name { font-weight: 600; padding-top: 10px; }
     .panel-card-list li.analysis-name:first-child { padding-top: 3px; }
-    .panel-card-section { font-size: 12px; font-weight: 600; color: var(--gray-500); padding: 6px 0 2px; border-top: 2px solid var(--gray-200); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+    .panel-card-section { font-size: 14px; font-weight: 600; color: var(--gray-500); padding: 6px 0 2px; border-top: 2px solid var(--gray-200); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
     .panel-card-section:first-child { border-top: none; margin-top: 0; }
 
     .panel-section { margin-bottom: 24px; }
-    .panel-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; color: var(--primary); }
-    .panel-subtitle { font-size: 13px; color: var(--gray-500); margin-bottom: 12px; }
+    .panel-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; color: var(--primary); }
+    .panel-subtitle { font-size: 15px; color: var(--gray-500); margin-bottom: 12px; }
 
     .empty-state { text-align: center; padding: 40px 20px; color: var(--gray-500); }
     .loading { text-align: center; padding: 40px; color: var(--gray-400); }
