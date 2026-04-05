@@ -403,7 +403,7 @@
       "uk-UA": "Тиреотропний гормон (ТТГ)"
     },
     "info": {
-      "description": "Pituitary signal that tells the thyroid how hard to work and how much T4 and T3 to make.",
+      "description": "The brain's command signal to your thyroid — produced by the pituitary gland, it tells the thyroid how much hormone to make. When thyroid hormones drop, TSH rises to push the thyroid harder; when they're too high, TSH falls. This makes TSH the single most sensitive indicator of thyroid function.",
       "scientific": "A glycoprotein hormone secreted by the adenohypophysis (anterior pituitary gland). Thyrotropin stimulates the thyroid gland by increasing the iodide transport, synthesis and release of thyroid hormones (thyroxine and triiodothyronine). Thyrotropin consists of two noncovalently linked subunits, alpha and beta. Within a species, the alpha subunit is common in the pituitary glycoprotein hormones (TSH, LH and FSH), but the beta subunit is unique and confers its biological specificity.",
       "why": "Primary screening test for hypothyroidism and hyperthyroidism.",
       "frequency": "Annually; every 6-8 weeks when adjusting thyroid medication",
@@ -432,7 +432,7 @@
       "uk-UA": "Трийодтиронін вільний (Т3 віл.)"
     },
     "info": {
-      "description": "The most active thyroid hormone, directly speeding up energy use, heat production, and heart activity.",
+      "description": "The most powerful thyroid hormone — the one that actually enters your cells and drives metabolism, heart rate, body temperature, and energy levels. Most T3 is converted from T4 in tissues, and only the 'free' unbound fraction is biologically active. When T3 is high, everything speeds up; when it's low, the body slows down.",
       "scientific": "Free T3 (free triiodothyronine) is a measure of free circulating T3, excluding that which is bound to carrier proteins. This provides a more accurate measure of T3 levels because the carrier proteins can increase or decrease in various conditions artificially inflating or shrinking the total T3. T3 is discriminating for diagnosing and/or following the treatment of hyperthyroidism. The thyroid delivers 20 times more T4 than T3, so T4 is the more relevant analyte except in special cases.",
       "why": "Confirms hyperthyroidism and evaluates thyroid function when TSH is abnormal.",
       "frequency": "As clinically indicated; with TSH when monitoring thyroid disease",
@@ -461,7 +461,7 @@
       "uk-UA": "Тироксин вільний (Т4 віл.)"
     },
     "info": {
-      "description": "The thyroid’s main circulating hormone, serving as a hormone reserve that tissues convert into active T3 when needed.",
+      "description": "The thyroid’s main output — a reservoir hormone that circulates in the blood waiting to be converted into active T3 where the body needs it. Free T4 measures only the unbound, available fraction, giving a true picture of thyroid supply regardless of protein changes from pregnancy, medications, or liver conditions.",
       "scientific": "Free T4 is the metabolically active fraction of thyroxine and is the precursor of triiodothyronine (T3). Free T4 is a sensitive test for thyroid function and is increased with hyperthyroidism and decreased with hypothyroidism. Free T4 is not affected by changes in thyroxine-binding proteins.",
       "why": "Confirms thyroid dysfunction when TSH is abnormal and monitors thyroid therapy.",
       "frequency": "As clinically indicated; with TSH when monitoring thyroid disease",
@@ -490,7 +490,7 @@
       "uk-UA": "Антитіла до тиреопероксидази (анти-ТПО)"
     },
     "info": {
-      "description": "Immune antibodies against the enzyme the thyroid uses to attach iodine and build its hormones.",
+      "description": "Antibodies that attack thyroid peroxidase — the very enzyme your thyroid needs to produce hormones. Their presence means your immune system is targeting the thyroid, which is the hallmark of Hashimoto's thyroiditis. Even low levels in healthy people can signal future thyroid problems years before symptoms appear.",
       "scientific": "Thyroperoxidase antibodies aid in the detection of autoimmune and Hashimoto's thyroiditis. Antibodies against the thyroid are seldom seen in serum of normal individuals but 5-10% of patients may have low levels of antibodies with no signs of disease. These antibodies may be associated with other autoimmune disorders (cross-reactive antibodies).",
       "why": "Diagnoses autoimmune thyroid disease such as Hashimoto's thyroiditis.",
       "frequency": "Once for diagnosis; repeat only as clinically indicated",
@@ -519,7 +519,7 @@
       "uk-UA": "Антитіла до тиреоглобуліну (анти-ТГ)"
     },
     "info": {
-      "description": "Immune antibodies against thyroglobulin, the storage protein the thyroid uses as raw material for making hormones.",
+      "description": "Antibodies against thyroglobulin — the protein scaffold your thyroid uses to assemble its hormones. Found in about 70% of Hashimoto's patients, they confirm autoimmune thyroid disease. In thyroid cancer follow-up, they matter because they can interfere with thyroglobulin measurements used to detect recurrence.",
       "scientific": "Circulating immunoglobulins directed against thyroglobulin are commonly present in patients with autoimmune (Hashimoto) thyroiditis and, to a lesser extent, Graves disease. The test is used to confirm that a patient's diffuse goiter and/or hypothyroidism stems from autoimmune thyroiditis, and may help distinguish Graves disease from toxic nodular goiter. These antibodies are present in approximately 70% of autoimmune thyroiditis patients. The presence of thyroglobulin antibodies doesn't necessarily indicate clinically significant thyroid disease or define thyroid functional status.",
       "why": "Supports diagnosis of autoimmune thyroid disease and monitors thyroid cancer follow-up.",
       "frequency": "Once for diagnosis; repeat only as clinically indicated",
@@ -548,7 +548,7 @@
       "uk-UA": "Антитіла до рецепторів ТТГ (TRAb)"
     },
     "info": {
-      "description": "Immune antibodies that latch onto the thyroid’s TSH receptor and can either push the gland to overwork or block its normal signal.",
+      "description": "Antibodies that hijack the TSH receptor on thyroid cells — instead of TSH controlling the thyroid, these antibodies take over. Stimulating TRAb force the thyroid to overproduce hormones, causing Graves’ disease. They’re the definitive marker for Graves’ and critical for assessing risk to a baby during pregnancy.",
       "scientific": "Thyrotropin receptor antibodies (TRAb) are immunoglobulins directed against the TSH receptor on thyroid follicular cells. Stimulating TRAb mimic the action of TSH, causing unregulated thyroid hormone production and are the hallmark of Graves disease. Blocking TRAb inhibit TSH binding and can cause hypothyroidism. TRAb measurement is essential for differentiating Graves disease from other causes of hyperthyroidism, monitoring disease activity during antithyroid drug therapy, and assessing the risk of neonatal thyrotoxicosis in pregnant women with Graves disease.",
       "why": "Diagnoses Graves' disease and predicts neonatal thyroid risk in pregnant patients.",
       "frequency": "As clinically indicated",
@@ -577,7 +577,7 @@
       "uk-UA": "Кальцитонін"
     },
     "info": {
-      "description": "A hormone from thyroid C-cells that helps lower blood calcium and slows the release of calcium from bone.",
+      "description": "A hormone from specialized thyroid C-cells that helps keep blood calcium from getting too high by slowing bone breakdown and increasing calcium excretion. Its main clinical value is as a tumor marker — C-cells can become cancerous (medullary thyroid carcinoma), and calcitonin levels rise dramatically, making it an early detection tool.",
       "scientific": "Calcitonin is a 32-amino acid peptide hormone secreted by the parafollicular C-cells of the thyroid gland. It acts to lower blood calcium by inhibiting osteoclast-mediated bone resorption and increasing renal calcium excretion. Calcitonin serves as a highly sensitive and specific tumor marker for medullary thyroid carcinoma (MTC), which arises from the C-cells. Elevated basal calcitonin levels or an exaggerated response to stimulation testing (pentagastrin or calcium) indicates C-cell hyperplasia or MTC. It is also used to monitor for recurrence after thyroidectomy.",
       "why": "Screens for and monitors medullary thyroid carcinoma.",
       "frequency": "As clinically indicated",
