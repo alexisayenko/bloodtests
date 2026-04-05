@@ -262,7 +262,7 @@
     "id": "fbc",
     "name": "Full Blood Count (FBC)",
     "color": "#fca5a5",
-    "icon": "<path d='M8 2h8M9 2v12c0 3-2 5-2 5h10s-2-2-2-5V2' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M9 10h6M9 12h6M9 14h5' stroke='white' stroke-width='.8' stroke-linecap='round'/><path d='M18 7c.8-1.2 2-1.5 2-.5s-2 3-2 3-2-2-2-3 1.2-.7 2 .5z' fill='white'/>",
+    "iconFile": "fbc.png",
     "lang": {
       "ru-RU": "Общий анализ крови (ОАК)",
       "uk-UA": "Загальний аналіз крові (ЗАК)"
