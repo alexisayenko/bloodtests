@@ -100,6 +100,8 @@
     .results-row.out-of-range .result-value { color: var(--danger); font-weight: 600; }
     .result-name { font-size: 16px; font-weight: 500; }
     .result-loinc { font-size: 13px; color: var(--gray-400); line-height: 1.6; }
+    .loinc-link { color: var(--gray-400); text-decoration: none; }
+    .loinc-link:hover { text-decoration: underline; color: var(--primary); }
     .result-value { font-size: 16px; text-align: right; font-variant-numeric: tabular-nums; }
     .result-ref { font-size: 14px; color: var(--gray-400); text-align: right; min-width: 80px; }
 
@@ -403,7 +405,7 @@
             return `<div class="results-row ${oor ? 'out-of-range' : ''}">
               <span class="result-name">
                 ${escHtml(getAnalysisName(r.loinc))}
-                <br><span class="result-loinc">LOINC ${escHtml(r.loinc)}${r.method ? ' · ' + escHtml(r.method) : ''}</span>
+                <br><span class="result-loinc"><a href="https://loinc.org/${encodeURIComponent(r.loinc)}" target="_blank" rel="noopener" class="loinc-link">LOINC ${escHtml(r.loinc)}</a>${r.method ? ' · ' + escHtml(r.method) : ''}</span>
               </span>
               <span class="result-value">${r.value} ${escHtml(r.unit || '')}</span>
               <span class="result-ref">${r.refMin != null && r.refMax != null ? r.refMin + ' – ' + r.refMax : '—'}</span>
@@ -487,10 +489,10 @@
           if (a.info.why) extra += `<li class="detail-line why-line">${clipboardIcon}${escHtml(a.info.why)}</li>`;
           if (a.info.frequency) extra += `<li class="detail-line freq-line">${clockIcon}Do it: ${escHtml(a.info.frequency)}</li>`;
         }
-        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:flex-start"><span>${escHtml(getAnalysisName(a.loinc))}<br><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span></span><span class="result-loinc" style="font-weight:normal;white-space:nowrap;margin-left:8px">${escHtml(a.loinc)}</span></li>${extra}`;
+        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:flex-start"><span>${escHtml(getAnalysisName(a.loinc))}<br><span class="result-loinc" style="font-weight:normal;font-style:italic">${escHtml(a.longCommonName)}</span></span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal;white-space:nowrap;margin-left:8px">${escHtml(a.loinc)}</a></li>${extra}`;
       }
       if (panelViewMode === 'compact') {
-        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><span class="result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</span></li>`;
+        return `<li class="analysis-name" style="display:flex;justify-content:space-between;align-items:baseline"><span>${escHtml(getAnalysisName(a.loinc))}</span><a href="https://loinc.org/${encodeURIComponent(a.loinc)}" target="_blank" rel="noopener" class="loinc-link result-loinc" style="font-weight:normal">${escHtml(a.loinc)}</a></li>`;
       }
       return `<li>${escHtml(getAnalysisName(a.loinc))}</li>`;
     }
