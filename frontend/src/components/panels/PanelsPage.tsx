@@ -13,7 +13,7 @@ interface Props {
 export function PanelsPage({ onShowDetail }: Props) {
   const { panels, loading } = useData();
   const { t } = useLang();
-  const [viewMode, setViewMode] = useLocalStorage<PanelViewMode>('bloodtests_panelView', 'compact');
+  const [viewMode, setViewMode] = useLocalStorage<PanelViewMode>('bloodtests_panelView', 'detailed');
   const [collapsedPanels, setCollapsedPanels] = useLocalStorage<Record<string, boolean>>('bloodtests_collapsed', {});
 
   const togglePanel = useCallback((panelId: string) => {
