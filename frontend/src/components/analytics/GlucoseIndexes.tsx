@@ -103,42 +103,40 @@ export function GlucoseIndexes({ resultsByLoinc }: Props) {
       </div>
 
       {data.length > 1 && (
-        <div style={{ marginTop: '16px' }}>
-          <div className="indexes-subtitle">Trends</div>
-          <ResponsiveContainer width="100%" height={250}>
-            <LineChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: -4 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis
-                dataKey="dateLabel"
-                tick={{ fontSize: 11, fill: '#9ca3af' }}
-                tickLine={false}
-                axisLine={{ stroke: '#e5e7eb' }}
-              />
-              <YAxis
-                yAxisId="left"
-                tick={{ fontSize: 10, fill: '#9ca3af' }}
-                tickLine={false}
-                axisLine={false}
-                width={45}
-              />
-              <YAxis
-                yAxisId="right"
-                orientation="right"
-                tick={{ fontSize: 10, fill: '#9ca3af' }}
-                tickLine={false}
-                axisLine={false}
-                width={45}
-              />
-              <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e5e7eb' }} />
-              <Legend wrapperStyle={{ fontSize: 12 }} />
-              <ReferenceLine yAxisId="left" y={2.5} stroke="#dc2626" strokeDasharray="4 4" strokeWidth={1} label={{ value: 'HOMA-IR 2.5', position: 'right', fontSize: 10, fill: '#dc2626' }} />
-              <Line type="monotone" dataKey="homaIR" yAxisId="left" name="HOMA-IR" stroke="#2563eb" strokeWidth={2} dot={{ r: 3.5, fill: '#2563eb', stroke: 'white', strokeWidth: 2 }} connectNulls label={{ position: 'top', fontSize: 10, fill: '#2563eb' }} />
-              <Line type="monotone" dataKey="quicki" yAxisId="left" name="QUICKI" stroke="#16a34a" strokeWidth={2} dot={{ r: 3.5, fill: '#16a34a', stroke: 'white', strokeWidth: 2 }} connectNulls label={{ position: 'top', fontSize: 10, fill: '#16a34a' }} />
-              <Line type="monotone" dataKey="insulinResistance" yAxisId="right" name="Insulin Resistance" stroke="#f97316" strokeWidth={2} dot={{ r: 3.5, fill: '#f97316', stroke: 'white', strokeWidth: 2 }} connectNulls label={{ position: 'top', fontSize: 10, fill: '#f97316' }} />
-              <Line type="monotone" dataKey="homaBeta" yAxisId="right" name="HOMA-β" stroke="#9333ea" strokeWidth={2} dot={{ r: 3.5, fill: '#9333ea', stroke: 'white', strokeWidth: 2 }} connectNulls label={{ position: 'top', fontSize: 10, fill: '#9333ea' }} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
+        <>
+          <div style={{ marginTop: '16px' }}>
+            <div className="indexes-subtitle">HOMA-IR & HOMA-β</div>
+            <ResponsiveContainer width="100%" height={220}>
+              <LineChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: -4 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <XAxis dataKey="dateLabel" tick={{ fontSize: 11, fill: '#9ca3af' }} tickLine={false} axisLine={{ stroke: '#e5e7eb' }} />
+                <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#9ca3af' }} tickLine={false} axisLine={false} width={45} />
+                <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10, fill: '#9ca3af' }} tickLine={false} axisLine={false} width={45} />
+                <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e5e7eb' }} />
+                <Legend wrapperStyle={{ fontSize: 12 }} />
+                <ReferenceLine yAxisId="left" y={2.5} stroke="#dc2626" strokeDasharray="4 4" strokeWidth={1} label={{ value: '2.5', position: 'left', fontSize: 10, fill: '#dc2626' }} />
+                <Line type="monotone" dataKey="homaIR" yAxisId="left" name="HOMA-IR" stroke="#2563eb" strokeWidth={2} dot={{ r: 3.5, fill: '#2563eb', stroke: 'white', strokeWidth: 2 }} connectNulls label={{ position: 'top', fontSize: 10, fill: '#2563eb' }} />
+                <Line type="monotone" dataKey="homaBeta" yAxisId="right" name="HOMA-β" stroke="#9333ea" strokeWidth={2} dot={{ r: 3.5, fill: '#9333ea', stroke: 'white', strokeWidth: 2 }} connectNulls label={{ position: 'top', fontSize: 10, fill: '#9333ea' }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+          <div style={{ marginTop: '16px' }}>
+            <div className="indexes-subtitle">Insulin Resistance & QUICKI</div>
+            <ResponsiveContainer width="100%" height={220}>
+              <LineChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: -4 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <XAxis dataKey="dateLabel" tick={{ fontSize: 11, fill: '#9ca3af' }} tickLine={false} axisLine={{ stroke: '#e5e7eb' }} />
+                <YAxis yAxisId="left" tick={{ fontSize: 10, fill: '#9ca3af' }} tickLine={false} axisLine={false} width={45} />
+                <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10, fill: '#9ca3af' }} tickLine={false} axisLine={false} width={45} />
+                <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e5e7eb' }} />
+                <Legend wrapperStyle={{ fontSize: 12 }} />
+                <ReferenceLine yAxisId="right" y={0.34} stroke="#16a34a" strokeDasharray="4 4" strokeWidth={1} label={{ value: '0.34', position: 'right', fontSize: 10, fill: '#16a34a' }} />
+                <Line type="monotone" dataKey="insulinResistance" yAxisId="left" name="Insulin Resistance" stroke="#f97316" strokeWidth={2} dot={{ r: 3.5, fill: '#f97316', stroke: 'white', strokeWidth: 2 }} connectNulls label={{ position: 'top', fontSize: 10, fill: '#f97316' }} />
+                <Line type="monotone" dataKey="quicki" yAxisId="right" name="QUICKI" stroke="#16a34a" strokeWidth={2} dot={{ r: 3.5, fill: '#16a34a', stroke: 'white', strokeWidth: 2 }} connectNulls label={{ position: 'top', fontSize: 10, fill: '#16a34a' }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </>
       )}
     </div>
   );
