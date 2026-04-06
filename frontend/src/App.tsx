@@ -45,7 +45,7 @@ function AppContent() {
   }
 
   return (
-    <div className="app">
+    <div className={`app${view === 'analytics' ? ' wide-mode' : ''}`}>
       <Header />
       <main className="main">{content}</main>
       <BottomNav activeView={view} onNavigate={navigate} />

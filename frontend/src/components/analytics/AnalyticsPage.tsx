@@ -117,7 +117,7 @@ export function AnalyticsPage({ sessions, loading }: Props) {
           <span>Thyroid Function</span>
         </div>
         <div className="panel-chart-body">
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={400}>
             <LineChart data={chartData} margin={{ top: 12, right: 12, bottom: 4, left: -4 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
 

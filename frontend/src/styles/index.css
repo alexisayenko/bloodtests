@@ -14,6 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 .app { min-height: 100dvh; display: flex; flex-direction: column; max-width: 600px; margin: 0 auto; }
+.app.wide-mode { max-width: none; }
 
 .header { background: var(--primary); color: white; padding: 16px 20px; position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; }
 .header h1 { font-size: 22px; font-weight: 600; min-width: 0; overflow: hidden; }
