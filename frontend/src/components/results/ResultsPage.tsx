@@ -147,7 +147,7 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
         >
           <div className="card-date" style={{ justifyContent: 'space-between' }}>
             <span>
-              <strong>{formatDate(g.date)}</strong>
+              <strong>{formatDate(g.date, uiLang)}</strong>
               {' · '}
               {g.place || 'Blood Test'}
               {' · '}
@@ -198,7 +198,7 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
             className={`view-toggle-btn${view === 'sessions' ? ' active' : ''}`}
             onClick={() => setView('sessions')}
           >
-            All {sessions.reduce((sum, g) => sum + g.itemCount, 0)}
+            {t('all')} {sessions.reduce((sum, g) => sum + g.itemCount, 0)}
           </button>
           <button
             className={`view-toggle-btn${view === 'near-range' ? ' active' : ''}`}
@@ -215,7 +215,7 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
             ⚠ {flaggedCounts.outCount}
           </button>
           <button className="view-toggle-btn utility" onClick={toggleAllSessions}>
-            Collapse / Expand all
+            {t('collapseExpandAll')}
           </button>
         </div>
       )}

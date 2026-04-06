@@ -79,7 +79,7 @@ export function ResultDetailPage({ group, loadItems, onBack }: Props) {
       <button className="btn-back" onClick={onBack}>{t('back')}</button>
       <div className="detail-header">
         <h2>{group.place || 'Blood Test'}</h2>
-        <div className="detail-date">{formatDate(group.date)}</div>
+        <div className="detail-date">{formatDate(group.date, lang)}</div>
       </div>
 
       {groupedByPanel && (

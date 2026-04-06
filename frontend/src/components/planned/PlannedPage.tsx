@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function PlannedPage({ planned, loading }: Props) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const { user } = useAuth();
   const today = new Date().toISOString().slice(0, 10);
 
@@ -29,7 +29,7 @@ export function PlannedPage({ planned, loading }: Props) {
           return (
             <div key={p.id} className={`card planned${overdue ? ' card-overdue' : ''}`}>
               <div className="card-date">
-                {p.plannedDate ? formatDate(p.plannedDate) : '—'}
+                {p.plannedDate ? formatDate(p.plannedDate, lang) : '—'}
                 {overdue && <span className="badge badge-overdue">{t('overdue')}</span>}
               </div>
               <div className="card-title">{p.testType || '—'}</div>

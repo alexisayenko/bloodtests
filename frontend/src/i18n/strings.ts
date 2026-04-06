@@ -10,6 +10,7 @@ export const uiStrings: Record<string, Record<string, string>> = {
     readMore: 'Read more', showLess: 'Show less', frequencyPrefix: 'Do it',
     signIn: 'Sign in', guest: 'Guest',
     planningTitle: 'Planning', upcomingTitle: 'Upcoming Tests',
+    all: 'All', collapseExpandAll: 'Collapse / Expand all',
   },
   'ru-RU': {
     results: 'Результаты', planned: 'Запланировано', panels: 'Панели',
@@ -22,6 +23,7 @@ export const uiStrings: Record<string, Record<string, string>> = {
     readMore: 'Показать больше', showLess: 'Свернуть', frequencyPrefix: 'Сдавать',
     signIn: 'Войти', guest: 'Гость',
     planningTitle: 'Планирование', upcomingTitle: 'Предстоящие анализы',
+    all: 'Все', collapseExpandAll: 'Свернуть / Развернуть все',
   },
   'uk-UA': {
     results: 'Результати', planned: 'Заплановано', panels: 'Панелі',
@@ -34,5 +36,6 @@ export const uiStrings: Record<string, Record<string, string>> = {
     readMore: 'Показати більше', showLess: 'Згорнути', frequencyPrefix: 'Здавати',
     signIn: 'Увійти', guest: 'Гість',
     planningTitle: 'Планування', upcomingTitle: 'Майбутні аналізи',
+    all: 'Усі', collapseExpandAll: 'Згорнути / Розгорнути все',
   },
 };
