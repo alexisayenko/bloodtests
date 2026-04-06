@@ -225,66 +225,26 @@
   },
   {
     "date": "2025-08-01",
-    "place": "Unknown Lab",
-    "file": "results-by-date\\2025-08-01__unknown-lab.json",
+    "place": "NeoGenesis",
+    "file": "results-by-date\\2025-08-01__neogenesis.json",
     "items": 10,
     "mappedItems": 10,
     "numericItems": 10
   },
   {
     "date": "2025-11-01",
-    "place": "Unknown Lab",
-    "file": "results-by-date\\2025-11-01__unknown-lab.json",
+    "place": "NeoGenesis",
+    "file": "results-by-date\\2025-11-01__neogenesis.json",
     "items": 1,
     "mappedItems": 1,
     "numericItems": 0
   },
   {
     "date": "2026-01-01",
-    "place": "Unknown Lab",
-    "file": "results-by-date\\2026-01-01__unknown-lab.json",
+    "place": "NeoGenesis",
+    "file": "results-by-date\\2026-01-01__neogenesis.json",
     "items": 43,
     "mappedItems": 43,
     "numericItems": 43
-  },
-  {
-    "date": "2026-02-01",
-    "place": "Unknown Lab",
-    "file": "results-by-date\\2026-02-01__unknown-lab.json",
-    "items": 1,
-    "mappedItems": 1,
-    "numericItems": 0
-  },
-  {
-    "date": "2026-05-01",
-    "place": "Unknown Lab",
-    "file": "results-by-date\\2026-05-01__unknown-lab.json",
-    "items": 34,
-    "mappedItems": 33,
-    "numericItems": 0
-  },
-  {
-    "date": "2026-11-01",
-    "place": "Unknown Lab",
-    "file": "results-by-date\\2026-11-01__unknown-lab.json",
-    "items": 86,
-    "mappedItems": 86,
-    "numericItems": 0
-  },
-  {
-    "date": "2027-05-01",
-    "place": "Unknown Lab",
-    "file": "results-by-date\\2027-05-01__unknown-lab.json",
-    "items": 13,
-    "mappedItems": 13,
-    "numericItems": 0
-  },
-  {
-    "date": "2027-11-01",
-    "place": "Unknown Lab",
-    "file": "results-by-date\\2027-11-01__unknown-lab.json",
-    "items": 80,
-    "mappedItems": 80,
-    "numericItems": 0
   }
 ]
