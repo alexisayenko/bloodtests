@@ -175,7 +175,18 @@
       .main { padding: 24px; padding-bottom: 80px; }
       .header { padding: 20px 24px; }
     }
+    .auth-area { display: flex; align-items: center; gap: 8px; }
+    .auth-avatar { width: 28px; height: 28px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.4); }
+    .auth-name { font-size: 12px; font-weight: 600; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .btn-auth {
+      background: rgba(255,255,255,0.2); border: none; color: white; padding: 6px 12px;
+      border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-auth:hover { background: rgba(255,255,255,0.3); }
+    .guest-badge { font-size: 11px; opacity: 0.7; }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <div class="app">
@@ -189,9 +200,10 @@
           <option value="ru-RU">Рус</option>
           <option value="uk-UA">Укр</option>
         </select>
-        <select id="user-select" class="user-select" onchange="selectUser(this.value)">
-          <option value="">-- User --</option>
-        </select>
+        <div id="auth-area" class="auth-area">
+          <span class="guest-badge">Guest</span>
+          <button class="btn-auth" onclick="signIn()">Sign in</button>
+        </div>
       </div>
     </header>
 
@@ -264,6 +276,47 @@
   </div>
 
   <script>
+    // --- Supabase client ---
+    const SUPABASE_URL = 'https://hvcfhywtbsxpgjxlvxww.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2Y2ZoeXd0YnN4cGdqeGx2eHd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM5MzI4MDEsImV4cCI6MjA1OTUwODgwMX0.oPaKFCRanSwML2By6JOn49hDq-8J8xt5R7kIC3C8Odk';
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    let sbUser = null; // current Supabase auth user
+
+    // --- Auth functions ---
+    async function signIn() {
+      await sb.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: window.location.origin + window.location.pathname }
+      });
+    }
+
+    async function signOut() {
+      await sb.auth.signOut();
+      sbUser = null;
+      currentUserId = null;
+      renderAuthArea();
+      loadUserData();
+    }
+
+    function renderAuthArea() {
+      const area = document.getElementById('auth-area');
+      if (sbUser) {
+        const meta = sbUser.user_metadata || {};
+        const name = meta.full_name || meta.name || sbUser.email || '';
+        const avatar = meta.avatar_url || meta.picture || '';
+        area.innerHTML = `
+          ${avatar ? `<img class="auth-avatar" src="${escHtml(avatar)}" alt="">` : ''}
+          <span class="auth-name">${escHtml(name)}</span>
+          <button class="btn-auth" onclick="signOut()">Out</button>
+        `;
+      } else {
+        area.innerHTML = `
+          <span class="guest-badge">Guest</span>
+          <button class="btn-auth" onclick="signIn()">Sign in</button>
+        `;
+      }
+    }
+
     let analysesCatalog = {};  // loinc -> analysis object
       let resultsCache = [];
       let resultsManifestCache = [];
@@ -323,21 +376,7 @@
       renderPanelsPage();
     }
 
-    // --- User picker ---
-    function selectUser(userId) {
-      currentUserId = userId || null;
-      localStorage.setItem('bloodtests_userId', userId);
-      loadUserData();
-    }
-
-    function populateUserSelect() {
-      const sel = document.getElementById('user-select');
-      sel.innerHTML = '<option value="">-- User --</option>' +
-        usersCache.map(u => `<option value="${escHtml(u.id)}"${u.id === currentUserId ? ' selected' : ''}>${escHtml(u.name)}</option>`).join('');
-    }
-
-    // Restore saved user
-    currentUserId = localStorage.getItem('bloodtests_userId') || null;
+    // User is now set via Supabase auth or guest mode — no manual picker
 
     // Restore saved language
     const savedLang = localStorage.getItem('bloodtests_lang');
@@ -408,53 +447,168 @@
 
     // --- Load data ---
     async function loadAll() {
-      const [analysesRes, panelsRes, usersRes] = await Promise.all([
+      // Catalog data always from JSON
+      const [analysesRes, panelsRes] = await Promise.all([
         fetch('data/analyses.json'),
         fetch('data/panels.json'),
-        fetch('data/users.json'),
       ]);
 
       const analyses = await analysesRes.json();
       analyses.forEach(a => { analysesCatalog[a.loinc] = a; });
       panelsCache = await panelsRes.json();
-      usersCache = await usersRes.json();
 
-      populateUserSelect();
       renderPanelsPage();
-      loadUserData();
+
+      // Check auth state
+      const { data: { session } } = await sb.auth.getSession();
+      if (session?.user) {
+        sbUser = session.user;
+        currentUserId = sbUser.id;
+        renderAuthArea();
+        await loadUserData();
+      } else {
+        // Guest mode: load from local JSON with first available user
+        await loadGuestData();
+      }
+
+      // Listen for auth changes (login/logout)
+      sb.auth.onAuthStateChange(async (event, session) => {
+        if (session?.user) {
+          sbUser = session.user;
+          currentUserId = sbUser.id;
+          renderAuthArea();
+          await loadUserData();
+        } else {
+          sbUser = null;
+          currentUserId = null;
+          renderAuthArea();
+          await loadGuestData();
+        }
+      });
     }
 
-      async function loadUserData() {
-        if (!currentUserId) {
-          resultsCache = [];
-          resultsManifestCache = [];
-          resultsGroupItemsCache = {};
-          plannedCache = [];
-          renderResultsList();
-          renderPlannedList(plannedCache);
-          return;
-        }
-        const [manifestRes, resultsRes, plannedRes] = await Promise.all([
-          fetch(`data/users/${currentUserId}/results-by-date/manifest.json`),
-          fetch(`data/users/${currentUserId}/results.json`),
-          fetch(`data/users/${currentUserId}/planned.json`),
-        ]);
+    async function loadGuestData() {
+      // Guest mode: load demo data from local JSON files
+      try {
+        const usersRes = await fetch('data/users.json');
+        usersCache = await usersRes.json();
+        currentUserId = usersCache.length > 0 ? usersCache[0].id : null;
+      } catch { usersCache = []; currentUserId = null; }
+      await loadUserDataFromJson();
+    }
 
-        resultsGroupItemsCache = {};
-        if (manifestRes.ok) {
-          resultsManifestCache = await manifestRes.json();
-          resultsManifestCache.sort((a, b) => b.date.localeCompare(a.date));
-          resultsCache = [];
-        } else {
-          resultsManifestCache = [];
-          resultsCache = await resultsRes.json();
-          resultsCache.sort((a, b) => b.date.localeCompare(a.date));
-        }
-        plannedCache = await plannedRes.json();
-        plannedCache.sort((a, b) => a.plannedDate.localeCompare(b.plannedDate));
-  
+    async function loadUserDataFromJson() {
+      if (!currentUserId) {
+        resultsCache = []; resultsManifestCache = []; resultsGroupItemsCache = {}; plannedCache = [];
+        renderResultsList(); renderPlannedList(plannedCache);
+        return;
+      }
+      const [manifestRes, resultsRes, plannedRes] = await Promise.all([
+        fetch(`data/users/${currentUserId}/results-by-date/manifest.json`),
+        fetch(`data/users/${currentUserId}/results.json`),
+        fetch(`data/users/${currentUserId}/planned.json`),
+      ]);
+
+      resultsGroupItemsCache = {};
+      if (manifestRes.ok) {
+        resultsManifestCache = await manifestRes.json();
+        resultsManifestCache.sort((a, b) => b.date.localeCompare(a.date));
+        resultsCache = [];
+      } else {
+        resultsManifestCache = [];
+        resultsCache = resultsRes.ok ? await resultsRes.json() : [];
+        resultsCache.sort((a, b) => b.date.localeCompare(a.date));
+      }
+      plannedCache = plannedRes.ok ? await plannedRes.json() : [];
+      plannedCache.sort((a, b) => a.plannedDate.localeCompare(b.plannedDate));
+
+      renderResultsList();
+      renderPlannedList(plannedCache);
+    }
+
+    async function loadUserData() {
+      if (!sbUser) { await loadUserDataFromJson(); return; }
+
+      // Load from Supabase
+      resultsGroupItemsCache = {};
+      try {
+        // Fetch test sessions (manifest)
+        const { data: sessions, error: sessErr } = await sb
+          .from('test_sessions')
+          .select('id, date, place, source_file, notes')
+          .order('date', { ascending: false });
+        if (sessErr) throw sessErr;
+
+        // Fetch all results for this user
+        const { data: allResults, error: resErr } = await sb
+          .from('results')
+          .select('*')
+          .order('created_at', { ascending: true });
+        if (resErr) throw resErr;
+
+        // Fetch planned tests
+        const { data: planned, error: planErr } = await sb
+          .from('planned_tests')
+          .select('*')
+          .order('planned_date', { ascending: true });
+        if (planErr) throw planErr;
+
+        // Group results by session_id
+        const resultsBySession = {};
+        allResults.forEach(r => {
+          if (!resultsBySession[r.session_id]) resultsBySession[r.session_id] = [];
+          resultsBySession[r.session_id].push(mapResult(r));
+        });
+
+        // Build manifest cache (like results-by-date/manifest.json)
+        resultsManifestCache = sessions.map(s => ({
+          date: s.date,
+          place: s.place || '',
+          file: s.id,  // use session UUID as key
+          items: (resultsBySession[s.id] || []).length,
+        }));
+
+        // Pre-populate group items cache so detail view works without extra fetch
+        sessions.forEach(s => {
+          resultsGroupItemsCache[s.id] = resultsBySession[s.id] || [];
+        });
+
+        resultsCache = [];
+
+        // Map planned tests
+        plannedCache = planned.map(p => ({
+          plannedDate: p.planned_date || '',
+          testType: p.test_type || '',
+          notes: p.notes || '',
+          id: p.id,
+        }));
+
         renderResultsList();
         renderPlannedList(plannedCache);
+      } catch (err) {
+        console.error('Supabase load error:', err);
+        // Fallback to empty state
+        resultsCache = []; resultsManifestCache = []; resultsGroupItemsCache = {}; plannedCache = [];
+        renderResultsList(); renderPlannedList(plannedCache);
+      }
+    }
+
+    // Map Supabase result row (snake_case) to app format (camelCase)
+    function mapResult(r) {
+      return {
+        loinc: r.loinc || '',
+        analysis: r.analysis || '',
+        symbol: r.symbol || '',
+        section: r.section || '',
+        value: r.value,
+        rawValue: r.raw_value || '',
+        valueQualifier: r.value_qualifier || '',
+        unit: r.unit || '',
+        refText: r.ref_text || '',
+        refMin: r.ref_min,
+        refMax: r.ref_max,
+        method: r.method || '',
+      };
     }
 
     // --- Results (grouped by date + place) ---
@@ -514,10 +668,18 @@
         let g = groups[groupIndex];
         if (!g) return;
         if (!g.items && g.file) {
-          const groupRes = await fetch(`data/users/${currentUserId}/${g.file.replaceAll('\\', '/')}`);
-          if (!groupRes.ok) return;
-          const payload = await groupRes.json();
-          resultsGroupItemsCache[g.file] = payload.items || [];
+          if (sbUser) {
+            // Supabase mode: items should already be cached; if not, fetch from DB
+            const { data, error } = await sb.from('results').select('*').eq('session_id', g.file);
+            if (error || !data) return;
+            resultsGroupItemsCache[g.file] = data.map(mapResult);
+          } else {
+            // Guest/JSON mode: fetch from local file
+            const groupRes = await fetch(`data/users/${currentUserId}/${g.file.replaceAll('\\', '/')}`);
+            if (!groupRes.ok) return;
+            const payload = await groupRes.json();
+            resultsGroupItemsCache[g.file] = payload.items || [];
+          }
           g = { ...g, items: resultsGroupItemsCache[g.file] };
         }
         if (!g.items || g.items.length === 0) return;
