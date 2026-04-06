@@ -40,7 +40,7 @@ function AppContent() {
       content = <PlannedPage planned={plannedTests} loading={loading} />;
       break;
     case 'analytics':
-      content = <AnalyticsPage />;
+      content = <AnalyticsPage sessions={sessions} loading={loading} />;
       break;
   }
 

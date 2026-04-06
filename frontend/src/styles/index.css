@@ -213,6 +213,30 @@ img.panel-icon { display: none; }
 
 @keyframes dropdownIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
+/* Analytics charts */
+.panel-chart-group {
+  background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+}
+.panel-chart-header {
+  display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+  background: var(--primary); color: white; font-size: 16px; font-weight: 600;
+  cursor: pointer;
+}
+.panel-chart-header span:first-child { flex: 1; }
+.panel-chart-count { font-size: 12px; font-weight: 400; opacity: 0.7; }
+.panel-chart-body {
+  padding: 12px; display: flex; flex-direction: column; gap: 16px;
+  border-left: 3px solid var(--panel-color, #d1d5db);
+}
+.biomarker-chart { }
+.biomarker-chart-title {
+  font-size: 14px; font-weight: 600; color: var(--gray-900);
+  margin-bottom: 4px; display: flex; align-items: baseline; gap: 6px;
+}
+.biomarker-chart-unit {
+  font-size: 11px; font-weight: 400; color: var(--gray-400);
+}
+
 @media (min-width: 640px) {
   .main { padding: 24px; padding-bottom: 80px; }
   .header { padding: 20px 24px; }
