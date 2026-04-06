@@ -99,6 +99,12 @@ body {
 .loinc-link:hover { text-decoration: underline; color: var(--primary); }
 .result-value { font-size: 16px; text-align: right; font-variant-numeric: tabular-nums; }
 .result-ref { font-size: 14px; color: var(--gray-400); text-align: right; min-width: 80px; }
+.result-panel-header {
+  font-size: 13px; font-weight: 700; color: var(--gray-500); text-transform: uppercase;
+  letter-spacing: 0.5px; padding: 12px 0 4px; margin-top: 16px;
+  border-left: 3px solid #d1d5db; padding-left: 10px;
+}
+.result-panel-header:first-child { margin-top: 20px; }
 
 .view-toggle { display: flex; gap: 4px; margin-bottom: 12px; }
 .view-toggle-btn {

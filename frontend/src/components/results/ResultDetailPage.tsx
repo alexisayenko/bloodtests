@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useLang } from '../../i18n/LangContext';
+import { useData } from '../../data/DataContext';
 import { formatDate } from '../../utils/format';
+import { getPanelName, getPanelAnalyses } from '../../utils/analysis';
 import { ResultRow } from './ResultRow';
 import type { ResultGroup, Result } from '../../types';
 
@@ -10,8 +12,15 @@ interface Props {
   onBack: () => void;
 }
 
+interface PanelGroup {
+  panelName: string;
+  color: string;
+  results: Result[];
+}
+
 export function ResultDetailPage({ group, loadItems, onBack }: Props) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const { panels } = useData();
   const [items, setItems] = useState<Result[] | null>(group.items);
 
   useEffect(() => {
@@ -19,6 +28,49 @@ export function ResultDetailPage({ group, loadItems, onBack }: Props) {
       loadItems(group.file).then(setItems);
     }
   }, [group.file, items, loadItems]);
+
+  // Build loinc -> panel lookup and group results by panel
+  const groupedByPanel = useMemo(() => {
+    if (!items || panels.length === 0) return null;
+
+    const loincToPanel: Record<string, number> = {};
+    panels.forEach((p, pi) => {
+      getPanelAnalyses(p).forEach(loinc => {
+        loincToPanel[loinc] = pi;
+      });
+    });
+
+    const panelGroups: Record<number, PanelGroup> = {};
+    const ungrouped: Result[] = [];
+
+    for (const r of items) {
+      const pi = loincToPanel[r.loinc];
+      if (pi !== undefined) {
+        if (!panelGroups[pi]) {
+          panelGroups[pi] = {
+            panelName: getPanelName(panels[pi], lang),
+            color: panels[pi].color || '#d1d5db',
+            results: [],
+          };
+        }
+        panelGroups[pi].results.push(r);
+      } else {
+        ungrouped.push(r);
+      }
+    }
+
+    // Sort panel groups by panel order
+    const sorted = Object.keys(panelGroups)
+      .map(Number)
+      .sort((a, b) => a - b)
+      .map(pi => panelGroups[pi]);
+
+    if (ungrouped.length > 0) {
+      sorted.push({ panelName: 'Other', color: '#d1d5db', results: ungrouped });
+    }
+
+    return sorted;
+  }, [items, panels, lang]);
 
   if (!items) return <div className="loading">Loading...</div>;
 
@@ -29,16 +81,39 @@ export function ResultDetailPage({ group, loadItems, onBack }: Props) {
         <h2>{group.place || 'Blood Test'}</h2>
         <div className="detail-date">{formatDate(group.date)}</div>
       </div>
-      <div className="results-table">
-        <div className="results-header">
-          <span>{t('biomarker')}</span>
-          <span>{t('value')}</span>
-          <span>{t('reference')}</span>
+
+      {groupedByPanel && groupedByPanel.map((pg, gi) => (
+        <div key={gi}>
+          <div className="result-panel-header" style={{ borderLeftColor: pg.color }}>
+            {pg.panelName}
+          </div>
+          <div className="results-table" style={{ marginTop: 0, borderRadius: gi === 0 ? undefined : 'var(--radius)' }}>
+            {gi === 0 && (
+              <div className="results-header">
+                <span>{t('biomarker')}</span>
+                <span>{t('value')}</span>
+                <span>{t('reference')}</span>
+              </div>
+            )}
+            {pg.results.map((r, i) => (
+              <ResultRow key={i} result={r} />
+            ))}
+          </div>
         </div>
-        {items.map((r, i) => (
-          <ResultRow key={i} result={r} />
-        ))}
-      </div>
+      ))}
+
+      {!groupedByPanel && (
+        <div className="results-table">
+          <div className="results-header">
+            <span>{t('biomarker')}</span>
+            <span>{t('value')}</span>
+            <span>{t('reference')}</span>
+          </div>
+          {items.map((r, i) => (
+            <ResultRow key={i} result={r} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
