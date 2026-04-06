@@ -69,6 +69,6 @@ export interface PlannedTest {
   notes: string;
 }
 
-export type ViewName = 'panels' | 'panel-detail' | 'results' | 'detail' | 'planned' | 'analytics';
+export type ViewName = 'panels' | 'panel-detail' | 'results' | 'analytics' | 'planning' | 'upcoming';
 export type PanelViewMode = 'minimal' | 'compact' | 'detailed';
 export type Lang = 'en' | 'ru-RU' | 'uk-UA';
