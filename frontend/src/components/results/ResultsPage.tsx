@@ -29,18 +29,20 @@ export function ResultsPage({ sessions, loading, onShowDetail }: Props) {
 
   const flaggedItems = useMemo(() => {
     const out: FlaggedItem[] = [];
-    const near: FlaggedItem[] = [];
+    const all: FlaggedItem[] = [];
     for (const session of sessions) {
       if (!session.items) continue;
       for (const r of session.items) {
         if (isOutOfRange(r)) {
-          out.push({ result: r, date: session.date, place: session.place, kind: 'out' });
+          const item = { result: r, date: session.date, place: session.place, kind: 'out' as const };
+          out.push(item);
+          all.push(item);
         } else if (isNearOutOfRange(r)) {
-          near.push({ result: r, date: session.date, place: session.place, kind: 'near' });
+          all.push({ result: r, date: session.date, place: session.place, kind: 'near' });
         }
       }
     }
-    return { out, near, all: [...out, ...near] };
+    return { out, all };
   }, [sessions]);
 
   const renderFlaggedList = (items: FlaggedItem[]) => {
