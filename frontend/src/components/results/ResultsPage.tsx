@@ -146,7 +146,13 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
           style={{ borderRadius: isExpanded ? 'var(--radius) var(--radius) 0 0' : undefined }}
         >
           <div className="card-date" style={{ justifyContent: 'space-between' }}>
-            <span>{formatDate(g.date)}</span>
+            <span>
+              <strong>{formatDate(g.date)}</strong>
+              {' · '}
+              {g.place || 'Blood Test'}
+              {' · '}
+              <span style={{ color: 'var(--gray-400)' }}>{displayCount} {t('biomarkers')}</span>
+            </span>
             <svg
               width="14" height="14" viewBox="0 0 14 14" fill="none"
               stroke="var(--gray-400)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
@@ -155,8 +161,6 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
               <path d="M3 5l4 4 4-4" />
             </svg>
           </div>
-          <div className="card-title">{g.place || 'Blood Test'}</div>
-          <div className="card-meta">{displayCount} {t('biomarkers')}</div>
         </div>
 
         {isExpanded && grouped && (
@@ -194,7 +198,7 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
             className={`view-toggle-btn${view === 'sessions' ? ' active' : ''}`}
             onClick={() => setView('sessions')}
           >
-            All
+            All {sessions.reduce((sum, g) => sum + g.itemCount, 0)}
           </button>
           <button
             className={`view-toggle-btn${view === 'near-range' ? ' active' : ''}`}
