@@ -61,4 +61,4 @@ Translations must match the DEPTH and QUALITY of the English text. Not shortened
 - [ ] General Inflammatory Markers (3 analyses)
 - [ ] HPA Axis (2 analyses)
 - [ ] Other Markers (5 analyses)
-- [ ] Full Blood Count (25 analyses)
+- [x] Full Blood Count (25 analyses)

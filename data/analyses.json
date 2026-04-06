@@ -8,7 +8,7 @@
       "uk-UA": "Гемоглобін"
     },
     "info": {
-      "description": "Protein in red blood cells that carries oxygen throughout the body.",
+      "description": "The iron-containing protein inside red blood cells that actually grabs oxygen molecules in the lungs and releases them where tissues need fuel. Each red blood cell carries about 270 million hemoglobin molecules — it's what makes blood red. Low hemoglobin is the defining feature of anemia, causing fatigue, shortness of breath, and pale skin.",
       "scientific": "Hemoglobin is a tetrameric protein composed of two alpha and two beta globin chains, each containing a heme group with a central iron atom that reversibly binds oxygen. It is the primary oxygen-transport metalloprotein in erythrocytes, facilitating the delivery of oxygen from the lungs to peripheral tissues and the return transport of carbon dioxide. Hemoglobin concentration in blood is a key indicator of oxygen-carrying capacity and is used to diagnose and classify anemias, polycythemia, and other hematologic disorders. Decreased levels are seen in iron deficiency, chronic disease, hemolysis, and bone marrow failure, while elevated levels occur in polycythemia vera, chronic hypoxia, and dehydration.",
       "why": "Detects anemia, polycythemia, and monitors blood disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -53,7 +53,7 @@
       "uk-UA": "Еритроцити"
     },
     "info": {
-      "description": "Cells that carry oxygen from the lungs to tissues and return carbon dioxide.",
+      "description": "Your body's oxygen delivery fleet — billions of disc-shaped cells constantly shuttling oxygen from your lungs to every tissue and carrying carbon dioxide back for exhale. Your bone marrow produces about 2 million new ones every second to keep up. Too few means anemia and oxygen starvation; too many thickens the blood and raises clot risk.",
       "scientific": "Erythrocytes (red blood cells) are anucleate biconcave disc-shaped cells produced in the bone marrow through erythropoiesis, a process regulated by erythropoietin. Their primary function is oxygen transport from the lungs to tissues and carbon dioxide removal, facilitated by their high hemoglobin content and large surface-area-to-volume ratio. The red blood cell count is a fundamental component of the complete blood count and is essential for diagnosing anemias, polycythemias, and monitoring bone marrow function. Abnormal values may reflect disorders of production, destruction, or loss of erythrocytes.",
       "why": "Evaluates oxygen-carrying capacity and detects anemia or polycythemia.",
       "frequency": "Annually, or as clinically indicated"
@@ -68,7 +68,7 @@
       "uk-UA": "Лейкоцити"
     },
     "info": {
-      "description": "Immune system cells that defend the body against infections and foreign invaders.",
+      "description": "Your blood's army — a combined force of different immune cells patrolling your body around the clock. When infection or injury strikes, their numbers surge as reinforcements are mobilized. A count that's too high often signals the body is fighting something; too low means your defenses are dangerously thin.",
       "scientific": "Leukocytes (white blood cells) are nucleated cells of the immune system that originate from hematopoietic stem cells in the bone marrow. They comprise neutrophils, lymphocytes, monocytes, eosinophils, and basophils, each with distinct roles in innate and adaptive immunity. The total white blood cell count is a fundamental hematologic parameter used to detect infections, inflammatory states, allergic reactions, and hematologic malignancies. Leukocytosis commonly indicates infection or inflammation, while leukopenia may result from bone marrow suppression, viral infections, or immunodeficiency.",
       "why": "Detects infections, immune disorders, and monitors bone marrow function.",
       "frequency": "Annually, or as clinically indicated"
@@ -1387,7 +1387,7 @@
       "uk-UA": "Гематокрит"
     },
     "info": {
-      "description": "Percentage of blood volume occupied by red blood cells.",
+      "description": "How much of your blood is actually red blood cells versus liquid plasma — think of it as the \"thickness\" of your blood. A low hematocrit confirms anemia; a high one means your blood is more viscous, which can strain the heart and increase clot risk. It's also sensitive to hydration — dehydration artificially inflates it, while over-hydration dilutes it.",
       "scientific": "Hematocrit is the volume percentage of red blood cells in whole blood, determined by automated hematology analyzers from the product of the red blood cell count and mean corpuscular volume (MCV). It reflects the oxygen-carrying capacity of the blood and the balance between red cell production, destruction, and plasma volume. Decreased hematocrit indicates anemia from blood loss, hemolysis, nutritional deficiency, or bone marrow failure, while elevated hematocrit occurs in polycythemia vera, chronic hypoxia, dehydration, and erythropoietin-secreting tumors. Hematocrit is used clinically to guide transfusion decisions, monitor fluid status, and assess the severity of anemia.",
       "why": "Detects anemia, dehydration, and polycythemia.",
       "frequency": "Annually, or as clinically indicated"
@@ -1762,7 +1762,7 @@
       "uk-UA": "Нейтрофіли (абс.)"
     },
     "info": {
-      "description": "Most abundant white blood cells, first responders to bacterial infections.",
+      "description": "The front-line soldiers of your immune system — they arrive first at any site of infection and destroy bacteria by engulfing them. Your bone marrow pumps out billions daily, and they live only hours in the bloodstream before migrating into tissues. A spike usually means a bacterial infection; a crash can leave you vulnerable to life-threatening infections.",
       "scientific": "Neutrophils are the most abundant circulating leukocytes (40-70% of WBC), derived from granulocyte-monocyte progenitors in the bone marrow through granulopoiesis regulated by granulocyte colony-stimulating factor (G-CSF). They are the primary effector cells of innate immunity, rapidly recruited to sites of infection where they phagocytose and kill bacteria and fungi through oxygen-dependent (respiratory burst, myeloperoxidase) and oxygen-independent (defensins, lysozyme) mechanisms, and by releasing neutrophil extracellular traps (NETs). Neutrophilia (elevated count) is the hallmark of bacterial infection, acute inflammation, stress, and corticosteroid use, while neutropenia (decreased count) increases susceptibility to life-threatening infections and may result from bone marrow suppression, autoimmune destruction, or congenital disorders.",
       "why": "Detects bacterial infections, monitors chemotherapy effects, and evaluates immune status.",
       "frequency": "Annually, or as clinically indicated"
@@ -1777,7 +1777,7 @@
       "uk-UA": "Лімфоцити (абс.)"
     },
     "info": {
-      "description": "White blood cells responsible for adaptive immunity, including T-cells and B-cells.",
+      "description": "The intelligence branch of your immune system — they remember every pathogen you've ever fought. B-lymphocytes produce antibodies that tag invaders for destruction, while T-lymphocytes coordinate attacks and kill infected cells directly. High counts often point to viral infections; persistently low counts weaken your body's ability to fight off disease.",
       "scientific": "Lymphocytes are mononuclear leukocytes that mediate adaptive immunity and comprise T cells (~70-80%, cell-mediated immunity), B cells (~10-15%, humoral immunity and antibody production), and natural killer (NK) cells (~5-10%, innate cytotoxicity). They originate from common lymphoid progenitors in the bone marrow, with T cells maturing in the thymus and B cells completing maturation in the marrow. Lymphocytosis is characteristic of viral infections, chronic lymphocytic leukemia, and pertussis, while lymphopenia occurs in HIV/AIDS, corticosteroid therapy, autoimmune diseases, and severe systemic illness. The absolute lymphocyte count is a critical component of the complete blood count differential and is essential for evaluating immune competence.",
       "why": "Evaluates viral infections, immune deficiencies, and lymphoproliferative disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -1792,7 +1792,7 @@
       "uk-UA": "Моноцити (абс.)"
     },
     "info": {
-      "description": "Largest white blood cells that differentiate into macrophages to engulf pathogens and debris.",
+      "description": "The cleanup crew — these large cells patrol your blood, then migrate into tissues where they transform into macrophages that swallow bacteria, dead cells, and debris. They also act as messengers, presenting pieces of invaders to lymphocytes so the immune system can mount a precise response. Elevated counts can signal chronic infection, inflammation, or autoimmune conditions.",
       "scientific": "Monocytes are the largest of the circulating leukocytes, produced in the bone marrow from granulocyte-monocyte progenitors and released into the blood where they circulate for 1-3 days before migrating into tissues to differentiate into macrophages, dendritic cells, and osteoclasts. As professional phagocytes, they play crucial roles in innate immunity (pathogen recognition and destruction), antigen presentation to T cells (bridging innate and adaptive immunity), tissue remodeling, and wound healing. Monocytosis is associated with chronic infections (tuberculosis, endocarditis), autoimmune and granulomatous diseases, myeloproliferative disorders (chronic myelomonocytic leukemia), and recovery from bone marrow suppression. Monocyte counts are an important component of the differential white blood cell count.",
       "why": "Helps diagnose chronic infections, inflammatory conditions, and blood disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -1807,7 +1807,7 @@
       "uk-UA": "Еозинофіли (абс.)"
     },
     "info": {
-      "description": "White blood cells involved in allergic responses and defense against parasites.",
+      "description": "Specialist fighters tuned to two threats — parasites and allergic reactions. They release toxic granules that destroy parasitic worms too large for other cells to engulf, but the same chemicals also drive allergic inflammation. A rise often points to allergies, asthma, or parasitic infection; they're a window into your body's hypersensitivity responses.",
       "scientific": "Eosinophils are granulocytic leukocytes characterized by bilobed nuclei and large cytoplasmic granules containing major basic protein (MBP), eosinophil cationic protein (ECP), eosinophil peroxidase, and eosinophil-derived neurotoxin. They develop in the bone marrow under the influence of IL-3, IL-5, and GM-CSF, and primarily reside in tissues (gut, respiratory tract). Eosinophils play key roles in defense against helminthic parasites, modulation of allergic inflammation, and tissue remodeling, but their cytotoxic granule contents can also cause tissue damage. Eosinophilia is characteristic of allergic diseases (asthma, atopic dermatitis), parasitic infections, drug reactions, and hypereosinophilic syndromes.",
       "why": "Detects allergic conditions, parasitic infections, and eosinophilic disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -1822,7 +1822,7 @@
       "uk-UA": "Базофіли (абс.)"
     },
     "info": {
-      "description": "Rarest white blood cells that release histamine and play a role in allergic reactions.",
+      "description": "The rarest white blood cells, but powerful alarm-pullers — they release histamine and other chemicals that dilate blood vessels and attract other immune cells to the scene. They play a key role in severe allergic reactions and anaphylaxis. Usually present in tiny numbers, a significant rise can signal allergic disorders, certain blood cancers, or chronic inflammation.",
       "scientific": "Basophils are the rarest circulating granulocytes (<1% of WBC), distinguished by large metachromatic granules containing histamine, heparin, and leukotrienes, and by high-affinity IgE receptors (FcepsilonRI) on their surface. They play a central role in IgE-mediated allergic reactions: cross-linking of surface IgE by allergens triggers immediate degranulation, releasing vasoactive mediators that cause bronchoconstriction, vasodilation, and increased vascular permeability. Basophils also produce IL-4 and IL-13, promoting Th2 immune polarization and IgE class switching. Basophilia is associated with allergic reactions, chronic myeloid leukemia, myeloproliferative neoplasms, and hypothyroidism.",
       "why": "Helps evaluate allergic conditions and myeloproliferative disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -1837,7 +1837,7 @@
       "uk-UA": "Нейтрофіли (%)"
     },
     "info": {
-      "description": "Percentage of white blood cells that are neutrophils.",
+      "description": "Shows what share of your white blood cell army is made up of neutrophils — the bacteria-fighting front line. Together with the absolute count, the percentage reveals whether a shift in your immune balance is real or just reflects a change in total white cell numbers. A high percentage with high WBC strongly suggests bacterial infection.",
       "scientific": "Neutrophil percentage represents the proportion of neutrophils relative to total leukocytes in the white blood cell differential count. It is derived from automated hematology analyzers using light scatter, impedance, and cytochemical staining characteristics to differentiate cell populations. While the absolute neutrophil count is generally more clinically meaningful, the percentage provides context for interpreting the differential pattern. A left shift (increased band forms or immature neutrophils) may be present even with a normal percentage, indicating acute bacterial infection or marrow stress.",
       "why": "Helps interpret the differential white blood cell count for infection or bone marrow assessment.",
       "frequency": "Annually, or as clinically indicated"
@@ -1852,7 +1852,7 @@
       "uk-UA": "Лімфоцити (%)"
     },
     "info": {
-      "description": "Percentage of white blood cells that are lymphocytes.",
+      "description": "The proportion of your white cells devoted to long-term immunity — the memory and precision-targeting branch. A high percentage often indicates viral infections, since lymphocytes are the main fighters against viruses. Comparing the percentage to the absolute count helps distinguish true lymphocyte changes from shifts caused by other cell types rising or falling.",
       "scientific": "Lymphocyte percentage represents the proportion of lymphocytes relative to total leukocytes in the peripheral blood differential count. In healthy adults, lymphocytes typically constitute 20-40% of circulating white blood cells. Relative lymphocytosis (increased percentage) may reflect either true lymphocyte expansion (viral infections, chronic lymphocytic leukemia) or a relative increase due to neutropenia. Relative lymphopenia (decreased percentage) can occur with neutrophilia shifting the differential or from true lymphocyte depletion in HIV, corticosteroid therapy, or immunosuppressive treatment.",
       "why": "Aids in diagnosing viral infections, immune deficiencies, and lymphocytic disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -1867,7 +1867,7 @@
       "uk-UA": "Моноцити (%)"
     },
     "info": {
-      "description": "Percentage of white blood cells that are monocytes.",
+      "description": "The share of your immune cells that are monocytes — the cleanup and communication crew. A rising percentage can point to chronic infections, autoimmune conditions, or recovery phases after acute illness. Read alongside the absolute count to tell if monocytes are truly increasing or just appear higher because other cell types dropped.",
       "scientific": "Monocyte percentage represents the proportion of monocytes relative to total leukocytes in the white blood cell differential count, normally comprising 2-8% of circulating leukocytes. This percentage is determined by automated hematology analyzers using cell size, nuclear characteristics, and cytoplasmic properties. An elevated monocyte percentage may indicate chronic infections (tuberculosis, subacute bacterial endocarditis), autoimmune diseases, myeloproliferative disorders, or recovery from acute infection or bone marrow suppression. The monocyte percentage should always be interpreted alongside the absolute monocyte count and other differential components for accurate clinical assessment.",
       "why": "Helps evaluate chronic infections, inflammatory conditions, and hematologic disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -1882,7 +1882,7 @@
       "uk-UA": "Еозинофіли (%)"
     },
     "info": {
-      "description": "Percentage of white blood cells that are eosinophils.",
+      "description": "What fraction of your white cells are the allergy-and-parasite specialists. Even small percentage increases can be clinically meaningful, since eosinophils are normally a tiny minority. A high share often signals allergic conditions, asthma, or parasitic infections.",
       "scientific": "Eosinophil percentage represents the proportion of eosinophils relative to total leukocytes in the peripheral blood differential count, normally comprising 1-4% of circulating white blood cells. It is determined by automated hematology analyzers that identify eosinophils by their characteristic granule staining and light scatter properties. An elevated eosinophil percentage may indicate allergic diseases, parasitic infections, drug hypersensitivity, or eosinophilic disorders, though the absolute eosinophil count is more clinically reliable for defining eosinophilia. Persistent eosinophilia warrants investigation for underlying causes including hypereosinophilic syndromes and eosinophilic granulomatosis with polyangiitis.",
       "why": "Screens for allergic reactions, parasitic infections, and eosinophilic disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -1897,7 +1897,7 @@
       "uk-UA": "Базофіли (%)"
     },
     "info": {
-      "description": "Percentage of white blood cells that are basophils.",
+      "description": "The tiniest slice of your white cell population — basophils are so rare that even 1-2% is considered elevated. Because their numbers are so small, percentage changes are less reliable than absolute counts. A genuine rise can point to allergic reactions, certain blood disorders, or chronic inflammation.",
       "scientific": "Basophil percentage represents the proportion of basophils relative to total leukocytes in the peripheral blood differential count, normally comprising less than 1% of circulating white blood cells. Basophils are the least numerous granulocytes and are identified by automated analyzers based on their unique staining and scatter characteristics. An elevated basophil percentage may suggest allergic reactions, chronic myeloid leukemia (where basophilia can be an early sign), other myeloproliferative neoplasms, hypothyroidism, or inflammatory bowel disease. Due to their very low numbers, even small absolute increases can cause a notable percentage change.",
       "why": "Helps evaluate allergic conditions and chronic myeloproliferative disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -1912,7 +1912,7 @@
       "uk-UA": "Середній об'єм еритроцита (MCV)"
     },
     "info": {
-      "description": "Average volume of a single red blood cell.",
+      "description": "How big your red blood cells are on average — one of the most important clues for diagnosing the type of anemia. Small cells (low MCV) usually point to iron deficiency; large cells (high MCV) suggest vitamin B12 or folate deficiency. Normal-sized cells with low hemoglobin point to chronic disease or blood loss.",
       "scientific": "Mean corpuscular volume (MCV) is the average volume of individual erythrocytes, calculated by dividing the hematocrit by the red blood cell count and expressed in femtoliters (fL). It is the primary parameter for morphologically classifying anemias: microcytic (MCV < 80 fL, as in iron deficiency and thalassemia), normocytic (MCV 80-100 fL, as in anemia of chronic disease and acute blood loss), and macrocytic (MCV > 100 fL, as in vitamin B12/folate deficiency and myelodysplastic syndromes). MCV is measured directly by automated hematology analyzers using impedance or light scatter methods. MCV may be spuriously elevated by cold agglutinins, hyperglycemia (osmotic cell swelling), or marked reticulocytosis.",
       "why": "Classifies anemia as microcytic, normocytic, or macrocytic to guide diagnosis.",
       "frequency": "Annually, or as clinically indicated"
@@ -1927,7 +1927,7 @@
       "uk-UA": "Середній вміст гемоглобіну (MCH)"
     },
     "info": {
-      "description": "Average amount of hemoglobin per red blood cell.",
+      "description": "How much oxygen-carrying hemoglobin each red blood cell is loaded with — a measure of how well each cell is equipped for its job. Low MCH means cells are under-loaded (often from iron deficiency), producing pale, weak cells. High MCH means cells are oversized and overstuffed, typically from B12 or folate problems.",
       "scientific": "Mean corpuscular hemoglobin (MCH) is the average mass of hemoglobin per individual red blood cell, calculated by dividing the hemoglobin concentration by the red blood cell count and expressed in picograms (pg). MCH generally parallels MCV, with low values (hypochromia) occurring in iron deficiency anemia and thalassemia, and elevated values in macrocytic anemias from B12 or folate deficiency. MCH provides information about the hemoglobin content of average erythrocytes and is useful for classifying anemias alongside MCV and MCHC. MCH may be spuriously affected by lipemia, hyperbilirubinemia, and extremely high white blood cell counts that interfere with hemoglobin measurement.",
       "why": "Helps classify anemia types and complements MCV in evaluating red cell disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -1942,7 +1942,7 @@
       "uk-UA": "Середня концентрація гемоглобіну (MCHC)"
     },
     "info": {
-      "description": "Average concentration of hemoglobin within red blood cells.",
+      "description": "How densely packed the hemoglobin is inside each red blood cell — not just how much, but how concentrated. Low MCHC produces pale, \"washed-out\" cells (hypochromic), classic in iron deficiency. High MCHC is rare and can indicate spherocytosis, where cells lose their disc shape and become small, dense spheres.",
       "scientific": "Mean corpuscular hemoglobin concentration (MCHC) is the average concentration of hemoglobin within red blood cells, calculated by dividing hemoglobin by hematocrit and expressed in g/dL. It reflects the ratio of hemoglobin mass to red cell volume and is the most specific red cell index for detecting hypochromia. Low MCHC indicates hypochromic red cells as seen in iron deficiency anemia and thalassemia trait. Elevated MCHC (hyperchromia) is characteristic of hereditary spherocytosis (where cell volume is reduced while hemoglobin content is preserved) and may also be seen as a laboratory artifact in the presence of cold agglutinins or severe lipemia.",
       "why": "Detects hypochromic anemias such as iron deficiency and hereditary spherocytosis.",
       "frequency": "Annually, or as clinically indicated"
@@ -1957,7 +1957,7 @@
       "uk-UA": "Ширина розподілу еритроцитів (RDW-CV)"
     },
     "info": {
-      "description": "Coefficient of variation in red blood cell size, indicating size heterogeneity.",
+      "description": "How much your red blood cells vary in size — like checking whether a batch of manufactured parts is uniform or all over the place. A high RDW means your bone marrow is producing cells of very different sizes, which is an early sign of iron, B12, or folate deficiency — often rising before hemoglobin drops. It's one of the earliest warning signals of developing anemia.",
       "scientific": "Red cell distribution width coefficient of variation (RDW-CV) is a quantitative measure of the heterogeneity of red blood cell volumes (anisocytosis), calculated as the standard deviation of red cell volumes divided by MCV, expressed as a percentage. Normal values are typically 11.5-14.5%. Elevated RDW-CV indicates increased variability in red cell size and is a hallmark of iron deficiency anemia, where a mixed population of microcytic and normocytic cells coexists. RDW-CV is particularly useful for differentiating iron deficiency anemia (elevated RDW) from thalassemia trait (normal RDW), both of which present with low MCV. Recent evidence also associates elevated RDW with cardiovascular disease, heart failure, and increased all-cause mortality.",
       "why": "Helps differentiate anemia types; elevated in iron deficiency and mixed nutritional anemias.",
       "frequency": "Annually, or as clinically indicated"
@@ -1972,7 +1972,7 @@
       "uk-UA": "Ширина розподілу еритроцитів (RDW-SD)"
     },
     "info": {
-      "description": "Standard deviation of red blood cell volume distribution.",
+      "description": "Another way to measure red blood cell size variation, but in absolute units rather than as a percentage. It's more sensitive than RDW-CV at detecting two distinct populations of cells — for example, a mix of normal and abnormally large cells. This makes it particularly useful for catching early nutritional deficiencies or monitoring response to treatment.",
       "scientific": "Red cell distribution width standard deviation (RDW-SD) is an absolute measure of the dispersion of red blood cell volumes, expressed in femtoliters (fL), derived directly from the width of the erythrocyte volume distribution histogram at the 20% frequency level. Unlike RDW-CV which is a coefficient of variation normalized to MCV, RDW-SD provides a volume-independent measure of anisocytosis. RDW-SD is less affected by MCV changes, making it more sensitive for detecting early anisocytosis in macrocytic conditions. Elevated RDW-SD reflects the presence of red cell populations of disparate sizes (anisocytosis), aiding in the classification and differential diagnosis of anemias.",
       "why": "Provides a direct measure of red cell size variability to help classify anemias.",
       "frequency": "Annually, or as clinically indicated"
@@ -1987,7 +1987,7 @@
       "uk-UA": "Тромбоцити"
     },
     "info": {
-      "description": "Cell fragments essential for blood clotting and wound repair.",
+      "description": "Tiny cell fragments that act as your body's emergency repair patches — they rush to any break in a blood vessel, clump together, and form a plug to stop bleeding. Your body maintains a huge reserve because rapid blood loss demands an instant response. Too few platelets risk dangerous bleeding; too many increase the chance of unwanted clots.",
       "scientific": "Platelets (thrombocytes) are small, anucleate cell fragments derived from megakaryocytes in the bone marrow through a process regulated by thrombopoietin. They play a central role in primary hemostasis by adhering to damaged endothelium (via von Willebrand factor and glycoprotein Ib), activating and aggregating to form a platelet plug, and providing a phospholipid surface for coagulation factor assembly. Platelets also release granule contents (ADP, thromboxane A2, serotonin, growth factors) that amplify the hemostatic response and promote wound healing. Thrombocytopenia (low count) increases bleeding risk, while thrombocytosis (elevated count) may be reactive or indicate a myeloproliferative neoplasm.",
       "why": "Detects thrombocytopenia or thrombocytosis and evaluates bleeding or clotting risk.",
       "frequency": "Annually, or as clinically indicated"
@@ -2002,7 +2002,7 @@
       "uk-UA": "Середній об'єм тромбоцита (MPV)"
     },
     "info": {
-      "description": "Average size of platelets, reflecting bone marrow platelet production activity.",
+      "description": "The average size of your platelets — a window into how hard your bone marrow is working. Young, freshly made platelets are larger and more active, so a high MPV means your marrow is ramping up production, often to replace platelets being consumed. A rising MPV with falling platelet count is a sign the body is destroying or using up platelets faster than it can make them.",
       "scientific": "Mean platelet volume (MPV) is the average size of circulating platelets, measured in femtoliters (fL) by automated hematology analyzers. MPV reflects thrombopoietic activity, with larger platelets being younger, more metabolically active, and containing more granules and thromboxane A2 than smaller, older platelets. Elevated MPV is associated with increased platelet turnover states such as immune thrombocytopenia (ITP), where the bone marrow compensates for peripheral destruction by releasing larger, younger platelets. Decreased MPV may indicate hypoproductive thrombocytopenia from bone marrow failure. MPV has also been investigated as a cardiovascular risk marker, with higher values associated with acute myocardial infarction and stroke.",
       "why": "Helps distinguish causes of abnormal platelet counts (production vs. destruction).",
       "frequency": "Annually, or as clinically indicated"
@@ -2017,7 +2017,7 @@
       "uk-UA": "Ширина розподілу тромбоцитів (PDW)"
     },
     "info": {
-      "description": "Measure of variation in platelet size within the blood.",
+      "description": "How much your platelets vary in size — similar to what RDW does for red blood cells. A wide distribution means your bone marrow is releasing platelets of different ages and sizes, which can indicate active platelet turnover or production stress. It helps distinguish between different causes of abnormal platelet counts.",
       "scientific": "Platelet distribution width (PDW) quantifies the variation in platelet size within the blood, analogous to RDW for red blood cells. It is derived from the platelet volume distribution curve generated by automated hematology analyzers. Increased PDW indicates greater heterogeneity in platelet size, reflecting active thrombopoiesis with a mix of newly released large platelets and older smaller ones. PDW is useful for differentiating reactive thrombocytosis (usually normal PDW) from myeloproliferative disorders (often increased PDW). It has also been studied as an inflammatory marker and has shown associations with various conditions including sepsis, acute coronary syndromes, and malignancies.",
       "why": "Aids in differentiating reactive thrombocytosis from myeloproliferative disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -2032,7 +2032,7 @@
       "uk-UA": "Коефіцієнт великих тромбоцитів (P-LCR)"
     },
     "info": {
-      "description": "Percentage of platelets that exceed a defined large-size threshold.",
+      "description": "What proportion of your platelets are oversized — large platelets are young, fresh from the bone marrow, and more \"sticky\" (reactive) than smaller, older ones. A high ratio signals the marrow is actively pushing out new platelets, often in response to increased destruction or consumption. It's a useful complement to MPV for understanding platelet turnover.",
       "scientific": "Platelet large cell ratio (P-LCR) is the percentage of platelets exceeding a defined volume threshold (typically >12 fL), measured by automated hematology analyzers. A higher P-LCR indicates a greater proportion of large, young, more reactive platelets in circulation, suggesting increased platelet turnover or accelerated thrombopoiesis. Elevated P-LCR is observed in immune thrombocytopenia (where peripheral destruction stimulates compensatory megakaryopoiesis), myeloproliferative disorders, and inflammatory conditions. P-LCR is clinically useful alongside MPV and PDW for differentiating consumptive from hypoproductive causes of thrombocytopenia. It has also been investigated as a marker of platelet activation in cardiovascular disease.",
       "why": "Indicates increased platelet turnover and helps evaluate thrombocytopenic conditions.",
       "frequency": "Annually, or as clinically indicated"
@@ -2047,7 +2047,7 @@
       "uk-UA": "Великі тромбоцити (P-LCC)"
     },
     "info": {
-      "description": "Absolute count of large platelets in the blood.",
+      "description": "The actual number of oversized platelets in your blood, not just the percentage. Large platelets are younger, more metabolically active, and carry more clotting factors — so a high count of them means greater clotting potential. This marker adds precision to P-LCR by giving a concrete number rather than a ratio.",
       "scientific": "Platelet large cell count (P-LCC) is the absolute number of large platelets (typically >12 fL) per unit volume of blood, providing a quantitative complement to the P-LCR percentage. It is measured by automated hematology analyzers and reflects the absolute burden of large, immature, and more metabolically active platelets in circulation. An elevated P-LCC indicates increased thrombopoietic activity, as newly released platelets from megakaryocytes tend to be larger. P-LCC is useful in conjunction with other platelet indices (MPV, PDW, P-LCR) for evaluating the etiology of thrombocytopenia and assessing thrombopoietic reserve.",
       "why": "Supplements P-LCR to evaluate platelet production and destruction disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -2062,7 +2062,7 @@
       "uk-UA": "Тромбокрит (PCT)"
     },
     "info": {
-      "description": "Percentage of blood volume occupied by platelets, analogous to hematocrit for red cells.",
+      "description": "The platelet equivalent of hematocrit — what fraction of your blood volume is made up of platelets. It combines platelet count and size into a single number, giving a more complete picture of total platelet mass than count alone. Useful because someone with fewer but larger platelets may have the same clotting capacity as someone with many small ones.",
       "scientific": "Plateletcrit (PCT) is the volume fraction of whole blood occupied by platelets, analogous to hematocrit for red blood cells, calculated as the product of platelet count and mean platelet volume divided by 10,000 and expressed as a percentage. It provides an integrated measure of total platelet mass that accounts for both the number and size of circulating platelets. Plateletcrit is useful for assessing overall platelet hemostatic capacity, particularly when platelet count and MPV change in opposite directions (as in ITP, where count decreases but MPV increases). Abnormal plateletcrit values may indicate increased bleeding or thrombotic risk and are used alongside other platelet indices for comprehensive evaluation of platelet disorders.",
       "why": "Provides an overall measure of platelet mass to evaluate bleeding and clotting risk.",
       "frequency": "Annually, or as clinically indicated"
