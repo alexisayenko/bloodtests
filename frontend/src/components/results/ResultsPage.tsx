@@ -1,9 +1,10 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { useLang } from '../../i18n/LangContext';
 import { useData } from '../../data/DataContext';
 import { useAuth } from '../../auth/AuthContext';
 import { formatDate, formatResultValue, formatResultReference, isOutOfRange, isNearOutOfRange } from '../../utils/format';
-import { getResultDisplayName } from '../../utils/analysis';
+import { getResultDisplayName, getPanelName, getPanelAnalyses } from '../../utils/analysis';
+import { ResultRow } from './ResultRow';
 import type { ResultGroup, Result } from '../../types';
 
 type ResultsView = 'sessions' | 'out-of-range' | 'near-range';
@@ -15,17 +16,80 @@ interface FlaggedItem {
   kind: 'out' | 'near';
 }
 
+interface PanelGroup {
+  panelName: string;
+  color: string;
+  results: Result[];
+}
+
 interface Props {
   sessions: ResultGroup[];
   loading: boolean;
-  onShowDetail: (index: number) => void;
+  loadGroupItems: (sessionId: string) => Promise<Result[]>;
 }
 
-export function ResultsPage({ sessions, loading, onShowDetail }: Props) {
+export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
   const { t, lang } = useLang();
   const { user } = useAuth();
-  const { analysesCatalog } = useData();
+  const { analysesCatalog, panels } = useData();
   const [view, setView] = useState<ResultsView>('sessions');
+  const [expandedSessions, setExpandedSessions] = useState<Record<string, boolean>>({});
+  const [loadedItems, setLoadedItems] = useState<Record<string, Result[]>>({});
+
+  const toggleSession = useCallback(async (sessionId: string, items: Result[] | null) => {
+    if (expandedSessions[sessionId]) {
+      setExpandedSessions(prev => {
+        const next = { ...prev };
+        delete next[sessionId];
+        return next;
+      });
+      return;
+    }
+
+    // Load items if not yet loaded
+    if (!items && !loadedItems[sessionId]) {
+      const loaded = await loadGroupItems(sessionId);
+      setLoadedItems(prev => ({ ...prev, [sessionId]: loaded }));
+    }
+
+    setExpandedSessions(prev => ({ ...prev, [sessionId]: true }));
+  }, [expandedSessions, loadedItems, loadGroupItems]);
+
+  const getSessionItems = (g: ResultGroup): Result[] | null => {
+    return g.items || loadedItems[g.file] || null;
+  };
+
+  const groupByPanel = useCallback((items: Result[]): PanelGroup[] => {
+    const loincToPanel: Record<string, number> = {};
+    panels.forEach((p, pi) => {
+      getPanelAnalyses(p).forEach(loinc => { loincToPanel[loinc] = pi; });
+    });
+
+    const panelGroups: Record<number, PanelGroup> = {};
+    const ungrouped: Result[] = [];
+
+    for (const r of items) {
+      const pi = loincToPanel[r.loinc];
+      if (pi !== undefined) {
+        if (!panelGroups[pi]) {
+          panelGroups[pi] = {
+            panelName: getPanelName(panels[pi], lang),
+            color: panels[pi].color || '#d1d5db',
+            results: [],
+          };
+        }
+        panelGroups[pi].results.push(r);
+      } else {
+        ungrouped.push(r);
+      }
+    }
+
+    const sorted = Object.keys(panelGroups).map(Number).sort((a, b) => a - b).map(pi => panelGroups[pi]);
+    if (ungrouped.length > 0) {
+      sorted.push({ panelName: 'Other', color: '#d1d5db', results: ungrouped });
+    }
+    return sorted;
+  }, [panels, lang]);
 
   const flaggedItems = useMemo(() => {
     const out: FlaggedItem[] = [];
@@ -112,13 +176,56 @@ export function ResultsPage({ sessions, loading, onShowDetail }: Props) {
 
       {!loading && view === 'sessions' && (
         <div className="card-list">
-          {sessions.map((g, i) => (
-            <div key={g.file} className="card" onClick={() => onShowDetail(i)}>
-              <div className="card-date">{formatDate(g.date)}</div>
-              <div className="card-title">{g.place || 'Blood Test'}</div>
-              <div className="card-meta">{g.itemCount} {t('biomarkers')}</div>
-            </div>
-          ))}
+          {sessions.map((g) => {
+            const isExpanded = expandedSessions[g.file];
+            const items = getSessionItems(g);
+            const grouped = isExpanded && items ? groupByPanel(items) : null;
+
+            return (
+              <div key={g.file} className="session-card">
+                <div
+                  className="card"
+                  onClick={() => toggleSession(g.file, g.items)}
+                  style={{ borderRadius: isExpanded ? 'var(--radius) var(--radius) 0 0' : undefined }}
+                >
+                  <div className="card-date" style={{ justifyContent: 'space-between' }}>
+                    <span>{formatDate(g.date)}</span>
+                    <svg
+                      width="14" height="14" viewBox="0 0 14 14" fill="none"
+                      stroke="var(--gray-400)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+                      style={{ transform: isExpanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}
+                    >
+                      <path d="M3 5l4 4 4-4" />
+                    </svg>
+                  </div>
+                  <div className="card-title">{g.place || 'Blood Test'}</div>
+                  <div className="card-meta">{g.itemCount} {t('biomarkers')}</div>
+                </div>
+
+                {isExpanded && grouped && (
+                  <div className="results-table" style={{ marginTop: 0, borderRadius: '0 0 var(--radius) var(--radius)' }}>
+                    {grouped.map((pg, gi) => (
+                      <div key={gi}>
+                        <div
+                          className="result-panel-divider"
+                          style={{ '--row-panel-color': pg.color } as React.CSSProperties}
+                        >
+                          {pg.panelName}
+                        </div>
+                        {pg.results.map((r, i) => (
+                          <ResultRow key={`${gi}-${i}`} result={r} panelColor={pg.color} />
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {isExpanded && !items && (
+                  <div className="loading" style={{ padding: '16px' }}>Loading...</div>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
 
