@@ -45,6 +45,16 @@ const CHART_PANELS = [
       { loinc: '2571-8', color: '#eab308', yAxisId: 'right' },   // Triglycerides
     ],
   },
+  {
+    panelId: 'liver-function',
+    lines: [
+      { loinc: '1742-6', color: '#2563eb', yAxisId: 'left' },    // ALT
+      { loinc: '1920-8', color: '#dc2626', yAxisId: 'left' },    // AST
+      { loinc: '2324-2', color: '#eab308', yAxisId: 'left' },    // GGT
+      { loinc: '6768-6', color: '#16a34a', yAxisId: 'left' },    // ALP
+      { loinc: '1975-2', color: '#f97316', yAxisId: 'right' },   // Total Bilirubin
+    ],
+  },
 ];
 
 interface Props {
