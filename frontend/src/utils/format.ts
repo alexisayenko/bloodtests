@@ -1,9 +1,10 @@
 import type { Result } from '../types';
 
 export function formatDate(dateStr: string): string {
-  return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
-    year: 'numeric', month: 'short',
-  });
+  const d = new Date(dateStr + 'T00:00:00');
+  const year = d.getFullYear();
+  const month = d.toLocaleDateString('en-US', { month: 'short' });
+  return `${year} ${month}`;
 }
 
 export function formatResultValue(result: Result): string {
