@@ -164,49 +164,45 @@ img.panel-icon { display: none; }
 .btn-auth:hover { background: rgba(255,255,255,0.3); }
 .guest-badge { font-size: 11px; opacity: 0.7; }
 
-/* User menu bottom sheet */
+/* User menu dropdown */
+.header-controls { position: relative; }
 .user-menu-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 100;
-  animation: fadeIn 0.2s ease;
+  position: fixed; inset: 0; z-index: 100;
 }
-.user-menu-sheet {
-  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 100%; max-width: 600px; background: white;
-  border-radius: 16px 16px 0 0; padding: 12px 20px 32px;
-  z-index: 101; animation: slideUp 0.25s ease;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-}
-.user-menu-handle {
-  width: 36px; height: 4px; background: var(--gray-200);
-  border-radius: 2px; margin: 0 auto 16px;
+.user-menu-dropdown {
+  position: absolute; top: 100%; right: 0; margin-top: 8px;
+  width: 260px; background: white; border-radius: var(--radius);
+  padding: 12px; z-index: 101;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  animation: dropdownIn 0.15s ease;
+  color: var(--gray-900);
 }
 .user-menu-profile {
-  display: flex; align-items: center; gap: 12px;
-  padding-bottom: 16px; border-bottom: 1px solid var(--gray-200);
+  display: flex; align-items: center; gap: 10px; padding: 4px 0;
 }
-.user-menu-avatar { width: 44px; height: 44px; border-radius: 50%; }
-.user-menu-name { font-size: 16px; font-weight: 600; }
-.user-menu-email { font-size: 13px; color: var(--gray-500); }
-.user-menu-section { padding: 16px 0; border-bottom: 1px solid var(--gray-200); }
-.user-menu-label { font-size: 12px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-.user-menu-lang-group { display: flex; gap: 6px; }
+.user-menu-avatar { width: 36px; height: 36px; border-radius: 50%; }
+.user-menu-name { font-size: 14px; font-weight: 600; }
+.user-menu-email { font-size: 12px; color: var(--gray-500); }
+.user-menu-divider { height: 1px; background: var(--gray-200); margin: 10px 0; }
+.user-menu-section { padding: 2px 0; }
+.user-menu-label { font-size: 11px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.user-menu-lang-group { display: flex; gap: 4px; }
 .user-menu-lang-btn {
-  flex: 1; padding: 8px; border: 1px solid var(--gray-200); border-radius: 8px;
-  background: white; font-size: 13px; font-weight: 500; cursor: pointer;
+  flex: 1; padding: 6px; border: 1px solid var(--gray-200); border-radius: 6px;
+  background: white; font-size: 12px; font-weight: 500; cursor: pointer;
   font-family: inherit; color: var(--gray-900); transition: all 0.15s;
 }
 .user-menu-lang-btn.active {
   background: var(--primary); color: white; border-color: var(--primary);
 }
 .user-menu-signout {
-  width: 100%; padding: 12px; margin-top: 16px; border: none;
+  width: 100%; padding: 8px; border: none;
   background: var(--danger-light); color: var(--danger);
-  font-size: 15px; font-weight: 600; border-radius: 10px;
+  font-size: 13px; font-weight: 600; border-radius: 8px;
   cursor: pointer; font-family: inherit;
 }
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideUp { from { transform: translateX(-50%) translateY(100%); } to { transform: translateX(-50%) translateY(0); } }
+@keyframes dropdownIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (min-width: 640px) {
   .main { padding: 24px; padding-bottom: 80px; }

@@ -32,9 +32,7 @@ export function UserMenu({ open, onClose }: Props) {
   return (
     <>
       <div className="user-menu-overlay" onClick={onClose} />
-      <div className="user-menu-sheet">
-        <div className="user-menu-handle" />
-
+      <div className="user-menu-dropdown">
         <div className="user-menu-profile">
           {avatar && <img className="user-menu-avatar" src={avatar} alt="" />}
           <div>
@@ -42,6 +40,8 @@ export function UserMenu({ open, onClose }: Props) {
             <div className="user-menu-email">{email}</div>
           </div>
         </div>
+
+        <div className="user-menu-divider" />
 
         <div className="user-menu-section">
           <div className="user-menu-label">Language</div>
@@ -57,6 +57,8 @@ export function UserMenu({ open, onClose }: Props) {
             ))}
           </div>
         </div>
+
+        <div className="user-menu-divider" />
 
         <button className="user-menu-signout" onClick={handleSignOut}>
           Sign out
