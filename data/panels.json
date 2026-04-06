@@ -191,7 +191,7 @@
     "id": "iron-metabolism",
     "name": "Iron Metabolism",
     "color": "#CCCCCC",
-    "iconFile": "iron.png",
+    "iconFile": "iron_metabolism_v12.png",
     "iconOld": "<path d='M15 3H9v4l-3 3v4l3 3v4h6v-4l3-3v-4l-3-3V3z' fill='none' stroke='white' stroke-width='1.5' stroke-linejoin='round'/><path d='M9 10h6M9 14h6' stroke='white' stroke-width='1' stroke-linecap='round'/>",
     "lang": {
       "ru-RU": "Обмен железа",
