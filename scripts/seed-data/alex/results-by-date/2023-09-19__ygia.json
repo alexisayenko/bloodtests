@@ -1,0 +1,115 @@
+{
+  "date": "2023-09-19",
+  "labName": "Ygia",
+  "sourceFile": "2023-09-Ygia.pdf",
+  "items": [
+    {
+      "symbol": "TSH",
+      "analysis": "Thyroid-Stimulating Hormone",
+      "loinc": "11580-8",
+      "rawValue": "3.63",
+      "value": 3.63,
+      "valueQualifier": null,
+      "unit": "μIU/mL",
+      "refText": "0.35 - 4.94",
+      "refMin": 0.35,
+      "refMax": 4.94
+    },
+    {
+      "symbol": "FT4",
+      "analysis": "Free Thyroxine",
+      "loinc": "3024-7",
+      "rawValue": "1.12",
+      "value": 1.12,
+      "valueQualifier": null,
+      "unit": "ng/dL",
+      "refText": "0.70 - 1.48",
+      "refMin": 0.7,
+      "refMax": 1.48
+    },
+    {
+      "symbol": "FSH",
+      "analysis": "Follicle-Stimulating Hormone",
+      "loinc": "15067-2",
+      "rawValue": "3.29",
+      "value": 3.29,
+      "valueQualifier": null,
+      "unit": "mIU/mL",
+      "refText": "0.95 - 11.95",
+      "refMin": 0.95,
+      "refMax": 11.95
+    },
+    {
+      "symbol": "LH",
+      "analysis": "Luteinizing Hormone",
+      "loinc": "10501-5",
+      "rawValue": "2.50",
+      "value": 2.5,
+      "valueQualifier": null,
+      "unit": "mIU/mL",
+      "refText": "0.57 - 12.10",
+      "refMin": 0.57,
+      "refMax": 12.1
+    },
+    {
+      "symbol": "PRL",
+      "analysis": "Prolactin",
+      "loinc": "15081-3",
+      "rawValue": "10.3",
+      "value": 10.3,
+      "valueQualifier": null,
+      "unit": "ng/mL",
+      "refText": "3.5 - 19.4",
+      "refMin": 3.5,
+      "refMax": 19.4
+    },
+    {
+      "symbol": "T",
+      "analysis": "Testosterone (Total)",
+      "loinc": "14913-8",
+      "rawValue": "372",
+      "value": 372,
+      "valueQualifier": null,
+      "unit": "ng/dL",
+      "refText": "142 - 923",
+      "refMin": 142.0,
+      "refMax": 923.0
+    },
+    {
+      "symbol": "E2",
+      "analysis": "Estradiol",
+      "loinc": "2243-4",
+      "rawValue": "25",
+      "value": 25,
+      "valueQualifier": null,
+      "unit": "pg/mL",
+      "refText": "11 - 44",
+      "refMin": 11.0,
+      "refMax": 44.0
+    },
+    {
+      "symbol": "ACTH",
+      "analysis": "ACTH",
+      "loinc": "2141-0",
+      "rawValue": "45",
+      "value": 45,
+      "valueQualifier": null,
+      "unit": "pg/mL",
+      "refText": "< 46",
+      "refMin": null,
+      "refMax": 46.0
+    },
+    {
+      "symbol": null,
+      "analysis": "Cortisol",
+      "loinc": "2143-6",
+      "rawValue": "14.1",
+      "value": 14.1,
+      "valueQualifier": null,
+      "unit": "μg/dL",
+      "refText": "3.7 - 19.4",
+      "refMin": 3.7,
+      "refMax": 19.4
+    }
+  ]
+}

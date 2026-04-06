@@ -1,0 +1,151 @@
+{
+  "date": "2023-10-01",
+  "labName": "Ygia",
+  "sourceFile": "2023-10-Ygia-1.pdf",
+  "items": [
+    {
+      "symbol": "TSH",
+      "analysis": "Thyroid-Stimulating Hormone",
+      "loinc": "11580-8",
+      "rawValue": "2.23",
+      "value": 2.23,
+      "valueQualifier": null,
+      "unit": "μIU/mL",
+      "refText": "0.35 - 4.94",
+      "refMin": 0.35,
+      "refMax": 4.94
+    },
+    {
+      "symbol": "FT4",
+      "analysis": "Free Thyroxine",
+      "loinc": "3024-7",
+      "rawValue": "1.20",
+      "value": 1.20,
+      "valueQualifier": null,
+      "unit": "ng/dL",
+      "refText": "0.70 - 1.48",
+      "refMin": 0.7,
+      "refMax": 1.48
+    },
+    {
+      "symbol": "SHBG",
+      "analysis": "Sex Hormone-Binding Globulin",
+      "loinc": "2942-1",
+      "rawValue": "23.5",
+      "value": 23.5,
+      "valueQualifier": null,
+      "unit": "nmol/L",
+      "refText": "13.5 - 71.4",
+      "refMin": 13.5,
+      "refMax": 71.4
+    },
+    {
+      "symbol": "FSH",
+      "analysis": "Follicle-Stimulating Hormone",
+      "loinc": "15067-2",
+      "rawValue": "3.54",
+      "value": 3.54,
+      "valueQualifier": null,
+      "unit": "mIU/mL",
+      "refText": "0.95 - 11.95",
+      "refMin": 0.95,
+      "refMax": 11.95
+    },
+    {
+      "symbol": "LH",
+      "analysis": "Luteinizing Hormone",
+      "loinc": "10501-5",
+      "rawValue": "2.34",
+      "value": 2.34,
+      "valueQualifier": null,
+      "unit": "mIU/mL",
+      "refText": "0.57 - 12.10",
+      "refMin": 0.57,
+      "refMax": 12.1
+    },
+    {
+      "symbol": "T",
+      "analysis": "Testosterone (Total)",
+      "loinc": "14913-8",
+      "rawValue": "352",
+      "value": 352,
+      "valueQualifier": null,
+      "unit": "ng/dL",
+      "refText": "142 - 923",
+      "refMin": 142.0,
+      "refMax": 923.0
+    },
+    {
+      "symbol": "E2",
+      "analysis": "Estradiol",
+      "loinc": "2243-4",
+      "rawValue": "13",
+      "value": 13,
+      "valueQualifier": null,
+      "unit": "pg/mL",
+      "refText": "11 - 44",
+      "refMin": 11.0,
+      "refMax": 44.0
+    },
+    {
+      "symbol": "IGF-1",
+      "analysis": "IGF-1 (Somatomedin C)",
+      "loinc": "2484-4",
+      "rawValue": "147",
+      "value": 147,
+      "valueQualifier": null,
+      "unit": "ng/mL",
+      "refText": "84 - 283",
+      "refMin": 84.0,
+      "refMax": 283.0
+    },
+    {
+      "symbol": null,
+      "analysis": "Cortisol",
+      "loinc": "2143-6",
+      "rawValue": "14.1",
+      "value": 14.1,
+      "valueQualifier": null,
+      "unit": "μg/dL",
+      "refText": "3.7 - 19.4",
+      "refMin": 3.7,
+      "refMax": 19.4
+    },
+    {
+      "symbol": "GLU",
+      "analysis": "Glucose Serum",
+      "loinc": "2339-0",
+      "rawValue": "104",
+      "value": 104,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "74 - 106",
+      "refMin": 74.0,
+      "refMax": 106.0
+    },
+    {
+      "symbol": null,
+      "analysis": "Insulin",
+      "loinc": "20448-7",
+      "rawValue": "45",
+      "value": 45,
+      "valueQualifier": null,
+      "unit": "μU/mL",
+      "refText": "3 - 25",
+      "refMin": 3.0,
+      "refMax": 25.0
+    },
+    {
+      "symbol": null,
+      "analysis": "Calcitonin",
+      "loinc": "1992-7",
+      "rawValue": "0.9",
+      "value": 0.9,
+      "valueQualifier": null,
+      "unit": "pg/mL",
+      "refText": "< 18.2",
+      "refMin": null,
+      "refMax": 18.2
+    }
+  ]
+}
