@@ -53,11 +53,12 @@ jobs:
 
           # --- Devel branch (React app) ---
           if [ -d devel/frontend ]; then
-            cd devel/frontend
+            cd devel
+            D_COMMIT=$(git log -1 --format="%h")
+            D_DATETIME=$(git log -1 --format="%ci" | cut -c1-16)
+            cd frontend
             npm ci
-            npm run build
-            D_COMMIT=$(cd .. && git log -1 --format="%h")
-            D_DATETIME=$(cd .. && git log -1 --format="%ci" | cut -c1-16)
+            BUILD_INFO="build ${BUILD_NUM} · ${D_COMMIT} · ${D_DATETIME}" npm run build
             cd ../..
             rsync -a devel/frontend/dist/ _site/dev/
           elif [ -d devel ]; then
