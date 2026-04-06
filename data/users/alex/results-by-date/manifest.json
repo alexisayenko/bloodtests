@@ -1,0 +1,290 @@
+[
+  {
+    "date": "2013-06-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2013-06-01__ygia.json",
+    "items": 3,
+    "mappedItems": 3,
+    "numericItems": 3
+  },
+  {
+    "date": "2015-03-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2015-03-01__ygia.json",
+    "items": 2,
+    "mappedItems": 2,
+    "numericItems": 2
+  },
+  {
+    "date": "2015-11-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2015-11-01__ygia.json",
+    "items": 21,
+    "mappedItems": 21,
+    "numericItems": 21
+  },
+  {
+    "date": "2016-03-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2016-03-01__ygia.json",
+    "items": 10,
+    "mappedItems": 10,
+    "numericItems": 10
+  },
+  {
+    "date": "2018-05-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2018-05-01__ygia.json",
+    "items": 4,
+    "mappedItems": 4,
+    "numericItems": 4
+  },
+  {
+    "date": "2018-10-01",
+    "place": "MediLab",
+    "file": "results-by-date\\2018-10-01__medilab.json",
+    "items": 17,
+    "mappedItems": 17,
+    "numericItems": 17
+  },
+  {
+    "date": "2018-11-01",
+    "place": "MediLab",
+    "file": "results-by-date\\2018-11-01__medilab.json",
+    "items": 3,
+    "mappedItems": 3,
+    "numericItems": 3
+  },
+  {
+    "date": "2019-01-01",
+    "place": "MediLab",
+    "file": "results-by-date\\2019-01-01__medilab.json",
+    "items": 2,
+    "mappedItems": 2,
+    "numericItems": 2
+  },
+  {
+    "date": "2019-07-01",
+    "place": "MediLab",
+    "file": "results-by-date\\2019-07-01__medilab.json",
+    "items": 6,
+    "mappedItems": 6,
+    "numericItems": 6
+  },
+  {
+    "date": "2020-07-01",
+    "place": "MediLab",
+    "file": "results-by-date\\2020-07-01__medilab.json",
+    "items": 6,
+    "mappedItems": 6,
+    "numericItems": 6
+  },
+  {
+    "date": "2020-11-01",
+    "place": "MediLab",
+    "file": "results-by-date\\2020-11-01__medilab.json",
+    "items": 24,
+    "mappedItems": 24,
+    "numericItems": 24
+  },
+  {
+    "date": "2021-03-01",
+    "place": "MediLab",
+    "file": "results-by-date\\2021-03-01__medilab.json",
+    "items": 5,
+    "mappedItems": 5,
+    "numericItems": 5
+  },
+  {
+    "date": "2021-11-01",
+    "place": "MediLab",
+    "file": "results-by-date\\2021-11-01__medilab.json",
+    "items": 4,
+    "mappedItems": 4,
+    "numericItems": 4
+  },
+  {
+    "date": "2022-04-01",
+    "place": "MediLab / Ygia",
+    "file": "results-by-date\\2022-04-01__medilab-ygia.json",
+    "items": 11,
+    "mappedItems": 11,
+    "numericItems": 11
+  },
+  {
+    "date": "2022-05-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2022-05-01__ygia.json",
+    "items": 9,
+    "mappedItems": 9,
+    "numericItems": 9
+  },
+  {
+    "date": "2022-06-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2022-06-01__ygia.json",
+    "items": 22,
+    "mappedItems": 22,
+    "numericItems": 22
+  },
+  {
+    "date": "2022-12-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2022-12-01__ygia.json",
+    "items": 39,
+    "mappedItems": 39,
+    "numericItems": 34
+  },
+  {
+    "date": "2023-09-01",
+    "place": "Bioanalysis / Ygia",
+    "file": "results-by-date\\2023-09-01__bioanalysis-ygia.json",
+    "items": 55,
+    "mappedItems": 55,
+    "numericItems": 54
+  },
+  {
+    "date": "2023-10-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2023-10-01__ygia.json",
+    "items": 12,
+    "mappedItems": 12,
+    "numericItems": 12
+  },
+  {
+    "date": "2023-12-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2023-12-01__ygia.json",
+    "items": 2,
+    "mappedItems": 2,
+    "numericItems": 2
+  },
+  {
+    "date": "2024-05-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2024-05-01__ygia.json",
+    "items": 10,
+    "mappedItems": 10,
+    "numericItems": 10
+  },
+  {
+    "date": "2024-06-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2024-06-01__ygia.json",
+    "items": 8,
+    "mappedItems": 8,
+    "numericItems": 8
+  },
+  {
+    "date": "2024-07-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2024-07-01__ygia.json",
+    "items": 5,
+    "mappedItems": 5,
+    "numericItems": 5
+  },
+  {
+    "date": "2024-10-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2024-10-01__ygia.json",
+    "items": 44,
+    "mappedItems": 44,
+    "numericItems": 44
+  },
+  {
+    "date": "2024-12-01",
+    "place": "MediLab",
+    "file": "results-by-date\\2024-12-01__medilab.json",
+    "items": 28,
+    "mappedItems": 28,
+    "numericItems": 28
+  },
+  {
+    "date": "2025-03-01",
+    "place": "Ygia",
+    "file": "results-by-date\\2025-03-01__ygia.json",
+    "items": 11,
+    "mappedItems": 11,
+    "numericItems": 11
+  },
+  {
+    "date": "2025-05-01",
+    "place": "NeoGenesis",
+    "file": "results-by-date\\2025-05-01__neogenesis.json",
+    "items": 44,
+    "mappedItems": 44,
+    "numericItems": 44
+  },
+  {
+    "date": "2025-06-01",
+    "place": "NeoGenesis",
+    "file": "results-by-date\\2025-06-01__neogenesis.json",
+    "items": 15,
+    "mappedItems": 15,
+    "numericItems": 15
+  },
+  {
+    "date": "2025-08-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2025-08-01__unknown-lab.json",
+    "items": 10,
+    "mappedItems": 10,
+    "numericItems": 10
+  },
+  {
+    "date": "2025-11-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2025-11-01__unknown-lab.json",
+    "items": 1,
+    "mappedItems": 1,
+    "numericItems": 0
+  },
+  {
+    "date": "2026-01-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2026-01-01__unknown-lab.json",
+    "items": 43,
+    "mappedItems": 43,
+    "numericItems": 43
+  },
+  {
+    "date": "2026-02-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2026-02-01__unknown-lab.json",
+    "items": 1,
+    "mappedItems": 1,
+    "numericItems": 0
+  },
+  {
+    "date": "2026-05-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2026-05-01__unknown-lab.json",
+    "items": 34,
+    "mappedItems": 33,
+    "numericItems": 0
+  },
+  {
+    "date": "2026-11-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2026-11-01__unknown-lab.json",
+    "items": 86,
+    "mappedItems": 86,
+    "numericItems": 0
+  },
+  {
+    "date": "2027-05-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2027-05-01__unknown-lab.json",
+    "items": 13,
+    "mappedItems": 13,
+    "numericItems": 0
+  },
+  {
+    "date": "2027-11-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2027-11-01__unknown-lab.json",
+    "items": 80,
+    "mappedItems": 80,
+    "numericItems": 0
+  }
+]

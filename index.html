@@ -265,7 +265,9 @@
 
   <script>
     let analysesCatalog = {};  // loinc -> analysis object
-    let resultsCache = [];
+      let resultsCache = [];
+      let resultsManifestCache = [];
+      let resultsGroupItemsCache = {};
     let panelsCache = [];
     let plannedCache = [];
     let usersCache = [];
@@ -285,7 +287,29 @@
       'uk-UA': { results: 'Результати', planned: 'Заплановано', panels: 'Панелі', biomarker: 'Показник', value: 'Значення', reference: 'Норма', back: '← Назад', noResults: 'Немає записів аналізів.', noPlanned: 'Немає запланованих аналізів.', noPanels: 'Панелі не визначені.', overdue: 'Прострочено', biomarkers: 'показників', analyses: 'аналізів', navResults: 'Результати', navPlanned: 'План', navPanels: 'Панелі', readMore: 'Показати більше', showLess: 'Згорнути', frequencyPrefix: 'Здавати' },
     };
 
-    function t(key) { return uiStrings[currentLang][key] || uiStrings['en'][key]; }
+      function t(key) { return uiStrings[currentLang][key] || uiStrings['en'][key]; }
+
+      function getResultDisplayName(result) {
+        if (result.analysis) return result.analysis;
+        if (result.loinc) return getAnalysisName(result.loinc);
+        return 'Unknown Analysis';
+      }
+
+      function formatResultValue(result) {
+        if (result.rawValue != null && result.rawValue !== '') {
+          return `${result.rawValue} ${result.unit || ''}`.trim();
+        }
+        if (result.value == null) return '—';
+        return `${result.value} ${result.unit || ''}`.trim();
+      }
+
+      function formatResultReference(result) {
+        if (result.refText) return result.refText;
+        if (result.refMin != null && result.refMax != null) return result.refMin + ' – ' + result.refMax;
+        if (result.refMin != null) return '> ' + result.refMin;
+        if (result.refMax != null) return '< ' + result.refMax;
+        return '—';
+      }
 
     function setLang(lang) {
       currentLang = lang;
@@ -400,33 +424,53 @@
       loadUserData();
     }
 
-    async function loadUserData() {
-      if (!currentUserId) {
-        resultsCache = [];
-        plannedCache = [];
+      async function loadUserData() {
+        if (!currentUserId) {
+          resultsCache = [];
+          resultsManifestCache = [];
+          resultsGroupItemsCache = {};
+          plannedCache = [];
+          renderResultsList();
+          renderPlannedList(plannedCache);
+          return;
+        }
+        const [manifestRes, resultsRes, plannedRes] = await Promise.all([
+          fetch(`data/users/${currentUserId}/results-by-date/manifest.json`),
+          fetch(`data/users/${currentUserId}/results.json`),
+          fetch(`data/users/${currentUserId}/planned.json`),
+        ]);
+
+        resultsGroupItemsCache = {};
+        if (manifestRes.ok) {
+          resultsManifestCache = await manifestRes.json();
+          resultsManifestCache.sort((a, b) => b.date.localeCompare(a.date));
+          resultsCache = [];
+        } else {
+          resultsManifestCache = [];
+          resultsCache = await resultsRes.json();
+          resultsCache.sort((a, b) => b.date.localeCompare(a.date));
+        }
+        plannedCache = await plannedRes.json();
+        plannedCache.sort((a, b) => a.plannedDate.localeCompare(b.plannedDate));
+  
         renderResultsList();
         renderPlannedList(plannedCache);
-        return;
-      }
-      const [resultsRes, plannedRes] = await Promise.all([
-        fetch(`data/users/${currentUserId}/results.json`),
-        fetch(`data/users/${currentUserId}/planned.json`),
-      ]);
-
-      resultsCache = await resultsRes.json();
-      resultsCache.sort((a, b) => b.date.localeCompare(a.date));
-      plannedCache = await plannedRes.json();
-      plannedCache.sort((a, b) => a.plannedDate.localeCompare(b.plannedDate));
-
-      renderResultsList();
-      renderPlannedList(plannedCache);
     }
 
     // --- Results (grouped by date + place) ---
-    function groupResults() {
-      const groups = {};
-      resultsCache.forEach(r => {
-        const key = r.date + '|' + (r.place || '');
+      function groupResults() {
+        if (resultsManifestCache.length > 0) {
+          return resultsManifestCache.map(g => ({
+            date: g.date,
+            place: g.place || '',
+            file: g.file,
+            items: resultsGroupItemsCache[g.file] || null,
+            itemCount: g.items || 0,
+          }));
+        }
+        const groups = {};
+        resultsCache.forEach(r => {
+          const key = r.date + '|' + (r.place || '');
         if (!groups[key]) groups[key] = { date: r.date, place: r.place || '', items: [] };
         groups[key].items.push(r);
       });
@@ -439,11 +483,22 @@
       if (!currentUserId) {
         container.innerHTML = '<div class="empty-state">Select a user to view results.</div>';
         return;
-      }
-      if (resultsCache.length === 0) {
-        container.innerHTML = `<div class="empty-state">${t('noResults')}</div>`;
-        return;
-      }
+        }
+        if (resultsCache.length === 0) {
+          if (resultsManifestCache.length > 0) {
+            const groups = groupResults();
+            container.innerHTML = groups.map((g, i) => `
+              <div class="card" onclick="showDetail(${i})">
+                <div class="card-date">${formatDate(g.date)}</div>
+                <div class="card-title">${escHtml(g.place || 'Blood Test')}</div>
+                <div class="card-meta">${g.itemCount} ${t('biomarkers')}</div>
+              </div>
+            `).join('');
+            return;
+          }
+          container.innerHTML = `<div class="empty-state">${t('noResults')}</div>`;
+          return;
+        }
       const groups = groupResults();
       container.innerHTML = groups.map((g, i) => `
         <div class="card" onclick="showDetail(${i})">
@@ -454,26 +509,34 @@
       `).join('');
     }
 
-    function showDetail(groupIndex) {
-      const groups = groupResults();
-      const g = groups[groupIndex];
-      if (!g) return;
-
-      const valuesHtml = `
-        <div class="results-table">
-          <div class="results-header"><span>${t('biomarker')}</span><span>${t('value')}</span><span>${t('reference')}</span></div>
-          ${g.items.map(r => {
-            const oor = isOutOfRange(r);
-            return `<div class="results-row ${oor ? 'out-of-range' : ''}">
-              <span class="result-name">
-                ${escHtml(getAnalysisName(r.loinc))}
-                <br><span class="result-loinc"><a href="https://loinc.org/${encodeURIComponent(r.loinc)}" target="_blank" rel="noopener" class="loinc-link">LOINC ${escHtml(r.loinc)}</a>${r.method ? ' · ' + escHtml(r.method) : ''}</span>
-              </span>
-              <span class="result-value">${r.value} ${escHtml(r.unit || '')}</span>
-              <span class="result-ref">${r.refMin != null && r.refMax != null ? r.refMin + ' – ' + r.refMax : '—'}</span>
-            </div>`;
-          }).join('')}
-        </div>`;
+      async function showDetail(groupIndex) {
+        const groups = groupResults();
+        let g = groups[groupIndex];
+        if (!g) return;
+        if (!g.items && g.file) {
+          const groupRes = await fetch(`data/users/${currentUserId}/${g.file.replaceAll('\\', '/')}`);
+          if (!groupRes.ok) return;
+          const payload = await groupRes.json();
+          resultsGroupItemsCache[g.file] = payload.items || [];
+          g = { ...g, items: resultsGroupItemsCache[g.file] };
+        }
+        if (!g.items || g.items.length === 0) return;
+  
+        const valuesHtml = `
+          <div class="results-table">
+            <div class="results-header"><span>${t('biomarker')}</span><span>${t('value')}</span><span>${t('reference')}</span></div>
+            ${g.items.map(r => {
+              const oor = isOutOfRange(r);
+              return `<div class="results-row ${oor ? 'out-of-range' : ''}">
+                <span class="result-name">
+                  ${escHtml(getResultDisplayName(r))}
+                  <br><span class="result-loinc">${r.loinc ? `<a href="https://loinc.org/${encodeURIComponent(r.loinc)}" target="_blank" rel="noopener" class="loinc-link">LOINC ${escHtml(r.loinc)}</a>` : 'Unmapped'}${r.method ? ' · ' + escHtml(r.method) : ''}${r.symbol ? ' · ' + escHtml(r.symbol) : ''}</span>
+                </span>
+                <span class="result-value">${escHtml(formatResultValue(r))}</span>
+                <span class="result-ref">${escHtml(formatResultReference(r))}</span>
+              </div>`;
+            }).join('')}
+          </div>`;
 
       document.getElementById('detail-content').innerHTML = `
         <div class="detail-header">
