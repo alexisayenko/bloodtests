@@ -1,5 +1,53 @@
 [
   {
+    "date": "2024-05-01",
+    "labName": "Ygia",
+    "file": "results-by-date\\2024-05-01__ygia.json",
+    "items": 9,
+    "mappedItems": 9,
+    "numericItems": 9
+  },
+  {
+    "date": "2024-06-01",
+    "labName": "Ygia",
+    "file": "results-by-date\\2024-06-01__ygia.json",
+    "items": 8,
+    "mappedItems": 8,
+    "numericItems": 8
+  },
+  {
+    "date": "2024-07-01",
+    "labName": "Ygia",
+    "file": "results-by-date\\2024-07-01__ygia.json",
+    "items": 4,
+    "mappedItems": 4,
+    "numericItems": 4
+  },
+  {
+    "date": "2024-10-01",
+    "labName": "Ygia",
+    "file": "results-by-date\\2024-10-01__ygia.json",
+    "items": 40,
+    "mappedItems": 40,
+    "numericItems": 40
+  },
+  {
+    "date": "2024-12-09",
+    "labName": "MediLab",
+    "file": "results-by-date\\2024-12-09__medilab.json",
+    "items": 32,
+    "mappedItems": 32,
+    "numericItems": 32
+  },
+  {
+    "date": "2024-12-17",
+    "labName": "MediLab",
+    "file": "results-by-date\\2024-12-17__medilab.json",
+    "items": 25,
+    "mappedItems": 25,
+    "numericItems": 25
+  },
+  {
     "date": "2025-03-01",
     "labName": "Ygia",
     "file": "results-by-date\\2025-03-01__ygia.json",

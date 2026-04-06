@@ -1,0 +1,115 @@
+{
+  "date": "2024-05-01",
+  "labName": "Ygia",
+  "sourceFile": "2024-05-Ygia-1.pdf",
+  "items": [
+    {
+      "symbol": "ACTH",
+      "analysis": "ACTH",
+      "loinc": "2141-0",
+      "rawValue": "37.1",
+      "value": 37.1,
+      "valueQualifier": null,
+      "unit": "pg/mL",
+      "refText": "7.2 - 63.3",
+      "refMin": 7.2,
+      "refMax": 63.3
+    },
+    {
+      "symbol": null,
+      "analysis": "Cortisol",
+      "loinc": "2143-6",
+      "rawValue": "10.0",
+      "value": 10.0,
+      "valueQualifier": null,
+      "unit": "μg/dL",
+      "refText": "3.7 - 19.4",
+      "refMin": 3.7,
+      "refMax": 19.4
+    },
+    {
+      "symbol": "GLU",
+      "analysis": "Glucose Serum",
+      "loinc": "2339-0",
+      "rawValue": "98",
+      "value": 98,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "74 - 106",
+      "refMin": 74.0,
+      "refMax": 106.0
+    },
+    {
+      "symbol": "TC",
+      "analysis": "Cholesterol Total",
+      "loinc": "2093-3",
+      "rawValue": "306",
+      "value": 306,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "< 200",
+      "refMin": null,
+      "refMax": 200.0
+    },
+    {
+      "symbol": "HDL-C",
+      "analysis": "HDL Cholesterol",
+      "loinc": "2085-9",
+      "rawValue": "35",
+      "value": 35,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "> 40",
+      "refMin": 40.0,
+      "refMax": null
+    },
+    {
+      "symbol": "TRIG",
+      "analysis": "Triglycerides",
+      "loinc": "2571-8",
+      "rawValue": "381",
+      "value": 381,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "< 150",
+      "refMin": null,
+      "refMax": 150.0
+    },
+    {
+      "symbol": "LDL-C",
+      "analysis": "LDL Cholesterol",
+      "loinc": "13457-7",
+      "rawValue": "194",
+      "value": 194,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "< 110",
+      "refMin": null,
+      "refMax": 110.0
+    },
+    {
+      "symbol": null,
+      "analysis": "Uric Acid",
+      "loinc": "3084-1",
+      "rawValue": "7.8",
+      "value": 7.8,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "3.5 - 8.5",
+      "refMin": 3.5,
+      "refMax": 8.5
+    },
+    {
+      "symbol": null,
+      "analysis": "Insulin",
+      "loinc": "20448-7",
+      "rawValue": "11",
+      "value": 11,
+      "valueQualifier": null,
+      "unit": "μU/mL",
+      "refText": "3 - 25",
+      "refMin": 3.0,
+      "refMax": 25.0
+    }
+  ]
+}

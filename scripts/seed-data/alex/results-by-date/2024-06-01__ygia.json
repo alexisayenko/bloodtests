@@ -1,0 +1,103 @@
+{
+  "date": "2024-06-01",
+  "labName": "Ygia",
+  "sourceFile": "2024-06-Ygia-1.pdf",
+  "items": [
+    {
+      "symbol": "FSH",
+      "analysis": "Follicle-Stimulating Hormone",
+      "loinc": "15067-2",
+      "rawValue": "5.26",
+      "value": 5.26,
+      "valueQualifier": null,
+      "unit": "mIU/mL",
+      "refText": "0.95 - 11.95",
+      "refMin": 0.95,
+      "refMax": 11.95
+    },
+    {
+      "symbol": "LH",
+      "analysis": "Luteinizing Hormone",
+      "loinc": "10501-5",
+      "rawValue": "4.73",
+      "value": 4.73,
+      "valueQualifier": null,
+      "unit": "mIU/mL",
+      "refText": "0.57 - 12.10",
+      "refMin": 0.57,
+      "refMax": 12.1
+    },
+    {
+      "symbol": "T",
+      "analysis": "Testosterone (Total)",
+      "loinc": "14913-8",
+      "rawValue": "505",
+      "value": 505,
+      "valueQualifier": null,
+      "unit": "ng/dL",
+      "refText": "142 - 923",
+      "refMin": 142.0,
+      "refMax": 923.0
+    },
+    {
+      "symbol": "E2",
+      "analysis": "Estradiol",
+      "loinc": "2243-4",
+      "rawValue": "28",
+      "value": 28,
+      "valueQualifier": null,
+      "unit": "pg/mL",
+      "refText": "11 - 44",
+      "refMin": 11.0,
+      "refMax": 44.0
+    },
+    {
+      "symbol": null,
+      "analysis": "Cortisol",
+      "loinc": "2143-6",
+      "rawValue": "13.9",
+      "value": 13.9,
+      "valueQualifier": null,
+      "unit": "μg/dL",
+      "refText": "3.7 - 19.4",
+      "refMin": 3.7,
+      "refMax": 19.4
+    },
+    {
+      "symbol": "Ca",
+      "analysis": "Calcium",
+      "loinc": "49765-1",
+      "rawValue": "11.14",
+      "value": 11.14,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "8.40 - 10.20",
+      "refMin": 8.4,
+      "refMax": 10.2
+    },
+    {
+      "symbol": "Vit D",
+      "analysis": "25-OH Vitamin D",
+      "loinc": "49054-0",
+      "rawValue": "31",
+      "value": 31,
+      "valueQualifier": null,
+      "unit": "ng/mL",
+      "refText": "30 - 100",
+      "refMin": 30.0,
+      "refMax": 100.0
+    },
+    {
+      "symbol": "FT",
+      "analysis": "Free Testosterone",
+      "loinc": "2991-8",
+      "rawValue": "44.5",
+      "value": 44.5,
+      "valueQualifier": null,
+      "unit": "pg/mL",
+      "refText": "15.0 - 50.0",
+      "refMin": 15.0,
+      "refMax": 50.0
+    }
+  ]
+}

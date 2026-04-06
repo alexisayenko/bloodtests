@@ -4,7 +4,6 @@
   "sourceFile": "2025-08-NeoGenesis-1.pdf",
   "items": [
     {
-      "sourceFile": "2025-08-NeoGenesis-1.pdf",
       "symbol": "FSH",
       "analysis": "Follicle-Stimulating Hormone",
       "loinc": "15067-2",
@@ -17,7 +16,6 @@
       "refMax": 12.4
     },
     {
-      "sourceFile": "2025-08-NeoGenesis-1.pdf",
       "symbol": "LH",
       "analysis": "Luteinizing Hormone",
       "loinc": "10501-5",
@@ -30,7 +28,6 @@
       "refMax": 8.6
     },
     {
-      "sourceFile": "2025-08-NeoGenesis-1.pdf",
       "symbol": "FT",
       "analysis": "Free Testosterone",
       "loinc": "2991-8",
@@ -43,7 +40,6 @@
       "refMax": 40.0
     },
     {
-      "sourceFile": "2025-08-NeoGenesis-1.pdf",
       "symbol": "T",
       "analysis": "Testosterone (Total)",
       "loinc": "14913-8",
@@ -56,7 +52,6 @@
       "refMax": 31.8
     },
     {
-      "sourceFile": "2025-08-NeoGenesis-2.pdf",
       "symbol": "Zn",
       "analysis": "Zinc",
       "loinc": "35937",
@@ -69,7 +64,6 @@
       "refMax": 127.0
     },
     {
-      "sourceFile": "2025-08-NeoGenesis-2.pdf",
       "symbol": "DHEA-S",
       "analysis": "DHEA-S",
       "loinc": "2191-5",
@@ -82,7 +76,6 @@
       "refMax": 220.0
     },
     {
-      "sourceFile": "2025-08-NeoGenesis-2.pdf",
       "symbol": "E2",
       "analysis": "Estradiol",
       "loinc": "2243-4",
@@ -95,7 +88,6 @@
       "refMax": 40.0
     },
     {
-      "sourceFile": "2025-08-NeoGenesis-2.pdf",
       "symbol": "PRL",
       "analysis": "Total Prolactin",
       "loinc": "15081-3",
@@ -108,7 +100,6 @@
       "refMax": 530.0
     },
     {
-      "sourceFile": "2025-08-NeoGenesis-2.pdf",
       "symbol": "DHT",
       "analysis": "Dihydrotestosterone",
       "loinc": "26454-9",
@@ -121,7 +112,6 @@
       "refMax": 990.0
     },
     {
-      "sourceFile": "2025-08-NeoGenesis-2.pdf",
       "symbol": "SHBG",
       "analysis": "Sex Hormone-Binding Globulin",
       "loinc": "2942-1",

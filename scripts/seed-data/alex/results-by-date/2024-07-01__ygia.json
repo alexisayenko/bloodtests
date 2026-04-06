@@ -1,0 +1,55 @@
+{
+  "date": "2024-07-01",
+  "labName": "Ygia",
+  "sourceFile": "2024-07-Ygia.pdf",
+  "items": [
+    {
+      "symbol": "FSH",
+      "analysis": "Follicle-Stimulating Hormone",
+      "loinc": "15067-2",
+      "rawValue": "6.58",
+      "value": 6.58,
+      "valueQualifier": null,
+      "unit": "mIU/mL",
+      "refText": "0.95 - 11.95",
+      "refMin": 0.95,
+      "refMax": 11.95
+    },
+    {
+      "symbol": "LH",
+      "analysis": "Luteinizing Hormone",
+      "loinc": "10501-5",
+      "rawValue": "4.65",
+      "value": 4.65,
+      "valueQualifier": null,
+      "unit": "mIU/mL",
+      "refText": "0.57 - 12.10",
+      "refMin": 0.57,
+      "refMax": 12.1
+    },
+    {
+      "symbol": "T",
+      "analysis": "Testosterone (Total)",
+      "loinc": "14913-8",
+      "rawValue": "738",
+      "value": 738,
+      "valueQualifier": null,
+      "unit": "ng/dL",
+      "refText": "142 - 923",
+      "refMin": 142.0,
+      "refMax": 923.0
+    },
+    {
+      "symbol": "E2",
+      "analysis": "Estradiol",
+      "loinc": "2243-4",
+      "rawValue": "37",
+      "value": 37,
+      "valueQualifier": null,
+      "unit": "pg/mL",
+      "refText": "11 - 44",
+      "refMin": 11.0,
+      "refMax": 44.0
+    }
+  ]
+}

@@ -4,7 +4,6 @@
   "sourceFile": "2026-01-NeoGenesis-1.pdf",
   "items": [
     {
-      "sourceFile": "2026-01-NeoGenesis-1.pdf",
       "symbol": "FSH",
       "analysis": "Follicle-Stimulating Hormone",
       "loinc": "15067-2",
@@ -17,7 +16,6 @@
       "refMax": 12.4
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-1.pdf",
       "symbol": "LH",
       "analysis": "Luteinizing Hormone",
       "loinc": "10501-5",
@@ -30,7 +28,6 @@
       "refMax": 8.6
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-1.pdf",
       "symbol": "E2",
       "analysis": "Estradiol",
       "loinc": "2243-4",
@@ -43,7 +40,6 @@
       "refMax": 40.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-1.pdf",
       "symbol": "PRL",
       "analysis": "Total Prolactin",
       "loinc": "15081-3",
@@ -56,7 +52,6 @@
       "refMax": 360.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-1.pdf",
       "symbol": "FT",
       "analysis": "Free Testosterone",
       "loinc": "2991-8",
@@ -69,7 +64,6 @@
       "refMax": 176.4
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-1.pdf",
       "symbol": "T",
       "analysis": "Testosterone (Total)",
       "loinc": "14913-8",
@@ -82,7 +76,6 @@
       "refMax": 31.8
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "GLU",
       "analysis": "Glucose Serum",
       "loinc": "2339-0",
@@ -95,7 +88,6 @@
       "refMax": 110.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": null,
       "analysis": "Uric Acid",
       "loinc": "3084-1",
@@ -108,7 +100,6 @@
       "refMax": 7.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "TC",
       "analysis": "Cholesterol Total",
       "loinc": "2093-3",
@@ -121,7 +112,6 @@
       "refMax": 200.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "HDL-C",
       "analysis": "HDL Cholesterol",
       "loinc": "2085-9",
@@ -134,7 +124,6 @@
       "refMax": null
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "TRIG",
       "analysis": "Triglycerides",
       "loinc": "2571-8",
@@ -147,7 +136,6 @@
       "refMax": 150.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "LDL-C",
       "analysis": "LDL Cholesterol",
       "loinc": "13457-7",
@@ -160,7 +148,6 @@
       "refMax": 130.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "WBC",
       "analysis": "White Blood Cells",
       "loinc": "6690-2",
@@ -173,7 +160,6 @@
       "refMax": 11.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "NEUT#",
       "analysis": "Neutrophils",
       "loinc": "751-8",
@@ -186,7 +172,6 @@
       "refMax": 5.38
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "LYMPH#",
       "analysis": "Lymphocytes",
       "loinc": "731-0",
@@ -199,7 +184,6 @@
       "refMax": 3.57
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "MONO#",
       "analysis": "Monocytes",
       "loinc": "742-7",
@@ -212,7 +196,6 @@
       "refMax": 0.82
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "EO#",
       "analysis": "Eosinophils",
       "loinc": "711-2",
@@ -225,7 +208,6 @@
       "refMax": 0.54
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "BASO#",
       "analysis": "Basophils",
       "loinc": "704-7",
@@ -238,7 +220,6 @@
       "refMax": 0.08
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "NEUT%",
       "analysis": "Neutrophils",
       "loinc": "770-8",
@@ -251,7 +232,6 @@
       "refMax": 75.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "LYMPH%",
       "analysis": "Lymphocytes",
       "loinc": "736-9",
@@ -264,7 +244,6 @@
       "refMax": 45.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "MONO%",
       "analysis": "Monocytes",
       "loinc": "5905-5",
@@ -277,7 +256,6 @@
       "refMax": 12.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "EO%",
       "analysis": "Eosinophils",
       "loinc": "713-8",
@@ -290,7 +268,6 @@
       "refMax": 6.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "BASO%",
       "analysis": "Basophils",
       "loinc": "706-2",
@@ -303,7 +280,6 @@
       "refMax": 1.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "RBC",
       "analysis": "Red Blood Cells",
       "loinc": "789-8",
@@ -316,7 +292,6 @@
       "refMax": 5.5
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "HGB",
       "analysis": "Hemoglobin",
       "loinc": "718-7",
@@ -329,7 +304,6 @@
       "refMax": 18.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "HCT",
       "analysis": "Haematocrit",
       "loinc": "4544-3",
@@ -342,7 +316,6 @@
       "refMax": 54.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "MCV",
       "analysis": "Mean Corpuscular Volume",
       "loinc": "787-2",
@@ -355,7 +328,6 @@
       "refMax": 93.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "MCH",
       "analysis": "Mean Corpuscular Hemoglobin",
       "loinc": "785-6",
@@ -368,7 +340,6 @@
       "refMax": 32.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "MCHC",
       "analysis": "Mean Corpuscular Hemoglobin Concentration",
       "loinc": "786-4",
@@ -381,7 +352,6 @@
       "refMax": 36.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "RDW-CV",
       "analysis": "Red Cell Distribution Width - CV",
       "loinc": "788-0",
@@ -394,7 +364,6 @@
       "refMax": 16.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "RDW-SD",
       "analysis": "Red Cell Distribution Width - SD",
       "loinc": "21000-5",
@@ -407,7 +376,6 @@
       "refMax": 43.9
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "PLT",
       "analysis": "Platelets",
       "loinc": "777-3",
@@ -420,7 +388,6 @@
       "refMax": 400.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "MPV",
       "analysis": "Mean Platelet Volume",
       "loinc": "32623-1",
@@ -433,7 +400,6 @@
       "refMax": 12.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "FT3",
       "analysis": "Free Triiodothyronine",
       "loinc": "3051-0",
@@ -446,7 +412,6 @@
       "refMax": 4.4
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "FT4",
       "analysis": "Free Thyroxine",
       "loinc": "3024-7",
@@ -459,7 +424,6 @@
       "refMax": 2.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "TSH",
       "analysis": "Thyroid-Stimulating Hormone",
       "loinc": "11580-8",
@@ -472,7 +436,6 @@
       "refMax": 4.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": null,
       "analysis": "Insulin",
       "loinc": "20448-7",
@@ -485,7 +448,6 @@
       "refMax": 24.9
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "SHBG",
       "analysis": "Sex Hormone-Binding Globulin",
       "loinc": "2942-1",
@@ -498,7 +460,6 @@
       "refMax": 64.0
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": null,
       "analysis": "Cortisol",
       "loinc": "2143-6",
@@ -511,7 +472,6 @@
       "refMax": 22.4
     },
     {
-      "sourceFile": "2026-01-NeoGenesis-2.pdf",
       "symbol": "hsCRP",
       "analysis": "high-sensitivity CRP",
       "loinc": "30522-7",

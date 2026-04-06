@@ -4,7 +4,6 @@
   "sourceFile": "2025-03-Ygia-1.pdf",
   "items": [
     {
-      "sourceFile": "2025-03-Ygia-1.pdf",
       "symbol": "PSA",
       "analysis": "PSA",
       "loinc": "2857-1",
@@ -17,7 +16,6 @@
       "refMax": 4.0
     },
     {
-      "sourceFile": "2025-03-Ygia-2.pdf",
       "symbol": "SHBG",
       "analysis": "Sex Hormone-Binding Globulin",
       "loinc": "13967-5",
@@ -30,7 +28,6 @@
       "refMax": 71.4
     },
     {
-      "sourceFile": "2025-03-Ygia-2.pdf",
       "symbol": "FSH",
       "analysis": "Follicle-Stimulating Hormone",
       "loinc": "15067-2",
@@ -43,7 +40,6 @@
       "refMax": 11.95
     },
     {
-      "sourceFile": "2025-03-Ygia-2.pdf",
       "symbol": "LH",
       "analysis": "Luteinizing Hormone",
       "loinc": "10501-5",
@@ -56,7 +52,6 @@
       "refMax": 12.1
     },
     {
-      "sourceFile": "2025-03-Ygia-2.pdf",
       "symbol": "FT",
       "analysis": "Free Testosterone",
       "loinc": "2991-8",
@@ -69,7 +64,6 @@
       "refMax": 50.0
     },
     {
-      "sourceFile": "2025-03-Ygia-2.pdf",
       "symbol": "T",
       "analysis": "Testosterone (Total)",
       "loinc": "14913-8",
@@ -82,7 +76,6 @@
       "refMax": 923.0
     },
     {
-      "sourceFile": "2025-03-Ygia-2.pdf",
       "symbol": "E2",
       "analysis": "Estradiol",
       "loinc": "2243-4",
@@ -95,7 +88,6 @@
       "refMax": 44.0
     },
     {
-      "sourceFile": "2025-03-Ygia-2.pdf",
       "symbol": "ACTH",
       "analysis": "ACTH",
       "loinc": "2141-0",
@@ -108,7 +100,6 @@
       "refMax": 63.3
     },
     {
-      "sourceFile": "2025-03-Ygia-2.pdf",
       "symbol": null,
       "analysis": "Cortisol",
       "loinc": "2143-6",
@@ -121,7 +112,6 @@
       "refMax": 19.4
     },
     {
-      "sourceFile": "2025-03-Ygia-3.pdf",
       "symbol": "GLU",
       "analysis": "Glucose Serum",
       "loinc": "2339-0",
@@ -134,7 +124,6 @@
       "refMax": 106.0
     },
     {
-      "sourceFile": "2025-03-Ygia-3.pdf",
       "symbol": null,
       "analysis": "Insulin",
       "loinc": "20448-7",
