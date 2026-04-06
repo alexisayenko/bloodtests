@@ -1,16 +1,19 @@
 import { useLang } from '../../i18n/LangContext';
 import { useData } from '../../data/DataContext';
 import { getResultDisplayName } from '../../utils/analysis';
-import { formatResultValue, formatResultReference, isOutOfRange } from '../../utils/format';
+import { formatResultValue, formatResultReference, isOutOfRange, isNearOutOfRange } from '../../utils/format';
 import type { Result } from '../../types';
 
 export function ResultRow({ result }: { result: Result }) {
   const { lang } = useLang();
   const { analysesCatalog } = useData();
   const oor = isOutOfRange(result);
+  const near = isNearOutOfRange(result);
+
+  const className = `results-row${oor ? ' out-of-range' : near ? ' near-out-of-range' : ''}`;
 
   return (
-    <div className={`results-row${oor ? ' out-of-range' : ''}`}>
+    <div className={className}>
       <span className="result-name">
         {getResultDisplayName(result, analysesCatalog, lang)}
         <br />

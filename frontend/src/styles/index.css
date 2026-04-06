@@ -91,6 +91,8 @@ body {
 }
 .results-row.out-of-range { background: var(--danger-light); }
 .results-row.out-of-range .result-value { color: var(--danger); font-weight: 600; }
+.results-row.near-out-of-range { background: #fffbeb; }
+.results-row.near-out-of-range .result-value { color: #d97706; font-weight: 600; }
 .result-name { font-size: 16px; font-weight: 500; }
 .result-loinc { font-size: 13px; color: var(--gray-400); line-height: 1.6; }
 .loinc-link { color: var(--gray-400); text-decoration: none; }

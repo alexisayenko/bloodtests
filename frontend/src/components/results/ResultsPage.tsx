@@ -2,16 +2,17 @@ import { useState, useMemo } from 'react';
 import { useLang } from '../../i18n/LangContext';
 import { useData } from '../../data/DataContext';
 import { useAuth } from '../../auth/AuthContext';
-import { formatDate, formatResultValue, formatResultReference, isOutOfRange } from '../../utils/format';
+import { formatDate, formatResultValue, formatResultReference, isOutOfRange, isNearOutOfRange } from '../../utils/format';
 import { getResultDisplayName } from '../../utils/analysis';
 import type { ResultGroup, Result } from '../../types';
 
-type ResultsView = 'sessions' | 'out-of-range';
+type ResultsView = 'sessions' | 'out-of-range' | 'near-range';
 
-interface OutOfRangeItem {
+interface FlaggedItem {
   result: Result;
   date: string;
   place: string;
+  kind: 'out' | 'near';
 }
 
 interface Props {
@@ -26,20 +27,49 @@ export function ResultsPage({ sessions, loading, onShowDetail }: Props) {
   const { analysesCatalog } = useData();
   const [view, setView] = useState<ResultsView>('sessions');
 
-  const outOfRangeItems = useMemo(() => {
-    const items: OutOfRangeItem[] = [];
+  const flaggedItems = useMemo(() => {
+    const out: FlaggedItem[] = [];
+    const near: FlaggedItem[] = [];
     for (const session of sessions) {
       if (!session.items) continue;
       for (const r of session.items) {
         if (isOutOfRange(r)) {
-          items.push({ result: r, date: session.date, place: session.place });
+          out.push({ result: r, date: session.date, place: session.place, kind: 'out' });
+        } else if (isNearOutOfRange(r)) {
+          near.push({ result: r, date: session.date, place: session.place, kind: 'near' });
         }
       }
     }
-    return items;
+    return { out, near, all: [...out, ...near] };
   }, [sessions]);
 
-  const oorCount = outOfRangeItems.length;
+  const renderFlaggedList = (items: FlaggedItem[]) => {
+    if (items.length === 0) {
+      return <div className="empty-state">All biomarkers are within range 🎉</div>;
+    }
+    return (
+      <div className="results-table">
+        <div className="results-header">
+          <span>{t('biomarker')}</span>
+          <span>{t('value')}</span>
+          <span>{t('reference')}</span>
+        </div>
+        {items.map((item, i) => (
+          <div key={i} className={`results-row ${item.kind === 'out' ? 'out-of-range' : 'near-out-of-range'}`}>
+            <span className="result-name">
+              {getResultDisplayName(item.result, analysesCatalog, lang)}
+              <br />
+              <span className="result-loinc">
+                {formatDate(item.date)} · {item.place}
+              </span>
+            </span>
+            <span className="result-value">{formatResultValue(item.result)}</span>
+            <span className="result-ref">{formatResultReference(item.result)}</span>
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div>
@@ -56,9 +86,16 @@ export function ResultsPage({ sessions, loading, onShowDetail }: Props) {
           <button
             className={`view-toggle-btn${view === 'out-of-range' ? ' active' : ''}`}
             onClick={() => setView('out-of-range')}
-            style={{ display: 'flex', alignItems: 'center', gap: '4px' }}
+            style={{ color: view === 'out-of-range' ? 'white' : '#dc2626' }}
           >
-            ⚠️ {oorCount}
+            ⚠ {flaggedItems.out.length}
+          </button>
+          <button
+            className={`view-toggle-btn${view === 'near-range' ? ' active' : ''}`}
+            onClick={() => setView('near-range')}
+            style={{ color: view === 'near-range' ? 'white' : '#d97706' }}
+          >
+            ⚠ {flaggedItems.all.length}
           </button>
         </div>
       )}
@@ -83,34 +120,8 @@ export function ResultsPage({ sessions, loading, onShowDetail }: Props) {
         </div>
       )}
 
-      {!loading && view === 'out-of-range' && (
-        <div>
-          {oorCount === 0 ? (
-            <div className="empty-state">All biomarkers are within range 🎉</div>
-          ) : (
-            <div className="results-table">
-              <div className="results-header">
-                <span>{t('biomarker')}</span>
-                <span>{t('value')}</span>
-                <span>{t('reference')}</span>
-              </div>
-              {outOfRangeItems.map((item, i) => (
-                <div key={i} className="results-row out-of-range">
-                  <span className="result-name">
-                    {getResultDisplayName(item.result, analysesCatalog, lang)}
-                    <br />
-                    <span className="result-loinc">
-                      {formatDate(item.date)} · {item.place}
-                    </span>
-                  </span>
-                  <span className="result-value">{formatResultValue(item.result)}</span>
-                  <span className="result-ref">{formatResultReference(item.result)}</span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+      {!loading && view === 'out-of-range' && renderFlaggedList(flaggedItems.out)}
+      {!loading && view === 'near-range' && renderFlaggedList(flaggedItems.all)}
     </div>
   );
 }

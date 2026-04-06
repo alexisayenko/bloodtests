@@ -32,3 +32,11 @@ export function isOutOfRange(r: Result): boolean {
   if (r.refMin == null || r.refMax == null || r.value == null) return false;
   return r.value < r.refMin || r.value > r.refMax;
 }
+
+export function isNearOutOfRange(r: Result): boolean {
+  if (r.refMin == null || r.refMax == null || r.value == null) return false;
+  if (isOutOfRange(r)) return false;
+  const range = r.refMax - r.refMin;
+  const margin = range * 0.1;
+  return r.value < r.refMin + margin || r.value > r.refMax - margin;
+}
