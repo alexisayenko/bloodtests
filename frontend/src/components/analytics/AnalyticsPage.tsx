@@ -1,25 +1,51 @@
-import { useMemo } from 'react';
-import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
-  ReferenceArea, ResponsiveContainer, Legend,
-} from 'recharts';
+import { useState, useMemo } from 'react';
 import { useLang } from '../../i18n/LangContext';
 import { useData } from '../../data/DataContext';
 import { useAuth } from '../../auth/AuthContext';
-import { getAnalysisName } from '../../utils/analysis';
+import { getPanelName } from '../../utils/analysis';
+import { PanelIcon } from '../panels/PanelIcon';
+import { PanelChartPage } from './PanelChartPage';
 import type { ResultGroup, Result } from '../../types';
 
-// Thyroid panel LOINC codes
-const THYROID_LOINCS = [
-  { loinc: '11580-8', color: '#2563eb', yAxisId: 'left' },   // TSH (µIU/mL, ~0.4-5)
-  { loinc: '3051-0', color: '#dc2626', yAxisId: 'right' },   // FT3 (pg/mL, ~1.7-3.7)
-  { loinc: '3024-7', color: '#eab308', yAxisId: 'right' },   // FT4 (ng/dL, ~0.7-2.0)
+// Panels that have meaningful chart configurations
+const CHART_PANELS = [
+  {
+    panelId: 'thyroid',
+    lines: [
+      { loinc: '11580-8', color: '#2563eb', yAxisId: 'left' },   // TSH
+      { loinc: '3051-0', color: '#dc2626', yAxisId: 'right' },   // FT3
+      { loinc: '3024-7', color: '#eab308', yAxisId: 'right' },   // FT4
+    ],
+  },
+  {
+    panelId: 'hpg-axis',
+    lines: [
+      { loinc: '14913-8', color: '#2563eb', yAxisId: 'left' },   // Testosterone
+      { loinc: '2991-8', color: '#dc2626', yAxisId: 'left' },    // Free Testosterone
+      { loinc: '2942-1', color: '#eab308', yAxisId: 'right' },   // SHBG
+      { loinc: '15067-2', color: '#16a34a', yAxisId: 'right' },  // FSH
+      { loinc: '10501-5', color: '#9333ea', yAxisId: 'right' },  // LH
+      { loinc: '2243-4', color: '#f97316', yAxisId: 'right' },   // Estradiol
+    ],
+  },
+  {
+    panelId: 'glucose-metabolism',
+    lines: [
+      { loinc: '2339-0', color: '#2563eb', yAxisId: 'left' },    // Glucose
+      { loinc: '20448-7', color: '#dc2626', yAxisId: 'right' },  // Insulin
+      { loinc: '4548-4', color: '#eab308', yAxisId: 'right' },   // HbA1c
+    ],
+  },
+  {
+    panelId: 'lipid-metabolism',
+    lines: [
+      { loinc: '2093-3', color: '#2563eb', yAxisId: 'left' },    // Total Cholesterol
+      { loinc: '2085-9', color: '#16a34a', yAxisId: 'left' },    // HDL
+      { loinc: '13457-7', color: '#dc2626', yAxisId: 'left' },   // LDL
+      { loinc: '2571-8', color: '#eab308', yAxisId: 'right' },   // Triglycerides
+    ],
+  },
 ];
-
-interface DataPoint {
-  date: string;
-  [key: string]: number | string | null;
-}
 
 interface Props {
   sessions: ResultGroup[];
@@ -29,47 +55,21 @@ interface Props {
 export function AnalyticsPage({ sessions, loading }: Props) {
   const { t, lang } = useLang();
   const { user } = useAuth();
-  const { analysesCatalog } = useData();
+  const { panels, analysesCatalog } = useData();
+  const [selectedPanelId, setSelectedPanelId] = useState<string | null>(null);
 
-  // Build combined dataset: one row per date, columns per biomarker
-  const { chartData, refRanges, units } = useMemo(() => {
-    // Collect all results by date and loinc
-    const byDate: Record<string, Record<string, Result>> = {};
+  // Index results by loinc
+  const resultsByLoinc = useMemo(() => {
+    const map: Record<string, { date: string; result: Result }[]> = {};
     for (const session of sessions) {
       if (!session.items) continue;
       for (const r of session.items) {
         if (!r.loinc || r.value == null) continue;
-        if (!THYROID_LOINCS.find(t => t.loinc === r.loinc)) continue;
-        if (!byDate[session.date]) byDate[session.date] = {};
-        byDate[session.date][r.loinc] = r;
+        if (!map[r.loinc]) map[r.loinc] = [];
+        map[r.loinc].push({ date: session.date, result: r });
       }
     }
-
-    // Build chart data sorted by date
-    const dates = Object.keys(byDate).sort();
-    const data: DataPoint[] = dates.map(date => {
-      const row: DataPoint = { date: date.slice(0, 7) }; // YYYY-MM
-      for (const t of THYROID_LOINCS) {
-        const r = byDate[date]?.[t.loinc];
-        row[t.loinc] = r?.value ?? null;
-      }
-      return row;
-    });
-
-    // Get reference ranges from any result
-    const refs: Record<string, { min: number | null; max: number | null }> = {};
-    const unitMap: Record<string, string> = {};
-    for (const dateResults of Object.values(byDate)) {
-      for (const t of THYROID_LOINCS) {
-        const r = dateResults[t.loinc];
-        if (r && !refs[t.loinc]) {
-          refs[t.loinc] = { min: r.refMin, max: r.refMax };
-          unitMap[t.loinc] = r.unit || '';
-        }
-      }
-    }
-
-    return { chartData: data, refRanges: refs, units: unitMap };
+    return map;
   }, [sessions]);
 
   if (loading) return <div className="loading">Loading...</div>;
@@ -82,112 +82,57 @@ export function AnalyticsPage({ sessions, loading }: Props) {
     );
   }
 
-  // Compute Y domains
-  const leftLoincs = THYROID_LOINCS.filter(t => t.yAxisId === 'left');
-  const rightLoincs = THYROID_LOINCS.filter(t => t.yAxisId === 'right');
+  // Find selected chart config and panel
+  const selectedConfig = CHART_PANELS.find(c => c.panelId === selectedPanelId);
+  const selectedPanel = panels.find(p => p.id === selectedPanelId);
 
-  const getRange = (loincs: typeof THYROID_LOINCS) => {
-    let min = Infinity, max = -Infinity;
-    for (const row of chartData) {
-      for (const t of loincs) {
-        const v = row[t.loinc] as number | null;
-        if (v != null) { min = Math.min(min, v); max = Math.max(max, v); }
-        const ref = refRanges[t.loinc];
-        if (ref?.min != null) min = Math.min(min, ref.min);
-        if (ref?.max != null) max = Math.max(max, ref.max);
-      }
-    }
-    const pad = (max - min) * 0.15 || 0.5;
-    return [Math.max(0, min - pad), max + pad];
-  };
+  if (selectedConfig && selectedPanel) {
+    return (
+      <PanelChartPage
+        panel={selectedPanel}
+        lines={selectedConfig.lines}
+        resultsByLoinc={resultsByLoinc}
+        analysesCatalog={analysesCatalog}
+        onBack={() => setSelectedPanelId(null)}
+      />
+    );
+  }
 
-  const [leftMin, leftMax] = getRange(leftLoincs);
-  const [rightMin, rightMax] = getRange(rightLoincs);
-
-  // Build left axis label
-  const leftUnits = [...new Set(leftLoincs.map(t => units[t.loinc]).filter(Boolean))].join(', ');
-  const rightUnits = [...new Set(rightLoincs.map(t => units[t.loinc]).filter(Boolean))].join(', ');
+  // Landing page: show available panels as cards
+  const availablePanels = CHART_PANELS.map(config => {
+    const panel = panels.find(p => p.id === config.panelId);
+    if (!panel) return null;
+    const hasData = config.lines.some(l => resultsByLoinc[l.loinc]?.length > 0);
+    return { panel, config, hasData };
+  }).filter(Boolean) as { panel: typeof panels[0]; config: typeof CHART_PANELS[0]; hasData: boolean }[];
 
   return (
     <div>
       <h2 className="section-title">Analytics</h2>
-
-      <div className="panel-chart-group" style={{ '--panel-color': '#FFF2CC' } as React.CSSProperties}>
-        <div className="panel-chart-header">
-          <span>Thyroid Function</span>
-        </div>
-        <div className="panel-chart-body">
-          <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={chartData} margin={{ top: 12, right: 12, bottom: 4, left: -4 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-
-              {/* Reference areas for each biomarker */}
-              {leftLoincs.map(t => {
-                const ref = refRanges[t.loinc];
-                if (!ref?.min || !ref?.max) return null;
-                return (
-                  <ReferenceArea
-                    key={`ref-${t.loinc}`}
-                    yAxisId="left"
-                    y1={ref.min}
-                    y2={ref.max}
-                    fill={t.color}
-                    fillOpacity={0.06}
-                    strokeOpacity={0}
-                  />
-                );
-              })}
-
-              <XAxis
-                dataKey="date"
-                tick={{ fontSize: 11, fill: '#9ca3af' }}
-                tickLine={false}
-                axisLine={{ stroke: '#e5e7eb' }}
-              />
-              <YAxis
-                yAxisId="left"
-                domain={[leftMin, leftMax]}
-                tick={{ fontSize: 10, fill: '#9ca3af' }}
-                tickLine={false}
-                axisLine={false}
-                width={50}
-                label={{ value: leftUnits, angle: -90, position: 'insideLeft', style: { fontSize: 10, fill: '#9ca3af' }, offset: 10 }}
-              />
-              <YAxis
-                yAxisId="right"
-                orientation="right"
-                domain={[rightMin, rightMax]}
-                tick={{ fontSize: 10, fill: '#9ca3af' }}
-                tickLine={false}
-                axisLine={false}
-                width={50}
-                label={{ value: rightUnits, angle: 90, position: 'insideRight', style: { fontSize: 10, fill: '#9ca3af' }, offset: 10 }}
-              />
-              <Tooltip
-                contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e5e7eb' }}
-              />
-              <Legend
-                wrapperStyle={{ fontSize: 12 }}
-              />
-
-              {THYROID_LOINCS.map(t => (
-                <Line
-                  key={t.loinc}
-                  type="monotone"
-                  dataKey={t.loinc}
-                  yAxisId={t.yAxisId}
-                  name={getAnalysisName(t.loinc, analysesCatalog, lang)}
-                  stroke={t.color}
-                  strokeWidth={2}
-                  dot={{ r: 3.5, fill: t.color, stroke: 'white', strokeWidth: 2 }}
-                  activeDot={{ r: 5 }}
-                  connectNulls
-                  label={{ position: 'top', fontSize: 10, fill: t.color }}
-                />
-              ))}
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
+      <div className="card-list">
+        {availablePanels.map(({ panel, hasData }) => (
+          <div
+            key={panel.id}
+            className={`card${!hasData ? ' card-disabled' : ''}`}
+            onClick={() => hasData && setSelectedPanelId(panel.id)}
+            style={{ opacity: hasData ? 1 : 0.5 }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <div style={{
+                width: '40px', height: '40px', borderRadius: '10px',
+                background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <PanelIcon panel={panel} />
+              </div>
+              <div>
+                <div className="card-title" style={{ marginBottom: 0 }}>{getPanelName(panel, lang)}</div>
+                <div className="card-meta">
+                  {hasData ? 'View charts →' : 'No data yet'}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
