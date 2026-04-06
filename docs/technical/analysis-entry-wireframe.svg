@@ -6,7 +6,7 @@
   <text x="70" y="80" font-size="22" fill="#333" font-weight="bold" font-style="italic">Display Name</text>
 
   <!-- Acronyms and synonyms -->
-  <text x="70" y="105" font-size="15" fill="#333" font-style="italic">Acronyms and other synonyms in English</text>
+  <text x="70" y="105" font-size="15" fill="#999" font-style="italic">Acronyms and other synonyms in English</text>
 
   <!-- Long Common Name (grey) + LOINC Code (right, grey) -->
   <text x="70" y="130" font-size="14" fill="#999" font-style="italic">Long Common Name</text>
@@ -18,11 +18,11 @@
 
   <!-- Scientific description with icon -->
   <rect x="70" y="205" width="14" height="14" rx="3" fill="none" stroke="#333" stroke-width="1.2"/>
-  <text x="92" y="218" font-size="15" fill="#333" font-style="italic">Scientific description of the analysis taken</text>
-  <text x="92" y="238" font-size="15" fill="#333" font-style="italic">from the LOINC website. Might take up to</text>
-  <text x="92" y="258" font-size="15" fill="#333" font-style="italic">several lines.</text>
+  <text x="92" y="218" font-size="15" fill="#333" font-style="italic">Scientific description of the biomarker</text>
+  <text x="92" y="238" font-size="15" fill="#333" font-style="italic">taken from the LOINC website. Might take</text>
+  <text x="92" y="258" font-size="15" fill="#333" font-style="italic">up to several lines.</text>
 
-  <!-- Ellipsis -->
+  <!-- Ellipsis (expand indicator) -->
   <text x="240" y="280" font-size="22" fill="#333" font-weight="bold" letter-spacing="3">...</text>
 
   <!-- Arrow to "Expand Scientific Description" -->
@@ -40,7 +40,7 @@
   <text x="92" y="347" font-size="15" fill="#333" font-style="italic">How often to do</text>
 
   <!-- Title -->
-  <text x="80" y="480" font-size="64" fill="#333" font-weight="bold">Analysis Entry</text>
+  <text x="60" y="480" font-size="64" fill="#333" font-weight="bold">Biomarker Entry</text>
 
   <defs>
     <marker id="arr" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">

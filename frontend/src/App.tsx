@@ -8,9 +8,9 @@ import { BottomNav } from './components/layout/BottomNav';
 import { PanelsPage } from './components/panels/PanelsPage';
 import { PanelDetailPage } from './components/panels/PanelDetailPage';
 import { ResultsPage } from './components/results/ResultsPage';
-
-import { PlannedPage } from './components/planned/PlannedPage';
 import { AnalyticsPage } from './components/analytics/AnalyticsPage';
+import { PlanningPage } from './components/planning/PlanningPage';
+import { UpcomingPage } from './components/upcoming/UpcomingPage';
 import type { ViewName } from './types';
 
 function AppContent() {
@@ -36,11 +36,14 @@ function AppContent() {
     case 'results':
       content = <ResultsPage sessions={sessions} loading={loading} loadGroupItems={loadGroupItems} />;
       break;
-    case 'planned':
-      content = <PlannedPage planned={plannedTests} loading={loading} />;
-      break;
     case 'analytics':
       content = <AnalyticsPage sessions={sessions} loading={loading} />;
+      break;
+    case 'planning':
+      content = <PlanningPage />;
+      break;
+    case 'upcoming':
+      content = <UpcomingPage planned={plannedTests} loading={loading} />;
       break;
   }
 

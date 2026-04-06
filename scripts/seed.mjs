@@ -3,13 +3,19 @@
  * Seed script: reads JSON data files and inserts them into Supabase.
  *
  * Usage:
- *   SUPABASE_SERVICE_KEY=sb_secret_... node scripts/seed.mjs
+ *   SUPABASE_SERVICE_KEY=sb_secret_... node scripts/seed.mjs [--user NAME] [USER_UUID]
  *
- * Requires: @supabase/supabase-js (uses dynamic import from CDN via npx or local install)
+ * Options:
+ *   --user NAME   Seed data folder name under scripts/seed-data/ (default: "alex")
+ *   USER_UUID     Target Supabase user ID (overrides default for the chosen user)
+ *
+ * Examples:
+ *   node scripts/seed.mjs                                        # seed alex (default)
+ *   node scripts/seed.mjs --user natalia e3b4df38-...            # seed natalia
  */
 
 import { createClient } from '@supabase/supabase-js';
-import { readFileSync, readdirSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
 const SUPABASE_URL = 'https://hvcfhywtbsxpgjxlvxww.supabase.co';
@@ -19,14 +25,34 @@ if (!SERVICE_KEY) {
   process.exit(1);
 }
 
-// Target user UUID — John Smith (alex.isayenko@gmail.com)
-const TARGET_USER_ID = process.argv[2] || 'f49e8347-87a5-46bf-b771-bb45ede2786f';
+// Parse arguments
+const args = process.argv.slice(2);
+let userName = 'alex';
+const positional = [];
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === '--user' && i + 1 < args.length) {
+    userName = args[++i];
+  } else {
+    positional.push(args[i]);
+  }
+}
+
+const DEFAULT_USER_IDS = {
+  alex: 'f49e8347-87a5-46bf-b771-bb45ede2786f',
+  natalia: '17bc7ed4-6fcb-402c-bcce-d50d05ffc835',
+};
+
+const TARGET_USER_ID = positional[0] || DEFAULT_USER_IDS[userName];
+if (!TARGET_USER_ID) {
+  console.error(`No default UUID for user "${userName}". Pass a UUID as argument.`);
+  process.exit(1);
+}
 
 const sb = createClient(SUPABASE_URL, SERVICE_KEY, {
   auth: { autoRefreshToken: false, persistSession: false }
 });
 
-const DATA_DIR = join(import.meta.dirname, 'seed-data', 'alex');
+const DATA_DIR = join(import.meta.dirname, 'seed-data', userName);
 const RESULTS_DIR = join(DATA_DIR, 'results-by-date');
 
 async function seed() {
@@ -38,17 +64,21 @@ async function seed() {
 
   let totalResults = 0;
 
-  // Known lab name corrections
-  const labFixes = {
-    '2025-08': 'NeoGenesis',
-    '2026-01': 'NeoGenesis',
+  // Known lab name corrections (per user)
+  const labFixesByUser = {
+    alex: {
+      '2025-08': 'NeoGenesis',
+      '2026-01': 'NeoGenesis',
+    },
   };
+  const labFixes = labFixesByUser[userName] || {};
 
-  // Skip future dates and unresolved Unknown Lab placeholders
+  // Skip future dates; for alex also skip unresolved Unknown Lab placeholders
   const today = new Date().toISOString().slice(0, 10);
   const realEntries = manifest.filter(e => {
     if (e.date > today) return false;
-    if (e.place === 'Unknown Lab' && !labFixes[e.date?.slice(0, 7)]) return false;
+    if (e.numericItems === 0) return false;
+    if (userName === 'alex' && e.place === 'Unknown Lab' && !labFixes[e.date?.slice(0, 7)]) return false;
     return true;
   });
   console.log(`Skipping ${manifest.length - realEntries.length} future/placeholder sessions`);
@@ -69,6 +99,12 @@ async function seed() {
     let place = sessionData.place || null;
     const monthKey = sessionData.date?.slice(0, 7);
     if (labFixes[monthKey]) place = labFixes[monthKey];
+
+    // Default lab name for unknown labs
+    const defaultLabs = { natalia: 'Поликлиника' };
+    if ((!place || place === 'Unknown Lab') && defaultLabs[userName]) {
+      place = defaultLabs[userName];
+    }
 
     // Insert test_session
     const { data: session, error: sessErr } = await sb
@@ -123,8 +159,9 @@ async function seed() {
     }
   }
 
-  // 2. Seed planned tests
-  const planned = JSON.parse(readFileSync(join(DATA_DIR, 'planned.json'), 'utf-8'));
+  // 2. Seed planned tests (optional file)
+  const plannedPath = join(DATA_DIR, 'planned.json');
+  const planned = existsSync(plannedPath) ? JSON.parse(readFileSync(plannedPath, 'utf-8')) : [];
   if (planned.length > 0) {
     const plannedRows = planned.map(p => ({
       user_id: TARGET_USER_ID,

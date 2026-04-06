@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 520" width="780" height="520" font-family="'Segoe Print', 'Comic Sans MS', cursive">
+  <!-- Entry box -->
+  <rect x="120" y="60" width="440" height="350" rx="12" fill="none" stroke="#333" stroke-width="2"/>
+
+  <!-- Panel colored line (left border) -->
+  <line x1="120" y1="62" x2="120" y2="408" stroke="#333" stroke-width="4"/>
+
+  <!-- Panel colored image (icon box) -->
+  <rect x="130" y="70" width="30" height="30" rx="4" fill="none" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Display Name -->
+  <text x="172" y="95" font-size="22" fill="#333" font-weight="bold" font-style="italic">Display Name</text>
+
+  <!-- Value (right side) -->
+  <text x="395" y="95" font-size="22" fill="#333" font-weight="bold">XXXX</text>
+
+  <!-- Reference range (far right, grey) -->
+  <text x="470" y="95" font-size="14" fill="#999" font-style="italic">xxx - xxx</text>
+
+  <!-- Acronyms and synonyms -->
+  <text x="172" y="120" font-size="14" fill="#999" font-style="italic">Acronyms and other synonyms in English</text>
+
+  <!-- Long Common Name + LOINC Code -->
+  <text x="172" y="143" font-size="13" fill="#999" font-style="italic">Long Common Name</text>
+  <text x="440" y="143" font-size="13" fill="#999" font-style="italic">LOINC Code</text>
+
+  <!-- Simple description -->
+  <text x="172" y="175" font-size="15" fill="#333" font-style="italic">Simple description of the analysis.</text>
+  <text x="172" y="195" font-size="15" fill="#333" font-style="italic">Taking several lines.</text>
+
+  <!-- Ellipsis (expand indicator) -->
+  <text x="300" y="225" font-size="22" fill="#333" font-weight="bold" letter-spacing="3">...</text>
+
+  <!-- Date done -->
+  <rect x="140" y="295" width="14" height="14" rx="3" fill="none" stroke="#333" stroke-width="1.2"/>
+  <text x="162" y="308" font-size="15" fill="#333" font-style="italic">Date done</text>
+
+  <!-- Laboratory -->
+  <rect x="140" y="325" width="14" height="14" rx="3" fill="none" stroke="#333" stroke-width="1.2"/>
+  <text x="162" y="338" font-size="15" fill="#333" font-style="italic">Laboratory</text>
+
+  <!-- Labels: Value -->
+  <text x="370" y="32" font-size="16" fill="#333" font-style="italic">Value</text>
+  <line x1="395" y1="38" x2="410" y2="78" stroke="#333" stroke-width="1" marker-end="url(#arr)"/>
+
+  <!-- Labels: Reference -->
+  <text x="460" y="32" font-size="16" fill="#333" font-style="italic">Reference</text>
+  <line x1="495" y1="38" x2="495" y2="78" stroke="#333" stroke-width="1" marker-end="url(#arr)"/>
+
+  <!-- Labels: Panel colored image -->
+  <text x="5" y="38" font-size="14" fill="#333" font-style="italic">Panel associated</text>
+  <text x="5" y="56" font-size="14" fill="#333" font-style="italic">colored image</text>
+  <line x1="140" y1="52" x2="140" y2="68" stroke="#333" stroke-width="1" marker-end="url(#arr)"/>
+
+  <!-- Labels: Panel colored line -->
+  <text x="5" y="240" font-size="14" fill="#333" font-style="italic">Panel associated</text>
+  <text x="5" y="258" font-size="14" fill="#333" font-style="italic">colored line</text>
+  <line x1="100" y1="248" x2="117" y2="248" stroke="#333" stroke-width="1" marker-end="url(#arr)"/>
+
+  <!-- Labels: Expand -->
+  <text x="570" y="195" font-size="16" fill="#333" font-style="italic">Expand</text>
+  <text x="570" y="215" font-size="16" fill="#333" font-style="italic">Simple and Scientific</text>
+  <text x="570" y="235" font-size="16" fill="#333" font-style="italic">Description</text>
+  <line x1="565" y1="218" x2="335" y2="218" stroke="#333" stroke-width="1" marker-end="url(#arr)"/>
+
+  <!-- Title -->
+  <text x="100" y="480" font-size="54" fill="#333" font-weight="bold">Biomarker Entry</text>
+  <text x="230" y="510" font-size="16" fill="#999" font-style="italic">(Results view)</text>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

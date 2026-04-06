@@ -8,18 +8,18 @@ interface Props {
   loading: boolean;
 }
 
-export function PlannedPage({ planned, loading }: Props) {
+export function UpcomingPage({ planned, loading }: Props) {
   const { t, lang } = useLang();
   const { user } = useAuth();
   const today = new Date().toISOString().slice(0, 10);
 
   return (
     <div>
-      <h2 className="section-title">{t('planned')}</h2>
+      <h2 className="section-title">{t('upcomingTitle')}</h2>
       <div className="card-list">
         {loading && <div className="loading">Loading...</div>}
         {!loading && !user && (
-          <div className="empty-state">{t('signIn')} to view planned tests.</div>
+          <div className="empty-state">{t('signIn')} to view upcoming tests.</div>
         )}
         {!loading && user && planned.length === 0 && (
           <div className="empty-state">{t('noPlanned')}</div>
