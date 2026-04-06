@@ -3,15 +3,29 @@
 ## Results Tab
 
 ### Fixes
-- Don't display analyses marked with "x" — those are planned, not completed
-- Fix the names of the laboratories
-- Validate correctness of test unit conversions
+- [x] Don't display analyses marked with "x" — those are planned, not completed
+- [x] Fix the names of the laboratories
+- [ ] Validate correctness of test unit conversions
 
 ### Features
-- Sort by lab
-- Sort by date
-- Filter: show only out-of-range (bad) analyses
-- Auto conversion between units (ng, mmol, etc.) — needs more thought
+- [ ] Sort by lab
+- [x] Sort by date (default: newest first)
+- [x] Filter: show only out-of-range (bad) analyses
+- [x] Filter: show near-out-of-range (within 10% of limits) + out-of-range
+- [x] Expandable session cards (inline, no separate detail page)
+- [x] Group biomarkers by panel within each session
+- [x] Collapse / Expand all sessions
+- [ ] Auto conversion between units (ng, mmol, etc.) — needs more thought
+
+---
+
+## Architecture (Done)
+- [x] Migrated from vanilla JS to React + TypeScript + Vite
+- [x] Supabase integration (Google OAuth + data loading)
+- [x] Seed script for populating Supabase from JSON data
+- [x] GitHub Pages deployment with GitHub Actions build step
+- [x] User menu dropdown (language, sign out)
+- [x] Guest mode (empty state when not signed in)
 
 ---
 
