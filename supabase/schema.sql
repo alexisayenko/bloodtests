@@ -55,17 +55,31 @@ CREATE TABLE planned_tests (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- 5. Testing schedule (user-defined frequencies)
+CREATE TABLE testing_schedule (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  panel_id TEXT,
+  loinc TEXT,
+  frequency_months INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(user_id, panel_id, loinc)
+);
+
 -- Indexes for performance
 CREATE INDEX idx_test_sessions_user_date ON test_sessions(user_id, date DESC);
 CREATE INDEX idx_results_session ON results(session_id);
 CREATE INDEX idx_results_user_loinc ON results(user_id, loinc);
 CREATE INDEX idx_planned_tests_user ON planned_tests(user_id);
+CREATE INDEX idx_testing_schedule_user ON testing_schedule(user_id);
 
 -- Row Level Security
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE test_sessions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE results ENABLE ROW LEVEL SECURITY;
 ALTER TABLE planned_tests ENABLE ROW LEVEL SECURITY;
+ALTER TABLE testing_schedule ENABLE ROW LEVEL SECURITY;
 
 -- RLS Policies: users can only access their own data
 CREATE POLICY "Users can view own profile" ON profiles FOR SELECT USING (auth.uid() = id);
@@ -85,6 +99,11 @@ CREATE POLICY "Users can view own planned" ON planned_tests FOR SELECT USING (au
 CREATE POLICY "Users can insert own planned" ON planned_tests FOR INSERT WITH CHECK (auth.uid() = user_id);
 CREATE POLICY "Users can update own planned" ON planned_tests FOR UPDATE USING (auth.uid() = user_id);
 CREATE POLICY "Users can delete own planned" ON planned_tests FOR DELETE USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can view own schedule" ON testing_schedule FOR SELECT USING (auth.uid() = user_id);
+CREATE POLICY "Users can insert own schedule" ON testing_schedule FOR INSERT WITH CHECK (auth.uid() = user_id);
+CREATE POLICY "Users can update own schedule" ON testing_schedule FOR UPDATE USING (auth.uid() = user_id);
+CREATE POLICY "Users can delete own schedule" ON testing_schedule FOR DELETE USING (auth.uid() = user_id);
 
 -- Auto-create profile on signup
 CREATE OR REPLACE FUNCTION handle_new_user()

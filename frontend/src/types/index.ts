@@ -69,6 +69,15 @@ export interface PlannedTest {
   notes: string;
 }
 
+export interface TestingScheduleEntry {
+  id: string;
+  panelId: string | null;
+  loinc: string | null;
+  frequencyMonths: number;
+}
+
+export type FrequencyPreset = 1 | 3 | 6 | 12 | 24;
+
 export type ViewName = 'panels' | 'panel-detail' | 'results' | 'analytics' | 'planning' | 'upcoming';
 export type PanelViewMode = 'minimal' | 'compact' | 'detailed';
 export type Lang = 'en' | 'ru-RU' | 'uk-UA';

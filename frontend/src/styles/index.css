@@ -253,6 +253,51 @@ img.panel-icon { display: none; }
 .index-card-formula { font-size: 11px; color: var(--gray-400); font-family: monospace; margin-bottom: 4px; }
 .index-card-desc { font-size: 11px; color: var(--gray-500); line-height: 1.4; }
 
+/* Testing Schedule */
+.schedule-list { display: flex; flex-direction: column; gap: 8px; }
+.schedule-card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.schedule-card-header {
+  display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+  background: var(--panel-color, var(--primary)); color: white; cursor: pointer;
+}
+.schedule-card-header .panel-icon-mask { width: 22px; height: 22px; background-color: white; }
+.schedule-card-title { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; font-weight: 600; font-size: 15px; }
+.schedule-card-title span:first-of-type { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.schedule-card-count { font-size: 11px; opacity: 0.7; font-weight: 400; white-space: nowrap; }
+.schedule-card-controls { flex-shrink: 0; }
+.schedule-chevron { transition: transform 0.2s; opacity: 0.7; flex-shrink: 0; }
+.schedule-chevron.expanded { transform: rotate(180deg); }
+
+.freq-select {
+  font-family: inherit; font-size: 12px; font-weight: 600;
+  padding: 4px 8px; border-radius: 6px; border: none;
+  background: rgba(255,255,255,0.25); color: white; cursor: pointer;
+  appearance: none; -webkit-appearance: none;
+}
+.freq-select option { color: var(--gray-900); background: white; }
+
+.schedule-card-body { padding: 4px 12px 8px; border-left: 3px solid var(--panel-color, #d1d5db); margin-left: 12px; }
+.schedule-biomarker-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 6px 0; border-top: 1px solid var(--gray-100);
+}
+.schedule-biomarker-row:first-child { border-top: none; }
+.schedule-biomarker-name { font-size: 14px; color: var(--gray-900); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.schedule-biomarker-freq { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.schedule-biomarker-freq .freq-select { background: var(--gray-100); color: var(--gray-900); font-size: 12px; }
+
+.schedule-inherited { font-size: 12px; color: var(--gray-400); white-space: nowrap; }
+.schedule-override-btn {
+  background: none; border: none; cursor: pointer; padding: 2px;
+  color: var(--gray-300); display: flex; align-items: center;
+}
+.schedule-override-btn:hover { color: var(--primary); }
+.schedule-clear-btn {
+  background: none; border: none; cursor: pointer; padding: 0 2px;
+  color: var(--gray-400); font-size: 16px; line-height: 1;
+}
+.schedule-clear-btn:hover { color: var(--danger); }
+
 @media (min-width: 640px) {
   .main { padding: 24px; padding-bottom: 80px; }
   .header { padding: 20px 24px; }
