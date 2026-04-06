@@ -1,0 +1,32 @@
+export const uiStrings: Record<string, Record<string, string>> = {
+  'en': {
+    results: 'Past Results', planned: 'Planned Tests', panels: 'Panels',
+    biomarker: 'Biomarker', value: 'Value', reference: 'Reference',
+    back: '← Back', noResults: 'No blood tests recorded yet.',
+    noPlanned: 'No planned tests.', noPanels: 'No panels defined.',
+    overdue: 'Overdue', biomarkers: 'biomarkers', analyses: 'analyses',
+    navResults: 'Results', navPlanned: 'Planned', navPanels: 'Panels',
+    readMore: 'Read more', showLess: 'Show less', frequencyPrefix: 'Do it',
+    signIn: 'Sign in', guest: 'Guest',
+  },
+  'ru-RU': {
+    results: 'Результаты', planned: 'Запланировано', panels: 'Панели',
+    biomarker: 'Показатель', value: 'Значение', reference: 'Норма',
+    back: '← Назад', noResults: 'Нет записей анализов.',
+    noPlanned: 'Нет запланированных анализов.', noPanels: 'Панели не определены.',
+    overdue: 'Просрочено', biomarkers: 'показателей', analyses: 'анализов',
+    navResults: 'Результаты', navPlanned: 'План', navPanels: 'Панели',
+    readMore: 'Показать больше', showLess: 'Свернуть', frequencyPrefix: 'Сдавать',
+    signIn: 'Войти', guest: 'Гость',
+  },
+  'uk-UA': {
+    results: 'Результати', planned: 'Заплановано', panels: 'Панелі',
+    biomarker: 'Показник', value: 'Значення', reference: 'Норма',
+    back: '← Назад', noResults: 'Немає записів аналізів.',
+    noPlanned: 'Немає запланованих аналізів.', noPanels: 'Панелі не визначені.',
+    overdue: 'Прострочено', biomarkers: 'показників', analyses: 'аналізів',
+    navResults: 'Результати', navPlanned: 'План', navPanels: 'Панелі',
+    readMore: 'Показати більше', showLess: 'Згорнути', frequencyPrefix: 'Здавати',
+    signIn: 'Увійти', guest: 'Гість',
+  },
+};
