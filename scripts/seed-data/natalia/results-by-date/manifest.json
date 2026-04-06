@@ -1,0 +1,114 @@
+[
+  {
+    "date": "2012-07-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2012-07-01__unknown-lab.json",
+    "items": 6,
+    "mappedItems": 6,
+    "numericItems": 6
+  },
+  {
+    "date": "2013-10-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2013-10-01__unknown-lab.json",
+    "items": 4,
+    "mappedItems": 4,
+    "numericItems": 4
+  },
+  {
+    "date": "2014-07-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2014-07-01__unknown-lab.json",
+    "items": 4,
+    "mappedItems": 4,
+    "numericItems": 4
+  },
+  {
+    "date": "2024-11-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2024-11-01__unknown-lab.json",
+    "items": 54,
+    "mappedItems": 54,
+    "numericItems": 54
+  },
+  {
+    "date": "2025-03-01",
+    "place": "Поликлиника",
+    "file": "results-by-date\\2025-03-01__unknown.json",
+    "items": 12,
+    "mappedItems": 12,
+    "numericItems": 12
+  },
+  {
+    "date": "2025-06-01",
+    "place": "NeoGenesis",
+    "file": "results-by-date\\2025-06-01__neogenesis.json",
+    "items": 34,
+    "mappedItems": 34,
+    "numericItems": 34
+  },
+  {
+    "date": "2025-08-01",
+    "place": "NeoGenesis",
+    "file": "results-by-date\\2025-08-01__neogenesis.json",
+    "items": 37,
+    "mappedItems": 37,
+    "numericItems": 32
+  },
+  {
+    "date": "2025-11-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2025-11-01__unknown-lab.json",
+    "items": 28,
+    "mappedItems": 28,
+    "numericItems": 0
+  },
+  {
+    "date": "2026-01-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2026-01-01__unknown-lab.json",
+    "items": 24,
+    "mappedItems": 24,
+    "numericItems": 24
+  },
+  {
+    "date": "2026-02-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2026-02-01__unknown-lab.json",
+    "items": 12,
+    "mappedItems": 12,
+    "numericItems": 0
+  },
+  {
+    "date": "2026-04-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2026-04-01__unknown-lab.json",
+    "items": 71,
+    "mappedItems": 71,
+    "numericItems": 0
+  },
+  {
+    "date": "2026-05-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2026-05-01__unknown-lab.json",
+    "items": 5,
+    "mappedItems": 5,
+    "numericItems": 0
+  },
+  {
+    "date": "2026-08-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2026-08-01__unknown-lab.json",
+    "items": 2,
+    "mappedItems": 2,
+    "numericItems": 0
+  },
+  {
+    "date": "2026-11-01",
+    "place": "Unknown Lab",
+    "file": "results-by-date\\2026-11-01__unknown-lab.json",
+    "items": 27,
+    "mappedItems": 27,
+    "numericItems": 0
+  }
+]

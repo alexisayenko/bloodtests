@@ -1,0 +1,71 @@
+{
+  "date": "2014-07-01",
+  "place": "Unknown Lab",
+  "sourceFile": "Мама - Blood Tests v2 - Лабораторные результаты.tsv",
+  "items": [
+    {
+      "sourceFile": "Мама - Blood Tests v2 - Лабораторные результаты.tsv",
+      "section": "FBC Erythrocytes",
+      "symbol": "HGB, Hb",
+      "analysis": "Hemoglobin",
+      "loinc": "718-7",
+      "date": "2014-07-01",
+      "place": null,
+      "rawValue": "134",
+      "value": 134.0,
+      "valueQualifier": null,
+      "unit": "g/L",
+      "refText": "120 - 140",
+      "refMin": 120.0,
+      "refMax": 140.0
+    },
+    {
+      "sourceFile": "Мама - Blood Tests v2 - Лабораторные результаты.tsv",
+      "section": "General Inflammatory Markers",
+      "symbol": "ESR",
+      "analysis": "Erythrocyte Sedimentation Rate",
+      "loinc": "30341-2",
+      "date": "2014-07-01",
+      "place": null,
+      "rawValue": "32",
+      "value": 32.0,
+      "valueQualifier": null,
+      "unit": "мм/ч",
+      "refText": "2 - 15",
+      "refMin": 2.0,
+      "refMax": 15.0
+    },
+    {
+      "sourceFile": "Мама - Blood Tests v2 - Лабораторные результаты.tsv",
+      "section": "Обмен глюкозы",
+      "symbol": "GLU",
+      "analysis": "Glucose Serum",
+      "loinc": "2339-0",
+      "date": "2014-07-01",
+      "place": null,
+      "rawValue": "5",
+      "value": 5.0,
+      "valueQualifier": null,
+      "unit": "ммоль/л",
+      "refText": "3.3 - 5.5",
+      "refMin": 3.3,
+      "refMax": 5.5
+    },
+    {
+      "sourceFile": "Мама - Blood Tests v2 - Лабораторные результаты.tsv",
+      "section": "Обмен железа",
+      "symbol": "Hb",
+      "analysis": "Hemoglobin",
+      "loinc": "718-7",
+      "date": "2014-07-01",
+      "place": null,
+      "rawValue": "134",
+      "value": 134.0,
+      "valueQualifier": null,
+      "unit": "g/dL",
+      "refText": "12.0 - 18.0",
+      "refMin": 12.0,
+      "refMax": 18.0
+    }
+  ]
+}

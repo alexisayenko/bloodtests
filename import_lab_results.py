@@ -8,10 +8,33 @@ from pathlib import Path
 from collections import defaultdict
 
 
-MONTH_HEADER_ROW = 4
-LAB_HEADER_ROWS = (6, 7)
-DATA_START_ROW = 9
-VALUE_START_COL = 12
+PROFILES = {
+    "alex": {
+        "month_header_row": 4,
+        "lab_header_rows": (6, 7),
+        "data_start_row": 9,
+        "value_start_col": 12,
+        "col_section": 0,
+        "col_symbol": 2,
+        "col_source_loinc": 3,
+        "col_analysis": 4,
+        "col_ref_text": 5,
+        "col_unit": 6,
+    },
+    "natalia": {
+        "month_header_row": 0,
+        "lab_header_rows": (1,),
+        "data_start_row": 5,
+        "value_start_col": 9,
+        "col_section": 0,
+        "col_symbol": 3,
+        "col_source_loinc": None,
+        "col_analysis": 4,
+        "col_analysis_alt": 5,
+        "col_ref_text": 6,
+        "col_unit": 7,
+    },
+}
 
 
 RAW_MANUAL_SYMBOL_TO_LOINC = {
@@ -110,6 +133,19 @@ RAW_MANUAL_SYMBOL_TO_LOINC = {
     "RF": "11572-5",
     "IGF-1": "2484-4",
     "PSA": "2857-1",
+    "ANTI-TPO": "5765-3",
+    "ANTI-TG": "5380-1",
+    "TRAB": "57350-7",
+    "P-LCR": "58410-2",
+    "P-LCC": "71696-2",
+    "CK": "2157-6",
+    "ACCP": "53027-9",
+    "CA 125": "10334-1",
+    "CEA": "2039-6",
+    "EGFR": "98979-8",
+    "TCA": "17861-6",
+    "HBA1C(NGSP)": "4548-4",
+    "HBA1C(IFCC)": "59261-8",
 }
 
 
@@ -118,6 +154,28 @@ RAW_MANUAL_ANALYSIS_TO_LOINC = {
     "C-PEPTIDE": "1986-0",
     "AMYLASE": "1798-8",
     "ANTI-HCV": "16128-1",
+    "LIPASE": "3040-3",
+    "THROMBIN TIME": "3243-3",
+    "ANTITHROMBIN (ACTIVITY)": "3174-0",
+    "% IRON SATURATION (DIRECT)": "2502-3",
+    "CREATINE KINASE": "2157-6",
+    "ANTI CYCLIC CITRULLINATED PEPTIDE": "53027-9",
+    "ESTIMATED GLOMERULAR FILTRATION RATE": "98979-8",
+    "CYSTATIN-C": "33863-2",
+    "ACTIVATED PARTIAL THROMBOPLASTIN TIME": "3173-2",
+    "PROTHROMBIN TIME": "5902-2",
+    "INTERNATIONAL NORMALIZED RATIO": "6301-6",
+    "ANTI-THYROID PEROXIDASE ANTIBODIES": "5765-3",
+    "ANTI-THYROGLOBULIN ANTIBODIES": "5380-1",
+    "TSH RECEPTOR ANTIBODIES": "57350-7",
+    "CALCITONIN": "1992-7",
+    "HEPATITIS B SURFACE ANTIGEN": "5195-3",
+    "VITAMIN ACTIVE-B12": "25959-2",
+    "1,25-DIHYDROXYVITAMIN D": "1995-0",
+    "CA 125": "10334-1",
+    "CEA": "2039-6",
+    "PROTHROMBIN INDEX": "5894-1",
+    "ПРОТРОМБИРОВАННЫЙИНДЕКС": "5894-1",
     "GLOBULIN": "10834-0",
     "ATHEROGENIC INDEX - RISK FACTOR": "9830-1",
     "LEPTIN": "2293-7",
@@ -162,7 +220,7 @@ def normalize(text: str) -> str:
     text = text or ""
     text = text.strip()
     text = text.replace("µ", "u").replace("μ", "u").replace("α", "a")
-    return re.sub(r"[^A-Za-z0-9%]+", "", text).upper()
+    return re.sub(r"[^A-Za-zА-Яа-яЁё0-9%]+", "", text).upper()
 
 
 MANUAL_SYMBOL_TO_LOINC = {normalize(key): value for key, value in RAW_MANUAL_SYMBOL_TO_LOINC.items()}
@@ -281,7 +339,7 @@ def main():
 
     root = Path.cwd()
     data_dir = root / args.data_dir
-    user_dir = data_dir / "users" / args.user
+    user_dir = root / "scripts" / "seed-data" / args.user
     imports_dir = user_dir / "imports"
     grouped_dir = user_dir / "results-by-date"
     imports_dir.mkdir(parents=True, exist_ok=True)
@@ -295,27 +353,30 @@ def main():
     with copied_input_path.open("r", encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.reader(handle, delimiter="\t"))
 
-    month_headers = rows[MONTH_HEADER_ROW]
-    lab_rows = [rows[index] for index in LAB_HEADER_ROWS]
+    profile = PROFILES.get(args.user, PROFILES["alex"])
+
+    month_headers = rows[profile["month_header_row"]]
+    lab_rows = [rows[index] for index in profile["lab_header_rows"]]
 
     parsed_entries = []
     grouped_entries = defaultdict(list)
     current_section = None
 
-    for row in rows[DATA_START_ROW:]:
-        if not any(cell.strip() for cell in row[:7]):
+    for row in rows[profile["data_start_row"]:]:
+        if not any(c.strip() for c in row[:max(profile["col_unit"] + 1, 7)]):
             continue
-        section = cell(row, 0) or current_section
+        section = cell(row, profile["col_section"]) or current_section
         current_section = section
-        symbol = cell(row, 2)
-        source_loinc = cell(row, 3)
-        analysis = cell(row, 4)
-        ref_text = cell(row, 5)
-        unit = cell(row, 6)
-        loinc = resolve_loinc(symbol, analysis, source_loinc, catalog_lookup)
+        symbol = cell(row, profile["col_symbol"])
+        source_loinc = cell(row, profile["col_source_loinc"]) if profile["col_source_loinc"] is not None else ""
+        analysis = cell(row, profile["col_analysis"])
+        analysis_alt = cell(row, profile["col_analysis_alt"]) if profile.get("col_analysis_alt") is not None else ""
+        ref_text = cell(row, profile["col_ref_text"])
+        unit = cell(row, profile["col_unit"])
+        loinc = resolve_loinc(symbol, analysis or analysis_alt, source_loinc, catalog_lookup)
         ref_min, ref_max = parse_reference_range(ref_text)
 
-        for column in range(VALUE_START_COL, len(month_headers)):
+        for column in range(profile["value_start_col"], len(month_headers)):
             raw_value = cell(row, column)
             if not raw_value:
                 continue

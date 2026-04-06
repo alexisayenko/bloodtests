@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-01",
+  "place": "Unknown Lab",
+  "sourceFile": "Мама - Blood Tests v2 - Лабораторные результаты.tsv",
+  "items": [
+    {
+      "sourceFile": "Мама - Blood Tests v2 - Лабораторные результаты.tsv",
+      "section": "Обмен глюкозы",
+      "symbol": "HbA1C (NGSP)",
+      "analysis": "Hemoglobin A1C (NGSP)",
+      "loinc": "4548-4",
+      "date": "2026-08-01",
+      "place": null,
+      "rawValue": "x",
+      "value": null,
+      "valueQualifier": null,
+      "unit": "%",
+      "refText": "3.8 - 5.8",
+      "refMin": 3.8,
+      "refMax": 5.8
+    },
+    {
+      "sourceFile": "Мама - Blood Tests v2 - Лабораторные результаты.tsv",
+      "section": "Сердечно-сосудистый и воспалительный риск",
+      "symbol": "hsCRP",
+      "analysis": "high-sencitivity CRP",
+      "loinc": "30522-7",
+      "date": "2026-08-01",
+      "place": null,
+      "rawValue": "x",
+      "value": null,
+      "valueQualifier": null,
+      "unit": "mg/L",
+      "refText": "<5.00",
+      "refMin": null,
+      "refMax": 5.0
+    }
+  ]
+}
