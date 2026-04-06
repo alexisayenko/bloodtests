@@ -1,0 +1,6 @@
+- [Writing guide](docs/technical/writing-guide.md) — How to write simple descriptions for analyses: deep physiological meaning in plain language
+- [Terminology](docs/technical/terminology.md) — UI terms: Panel, Panel Caption, Analysis Entry, Decorative Line, View Modes
+- [Data model](docs/technical/data-model.md) — Data structure: analyses.json, panels.json, users.json, results, planned
+- [TODO](docs/TODO.md) — Analytics tab roadmap: charts, indexes, trends, reports
+- [Panel wireframe](docs/technical/panel-wireframe.svg) — Analysis Panel visual structure
+- [Analysis Entry wireframe](docs/technical/analysis-entry-wireframe.svg) — Analysis Entry visual structure
