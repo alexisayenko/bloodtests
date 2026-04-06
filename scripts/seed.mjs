@@ -39,7 +39,7 @@ for (let i = 0; i < args.length; i++) {
 
 const DEFAULT_USER_IDS = {
   alex: 'f49e8347-87a5-46bf-b771-bb45ede2786f',
-  natalia: 'e3b4df38-a086-4139-b3d1-b876ae4349c9',
+  natalia: '17bc7ed4-6fcb-402c-bcce-d50d05ffc835',
 };
 
 const TARGET_USER_ID = positional[0] || DEFAULT_USER_IDS[userName];
