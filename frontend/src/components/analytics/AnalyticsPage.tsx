@@ -5,6 +5,7 @@ import { useAuth } from '../../auth/AuthContext';
 import { getPanelName } from '../../utils/analysis';
 import { PanelIcon } from '../panels/PanelIcon';
 import { PanelChartPage } from './PanelChartPage';
+import { GlucoseIndexes } from './GlucoseIndexes';
 import type { ResultGroup, Result } from '../../types';
 
 // Panels that have meaningful chart configurations
@@ -106,13 +107,18 @@ export function AnalyticsPage({ sessions, loading }: Props) {
 
   if (selectedConfig && selectedPanel) {
     return (
-      <PanelChartPage
-        panel={selectedPanel}
-        lines={selectedConfig.lines}
-        resultsByLoinc={resultsByLoinc}
-        analysesCatalog={analysesCatalog}
-        onBack={() => setSelectedPanelId(null)}
-      />
+      <>
+        <PanelChartPage
+          panel={selectedPanel}
+          lines={selectedConfig.lines}
+          resultsByLoinc={resultsByLoinc}
+          analysesCatalog={analysesCatalog}
+          onBack={() => setSelectedPanelId(null)}
+        />
+        {selectedPanelId === 'glucose-metabolism' && (
+          <GlucoseIndexes resultsByLoinc={resultsByLoinc} />
+        )}
+      </>
     );
   }
 
