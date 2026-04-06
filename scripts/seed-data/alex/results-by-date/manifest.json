@@ -211,17 +211,17 @@
     "date": "2025-05-01",
     "place": "NeoGenesis",
     "file": "results-by-date\\2025-05-01__neogenesis.json",
-    "items": 44,
-    "mappedItems": 44,
-    "numericItems": 44
+    "items": 42,
+    "mappedItems": 42,
+    "numericItems": 42
   },
   {
     "date": "2025-06-01",
     "place": "NeoGenesis",
     "file": "results-by-date\\2025-06-01__neogenesis.json",
-    "items": 15,
-    "mappedItems": 15,
-    "numericItems": 15
+    "items": 12,
+    "mappedItems": 12,
+    "numericItems": 12
   },
   {
     "date": "2025-08-01",
@@ -235,8 +235,8 @@
     "date": "2026-01-01",
     "place": "NeoGenesis",
     "file": "results-by-date\\2026-01-01__neogenesis.json",
-    "items": 43,
-    "mappedItems": 43,
-    "numericItems": 43
+    "items": 40,
+    "mappedItems": 40,
+    "numericItems": 40
   }
 ]
