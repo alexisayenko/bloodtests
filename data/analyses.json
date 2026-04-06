@@ -262,7 +262,7 @@
       "uk-UA": "Лужна фосфатаза"
     },
     "info": {
-      "description": "Enzyme found mainly in the liver and bones involved in mineralization.",
+      "description": "An enzyme that lives in the walls of bile ducts in the liver and on bone surfaces — it rises when bile flow is blocked or bones are actively remodeling. Because it comes from two main sources, a high ALP requires detective work: if GGT is also high, the liver is the culprit; if not, it's likely from bone. It's one of the first markers to rise in bile duct obstruction.",
       "scientific": "Alkaline phosphatase (ALP) is a group of isoenzymes that catalyze the hydrolysis of phosphate esters at alkaline pH, found predominantly in the liver (biliary canalicular membrane), bone (osteoblasts), intestine, kidney, and placenta. Hepatic ALP is elevated in cholestatic liver disease and biliary obstruction, while bone ALP rises with increased osteoblastic activity in conditions such as Paget disease, osteomalacia, and bone metastases. ALP is a standard component of liver function panels and is physiologically elevated during growth in children and during pregnancy due to placental isoenzyme production. Isoenzyme fractionation or concurrent measurement of GGT helps determine the tissue source of ALP elevation.",
       "why": "Detects liver disease, bile duct obstruction, and bone disorders.",
       "frequency": "Annually, or as clinically indicated"
@@ -277,7 +277,7 @@
       "uk-UA": "Аланінамінотрансфераза (АЛТ)"
     },
     "info": {
-      "description": "Liver enzyme released into the blood when liver cells are damaged.",
+      "description": "The most liver-specific enzyme in your blood — it normally sits inside liver cells, so when it shows up at high levels in your blood, it means liver cells are leaking or dying. Unlike AST, ALT is found almost exclusively in the liver, making it the sharper signal for liver damage. Even mild elevations can indicate fatty liver, medication effects, or early hepatitis.",
       "scientific": "Alanine aminotransferase (ALT) is a cytoplasmic enzyme that catalyzes the reversible transamination of alanine and alpha-ketoglutarate to pyruvate and glutamate, playing a central role in amino acid metabolism and gluconeogenesis. ALT is found predominantly in hepatocytes, making it the most liver-specific of the commonly measured aminotransferases. Serum ALT elevation reflects hepatocellular injury from any cause, including viral hepatitis, drug-induced liver injury, non-alcoholic fatty liver disease, and ischemic hepatitis. The magnitude and pattern of ALT elevation, particularly the AST/ALT ratio, aids in distinguishing between different etiologies of liver disease.",
       "why": "Screens for liver damage from hepatitis, medications, or fatty liver disease.",
       "frequency": "Annually, or as clinically indicated"
@@ -292,7 +292,7 @@
       "uk-UA": "Гамма-глутамілтрансфераза (ГГТ)"
     },
     "info": {
-      "description": "Enzyme found in the liver, bile ducts, and kidneys involved in glutathione metabolism.",
+      "description": "A sensitive sentinel for liver stress, especially from alcohol and bile duct problems — it rises before other liver enzymes in many conditions. It's the key to interpreting a high ALP: if GGT is also elevated, the problem is in the liver or bile ducts, not the bones. It's particularly responsive to alcohol consumption, even moderate amounts can push it up.",
       "scientific": "Gamma-glutamyltransferase (GGT) is a cell-surface glycoprotein enzyme that catalyzes the transfer of the gamma-glutamyl group from glutathione to amino acids and peptides, playing a key role in glutathione metabolism and the cellular defense against oxidative stress. It is found in high concentrations in the liver, bile duct epithelium, kidneys, and pancreas. Serum GGT is a sensitive marker of hepatobiliary disease and is characteristically elevated by alcohol consumption, enzyme-inducing drugs, and cholestatic conditions. GGT measurement is clinically useful for confirming the hepatic origin of an elevated alkaline phosphatase and as a marker of chronic alcohol use.",
       "why": "Detects bile duct problems, alcohol-related liver damage, and liver disease.",
       "frequency": "Annually, or as clinically indicated"
@@ -307,7 +307,7 @@
       "uk-UA": "Аспартатамінотрансфераза (АСТ)"
     },
     "info": {
-      "description": "Enzyme found in the liver, heart, and muscles released when tissues are damaged.",
+      "description": "A tissue damage marker found in the liver, heart, and muscles — when cells in any of these organs are injured, AST spills into the bloodstream. Unlike ALT, it's not liver-specific, so you need to compare the two: if ALT is higher than AST, the liver is likely the source; if AST dominates, consider heart or muscle damage, or advanced liver disease like cirrhosis.",
       "scientific": "Aspartate aminotransferase (AST) is a pyridoxal phosphate-dependent enzyme that catalyzes the reversible transamination of aspartate and alpha-ketoglutarate to oxaloacetate and glutamate. AST exists as cytoplasmic and mitochondrial isoforms and is found in high concentrations in the liver, heart, skeletal muscle, kidney, and erythrocytes. Serum AST elevation occurs with hepatocellular damage, myocardial infarction, skeletal muscle injury, and hemolysis. The AST/ALT ratio (De Ritis ratio) is clinically useful: a ratio greater than 2 suggests alcoholic liver disease, while a ratio less than 1 is more typical of non-alcoholic fatty liver disease or viral hepatitis.",
       "why": "Evaluates liver damage and helps differentiate liver from muscle injury when compared with ALT.",
       "frequency": "Annually, or as clinically indicated"
@@ -410,7 +410,7 @@
       "uk-UA": "Білірубін прямий"
     },
     "info": {
-      "description": "Water-soluble form of bilirubin processed by the liver for excretion.",
+      "description": "Bilirubin that the liver has already processed and made water-soluble, ready to be dumped into bile and excreted. When this fraction rises, it means the liver did its job of processing bilirubin, but something is blocking its exit — typically a bile duct obstruction or liver disease preventing excretion. High direct bilirubin with dark urine is a classic sign of obstructive jaundice.",
       "scientific": "Direct (conjugated) bilirubin is the water-soluble glucuronide conjugate of bilirubin formed in hepatocytes by the enzyme UDP-glucuronosyltransferase (UGT1A1). After conjugation, direct bilirubin is actively secreted into bile canaliculi for excretion into the intestine. Elevated direct bilirubin in serum indicates impaired hepatocellular excretion or mechanical obstruction of the biliary system, as seen in obstructive jaundice, intrahepatic cholestasis, hepatitis, and drug-induced liver injury. The ratio of direct to total bilirubin helps differentiate conjugated (post-hepatic) from unconjugated (pre-hepatic or hepatic) causes of hyperbilirubinemia.",
       "why": "Helps differentiate obstructive from hepatocellular causes of jaundice.",
       "frequency": "As clinically indicated"
@@ -425,7 +425,7 @@
       "uk-UA": "Білірубін загальний"
     },
     "info": {
-      "description": "Yellow pigment produced from the breakdown of red blood cells.",
+      "description": "The yellow pigment your body produces when it recycles old red blood cells — the liver processes it and excretes it through bile, which is what gives stool its brown color. When bilirubin builds up in the blood, it turns your skin and eyes yellow (jaundice). The total level tells you something is wrong; the split between direct and indirect tells you where the problem is.",
       "scientific": "Bilirubin is a yellow tetrapyrrole pigment produced from the catabolism of heme, primarily from senescent erythrocyte hemoglobin degradation in the reticuloendothelial system. Total bilirubin comprises unconjugated (indirect) bilirubin, which is lipid-soluble and transported bound to albumin, and conjugated (direct) bilirubin, which is water-soluble after hepatic glucuronidation. Elevated total bilirubin manifests clinically as jaundice and may result from increased bilirubin production (hemolysis), impaired hepatic conjugation (Gilbert syndrome, neonatal jaundice), or decreased biliary excretion (cholestasis, biliary obstruction). Total bilirubin measurement is a standard component of liver function assessment.",
       "why": "Evaluates liver function, bile duct obstruction, and hemolytic conditions.",
       "frequency": "Annually, or as clinically indicated"
@@ -847,7 +847,7 @@
       "uk-UA": "Білірубін непрямий"
     },
     "info": {
-      "description": "Unconjugated bilirubin not yet processed by the liver.",
+      "description": "Raw, unprocessed bilirubin that's still traveling to the liver — it's fat-soluble and bound to albumin in the blood. When this fraction is elevated, either too many red blood cells are being destroyed (hemolysis) or the liver can't keep up with processing. Some people have a harmless genetic condition called Gilbert's syndrome that mildly elevates indirect bilirubin without any liver disease.",
       "scientific": "Indirect (unconjugated) bilirubin is the lipid-soluble form of bilirubin that has not yet undergone hepatic glucuronidation and circulates tightly bound to serum albumin. It is produced from the enzymatic degradation of heme by heme oxygenase and biliverdin reductase in the reticuloendothelial system. Elevated indirect bilirubin is characteristic of conditions involving increased bilirubin production (hemolytic anemias, ineffective erythropoiesis), impaired hepatic uptake, or defective conjugation (Gilbert syndrome, Crigler-Najjar syndrome). Indirect bilirubin is calculated by subtracting direct bilirubin from total bilirubin.",
       "why": "Helps identify hemolytic anemia and Gilbert syndrome as causes of elevated bilirubin.",
       "frequency": "As clinically indicated"
@@ -862,7 +862,7 @@
       "uk-UA": "Псевдохолінестераза"
     },
     "info": {
-      "description": "Enzyme produced by the liver that hydrolyzes choline esters.",
+      "description": "An enzyme manufactured by the liver that reflects the organ's synthetic power — how well the liver is actually producing things. Unlike ALT and AST which rise when the liver is damaged, pseudocholinesterase drops when the liver is too sick to manufacture it. Low levels indicate severe liver disease, malnutrition, or organophosphate poisoning.",
       "scientific": "Pseudocholinesterase (butyrylcholinesterase, BChE) is a serine hydrolase synthesized by the liver and secreted into plasma, where it hydrolyzes choline esters including the neuromuscular blocking agent succinylcholine. It serves as a marker of hepatic synthetic function, with decreased activity seen in chronic liver disease, malnutrition, organophosphate and carbamate poisoning, and certain genetic variants (dibucaine-resistant variants). Genetic polymorphisms in the BCHE gene can cause prolonged neuromuscular blockade (succinylcholine apnea) after anesthesia. Pre-operative measurement is indicated when atypical cholinesterase is suspected, and serial monitoring is used in organophosphate exposure.",
       "why": "Assesses liver synthetic function and detects organophosphate poisoning or genetic variants affecting anesthesia.",
       "frequency": "As clinically indicated"
@@ -877,7 +877,7 @@
       "uk-UA": "HBsAg (поверхневий антиген гепатиту B)"
     },
     "info": {
-      "description": "Surface protein of the hepatitis B virus indicating current infection.",
+      "description": "A piece of the hepatitis B virus's outer coat found in the blood — its presence means the virus is actively in your body, either as a new infection or a chronic carrier state. It's the first marker to appear after infection, often weeks before symptoms. A positive result triggers further testing to determine if the infection is acute, chronic, or being cleared.",
       "scientific": "Hepatitis B surface antigen (HBsAg) is a lipoprotein envelope component of the hepatitis B virus (HBV) that is the earliest serologic marker to appear during acute HBV infection, detectable 1-10 weeks before symptom onset and ALT elevation. Its presence indicates active HBV infection, either acute or chronic; persistence beyond 6 months defines chronic HBV carrier status. HBsAg is produced in vast excess during viral replication and is found both on intact virions and as non-infectious spherical and filamentous subviral particles. HBsAg screening is recommended for blood donors, pregnant women, high-risk populations, and is essential for guiding antiviral treatment decisions.",
       "why": "Screens for active hepatitis B infection and carrier status.",
       "frequency": "Once for screening; repeat if at ongoing risk"
@@ -892,7 +892,7 @@
       "uk-UA": "Антитіла до вірусу гепатиту C"
     },
     "info": {
-      "description": "Antibodies against hepatitis C virus indicating past or current infection.",
+      "description": "Your immune system's fingerprint showing it has encountered hepatitis C — these antibodies appear whether the infection was cleared or is still active. A positive result doesn't necessarily mean you're currently infected; it means your body has seen the virus at some point. Follow-up viral load testing is needed to determine if the virus is still present and active.",
       "scientific": "Anti-HCV antibodies are immunoglobulins directed against structural and non-structural proteins of the hepatitis C virus, detected by enzyme immunoassay (EIA) as a screening test for HCV infection. A positive anti-HCV result indicates prior exposure to HCV but does not distinguish between active and resolved infection, necessitating confirmatory HCV RNA testing by nucleic acid amplification. Anti-HCV antibodies typically become detectable 4-10 weeks after infection, during the seroconversion window period. HCV screening is recommended for all adults at least once, persons with risk factors, and is critical because chronic HCV infection is a leading cause of cirrhosis, hepatocellular carcinoma, and liver transplantation.",
       "why": "Screens for hepatitis C infection, which can cause chronic liver disease.",
       "frequency": "Once for screening; repeat if at ongoing risk"
@@ -907,7 +907,7 @@
       "uk-UA": "Альбумін"
     },
     "info": {
-      "description": "Most abundant blood protein, produced by the liver, that maintains fluid balance and transports substances.",
+      "description": "The liver's most important product — this protein acts like a sponge that keeps fluid inside your blood vessels and a taxi that carries hormones, drugs, and nutrients through the bloodstream. Because the liver makes it, low albumin is a red flag for chronic liver disease or malnutrition. When albumin drops too low, fluid leaks out of blood vessels into tissues, causing swelling.",
       "scientific": "Albumin is a 66.5-kDa single-chain polypeptide synthesized by hepatocytes, constituting approximately 55-60% of total plasma protein and the primary determinant of plasma oncotic pressure. It serves as a major transport protein for bilirubin, fatty acids, hormones, drugs, calcium, and other molecules, and contributes to acid-base buffering. Serum albumin is a marker of hepatic synthetic function and nutritional status, with decreased levels (hypoalbuminemia) seen in chronic liver disease, nephrotic syndrome, malnutrition, and systemic inflammation. As a negative acute-phase reactant, albumin levels decrease during inflammatory states, limiting its specificity as a nutritional marker.",
       "why": "Evaluates liver synthetic function, nutritional status, and kidney disease.",
       "frequency": "Annually, or as clinically indicated"
@@ -922,7 +922,7 @@
       "uk-UA": "Глобулін"
     },
     "info": {
-      "description": "Group of proteins including immunoglobulins and transport proteins, calculated from total protein minus albumin.",
+      "description": "Everything in your blood protein pool that isn't albumin — a diverse group including antibodies (immunoglobulins), clotting factors, and transport proteins. High globulin often points to chronic inflammation, infection, or immune system overactivity. The albumin-to-globulin ratio is a quick health snapshot: when globulin overtakes albumin, something is driving chronic immune activation.",
       "scientific": "Globulins are a heterogeneous group of serum proteins comprising alpha-1, alpha-2, beta, and gamma fractions, calculated by subtracting albumin from total protein. The alpha and beta globulins include transport proteins (haptoglobin, transferrin, ceruloplasmin), acute-phase reactants, complement components, and coagulation factors, while gamma globulins are predominantly immunoglobulins (IgG, IgA, IgM, IgD, IgE) produced by plasma cells. Elevated globulins may indicate chronic infections, autoimmune diseases, chronic liver disease, or monoclonal gammopathies such as multiple myeloma. The albumin-to-globulin (A/G) ratio is a useful adjunct for evaluating the pattern of protein abnormalities.",
       "why": "Screens for immune disorders, chronic infections, and liver disease.",
       "frequency": "Annually, or as clinically indicated"
@@ -937,7 +937,7 @@
       "uk-UA": "Загальний білок"
     },
     "info": {
-      "description": "Sum of all proteins in the blood, mainly albumin and globulins.",
+      "description": "The total amount of protein dissolved in your blood — a big-picture check on your liver's manufacturing ability and your immune system's activity. Low total protein suggests the liver isn't making enough (liver disease, malnutrition) or protein is being lost (kidney disease). High total protein often signals chronic inflammation or immune disorders producing excess antibodies.",
       "scientific": "Total protein measures the combined concentration of all proteins in serum, predominantly albumin and globulins. It reflects the balance between hepatic protein synthesis, nutritional protein intake, renal and gastrointestinal losses, and catabolic consumption. Hyperproteinemia may result from dehydration (hemoconcentration) or increased immunoglobulin production in conditions such as multiple myeloma, chronic infections, or autoimmune diseases. Hypoproteinemia can arise from hepatic insufficiency, malnutrition, nephrotic syndrome, protein-losing enteropathy, or extensive burns, and manifests clinically as edema due to reduced plasma oncotic pressure.",
       "why": "Assesses nutritional status, liver function, and screens for immune or kidney disorders.",
       "frequency": "Annually, or as clinically indicated"

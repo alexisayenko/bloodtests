@@ -50,7 +50,7 @@ Translations must match the DEPTH and QUALITY of the English text. Not shortened
 ## Panels completed:
 - [x] Thyroid Function (7 analyses)
 - [x] Glucose Metabolism (9 analyses)
-- [ ] Liver Function (14 analyses)
+- [x] Liver Function (14 analyses)
 - [ ] Lipid Metabolism (8 analyses)
 - [ ] Cardiovascular and Inflammatory Risk (9 analyses)
 - [ ] HPG Axis (9 analyses)
