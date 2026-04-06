@@ -55,6 +55,14 @@ const CHART_PANELS = [
       { loinc: '1975-2', color: '#f97316', yAxisId: 'right' },   // Total Bilirubin
     ],
   },
+  {
+    panelId: 'kidney-function',
+    lines: [
+      { loinc: '3094-0', color: '#2563eb', yAxisId: 'left' },    // Urea
+      { loinc: '12190-5', color: '#dc2626', yAxisId: 'left' },   // Creatinine
+      { loinc: '3084-1', color: '#eab308', yAxisId: 'right' },   // Uric Acid
+    ],
+  },
 ];
 
 interface Props {
