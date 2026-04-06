@@ -84,10 +84,10 @@ export function ResultDetailPage({ group, loadItems, onBack }: Props) {
 
       {groupedByPanel && groupedByPanel.map((pg, gi) => (
         <div key={gi}>
-          <div className="result-panel-header" style={{ borderLeftColor: pg.color }}>
+          <div className="result-panel-header">
             {pg.panelName}
           </div>
-          <div className="results-table" style={{ marginTop: 0, borderRadius: gi === 0 ? undefined : 'var(--radius)' }}>
+          <div className="results-table panel-grouped">
             {gi === 0 && (
               <div className="results-header">
                 <span>{t('biomarker')}</span>
@@ -96,7 +96,7 @@ export function ResultDetailPage({ group, loadItems, onBack }: Props) {
               </div>
             )}
             {pg.results.map((r, i) => (
-              <ResultRow key={i} result={r} />
+              <ResultRow key={i} result={r} panelColor={pg.color} />
             ))}
           </div>
         </div>
