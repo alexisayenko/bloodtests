@@ -33,26 +33,43 @@ jobs:
           path: devel
         continue-on-error: true
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Build site
         run: |
           mkdir -p _site/dev
           BUILD_NUM=${{ github.run_number }}
-          # Copy main to root and stamp build info
-          rsync -a --exclude='.git' --exclude='.github' main/ _site/
+
+          # --- Main branch (vanilla HTML for now) ---
+          rsync -a --exclude='.git' --exclude='.github' --exclude='frontend' --exclude='node_modules' main/ _site/
           cd main
           M_COMMIT=$(git log -1 --format="%h")
           M_DATETIME=$(git log -1 --format="%ci" | cut -c1-16)
           cd ..
           sed -i "s/<!--BUILD_INFO-->/build ${BUILD_NUM} · ${M_COMMIT} · ${M_DATETIME}/" _site/index.html
-          # Copy devel to /dev/ subfolder and stamp build info
-          if [ -d devel ]; then
-            rsync -a --exclude='.git' --exclude='.github' devel/ _site/dev/
+
+          # --- Devel branch (React app) ---
+          if [ -d devel/frontend ]; then
+            cd devel
+            D_COMMIT=$(git log -1 --format="%h")
+            D_DATETIME=$(git log -1 --format="%ci" | cut -c1-16)
+            cd frontend
+            npm ci
+            BUILD_INFO="build ${BUILD_NUM} · ${D_COMMIT} · ${D_DATETIME}" npm run build
+            cd ../..
+            rsync -a devel/frontend/dist/ _site/dev/
+          elif [ -d devel ]; then
+            rsync -a --exclude='.git' --exclude='.github' --exclude='frontend' --exclude='node_modules' devel/ _site/dev/
             cd devel
             D_COMMIT=$(git log -1 --format="%h")
             D_DATETIME=$(git log -1 --format="%ci" | cut -c1-16)
             cd ..
             sed -i "s/<!--BUILD_INFO-->/build ${BUILD_NUM} · ${D_COMMIT} · ${D_DATETIME}/" _site/dev/index.html
           fi
+
           ls -la _site/
           ls -la _site/dev/ || echo "No dev folder"
 

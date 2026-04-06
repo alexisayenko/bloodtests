@@ -1,0 +1,81 @@
+import { useState, useCallback } from 'react';
+import { LangProvider } from './i18n/LangContext';
+import { AuthProvider } from './auth/AuthContext';
+import { DataProvider } from './data/DataContext';
+import { useResults } from './data/useResults';
+import { Header } from './components/layout/Header';
+import { BottomNav } from './components/layout/BottomNav';
+import { PanelsPage } from './components/panels/PanelsPage';
+import { PanelDetailPage } from './components/panels/PanelDetailPage';
+import { ResultsPage } from './components/results/ResultsPage';
+import { ResultDetailPage } from './components/results/ResultDetailPage';
+import { PlannedPage } from './components/planned/PlannedPage';
+import { AnalyticsPage } from './components/analytics/AnalyticsPage';
+import type { ViewName } from './types';
+
+function AppContent() {
+  const [view, setView] = useState<ViewName>('panels');
+  const [detailPanelIndex, setDetailPanelIndex] = useState(0);
+  const [detailResultIndex, setDetailResultIndex] = useState(0);
+  const { sessions, plannedTests, loading, loadGroupItems } = useResults();
+
+  const navigate = useCallback((v: ViewName) => setView(v), []);
+
+  const showPanelDetail = useCallback((index: number) => {
+    setDetailPanelIndex(index);
+    setView('panel-detail');
+  }, []);
+
+  const showResultDetail = useCallback((index: number) => {
+    setDetailResultIndex(index);
+    setView('detail');
+  }, []);
+
+  let content;
+  switch (view) {
+    case 'panels':
+      content = <PanelsPage onShowDetail={showPanelDetail} />;
+      break;
+    case 'panel-detail':
+      content = <PanelDetailPage panelIndex={detailPanelIndex} onBack={() => setView('panels')} />;
+      break;
+    case 'results':
+      content = <ResultsPage sessions={sessions} loading={loading} onShowDetail={showResultDetail} />;
+      break;
+    case 'detail':
+      content = sessions[detailResultIndex] ? (
+        <ResultDetailPage
+          group={sessions[detailResultIndex]}
+          loadItems={loadGroupItems}
+          onBack={() => setView('results')}
+        />
+      ) : null;
+      break;
+    case 'planned':
+      content = <PlannedPage planned={plannedTests} loading={loading} />;
+      break;
+    case 'analytics':
+      content = <AnalyticsPage />;
+      break;
+  }
+
+  return (
+    <div className="app">
+      <Header />
+      <main className="main">{content}</main>
+      <BottomNav activeView={view} onNavigate={navigate} />
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LangProvider>
+      <AuthProvider>
+        <DataProvider>
+          <AppContent />
+        </DataProvider>
+      </AuthProvider>
+    </LangProvider>
+  );
+}

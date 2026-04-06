@@ -1,0 +1,39 @@
+{
+  "date": "2019-01-01",
+  "place": "MediLab",
+  "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
+  "items": [
+    {
+      "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
+      "section": "Thryoid Function",
+      "symbol": "FT4",
+      "analysis": "Free thyroxine",
+      "loinc": "3024-7",
+      "date": "2019-01-01",
+      "place": "MediLab",
+      "rawValue": "1.51",
+      "value": 1.51,
+      "valueQualifier": null,
+      "unit": "ng/dL",
+      "refText": "0.70 - 2.0",
+      "refMin": 0.7,
+      "refMax": 2.0
+    },
+    {
+      "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
+      "section": "Thryoid Function",
+      "symbol": "TSH",
+      "analysis": "Thyroid-stimulating hormone",
+      "loinc": "11580-8",
+      "date": "2019-01-01",
+      "place": "MediLab",
+      "rawValue": "3.37",
+      "value": 3.37,
+      "valueQualifier": null,
+      "unit": "µIU/mL",
+      "refText": "0.4 - 4.0",
+      "refMin": 0.4,
+      "refMax": 4.0
+    }
+  ]
+}
