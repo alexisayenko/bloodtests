@@ -84,7 +84,7 @@ export function ResultDetailPage({ group, loadItems, onBack }: Props) {
 
       {groupedByPanel && (
         <div className="results-table" style={{ marginTop: '20px' }}>
-          <div className="results-header sticky-header">
+          <div className="results-header">
             <span>{t('biomarker')}</span>
             <span>{t('value')}</span>
             <span>{t('reference')}</span>
