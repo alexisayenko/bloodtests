@@ -1,6 +1,6 @@
 {
   "date": "2026-01-01",
-  "place": "Unknown Lab",
+  "place": "NeoGenesis",
   "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
   "items": [
     {
@@ -111,9 +111,9 @@
       "value": 5.52,
       "valueQualifier": null,
       "unit": "x10⁶/μL",
-      "refText": "4.00 - 6.30",
+      "refText": "4.00 - 5.50",
       "refMin": 4.0,
-      "refMax": 6.3
+      "refMax": 5.5
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
@@ -335,8 +335,8 @@
       "value": 84.58,
       "valueQualifier": null,
       "unit": "mg/dL",
-      "refText": "70 - 110",
-      "refMin": 70.0,
+      "refText": "74.00 - 110.00",
+      "refMin": 74.0,
       "refMax": 110.0
     },
     {
@@ -350,10 +350,10 @@
       "rawValue": "6.09",
       "value": 6.09,
       "valueQualifier": null,
-      "unit": "µU/mL",
-      "refText": "2.5 - 25",
-      "refMin": 2.5,
-      "refMax": 25.0
+      "unit": "μIU/mL",
+      "refText": "2.60 - 24.90",
+      "refMin": 2.6,
+      "refMax": 24.9
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
@@ -366,10 +366,10 @@
       "rawValue": "13.38",
       "value": 13.38,
       "valueQualifier": null,
-      "unit": "µg/dL",
-      "refText": "6.2 - 19.4",
-      "refMin": 6.2,
-      "refMax": 19.4
+      "unit": "μg/dL",
+      "refText": "4.30 - 22.40",
+      "refMin": 4.3,
+      "refMax": 22.4
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
@@ -447,9 +447,9 @@
       "value": 41.3,
       "valueQualifier": null,
       "unit": "nmol/L",
-      "refText": "13.5 - 71.4",
-      "refMin": 13.5,
-      "refMax": 71.4
+      "refText": "13.0 - 64.0",
+      "refMin": 13.0,
+      "refMax": 64.0
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
@@ -478,58 +478,10 @@
       "rawValue": "186.29",
       "value": 186.29,
       "valueQualifier": null,
-      "unit": "mIU/mL",
+      "unit": "mIU/L",
       "refText": "53.00 - 360.00",
       "refMin": 53.0,
       "refMax": 360.0
-    },
-    {
-      "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
-      "section": "Iron Metabolism",
-      "symbol": "HCT",
-      "analysis": "Hematocrite",
-      "loinc": "4544-3",
-      "date": "2026-01-01",
-      "place": null,
-      "rawValue": "49.50",
-      "value": 49.5,
-      "valueQualifier": null,
-      "unit": "%",
-      "refText": "40.0 - 54.0",
-      "refMin": 40.0,
-      "refMax": 54.0
-    },
-    {
-      "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
-      "section": "Iron Metabolism",
-      "symbol": "Hb",
-      "analysis": "Hemoglobin",
-      "loinc": "718-7",
-      "date": "2026-01-01",
-      "place": null,
-      "rawValue": "16.30",
-      "value": 16.3,
-      "valueQualifier": null,
-      "unit": "g/dL",
-      "refText": "12.0 - 18.0",
-      "refMin": 12.0,
-      "refMax": 18.0
-    },
-    {
-      "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
-      "section": "Iron Metabolism",
-      "symbol": "RBC",
-      "analysis": "Red Blood Cells",
-      "loinc": "789-8",
-      "date": "2026-01-01",
-      "place": null,
-      "rawValue": "5.52",
-      "value": 5.52,
-      "valueQualifier": null,
-      "unit": "x10⁶/μL",
-      "refText": "4.00 - 6.30",
-      "refMin": 4.0,
-      "refMax": 6.3
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
@@ -542,10 +494,10 @@
       "rawValue": "5.82",
       "value": 5.82,
       "valueQualifier": null,
-      "unit": "mg/dl",
-      "refText": "3.5 - 8.5",
-      "refMin": 3.5,
-      "refMax": 8.5
+      "unit": "mg/dL",
+      "refText": "3.00 - 7.00",
+      "refMin": 3.0,
+      "refMax": 7.0
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
@@ -559,8 +511,8 @@
       "value": 176.59,
       "valueQualifier": null,
       "unit": "mg/dL",
-      "refText": "70 - 200",
-      "refMin": 70.0,
+      "refText": "< 200.00",
+      "refMin": null,
       "refMax": 200.0
     },
     {
@@ -575,8 +527,8 @@
       "value": 44.56,
       "valueQualifier": null,
       "unit": "mg/dL",
-      "refText": "> 35",
-      "refMin": 35.0,
+      "refText": "> 40.00",
+      "refMin": 40.0,
       "refMax": null
     },
     {
@@ -607,8 +559,8 @@
       "value": 105.21,
       "valueQualifier": null,
       "unit": "mg/dL",
-      "refText": "50 - 150",
-      "refMin": 50.0,
+      "refText": "< 150.00",
+      "refMin": null,
       "refMax": 150.0
     },
     {
@@ -671,9 +623,9 @@
       "value": 2.64,
       "valueQualifier": null,
       "unit": "pg/mL",
-      "refText": "1.7 - 3.7",
-      "refMin": 1.7,
-      "refMax": 3.7
+      "refText": "2.00 - 4.40",
+      "refMin": 2.0,
+      "refMax": 4.4
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
