@@ -239,6 +239,13 @@
         </svg>
         <span id="nav-panels-label">Panels</span>
       </button>
+      <button id="nav-planned" class="nav-item" onclick="showView('planned')">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+          <path d="M9 14l2 2 4-4"/>
+        </svg>
+        <span id="nav-planned-label">Planned</span>
+      </button>
       <button id="nav-results" class="nav-item" onclick="showView('results')">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -246,13 +253,6 @@
           <line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
         <span id="nav-results-label">Results</span>
-      </button>
-      <button id="nav-planned" class="nav-item" onclick="showView('planned')">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-          <path d="M9 14l2 2 4-4"/>
-        </svg>
-        <span id="nav-planned-label">Planned</span>
       </button>
       <button id="nav-analytics" class="nav-item" onclick="showView('analysis')">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
@@ -646,12 +646,15 @@
         ? `<button class="view-toggle-btn utility" onclick="toggleAllPanels()">Collapse / Expand all</button>`
         : '';
 
+      const totalAnalyses = panelsCache.reduce((sum, p) => sum + getPanelAnalyses(p).length, 0);
+      const statsHtml = `<div style="font-size:13px;color:var(--gray-400);margin-bottom:8px">${panelsCache.length} ${t('panels')} · ${totalAnalyses} ${t('analyses')}</div>`;
+
       const toggleHtml = `<div class="view-toggle">
         <button class="view-toggle-btn ${panelViewMode === 'minimal' ? 'active' : ''}" onclick="setPanelView('minimal')">Minimal</button>
         <button class="view-toggle-btn ${panelViewMode === 'compact' ? 'active' : ''}" onclick="setPanelView('compact')">Compact</button>
         <button class="view-toggle-btn ${panelViewMode === 'detailed' ? 'active' : ''}" onclick="setPanelView('detailed')">Detailed</button>
         ${collapseAllButton}
-      </div>`;
+      </div>${statsHtml}`;
 
       const gridClass = panelViewMode === 'minimal' ? 'panels-grid' : 'panels-grid panels-grid-single';
 
