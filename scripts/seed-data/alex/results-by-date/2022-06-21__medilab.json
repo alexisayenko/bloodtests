@@ -1,0 +1,31 @@
+{
+  "date": "2022-06-21",
+  "labName": "MediLab",
+  "sourceFile": "2022-06-MediLab.pdf",
+  "items": [
+    {
+      "symbol": null,
+      "analysis": "Urea",
+      "loinc": "3094-0",
+      "rawValue": "22",
+      "value": 22,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "10 - 50",
+      "refMin": 10.0,
+      "refMax": 50.0
+    },
+    {
+      "symbol": "CREAT",
+      "analysis": "Creatinine",
+      "loinc": "2160-0",
+      "rawValue": "1.05",
+      "value": 1.05,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "0.5 - 1.3",
+      "refMin": 0.5,
+      "refMax": 1.3
+    }
+  ]
+}

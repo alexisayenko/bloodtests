@@ -1,0 +1,19 @@
+{
+  "date": "2022-04-29",
+  "labName": "Ygia",
+  "sourceFile": "2022-04-Ygia.pdf",
+  "items": [
+    {
+      "symbol": "D-Dimer",
+      "analysis": "D-Dimer",
+      "loinc": "48066-5",
+      "rawValue": "452",
+      "value": 452,
+      "valueQualifier": null,
+      "unit": "ng/mL",
+      "refText": "< 500",
+      "refMin": null,
+      "refMax": 500.0
+    }
+  ]
+}

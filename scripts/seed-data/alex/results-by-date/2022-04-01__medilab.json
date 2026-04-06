@@ -1,0 +1,115 @@
+{
+  "date": "2022-04-01",
+  "labName": "MediLab",
+  "sourceFile": "2022-04-MediLab-2.pdf",
+  "items": [
+    {
+      "symbol": "HbA1c",
+      "analysis": "HbA1c",
+      "loinc": "17855-8",
+      "rawValue": "4.9",
+      "value": 4.9,
+      "valueQualifier": null,
+      "unit": "%",
+      "refText": "4.2 - 5.9",
+      "refMin": 4.2,
+      "refMax": 5.9
+    },
+    {
+      "symbol": "Ca",
+      "analysis": "Calcium",
+      "loinc": "49765-1",
+      "rawValue": "9.5",
+      "value": 9.5,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "8.1 - 10.4",
+      "refMin": 8.1,
+      "refMax": 10.4
+    },
+    {
+      "symbol": "P",
+      "analysis": "Phosphorus",
+      "loinc": "2774-8",
+      "rawValue": "3.5",
+      "value": 3.5,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "2.5 - 4.8",
+      "refMin": 2.5,
+      "refMax": 4.8
+    },
+    {
+      "symbol": "TSH",
+      "analysis": "Thyroid-Stimulating Hormone",
+      "loinc": "11580-8",
+      "rawValue": "3.7",
+      "value": 3.7,
+      "valueQualifier": null,
+      "unit": "\u03bcIU/mL",
+      "refText": "0.270 - 4.20",
+      "refMin": 0.27,
+      "refMax": 4.2
+    },
+    {
+      "symbol": "PTH",
+      "analysis": "Parathyroid Hormone",
+      "loinc": "2731-8",
+      "rawValue": "161",
+      "value": 161,
+      "valueQualifier": null,
+      "unit": "pg/mL",
+      "refText": "15 - 65",
+      "refMin": 15.0,
+      "refMax": 65.0
+    },
+    {
+      "symbol": "FT4",
+      "analysis": "Free Thyroxine",
+      "loinc": "3024-7",
+      "rawValue": "13.53",
+      "value": 13.53,
+      "valueQualifier": null,
+      "unit": "pmol/L",
+      "refText": "9.0 - 22.00",
+      "refMin": 9.0,
+      "refMax": 22.0
+    },
+    {
+      "symbol": "Vit D",
+      "analysis": "25-OH Vitamin D",
+      "loinc": "49054-0",
+      "rawValue": "17.8",
+      "value": 17.8,
+      "valueQualifier": null,
+      "unit": "ng/mL",
+      "refText": "> 30.0",
+      "refMin": 30.0,
+      "refMax": null
+    },
+    {
+      "symbol": null,
+      "analysis": "Insulin",
+      "loinc": "20448-7",
+      "rawValue": "14.1",
+      "value": 14.1,
+      "valueQualifier": null,
+      "unit": "\u03bcU/mL",
+      "refText": "2.6 - 24.9",
+      "refMin": 2.6,
+      "refMax": 24.9
+    },
+    {
+      "symbol": null,
+      "analysis": "Cortisol",
+      "loinc": "2143-6",
+      "rawValue": "14.2",
+      "value": 14.2,
+      "valueQualifier": null,
+      "unit": "\u03bcg/dL",
+      "refText": "6.2 - 19.4",
+      "refMin": 6.2,
+      "refMax": 19.4
+    }
+  ]
+}
