@@ -64,21 +64,11 @@ async function seed() {
 
   let totalResults = 0;
 
-  // Known lab name corrections (per user)
-  const labFixesByUser = {
-    alex: {
-      '2025-08': 'NeoGenesis',
-      '2026-01': 'NeoGenesis',
-    },
-  };
-  const labFixes = labFixesByUser[userName] || {};
-
-  // Skip future dates; for alex also skip unresolved Unknown Lab placeholders
+  // Skip future dates and empty sessions
   const today = new Date().toISOString().slice(0, 10);
   const realEntries = manifest.filter(e => {
     if (e.date > today) return false;
     if (e.numericItems === 0) return false;
-    if (userName === 'alex' && e.place === 'Unknown Lab' && !labFixes[e.date?.slice(0, 7)]) return false;
     return true;
   });
   console.log(`Skipping ${manifest.length - realEntries.length} future/placeholder sessions`);
@@ -95,15 +85,14 @@ async function seed() {
       continue;
     }
 
-    // Apply lab name fix
-    let place = sessionData.place || null;
-    const monthKey = sessionData.date?.slice(0, 7);
-    if (labFixes[monthKey]) place = labFixes[monthKey];
-
-    // Default lab name for unknown labs
-    const defaultLabs = { natalia: 'Поликлиника' };
-    if ((!place || place === 'Unknown Lab') && defaultLabs[userName]) {
-      place = defaultLabs[userName];
+    // Derive lab name: explicit labName field, or extract from filename (e.g. "2025-08-01__neogenesis.json" → "NeoGenesis")
+    let labName = sessionData.labName || null;
+    if (!labName) {
+      const match = fileName.match(/__(.+)\.json$/);
+      if (match) {
+        const raw = match[1].replace(/-/g, ' ');
+        labName = raw.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      }
     }
 
     // Insert test_session
@@ -112,18 +101,18 @@ async function seed() {
       .upsert({
         user_id: TARGET_USER_ID,
         date: sessionData.date,
-        place: place,
+        place: labName,
         source_file: sessionData.sourceFile || null,
       }, { onConflict: 'user_id,date,place' })
       .select('id')
       .single();
 
     if (sessErr) {
-      console.error(`  Error inserting session ${entry.date} ${entry.place}:`, sessErr.message);
+      console.error(`  Error inserting session ${entry.date} ${labName}:`, sessErr.message);
       continue;
     }
 
-    console.log(`  Session ${sessionData.date} @ ${sessionData.place} → ${session.id}`);
+    console.log(`  Session ${sessionData.date} @ ${labName} → ${session.id}`);
 
     // Insert results for this session
     const items = sessionData.items || [];
