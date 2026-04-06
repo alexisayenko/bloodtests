@@ -2,19 +2,12 @@ import { useState, useMemo, useCallback } from 'react';
 import { useLang } from '../../i18n/LangContext';
 import { useData } from '../../data/DataContext';
 import { useAuth } from '../../auth/AuthContext';
-import { formatDate, formatResultValue, formatResultReference, isOutOfRange, isNearOutOfRange } from '../../utils/format';
-import { getResultDisplayName, getPanelName, getPanelAnalyses } from '../../utils/analysis';
+import { formatDate, isOutOfRange, isNearOutOfRange } from '../../utils/format';
+import { getPanelName, getPanelAnalyses } from '../../utils/analysis';
 import { ResultRow } from './ResultRow';
 import type { ResultGroup, Result } from '../../types';
 
 type ResultsView = 'sessions' | 'out-of-range' | 'near-range';
-
-interface FlaggedItem {
-  result: Result;
-  date: string;
-  place: string;
-  kind: 'out' | 'near';
-}
 
 interface PanelGroup {
   panelName: string;
@@ -29,12 +22,21 @@ interface Props {
 }
 
 export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
-  const { t, lang } = useLang();
+  const { t } = useLang();
   const { user } = useAuth();
-  const { analysesCatalog, panels } = useData();
+  const { panels } = useData();
+  const { lang: uiLang } = useLang();
   const [view, setView] = useState<ResultsView>('sessions');
   const [expandedSessions, setExpandedSessions] = useState<Record<string, boolean>>({});
   const [loadedItems, setLoadedItems] = useState<Record<string, Result[]>>({});
+
+  // Filter function based on current view
+  const filterResults = useCallback((items: Result[]): Result[] => {
+    if (view === 'sessions') return items;
+    if (view === 'out-of-range') return items.filter(r => isOutOfRange(r));
+    if (view === 'near-range') return items.filter(r => isOutOfRange(r) || isNearOutOfRange(r));
+    return items;
+  }, [view]);
 
   const toggleSession = useCallback(async (sessionId: string, items: Result[] | null) => {
     if (expandedSessions[sessionId]) {
@@ -46,7 +48,6 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
       return;
     }
 
-    // Load items if not yet loaded
     if (!items && !loadedItems[sessionId]) {
       const loaded = await loadGroupItems(sessionId);
       setLoadedItems(prev => ({ ...prev, [sessionId]: loaded }));
@@ -56,15 +57,16 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
   }, [expandedSessions, loadedItems, loadGroupItems]);
 
   const toggleAllSessions = useCallback(() => {
-    const allExpanded = sessions.length > 0 && sessions.every(g => expandedSessions[g.file]);
+    const visibleSessions = getVisibleSessions();
+    const allExpanded = visibleSessions.length > 0 && visibleSessions.every(g => expandedSessions[g.file]);
     if (allExpanded) {
       setExpandedSessions({});
     } else {
       const allOpen: Record<string, boolean> = {};
-      sessions.forEach(g => { allOpen[g.file] = true; });
+      visibleSessions.forEach(g => { allOpen[g.file] = true; });
       setExpandedSessions(allOpen);
     }
-  }, [sessions, expandedSessions]);
+  }, [sessions, expandedSessions, view]);
 
   const getSessionItems = (g: ResultGroup): Result[] | null => {
     return g.items || loadedItems[g.file] || null;
@@ -84,7 +86,7 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
       if (pi !== undefined) {
         if (!panelGroups[pi]) {
           panelGroups[pi] = {
-            panelName: getPanelName(panels[pi], lang),
+            panelName: getPanelName(panels[pi], uiLang),
             color: panels[pi].color || '#d1d5db',
             results: [],
           };
@@ -100,50 +102,84 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
       sorted.push({ panelName: 'Other', color: '#d1d5db', results: ungrouped });
     }
     return sorted;
-  }, [panels, lang]);
+  }, [panels, uiLang]);
 
-  const flaggedItems = useMemo(() => {
-    const out: FlaggedItem[] = [];
-    const all: FlaggedItem[] = [];
+  // Count flagged biomarkers
+  const flaggedCounts = useMemo(() => {
+    let outCount = 0;
+    let allCount = 0;
     for (const session of sessions) {
       if (!session.items) continue;
       for (const r of session.items) {
-        if (isOutOfRange(r)) {
-          const item = { result: r, date: session.date, place: session.place, kind: 'out' as const };
-          out.push(item);
-          all.push(item);
-        } else if (isNearOutOfRange(r)) {
-          all.push({ result: r, date: session.date, place: session.place, kind: 'near' });
-        }
+        if (isOutOfRange(r)) { outCount++; allCount++; }
+        else if (isNearOutOfRange(r)) { allCount++; }
       }
     }
-    return { out, all };
+    return { outCount, allCount };
   }, [sessions]);
 
-  const renderFlaggedList = (items: FlaggedItem[]) => {
-    if (items.length === 0) {
-      return <div className="empty-state">All biomarkers are within range 🎉</div>;
-    }
+  // Get sessions that have matching results for current filter
+  const getVisibleSessions = useCallback((): ResultGroup[] => {
+    if (view === 'sessions') return sessions;
+    return sessions.filter(g => {
+      if (!g.items) return false;
+      return filterResults(g.items).length > 0;
+    });
+  }, [sessions, view, filterResults]);
+
+  const visibleSessions = getVisibleSessions();
+
+  const renderSessionCard = (g: ResultGroup) => {
+    const isExpanded = expandedSessions[g.file];
+    const allItems = getSessionItems(g);
+    const filteredItems = allItems ? filterResults(allItems) : null;
+    const grouped = isExpanded && filteredItems ? groupByPanel(filteredItems) : null;
+    const displayCount = view === 'sessions'
+      ? g.itemCount
+      : (filteredItems ? filteredItems.length : 0);
+
     return (
-      <div className="results-table">
-        <div className="results-header">
-          <span>{t('biomarker')}</span>
-          <span>{t('value')}</span>
-          <span>{t('reference')}</span>
-        </div>
-        {items.map((item, i) => (
-          <div key={i} className={`results-row ${item.kind === 'out' ? 'out-of-range' : 'near-out-of-range'}`}>
-            <span className="result-name">
-              {getResultDisplayName(item.result, analysesCatalog, lang)}
-              <br />
-              <span className="result-loinc">
-                {formatDate(item.date)} · {item.place}
-              </span>
-            </span>
-            <span className="result-value">{formatResultValue(item.result)}</span>
-            <span className="result-ref">{formatResultReference(item.result)}</span>
+      <div key={g.file} className="session-card">
+        <div
+          className="card"
+          onClick={() => toggleSession(g.file, g.items)}
+          style={{ borderRadius: isExpanded ? 'var(--radius) var(--radius) 0 0' : undefined }}
+        >
+          <div className="card-date" style={{ justifyContent: 'space-between' }}>
+            <span>{formatDate(g.date)}</span>
+            <svg
+              width="14" height="14" viewBox="0 0 14 14" fill="none"
+              stroke="var(--gray-400)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+              style={{ transform: isExpanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}
+            >
+              <path d="M3 5l4 4 4-4" />
+            </svg>
           </div>
-        ))}
+          <div className="card-title">{g.place || 'Blood Test'}</div>
+          <div className="card-meta">{displayCount} {t('biomarkers')}</div>
+        </div>
+
+        {isExpanded && grouped && (
+          <div className="results-table" style={{ marginTop: 0, borderRadius: '0 0 var(--radius) var(--radius)' }}>
+            {grouped.map((pg, gi) => (
+              <div key={gi}>
+                <div
+                  className="result-panel-divider"
+                  style={{ '--row-panel-color': pg.color } as React.CSSProperties}
+                >
+                  {pg.panelName}
+                </div>
+                {pg.results.map((r, i) => (
+                  <ResultRow key={`${gi}-${i}`} result={r} panelColor={pg.color} />
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {isExpanded && !allItems && (
+          <div className="loading" style={{ padding: '16px' }}>Loading...</div>
+        )}
       </div>
     );
   };
@@ -165,20 +201,18 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
             onClick={() => setView('near-range')}
             style={{ color: view === 'near-range' ? 'white' : '#d97706' }}
           >
-            ⚠ {flaggedItems.all.length}
+            ⚠ {flaggedCounts.allCount}
           </button>
           <button
             className={`view-toggle-btn${view === 'out-of-range' ? ' active' : ''}`}
             onClick={() => setView('out-of-range')}
             style={{ color: view === 'out-of-range' ? 'white' : '#dc2626' }}
           >
-            ⚠ {flaggedItems.out.length}
+            ⚠ {flaggedCounts.outCount}
           </button>
-          {view === 'sessions' && (
-            <button className="view-toggle-btn utility" onClick={toggleAllSessions}>
-              Collapse / Expand all
-            </button>
-          )}
+          <button className="view-toggle-btn utility" onClick={toggleAllSessions}>
+            Collapse / Expand all
+          </button>
         </div>
       )}
 
@@ -190,63 +224,14 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
         <div className="empty-state">{t('noResults')}</div>
       )}
 
-      {!loading && view === 'sessions' && (
+      {!loading && user && (
         <div className="card-list">
-          {sessions.map((g) => {
-            const isExpanded = expandedSessions[g.file];
-            const items = getSessionItems(g);
-            const grouped = isExpanded && items ? groupByPanel(items) : null;
-
-            return (
-              <div key={g.file} className="session-card">
-                <div
-                  className="card"
-                  onClick={() => toggleSession(g.file, g.items)}
-                  style={{ borderRadius: isExpanded ? 'var(--radius) var(--radius) 0 0' : undefined }}
-                >
-                  <div className="card-date" style={{ justifyContent: 'space-between' }}>
-                    <span>{formatDate(g.date)}</span>
-                    <svg
-                      width="14" height="14" viewBox="0 0 14 14" fill="none"
-                      stroke="var(--gray-400)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
-                      style={{ transform: isExpanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}
-                    >
-                      <path d="M3 5l4 4 4-4" />
-                    </svg>
-                  </div>
-                  <div className="card-title">{g.place || 'Blood Test'}</div>
-                  <div className="card-meta">{g.itemCount} {t('biomarkers')}</div>
-                </div>
-
-                {isExpanded && grouped && (
-                  <div className="results-table" style={{ marginTop: 0, borderRadius: '0 0 var(--radius) var(--radius)' }}>
-                    {grouped.map((pg, gi) => (
-                      <div key={gi}>
-                        <div
-                          className="result-panel-divider"
-                          style={{ '--row-panel-color': pg.color } as React.CSSProperties}
-                        >
-                          {pg.panelName}
-                        </div>
-                        {pg.results.map((r, i) => (
-                          <ResultRow key={`${gi}-${i}`} result={r} panelColor={pg.color} />
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {isExpanded && !items && (
-                  <div className="loading" style={{ padding: '16px' }}>Loading...</div>
-                )}
-              </div>
-            );
-          })}
+          {visibleSessions.length === 0 && sessions.length > 0 && (
+            <div className="empty-state">All biomarkers are within range 🎉</div>
+          )}
+          {visibleSessions.map(renderSessionCard)}
         </div>
       )}
-
-      {!loading && view === 'out-of-range' && renderFlaggedList(flaggedItems.out)}
-      {!loading && view === 'near-range' && renderFlaggedList(flaggedItems.all)}
     </div>
   );
 }
