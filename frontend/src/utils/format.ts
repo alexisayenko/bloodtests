@@ -1,9 +1,10 @@
 import type { Result } from '../types';
 
 export function formatDate(dateStr: string): string {
-  return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
-    year: 'numeric', month: 'short',
-  });
+  const d = new Date(dateStr + 'T00:00:00');
+  const year = d.getFullYear();
+  const month = d.toLocaleDateString('en-US', { month: 'short' });
+  return `${year} ${month}`;
 }
 
 export function formatResultValue(result: Result): string {
@@ -31,4 +32,12 @@ export function formatFrequencyText(text: string): string {
 export function isOutOfRange(r: Result): boolean {
   if (r.refMin == null || r.refMax == null || r.value == null) return false;
   return r.value < r.refMin || r.value > r.refMax;
+}
+
+export function isNearOutOfRange(r: Result): boolean {
+  if (r.refMin == null || r.refMax == null || r.value == null) return false;
+  if (isOutOfRange(r)) return false;
+  const range = r.refMax - r.refMin;
+  const margin = range * 0.1;
+  return r.value < r.refMin + margin || r.value > r.refMax - margin;
 }

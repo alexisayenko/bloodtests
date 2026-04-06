@@ -8,7 +8,7 @@ import { BottomNav } from './components/layout/BottomNav';
 import { PanelsPage } from './components/panels/PanelsPage';
 import { PanelDetailPage } from './components/panels/PanelDetailPage';
 import { ResultsPage } from './components/results/ResultsPage';
-import { ResultDetailPage } from './components/results/ResultDetailPage';
+
 import { PlannedPage } from './components/planned/PlannedPage';
 import { AnalyticsPage } from './components/analytics/AnalyticsPage';
 import type { ViewName } from './types';
@@ -16,7 +16,6 @@ import type { ViewName } from './types';
 function AppContent() {
   const [view, setView] = useState<ViewName>('panels');
   const [detailPanelIndex, setDetailPanelIndex] = useState(0);
-  const [detailResultIndex, setDetailResultIndex] = useState(0);
   const { sessions, plannedTests, loading, loadGroupItems } = useResults();
 
   const navigate = useCallback((v: ViewName) => setView(v), []);
@@ -24,11 +23,6 @@ function AppContent() {
   const showPanelDetail = useCallback((index: number) => {
     setDetailPanelIndex(index);
     setView('panel-detail');
-  }, []);
-
-  const showResultDetail = useCallback((index: number) => {
-    setDetailResultIndex(index);
-    setView('detail');
   }, []);
 
   let content;
@@ -40,22 +34,13 @@ function AppContent() {
       content = <PanelDetailPage panelIndex={detailPanelIndex} onBack={() => setView('panels')} />;
       break;
     case 'results':
-      content = <ResultsPage sessions={sessions} loading={loading} onShowDetail={showResultDetail} />;
-      break;
-    case 'detail':
-      content = sessions[detailResultIndex] ? (
-        <ResultDetailPage
-          group={sessions[detailResultIndex]}
-          loadItems={loadGroupItems}
-          onBack={() => setView('results')}
-        />
-      ) : null;
+      content = <ResultsPage sessions={sessions} loading={loading} loadGroupItems={loadGroupItems} />;
       break;
     case 'planned':
       content = <PlannedPage planned={plannedTests} loading={loading} />;
       break;
     case 'analytics':
-      content = <AnalyticsPage />;
+      content = <AnalyticsPage sessions={sessions} loading={loading} />;
       break;
   }
 

@@ -16,7 +16,7 @@ body {
 .app { min-height: 100dvh; display: flex; flex-direction: column; max-width: 600px; margin: 0 auto; }
 
 .header { background: var(--primary); color: white; padding: 16px 20px; position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; }
-.header h1 { font-size: 22px; font-weight: 600; }
+.header h1 { font-size: 22px; font-weight: 600; min-width: 0; overflow: hidden; }
 .branch-badge {
   display: none;
   font-size: 12px;
@@ -91,12 +91,21 @@ body {
 }
 .results-row.out-of-range { background: var(--danger-light); }
 .results-row.out-of-range .result-value { color: var(--danger); font-weight: 600; }
+.results-row.near-out-of-range { background: #fffbeb; }
+.results-row.near-out-of-range .result-value { color: #d97706; font-weight: 600; }
 .result-name { font-size: 16px; font-weight: 500; }
 .result-loinc { font-size: 13px; color: var(--gray-400); line-height: 1.6; }
 .loinc-link { color: var(--gray-400); text-decoration: none; }
 .loinc-link:hover { text-decoration: underline; color: var(--primary); }
 .result-value { font-size: 16px; text-align: right; font-variant-numeric: tabular-nums; }
 .result-ref { font-size: 14px; color: var(--gray-400); text-align: right; min-width: 80px; }
+.result-panel-divider {
+  font-size: 12px; font-weight: 700; color: white; text-transform: uppercase;
+  letter-spacing: 0.5px; padding: 8px 16px;
+  background: var(--primary);
+  border-left: 3px solid var(--row-panel-color, #d1d5db);
+}
+.results-row.panel-colored { border-left: 3px solid var(--row-panel-color, #d1d5db); }
 
 .view-toggle { display: flex; gap: 4px; margin-bottom: 12px; }
 .view-toggle-btn {
@@ -121,7 +130,7 @@ img.panel-icon { display: none; }
   -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center;
   mask-size: contain; mask-repeat: no-repeat; mask-position: center;
 }
-.panel-card-title span { flex: 1; text-align: left; }
+.panel-card-title span { flex: 1; text-align: left; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .panel-collapse-btn { background: none; border: none; cursor: pointer; padding: 4px; transition: transform 0.2s; }
 .panel-collapse-btn svg { display: block; }
 .panel-collapse-btn.collapsed { transform: rotate(90deg); }
@@ -163,6 +172,70 @@ img.panel-icon { display: none; }
 }
 .btn-auth:hover { background: rgba(255,255,255,0.3); }
 .guest-badge { font-size: 11px; opacity: 0.7; }
+
+/* User menu dropdown */
+.header-controls { position: relative; }
+.user-menu-overlay {
+  position: fixed; inset: 0; z-index: 100;
+}
+.user-menu-dropdown {
+  position: absolute; top: 100%; right: 0; margin-top: 8px;
+  width: 260px; background: white; border-radius: var(--radius);
+  padding: 12px; z-index: 101;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  animation: dropdownIn 0.15s ease;
+  color: var(--gray-900);
+}
+.user-menu-profile {
+  display: flex; align-items: center; gap: 10px; padding: 4px 0;
+}
+.user-menu-avatar { width: 36px; height: 36px; border-radius: 50%; }
+.user-menu-name { font-size: 14px; font-weight: 600; }
+.user-menu-email { font-size: 12px; color: var(--gray-500); }
+.user-menu-divider { height: 1px; background: var(--gray-200); margin: 10px 0; }
+.user-menu-section { padding: 2px 0; }
+.user-menu-label { font-size: 11px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.user-menu-lang-group { display: flex; gap: 4px; }
+.user-menu-lang-btn {
+  flex: 1; padding: 6px; border: 1px solid var(--gray-200); border-radius: 6px;
+  background: white; font-size: 12px; font-weight: 500; cursor: pointer;
+  font-family: inherit; color: var(--gray-900); transition: all 0.15s;
+}
+.user-menu-lang-btn.active {
+  background: var(--primary); color: white; border-color: var(--primary);
+}
+.user-menu-signout {
+  width: 100%; padding: 8px; border: none;
+  background: var(--danger-light); color: var(--danger);
+  font-size: 13px; font-weight: 600; border-radius: 8px;
+  cursor: pointer; font-family: inherit;
+}
+
+@keyframes dropdownIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Analytics charts */
+.panel-chart-group {
+  background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+}
+.panel-chart-header {
+  display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+  background: var(--primary); color: white; font-size: 16px; font-weight: 600;
+  cursor: pointer;
+}
+.panel-chart-header span:first-child { flex: 1; }
+.panel-chart-count { font-size: 12px; font-weight: 400; opacity: 0.7; }
+.panel-chart-body {
+  padding: 12px; display: flex; flex-direction: column; gap: 16px;
+  border-left: 3px solid var(--panel-color, #d1d5db);
+}
+.biomarker-chart { }
+.biomarker-chart-title {
+  font-size: 14px; font-weight: 600; color: var(--gray-900);
+  margin-bottom: 4px; display: flex; align-items: baseline; gap: 6px;
+}
+.biomarker-chart-unit {
+  font-size: 11px; font-weight: 400; color: var(--gray-400);
+}
 
 @media (min-width: 640px) {
   .main { padding: 24px; padding-bottom: 80px; }
