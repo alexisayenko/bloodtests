@@ -26,7 +26,7 @@ const sb = createClient(SUPABASE_URL, SERVICE_KEY, {
   auth: { autoRefreshToken: false, persistSession: false }
 });
 
-const DATA_DIR = join(import.meta.dirname, '..', 'data', 'users', 'alex');
+const DATA_DIR = join(import.meta.dirname, 'seed-data', 'alex');
 const RESULTS_DIR = join(DATA_DIR, 'results-by-date');
 
 async function seed() {

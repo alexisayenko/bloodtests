@@ -488,40 +488,9 @@
     }
 
     async function loadGuestData() {
-      // Guest mode: load demo data from local JSON files
-      try {
-        const usersRes = await fetch('data/users.json');
-        usersCache = await usersRes.json();
-        currentUserId = usersCache.length > 0 ? usersCache[0].id : null;
-      } catch { usersCache = []; currentUserId = null; }
-      await loadUserDataFromJson();
-    }
-
-    async function loadUserDataFromJson() {
-      if (!currentUserId) {
-        resultsCache = []; resultsManifestCache = []; resultsGroupItemsCache = {}; plannedCache = [];
-        renderResultsList(); renderPlannedList(plannedCache);
-        return;
-      }
-      const [manifestRes, resultsRes, plannedRes] = await Promise.all([
-        fetch(`data/users/${currentUserId}/results-by-date/manifest.json`),
-        fetch(`data/users/${currentUserId}/results.json`),
-        fetch(`data/users/${currentUserId}/planned.json`),
-      ]);
-
-      resultsGroupItemsCache = {};
-      if (manifestRes.ok) {
-        resultsManifestCache = await manifestRes.json();
-        resultsManifestCache.sort((a, b) => b.date.localeCompare(a.date));
-        resultsCache = [];
-      } else {
-        resultsManifestCache = [];
-        resultsCache = resultsRes.ok ? await resultsRes.json() : [];
-        resultsCache.sort((a, b) => b.date.localeCompare(a.date));
-      }
-      plannedCache = plannedRes.ok ? await plannedRes.json() : [];
-      plannedCache.sort((a, b) => a.plannedDate.localeCompare(b.plannedDate));
-
+      // Guest mode: show empty state, sign in to see your data
+      currentUserId = null;
+      resultsCache = []; resultsManifestCache = []; resultsGroupItemsCache = {}; plannedCache = [];
       renderResultsList();
       renderPlannedList(plannedCache);
     }
@@ -668,18 +637,10 @@
         let g = groups[groupIndex];
         if (!g) return;
         if (!g.items && g.file) {
-          if (sbUser) {
-            // Supabase mode: items should already be cached; if not, fetch from DB
-            const { data, error } = await sb.from('results').select('*').eq('session_id', g.file);
-            if (error || !data) return;
-            resultsGroupItemsCache[g.file] = data.map(mapResult);
-          } else {
-            // Guest/JSON mode: fetch from local file
-            const groupRes = await fetch(`data/users/${currentUserId}/${g.file.replaceAll('\\', '/')}`);
-            if (!groupRes.ok) return;
-            const payload = await groupRes.json();
-            resultsGroupItemsCache[g.file] = payload.items || [];
-          }
+          // Fetch results from Supabase by session ID
+          const { data, error } = await sb.from('results').select('*').eq('session_id', g.file);
+          if (error || !data) return;
+          resultsGroupItemsCache[g.file] = data.map(mapResult);
           g = { ...g, items: resultsGroupItemsCache[g.file] };
         }
         if (!g.items || g.items.length === 0) return;
