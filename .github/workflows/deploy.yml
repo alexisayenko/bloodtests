@@ -52,7 +52,9 @@ jobs:
           M_COMMIT=$(git log -1 --format="%h")
           M_DATETIME=$(git log -1 --format="%ci" | cut -c1-16)
           cd ..
-          sed -i "s/<!--BUILD_INFO-->/build ${BUILD_NUM} · ${M_COMMIT} · ${M_DATETIME}/" _site/index.html
+          if [ -f _site/index.html ]; then
+            sed -i "s/<!--BUILD_INFO-->/build ${BUILD_NUM} · ${M_COMMIT} · ${M_DATETIME}/" _site/index.html
+          fi
 
           # --- Devel branch (React app) ---
           if [ -d devel/frontend ]; then
