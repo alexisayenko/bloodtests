@@ -55,6 +55,17 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
     setExpandedSessions(prev => ({ ...prev, [sessionId]: true }));
   }, [expandedSessions, loadedItems, loadGroupItems]);
 
+  const toggleAllSessions = useCallback(() => {
+    const allExpanded = sessions.length > 0 && sessions.every(g => expandedSessions[g.file]);
+    if (allExpanded) {
+      setExpandedSessions({});
+    } else {
+      const allOpen: Record<string, boolean> = {};
+      sessions.forEach(g => { allOpen[g.file] = true; });
+      setExpandedSessions(allOpen);
+    }
+  }, [sessions, expandedSessions]);
+
   const getSessionItems = (g: ResultGroup): Result[] | null => {
     return g.items || loadedItems[g.file] || null;
   };
@@ -147,14 +158,7 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
             className={`view-toggle-btn${view === 'sessions' ? ' active' : ''}`}
             onClick={() => setView('sessions')}
           >
-            {t('results')}
-          </button>
-          <button
-            className={`view-toggle-btn${view === 'out-of-range' ? ' active' : ''}`}
-            onClick={() => setView('out-of-range')}
-            style={{ color: view === 'out-of-range' ? 'white' : '#dc2626' }}
-          >
-            ⚠ {flaggedItems.out.length}
+            All
           </button>
           <button
             className={`view-toggle-btn${view === 'near-range' ? ' active' : ''}`}
@@ -163,6 +167,18 @@ export function ResultsPage({ sessions, loading, loadGroupItems }: Props) {
           >
             ⚠ {flaggedItems.all.length}
           </button>
+          <button
+            className={`view-toggle-btn${view === 'out-of-range' ? ' active' : ''}`}
+            onClick={() => setView('out-of-range')}
+            style={{ color: view === 'out-of-range' ? 'white' : '#dc2626' }}
+          >
+            ⚠ {flaggedItems.out.length}
+          </button>
+          {view === 'sessions' && (
+            <button className="view-toggle-btn utility" onClick={toggleAllSessions}>
+              Collapse / Expand all
+            </button>
+          )}
         </div>
       )}
 
