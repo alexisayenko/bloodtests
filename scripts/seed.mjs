@@ -41,7 +41,6 @@ async function seed() {
   // Known lab name corrections
   const labFixes = {
     '2025-08': 'NeoGenesis',
-    '2025-11': 'NeoGenesis',
     '2026-01': 'NeoGenesis',
   };
 

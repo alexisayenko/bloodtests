@@ -232,14 +232,6 @@
     "numericItems": 10
   },
   {
-    "date": "2025-11-01",
-    "place": "NeoGenesis",
-    "file": "results-by-date\\2025-11-01__neogenesis.json",
-    "items": 1,
-    "mappedItems": 1,
-    "numericItems": 0
-  },
-  {
     "date": "2026-01-01",
     "place": "NeoGenesis",
     "file": "results-by-date\\2026-01-01__neogenesis.json",
