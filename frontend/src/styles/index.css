@@ -99,13 +99,15 @@ body {
 .loinc-link:hover { text-decoration: underline; color: var(--primary); }
 .result-value { font-size: 16px; text-align: right; font-variant-numeric: tabular-nums; }
 .result-ref { font-size: 14px; color: var(--gray-400); text-align: right; min-width: 80px; }
-.result-panel-header {
-  font-size: 13px; font-weight: 700; color: white; text-transform: uppercase;
-  letter-spacing: 0.5px; padding: 8px 16px; margin-top: 16px;
-  background: var(--primary); border-radius: var(--radius) var(--radius) 0 0;
+.sticky-header {
+  position: sticky; top: 0; z-index: 5;
 }
-.result-panel-header:first-child { margin-top: 20px; }
-.results-table.panel-grouped { margin-top: 0; border-radius: 0 0 var(--radius) var(--radius); }
+.result-panel-divider {
+  font-size: 12px; font-weight: 700; color: var(--gray-500); text-transform: uppercase;
+  letter-spacing: 0.5px; padding: 8px 16px;
+  background: var(--gray-100);
+  border-left: 3px solid var(--row-panel-color, #d1d5db);
+}
 .results-row.panel-colored { border-left: 3px solid var(--row-panel-color, #d1d5db); }
 
 .view-toggle { display: flex; gap: 4px; margin-bottom: 12px; }

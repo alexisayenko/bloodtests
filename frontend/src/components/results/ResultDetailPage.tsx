@@ -82,25 +82,25 @@ export function ResultDetailPage({ group, loadItems, onBack }: Props) {
         <div className="detail-date">{formatDate(group.date)}</div>
       </div>
 
-      {groupedByPanel && groupedByPanel.map((pg, gi) => (
-        <div key={gi}>
-          <div className="result-panel-header">
-            {pg.panelName}
+      {groupedByPanel && (
+        <div className="results-table" style={{ marginTop: '20px' }}>
+          <div className="results-header sticky-header">
+            <span>{t('biomarker')}</span>
+            <span>{t('value')}</span>
+            <span>{t('reference')}</span>
           </div>
-          <div className="results-table panel-grouped">
-            {gi === 0 && (
-              <div className="results-header">
-                <span>{t('biomarker')}</span>
-                <span>{t('value')}</span>
-                <span>{t('reference')}</span>
+          {groupedByPanel.map((pg, gi) => (
+            <div key={gi}>
+              <div className="result-panel-divider" style={{ '--row-panel-color': pg.color } as React.CSSProperties}>
+                {pg.panelName}
               </div>
-            )}
-            {pg.results.map((r, i) => (
-              <ResultRow key={i} result={r} panelColor={pg.color} />
-            ))}
-          </div>
+              {pg.results.map((r, i) => (
+                <ResultRow key={`${gi}-${i}`} result={r} panelColor={pg.color} />
+              ))}
+            </div>
+          ))}
         </div>
-      ))}
+      )}
 
       {!groupedByPanel && (
         <div className="results-table">
