@@ -383,9 +383,9 @@
       "value": 95.98,
       "valueQualifier": null,
       "unit": "pg/mL",
-      "refText": "11 -  44",
-      "refMin": 11.0,
-      "refMax": 44.0
+      "refText": "10.00 - 40.00",
+      "refMin": 10.0,
+      "refMax": 40.0
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
@@ -398,10 +398,10 @@
       "rawValue": "9.44",
       "value": 9.44,
       "valueQualifier": null,
-      "unit": "mlU/mL",
-      "refText": "0.95 - 11.95",
-      "refMin": 0.95,
-      "refMax": 11.95
+      "unit": "mIU/mL",
+      "refText": "1.50 - 12.40",
+      "refMin": 1.5,
+      "refMax": 12.4
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
@@ -415,9 +415,9 @@
       "value": 163.41,
       "valueQualifier": null,
       "unit": "pg/mL",
-      "refText": "15.0 - 50.0",
-      "refMin": 15.0,
-      "refMax": 50.0
+      "refText": "40.45 - 176.40",
+      "refMin": 40.45,
+      "refMax": 176.40
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
@@ -430,9 +430,9 @@
       "rawValue": "6.06",
       "value": 6.06,
       "valueQualifier": null,
-      "unit": "mlU/mL",
-      "refText": "0.57 - 8.6",
-      "refMin": 0.57,
+      "unit": "mIU/mL",
+      "refText": "1.70 - 8.60",
+      "refMin": 1.7,
       "refMax": 8.6
     },
     {
@@ -459,13 +459,13 @@
       "loinc": "14913-8",
       "date": "2026-01-01",
       "place": null,
-      "rawValue": "10.28",
-      "value": 10.28,
+      "rawValue": "35.65",
+      "value": 35.65,
       "valueQualifier": null,
-      "unit": "ng/mL",
-      "refText": "1.42 - 9.23",
-      "refMin": 1.42,
-      "refMax": 9.23
+      "unit": "nmol/L",
+      "refText": "9.20 - 31.80",
+      "refMin": 9.2,
+      "refMax": 31.8
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
@@ -475,13 +475,13 @@
       "loinc": "15081-3",
       "date": "2026-01-01",
       "place": null,
-      "rawValue": "186",
-      "value": 186.0,
+      "rawValue": "186.29",
+      "value": 186.29,
       "valueQualifier": null,
-      "unit": "mIU/L",
-      "refText": "40 – 530",
-      "refMin": 40.0,
-      "refMax": 530.0
+      "unit": "mIU/mL",
+      "refText": "53.00 - 360.00",
+      "refMin": 53.0,
+      "refMax": 360.0
     },
     {
       "sourceFile": "Alex - Blood Tests v2 - Lab Results.tsv",
