@@ -1,0 +1,79 @@
+{
+  "date": "2019-07-01",
+  "labName": "MediLab",
+  "sourceFile": "2019-07-MediLab.pdf",
+  "items": [
+    {
+      "symbol": "ACTH",
+      "analysis": "ACTH",
+      "loinc": "2141-0",
+      "rawValue": "30.2",
+      "value": 30.2,
+      "valueQualifier": null,
+      "unit": "pg/mL",
+      "refText": "7.2 - 63",
+      "refMin": 7.2,
+      "refMax": 63.0
+    },
+    {
+      "symbol": "TSH",
+      "analysis": "Thyroid-Stimulating Hormone",
+      "loinc": "11580-8",
+      "rawValue": "2.41",
+      "value": 2.41,
+      "valueQualifier": null,
+      "unit": "μIU/mL",
+      "refText": "0.270 - 4.20",
+      "refMin": 0.27,
+      "refMax": 4.2
+    },
+    {
+      "symbol": "FT4",
+      "analysis": "Free Thyroxine",
+      "loinc": "3024-7",
+      "rawValue": "14.01",
+      "value": 14.01,
+      "valueQualifier": null,
+      "unit": "pmol/L",
+      "refText": "9.0 - 22.00",
+      "refMin": 9.0,
+      "refMax": 22.0
+    },
+    {
+      "symbol": null,
+      "analysis": "Insulin",
+      "loinc": "20448-7",
+      "rawValue": "8.1",
+      "value": 8.1,
+      "valueQualifier": null,
+      "unit": "μU/mL",
+      "refText": "2.6 - 24.9",
+      "refMin": 2.6,
+      "refMax": 24.9
+    },
+    {
+      "symbol": null,
+      "analysis": "Cortisol",
+      "loinc": "2143-6",
+      "rawValue": "11.3",
+      "value": 11.3,
+      "valueQualifier": null,
+      "unit": "μg/dL",
+      "refText": "6.2 - 19.4",
+      "refMin": 6.2,
+      "refMax": 19.4
+    },
+    {
+      "symbol": "GLU",
+      "analysis": "Glucose Serum",
+      "loinc": "2339-0",
+      "rawValue": "91",
+      "value": 91,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "70 - 110",
+      "refMin": 70.0,
+      "refMax": 110.0
+    }
+  ]
+}

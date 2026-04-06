@@ -1,5 +1,69 @@
 [
   {
+    "date": "2018-10-01",
+    "labName": "MediLab",
+    "file": "results-by-date\\2018-10-01__medilab.json",
+    "items": 17,
+    "mappedItems": 17,
+    "numericItems": 17
+  },
+  {
+    "date": "2018-11-01",
+    "labName": "MediLab",
+    "file": "results-by-date\\2018-11-01__medilab.json",
+    "items": 3,
+    "mappedItems": 3,
+    "numericItems": 3
+  },
+  {
+    "date": "2019-01-01",
+    "labName": "MediLab",
+    "file": "results-by-date\\2019-01-01__medilab.json",
+    "items": 2,
+    "mappedItems": 2,
+    "numericItems": 2
+  },
+  {
+    "date": "2019-07-01",
+    "labName": "MediLab",
+    "file": "results-by-date\\2019-07-01__medilab.json",
+    "items": 6,
+    "mappedItems": 6,
+    "numericItems": 6
+  },
+  {
+    "date": "2020-07-01",
+    "labName": "MediLab",
+    "file": "results-by-date\\2020-07-01__medilab.json",
+    "items": 6,
+    "mappedItems": 6,
+    "numericItems": 6
+  },
+  {
+    "date": "2020-11-01",
+    "labName": "MediLab",
+    "file": "results-by-date\\2020-11-01__medilab.json",
+    "items": 39,
+    "mappedItems": 39,
+    "numericItems": 39
+  },
+  {
+    "date": "2021-03-01",
+    "labName": "MediLab",
+    "file": "results-by-date\\2021-03-01__medilab.json",
+    "items": 5,
+    "mappedItems": 5,
+    "numericItems": 5
+  },
+  {
+    "date": "2021-11-01",
+    "labName": "MediLab",
+    "file": "results-by-date\\2021-11-01__medilab.json",
+    "items": 23,
+    "mappedItems": 23,
+    "numericItems": 23
+  },
+  {
     "date": "2022-04-01",
     "labName": "MediLab",
     "file": "results-by-date\\2022-04-01__medilab.json",

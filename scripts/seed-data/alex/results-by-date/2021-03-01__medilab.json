@@ -1,0 +1,67 @@
+{
+  "date": "2021-03-01",
+  "labName": "MediLab",
+  "sourceFile": "2021-03-MediLab.pdf",
+  "items": [
+    {
+      "symbol": "IgG",
+      "analysis": "Immunoglobulin G",
+      "loinc": "2465-3",
+      "rawValue": "800.0",
+      "value": 800.0,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "700 - 1600",
+      "refMin": 700.0,
+      "refMax": 1600.0
+    },
+    {
+      "symbol": "TSH",
+      "analysis": "Thyroid-Stimulating Hormone",
+      "loinc": "11580-8",
+      "rawValue": "4.27",
+      "value": 4.27,
+      "valueQualifier": null,
+      "unit": "μIU/mL",
+      "refText": "0.270 - 4.20",
+      "refMin": 0.27,
+      "refMax": 4.2
+    },
+    {
+      "symbol": null,
+      "analysis": "Insulin",
+      "loinc": "20448-7",
+      "rawValue": "12.6",
+      "value": 12.6,
+      "valueQualifier": null,
+      "unit": "μU/mL",
+      "refText": "2.6 - 24.9",
+      "refMin": 2.6,
+      "refMax": 24.9
+    },
+    {
+      "symbol": null,
+      "analysis": "Cortisol",
+      "loinc": "2143-6",
+      "rawValue": "19.8",
+      "value": 19.8,
+      "valueQualifier": null,
+      "unit": "μg/dL",
+      "refText": "6.2 - 19.4",
+      "refMin": 6.2,
+      "refMax": 19.4
+    },
+    {
+      "symbol": "GLU",
+      "analysis": "Glucose Serum",
+      "loinc": "2339-0",
+      "rawValue": "84",
+      "value": 84,
+      "valueQualifier": null,
+      "unit": "mg/dL",
+      "refText": "70 - 110",
+      "refMin": 70.0,
+      "refMax": 110.0
+    }
+  ]
+}
